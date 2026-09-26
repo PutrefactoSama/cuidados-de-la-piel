@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0F172A;
+        font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+        color: #0F172A;
+      }
+
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        background: #F8FAFC;
+        overflow: hidden;
+      }
+
+      /* Background subtle decorative mesh */
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image: 
+          radial-gradient(circle at 10% 20%, rgba(30, 86, 160, 0.05) 0%, transparent 40%),
+          radial-gradient(circle at 90% 80%, rgba(46, 125, 50, 0.06) 0%, transparent 45%),
+          linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
+        background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+      }
+
+      /* Top Persistent Header Bar */
+      .top-brand-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        padding: 0 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #FFFFFF;
+        border-bottom: 2px solid #E2E8F0;
+        box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+        z-index: 50;
+      }
+
+      .brand-lockup {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .brand-icon-box {
+        width: 58px;
+        height: 58px;
+        background: #1E56A0;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+        box-shadow: 0 4px 12px rgba(30, 86, 160, 0.25);
+      }
+
+      .brand-title {
+        font-size: 30px;
+        font-weight: 800;
+        color: #0F172A;
+        letter-spacing: -0.02em;
+      }
+
+      .brand-subtitle {
+        font-size: 16px;
+        font-weight: 500;
+        color: #64748B;
+      }
+
+      .brand-pill {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #ECFDF5;
+        border: 1.5px solid #A7F3D0;
+        color: #065F46;
+        padding: 10px 24px;
+        border-radius: 9999px;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      /* Scene Containers */
+      .scene {
+        position: absolute;
+        inset: 100px 0 0 0;
+        padding: 60px 80px 70px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* Scene 1: Hero */
+      .hero-scene {
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: #EFF6FF;
+        border: 2px solid #BFDBFE;
+        color: #1E40AF;
+        padding: 12px 28px;
+        border-radius: 9999px;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 28px;
+      }
+
+      .hero-h1 {
+        font-size: 68px;
+        font-weight: 800;
+        line-height: 1.15;
+        color: #0F172A;
+        letter-spacing: -0.03em;
+        max-width: 1400px;
+        margin-bottom: 24px;
+      }
+
+      .hero-h1 span {
+        color: #1E56A0;
+      }
+
+      .hero-p {
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #475569;
+        max-width: 1000px;
+      }
+
+      /* Scene 2: 2h Rotation Clock */
+      .scene-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 40px;
+      }
+
+      .scene-tag {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1E56A0;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      .scene-title {
+        font-size: 44px;
+        font-weight: 800;
+        color: #0F172A;
+        letter-spacing: -0.02em;
+      }
+
+      .rotation-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+      }
+
+      .rotation-card {
+        background: #FFFFFF;
+        border-radius: 20px;
+        border: 2px solid #E2E8F0;
+        padding: 32px 28px;
+        box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+      }
+
+      .rotation-card.active {
+        border-color: #1E56A0;
+        box-shadow: 0 16px 32px -4px rgba(30, 86, 160, 0.15);
+      }
+
+      .card-step-badge {
+        position: absolute;
+        top: -16px;
+        background: #1E56A0;
+        color: #FFFFFF;
+        font-size: 15px;
+        font-weight: 700;
+        padding: 6px 16px;
+        border-radius: 9999px;
+      }
+
+      .card-icon-wrap {
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        background: #F1F5F9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #1E56A0;
+        margin: 14px 0 20px 0;
+      }
+
+      .card-time {
+        font-size: 22px;
+        font-weight: 800;
+        color: #D97706;
+        margin-bottom: 8px;
+      }
+
+      .card-name {
+        font-size: 22px;
+        font-weight: 700;
+        color: #0F172A;
+        margin-bottom: 12px;
+      }
+
+      .card-desc {
+        font-size: 16px;
+        font-weight: 400;
+        color: #64748B;
+        line-height: 1.4;
+      }
+
+      /* Scene 3: 30 Degrees Rule */
+      .rule-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .rule-box {
+        background: #FFFFFF;
+        border-radius: 24px;
+        padding: 44px;
+        border: 2px solid #E2E8F0;
+        box-shadow: 0 12px 30px -6px rgba(15, 23, 42, 0.06);
+      }
+
+      .rule-box.danger {
+        border-color: #FECACA;
+        background: #FFF5F5;
+      }
+
+      .rule-box.success {
+        border-color: #A7F3D0;
+        background: #F0FDF4;
+      }
+
+      .rule-box-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .status-circle {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+        font-size: 22px;
+        font-weight: 800;
+      }
+
+      .status-circle.red {
+        background: #DC2626;
+      }
+
+      .status-circle.green {
+        background: #16A34A;
+      }
+
+      .rule-box-title {
+        font-size: 28px;
+        font-weight: 800;
+      }
+
+      .rule-box.danger .rule-box-title {
+        color: #991B1B;
+      }
+
+      .rule-box.success .rule-box-title {
+        color: #166534;
+      }
+
+      .rule-box-p {
+        font-size: 20px;
+        line-height: 1.6;
+        color: #334155;
+      }
+
+      /* Scene 4: Golden Rules */
+      .keys-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 36px;
+      }
+
+      .key-card {
+        background: #FFFFFF;
+        border-radius: 24px;
+        padding: 40px 32px;
+        border: 2px solid #E2E8F0;
+        box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.05);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .key-card-num {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: #1E56A0;
+        color: #FFFFFF;
+        font-size: 22px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+      }
+
+      .key-card-title {
+        font-size: 24px;
+        font-weight: 800;
+        color: #0F172A;
+        margin-bottom: 14px;
+      }
+
+      .key-card-text {
+        font-size: 18px;
+        font-weight: 400;
+        color: #475569;
+        line-height: 1.55;
+      }
+
+      /* Footer Progress Bar */
+      .bottom-progress-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: #E2E8F0;
+      }
+
+      .progress-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #1E56A0, #2E7D32);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="10"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div class="bg-grid"></div>
+
+      <!-- Persistent Header -->
+      <header class="top-brand-bar clip" data-start="0" data-duration="10" data-track-index="0">
+        <div class="brand-lockup">
+          <div class="brand-icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="brand-title">Aprendamos Juntos | CuidaPiel</div>
+            <div class="brand-subtitle">Guía de Prevención Activa de Lesiones por Presión</div>
+          </div>
+        </div>
+        <div class="brand-pill">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          Protocolo Oficial de Cuidado Geriátrico
+        </div>
+      </header>
+
+      <!-- SCENE 1: Hero (0.0s - 2.5s) -->
+      <section id="scene-hero" class="scene hero-scene clip" data-start="0" data-duration="2.5" data-track-index="1">
+        <div class="hero-badge" id="hero-badge">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          Cuidado Seguro y Digno en el Hogar
+        </div>
+        <h1 class="hero-h1" id="hero-h1">
+          Prevención de <span>Lesiones por Presión</span> en Adultos Mayores
+        </h1>
+        <p class="hero-p" id="hero-p">
+          Las escaras se pueden prevenir en un 95% con técnicas posturales correctas, hidratación y cuidado amoroso constante.
+        </p>
+      </section>
+
+      <!-- SCENE 2: Rotation Schedule (2.5s - 5.5s) -->
+      <section id="scene-rotation" class="scene clip" data-start="2.5" data-duration="3.0" data-track-index="1">
+        <div class="scene-header">
+          <div>
+            <div class="scene-tag" id="rot-tag">Pilar Fundamental 1</div>
+            <h2 class="scene-title" id="rot-title">Reloj de Rotación: Cambios cada 2 Horas</h2>
+          </div>
+          <div class="brand-pill" style="background:#FFFBEB; border-color:#FDE68A; color:#B45309;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            Máximo 2 horas en la misma posición
+          </div>
+        </div>
+
+        <div class="rotation-grid" id="rot-grid">
+          <!-- Step 1 -->
+          <div class="rotation-card" id="card-1">
+            <div class="card-step-badge">Paso 1 (08:00 - 10:00)</div>
+            <div class="card-icon-wrap">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="2" y="7" width="20" height="13" rx="2"></rect>
+                <path d="M12 2v5"></path>
+              </svg>
+            </div>
+            <div class="card-time">2 Horas</div>
+            <div class="card-name">Boca Arriba</div>
+            <div class="card-desc">Decúbito supino con almohada bajo las pantorrillas para talones flotantes.</div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="rotation-card active" id="card-2">
+            <div class="card-step-badge">Paso 2 (10:00 - 12:00)</div>
+            <div class="card-icon-wrap" style="background:#EFF6FF; color:#1E56A0;">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m10 8 4 4-4 4"></path>
+              </svg>
+            </div>
+            <div class="card-time">2 Horas</div>
+            <div class="card-name">Lateral Derecho 30°</div>
+            <div class="card-desc">Inclinación suave a 30° con cojín en espalda y entre las rodillas.</div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="rotation-card" id="card-3">
+            <div class="card-step-badge">Paso 3 (12:00 - 14:00)</div>
+            <div class="card-icon-wrap">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"></path>
+                <path d="M3 11v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5"></path>
+                <path d="M5 18v2"></path>
+                <path d="M19 18v2"></path>
+              </svg>
+            </div>
+            <div class="card-time">2 Horas</div>
+            <div class="card-name">Sedestación en Sillón</div>
+            <div class="card-desc">Sentado cómodo con cojín antiescaras viscoelástico y pies apoyados.</div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="rotation-card" id="card-4">
+            <div class="card-step-badge">Paso 4 (14:00 - 16:00)</div>
+            <div class="card-icon-wrap">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m14 16-4-4 4-4"></path>
+              </svg>
+            </div>
+            <div class="card-time">2 Horas</div>
+            <div class="card-name">Lateral Izquierdo 30°</div>
+            <div class="card-desc">Giro protegido a 30° liberando trocánter y zona sacra.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCENE 3: The 30-Degree Rule (5.5s - 8.0s) -->
+      <section id="scene-rule30" class="scene clip" data-start="5.5" data-duration="2.5" data-track-index="1">
+        <div class="scene-header">
+          <div>
+            <div class="scene-tag" id="r30-tag">Pilar Fundamental 2</div>
+            <h2 class="scene-title" id="r30-title">La Regla de Oro de los 30 Grados</h2>
+          </div>
+          <div class="brand-pill" style="background:#ECFDF5; border-color:#A7F3D0; color:#065F46;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Protección de Cadera y Huesos
+          </div>
+        </div>
+
+        <div class="rule-split">
+          <!-- Danger -->
+          <div class="rule-box danger" id="r30-danger">
+            <div class="rule-box-header">
+              <div class="status-circle red">✕</div>
+              <div class="rule-box-title">ERROR CRÍTICO: Lateral a 90°</div>
+            </div>
+            <p class="rule-box-p">
+              <strong>NUNCA</strong> coloque a la persona completamente de costado perpendicular (90°). Todo el peso del cuerpo presiona directamente el <strong>trocánter mayor (hueso de la cadera)</strong>, cortando el flujo sanguíneo en minutos.
+            </p>
+          </div>
+
+          <!-- Safe -->
+          <div class="rule-box success" id="r30-success">
+            <div class="rule-box-header">
+              <div class="status-circle green">✓</div>
+              <div class="rule-box-title">FORMA CORRECTA: Inclinación a 30°</div>
+            </div>
+            <p class="rule-box-p">
+              Coloque una <strong>almohada o cuña en la espalda</strong> logrando un ángulo suave de 30°. El peso se distribuye en la masa muscular del glúteo y se protege la cadera, el sacro y las rodillas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCENE 4: 3 Golden Care Keys (8.0s - 10.0s) -->
+      <section id="scene-keys" class="scene clip" data-start="8.0" data-duration="2.0" data-track-index="1">
+        <div class="scene-header">
+          <div>
+            <div class="scene-tag" id="keys-tag">Pilar Fundamental 3</div>
+            <h2 class="scene-title" id="keys-title">3 Claves para una Piel Sana y Protegida</h2>
+          </div>
+          <div class="brand-pill">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            Cuidado Diario con Amor
+          </div>
+        </div>
+
+        <div class="keys-grid">
+          <!-- Key 1 -->
+          <div class="key-card" id="key-1">
+            <div class="key-card-num">1</div>
+            <div class="key-card-title">Hidratación y AGHO</div>
+            <div class="key-card-text">
+              Aplique ácidos grasos hiperoxigenados con toques suaves. <strong>Jamás masajee</strong> zonas enrojecidas.
+            </div>
+          </div>
+
+          <!-- Key 2 -->
+          <div class="key-card" id="key-2">
+            <div class="key-card-num">2</div>
+            <div class="key-card-title">Sábanas sin Arrugas</div>
+            <div class="key-card-text">
+              Mantenga la ropa de cama limpia, seca y estirada. Las arrugas generan fricción directa y cizallamiento.
+            </div>
+          </div>
+
+          <!-- Key 3 -->
+          <div class="key-card" id="key-3">
+            <div class="key-card-num">3</div>
+            <div class="key-card-title">Talones Siempre Flotantes</div>
+            <div class="key-card-text">
+              Ubique un cojín bajo las pantorrillas para que los talones queden suspendidos en el aire sin tocar el colchón.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Progress Bar -->
+      <div class="bottom-progress-bar clip" data-start="0" data-duration="10" data-track-index="2">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <script>
+      // Single paused GSAP timeline indexed by composition id for HyperFrames seekable rendering
+      const tl = gsap.timeline({ paused: true });
+
+      // Progress bar fill across full duration
+      tl.fromTo("#progress-fill", { width: "0%" }, { width: "100%", duration: 10, ease: "none" }, 0);
+
+      // --- SCENE 1: Hero (0.0s - 2.5s) ---
+      tl.fromTo("#scene-hero", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 0);
+      tl.fromTo("#hero-badge", { opacity: 0, y: -20, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.5)" }, 0.1);
+      tl.fromTo("#hero-h1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.3);
+      tl.fromTo("#hero-p", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.5);
+      tl.to("#scene-hero", { opacity: 0, scale: 0.98, y: -20, duration: 0.4, ease: "power2.in" }, 2.1);
+
+      // --- SCENE 2: Rotation Clock (2.5s - 5.5s) ---
+      tl.fromTo("#scene-rotation", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 2.5);
+      tl.fromTo("#rot-tag", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, 2.6);
+      tl.fromTo("#rot-title", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, 2.7);
+      tl.fromTo("#card-1", { opacity: 0, y: 30, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.2)" }, 2.8);
+      tl.fromTo("#card-2", { opacity: 0, y: 30, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.2)" }, 3.0);
+      tl.fromTo("#card-3", { opacity: 0, y: 30, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.2)" }, 3.2);
+      tl.fromTo("#card-4", { opacity: 0, y: 30, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.2)" }, 3.4);
+      tl.to("#scene-rotation", { opacity: 0, y: -20, duration: 0.4, ease: "power2.in" }, 5.1);
+
+      // --- SCENE 3: 30-Degree Rule (5.5s - 8.0s) ---
+      tl.fromTo("#scene-rule30", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 5.5);
+      tl.fromTo("#r30-tag", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, 5.6);
+      tl.fromTo("#r30-title", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, 5.7);
+      tl.fromTo("#r30-danger", { opacity: 0, x: -40, scale: 0.96 }, { opacity: 1, x: 0, scale: 1, duration: 0.6, ease: "power3.out" }, 5.8);
+      tl.fromTo("#r30-success", { opacity: 0, x: 40, scale: 0.96 }, { opacity: 1, x: 0, scale: 1, duration: 0.6, ease: "power3.out" }, 6.0);
+      tl.to("#scene-rule30", { opacity: 0, y: -20, duration: 0.4, ease: "power2.in" }, 7.6);
+
+      // --- SCENE 4: Golden Keys (8.0s - 10.0s) ---
+      tl.fromTo("#scene-keys", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 8.0);
+      tl.fromTo("#keys-tag", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, 8.1);
+      tl.fromTo("#keys-title", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, 8.2);
+      tl.fromTo("#key-1", { opacity: 0, y: 30, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.2)" }, 8.3);
+      tl.fromTo("#key-2", { opacity: 0, y: 30, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.2)" }, 8.45);
+      tl.fromTo("#key-3", { opacity: 0, y: 30, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.2)" }, 8.6);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

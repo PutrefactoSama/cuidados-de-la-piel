@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CuidaPiel: Prevención Activa de Lesiones por Presión | Aprendamos Juntos</title>
+<!-- Lexend Font for High Readability -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#88d982",
+            "tertiary-container": "#10651d",
+            "outline": "#737782",
+            "on-primary": "#ffffff",
+            "surface-variant": "#d8e3fb",
+            "on-surface-variant": "#424751",
+            "primary-container": "#1e56a0",
+            "inverse-primary": "#aac7ff",
+            "on-surface": "#111c2d",
+            "inverse-on-surface": "#ecf1ff",
+            "secondary-container": "#fe932c",
+            "on-background": "#111c2d",
+            "primary-fixed-dim": "#aac7ff",
+            "on-secondary-fixed-variant": "#6e3900",
+            "tertiary": "#004b0f",
+            "surface-bright": "#f9f9ff",
+            "surface-container-highest": "#d8e3fb",
+            "secondary-fixed": "#ffdcc3",
+            "surface-dim": "#cfdaf2",
+            "outline-variant": "#c2c6d3",
+            "on-error-container": "#93000a",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#005312",
+            "tertiary-fixed": "#a3f69c",
+            "surface-container-low": "#f0f3ff",
+            "surface-container-high": "#dee8ff",
+            "on-primary-container": "#b4cdff",
+            "primary": "#003e80",
+            "on-primary-fixed": "#001b3e",
+            "on-tertiary-container": "#8ee088",
+            "primary-fixed": "#d6e3ff",
+            "on-primary-fixed-variant": "#00458d",
+            "inverse-surface": "#263143",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#663500",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#2f1500",
+            "secondary": "#904d00",
+            "surface-container": "#e7eeff",
+            "surface-tint": "#295ea8",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface": "#f9f9ff",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed": "#002204",
+            "secondary-fixed-dim": "#ffb77d",
+            "background": "#f9f9ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-md": "2rem",
+            "space-sm": "0.75rem",
+            "space-lg": "2rem",
+            "space-xl": "3rem",
+            "space-md": "1.25rem",
+            "gutter": "1.5rem",
+            "gutter-lg": "2rem",
+            "space-xs": "0.5rem",
+            "margin": "1.25rem",
+            "margin-lg": "3.5rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Lexend"],
+            "label-lg": ["Lexend"],
+            "headline-lg-mobile": ["Lexend"],
+            "label-md": ["Lexend"],
+            "body-md": ["Lexend"],
+            "headline-sm": ["Lexend"],
+            "body-xl": ["Lexend"],
+            "headline-lg": ["Lexend"],
+            "display-lg-mobile": ["Lexend"],
+            "label-sm": ["Lexend"],
+            "display-lg": ["Lexend"],
+            "body-lg": ["Lexend"]
+          },
+          "fontSize": {
+            "headline-md": ["26px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "label-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "label-md": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "headline-sm": ["22px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "body-xl": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "44px", "fontWeight": "600" }],
+            "display-lg-mobile": ["32px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display-lg": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    
+    /* Tactile button dynamic press effect */
+    .tactile-btn {
+      box-shadow: 0 4px 0 #002b5c;
+      transition: all 0.1s ease-in-out;
+    }
+    .tactile-btn:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 #002b5c;
+    }
+    
+    .tactile-card {
+      box-shadow: 0 2px 8px -1px rgba(30, 41, 59, 0.07), 0 1px 4px -1px rgba(30, 41, 59, 0.04);
+      border: 1px solid rgba(30, 41, 59, 0.09);
+    }
+    .tactile-card-elevated {
+      box-shadow: 0 12px 24px -4px rgba(30, 41, 59, 0.09), 0 4px 12px -2px rgba(30, 41, 59, 0.05);
+      border: 1px solid rgba(30, 41, 59, 0.14);
+    }
+
+    /* Accessibility Text Scaling */
+    body.text-scale-large {
+      font-size: 115% !important;
+    }
+    body.text-scale-xlarge {
+      font-size: 130% !important;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg antialiased min-h-screen selection:bg-surface-variant selection:text-primary">
+<!-- TOP ACCESSIBILITY & AUDIO NARRATION STATUS BAR (Domain-Specific Sticky Bar) -->
+<aside aria-label="Herramientas de accesibilidad y lectura" class="sticky top-0 z-50 bg-surface-container-low border-b border-surface-container-high px-space-md py-space-xs shadow-sm">
+<div class="max-w-[1200px] mx-auto flex flex-wrap items-center justify-between gap-space-sm">
+<!-- Audio Narration Assist Unit -->
+<div class="flex items-center gap-space-sm">
+<button aria-label="Escuchar lectura en voz alta de la guía postural activa" class="flex items-center gap-space-xs px-space-md py-1.5 bg-primary text-on-primary rounded-xl font-label-md text-label-md min-h-[52px] min-w-[52px] focus:ring-4 focus:ring-primary-fixed focus:outline-none tactile-btn" id="audioGuideBtn" type="button">
+<span class="material-symbols-outlined fill-icon" id="audioIcon">volume_up</span>
+<span class="font-semibold" id="audioText">Escuchar guía paso a paso</span>
+</button>
+<span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-full text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container animate-pulse"></span>
+          Audio-guía disponible en Español claro
+        </span>
+</div>
+<!-- Controls: Text Scaling & Direct Emergency Helpline -->
+<div class="flex items-center flex-wrap gap-space-sm">
+<!-- Text Size Switcher -->
+<div aria-label="Cambiar tamaño de texto" class="flex items-center bg-surface-container-lowest rounded-xl p-1 border border-outline-variant" role="group">
+<button class="px-3 py-2 text-primary font-bold rounded-lg min-h-[52px] min-w-[52px] hover:bg-surface-container text-label-md focus:ring-2 focus:ring-primary active:scale-95" id="btnFontNormal" title="Texto Normal" type="button">
+            A
+          </button>
+<button class="px-3 py-2 text-primary font-bold rounded-lg min-h-[52px] min-w-[52px] hover:bg-surface-container text-label-lg focus:ring-2 focus:ring-primary active:scale-95" id="btnFontLarge" title="Texto Grande" type="button">
+            A+
+          </button>
+<button class="px-3 py-2 text-primary font-bold rounded-lg min-h-[52px] min-w-[52px] hover:bg-surface-container text-headline-sm focus:ring-2 focus:ring-primary active:scale-95" id="btnFontXLarge" title="Texto Muy Grande" type="button">
+            A++
+          </button>
+</div>
+<!-- Emergency Nurse Helpline Direct Access -->
+<a aria-label="Llamar teléfono 24/7 gratuito de enfermería 900 100 200" class="flex items-center gap-space-xs px-space-md py-2 bg-error-container text-on-error-container rounded-xl font-label-md text-label-md min-h-[52px] min-w-[52px] hover:bg-error hover:text-on-error focus:ring-4 focus:ring-error transition-colors" href="tel:900100200">
+<span class="material-symbols-outlined fill-icon">contact_phone</span>
+<div class="text-left">
+<span class="block text-xs uppercase tracking-wider font-bold">Enlace Urgente 24/7</span>
+<span class="font-extrabold tracking-tight">900 100 200</span>
+</div>
+</a>
+</div>
+</div>
+</aside>
+<!-- IMMUTABLE TOP NAV BAR (Shared Components JSON Anchor) -->
+<header class="bg-surface-container-lowest shadow-sm">
+<div class="w-full max-w-[1200px] mx-auto px-margin-md flex items-center justify-between min-h-[72px]">
+<!-- Brand Logo / Product Name -->
+<div class="flex items-center gap-space-sm">
+<div aria-hidden="true" class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-2xl fill-icon">health_and_safety</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight block">
+            Aprendamos Juntos
+          </span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified_user</span> CuidaPiel: Prevención Activa
+          </span>
+</div>
+</div>
+<!-- Navigation Links from Shared JSON -->
+<nav aria-label="Navegación principal" class="hidden lg:flex items-center gap-space-lg">
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-on-surface min-h-[52px] flex items-center" href="#protocolo">Cursos</a>
+<a aria-current="page" class="text-primary font-label-lg text-label-lg border-b-2 border-primary pb-1 min-h-[52px] flex items-center" href="#rotacion">Guías Rápidas</a>
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-on-surface min-h-[52px] flex items-center" href="#comunidad">Comunidad</a>
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-on-surface min-h-[52px] flex items-center" href="#mi-progreso">Mi Progreso</a>
+</nav>
+<!-- Trailing Action Badges & Caregiver Mode Switch -->
+<div class="flex items-center gap-space-sm">
+<button aria-pressed="true" class="flex items-center gap-space-xs px-space-md py-2 bg-surface-container-high text-primary rounded-xl font-label-md text-label-md min-h-[52px] min-w-[52px] border border-primary-fixed hover:bg-primary hover:text-on-primary transition-colors focus:ring-4 focus:ring-primary-fixed" id="caregiverModeToggle" type="button">
+<span class="material-symbols-outlined fill-icon text-secondary">supervisor_account</span>
+<span class="font-bold">Modo Cuidador</span>
+</button>
+<button aria-label="Perfil del cuidador o usuario" class="p-2 text-on-surface-variant hover:text-primary rounded-xl min-h-[52px] min-w-[52px] flex items-center justify-center focus:ring-2 focus:ring-primary" type="button">
+<span class="material-symbols-outlined text-3xl">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN WRAPPER CONTAINER -->
+<main class="w-full max-w-[1200px] mx-auto px-margin-md py-space-lg space-y-space-xl" id="contenido-principal">
+<!-- HERO SECTION & PATIENT PROFILE BANNER -->
+<section aria-labelledby="hero-heading" class="tactile-card bg-surface-container-lowest rounded-2xl p-space-lg md:p-space-xl border-l-8 border-primary relative overflow-hidden">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="space-y-space-xs max-w-2xl">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 bg-surface-container-high text-primary rounded-full font-label-md text-label-md">
+<span class="material-symbols-outlined text-base fill-icon">shield_with_heart</span>
+<span>Protocolo Hospitalario y Domiciliario de Piel Intacta</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight" id="hero-heading">
+            Prevención Activa de Lesiones por Presión
+          </h1>
+<p class="font-body-xl text-body-xl text-on-surface-variant">
+            Guía clínica, visual y cercana para evitar úlceras por decúbito y escaras. El 95% de las lesiones de piel se pueden prevenir con alivio de presión oportuno y cuidado dérmico continuo.
+          </p>
+</div>
+<!-- Current Caregiver Card & Patient Quick Toggle -->
+<div class="bg-surface-container-low rounded-2xl p-space-md border border-surface-container-highest space-y-space-sm min-w-[320px]">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-outline">Persona Asistida</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-full text-xs font-bold">
+<span class="material-symbols-outlined text-xs fill-icon">check_circle</span> Plan Activo
+            </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-xl border-2 border-primary">
+              DF
+            </div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">Don Fernando (78 a.)</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Encamado y sillón de reposo</p>
+</div>
+</div>
+<!-- Dynamic Impending Alarm Card -->
+<div class="p-space-sm bg-secondary-fixed text-on-secondary-fixed rounded-xl border border-secondary-fixed-dim flex items-center gap-space-sm" role="alert">
+<span class="material-symbols-outlined text-3xl text-secondary fill-icon animate-bounce">alarm</span>
+<div>
+<p class="font-label-md text-label-md font-bold">Próximo cambio en: <span class="text-secondary font-extrabold" id="countdownTimer">25 minutos</span></p>
+<p class="font-body-md text-body-md">Siguiente: Decúbito lateral derecho 30°</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CORE FEATURE 1: RELOJ INTERACTIVO DE ROTACIÓN POSTURAL (2-Hour Clock Protocol) -->
+<section aria-labelledby="rotacion-heading" class="tactile-card-elevated bg-surface-container-lowest rounded-2xl p-space-lg md:p-space-xl" id="rotacion">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b border-surface-container-high pb-space-md mb-space-lg">
+<div>
+<div class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary font-bold mb-1">
+<span class="material-symbols-outlined fill-icon text-lg">schedule</span>
+<span>Intervalos Estrictos de 2 Horas</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold" id="rotacion-heading">
+            Reloj de Rotación Postural Activa
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+            Aliviar la presión sanguínea en capilares antes de que se produzca isquemia. Haga clic en cada franja horaria para ver la técnica de posicionamiento y registrar el cambio.
+          </p>
+</div>
+<button class="tactile-btn bg-tertiary-container hover:bg-tertiary text-on-tertiary px-space-lg py-space-sm rounded-xl font-label-lg text-label-lg min-h-[54px] min-w-[52px] flex items-center justify-center gap-space-xs focus:ring-4 focus:ring-tertiary-fixed" id="btnRegisterDone" type="button">
+<span class="material-symbols-outlined fill-icon">check</span>
+<span>Marcar Cambio Realizado</span>
+</button>
+</div>
+<!-- Interactive Posture Slot Cards Grid (24-hour cycle highlights) -->
+<div aria-label="Turnos de rotación postural" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md" role="tablist">
+<!-- Slot 1: Active -->
+<button aria-controls="slot-detail-panel" aria-selected="true" class="posture-slot text-left p-space-md rounded-2xl border-2 border-primary bg-surface-container-low focus:ring-4 focus:ring-primary-fixed min-h-[52px] relative transition-all shadow-sm" data-slot="1" role="tab" type="button">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2.5 py-1 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm font-bold">10:00 - 12:00</span>
+<span class="material-symbols-outlined text-primary fill-icon">radio_button_checked</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-primary mb-1">Decúbito Supino</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Boca arriba, cabecero máximo a 30° y talones completamente en el aire.</p>
+<div class="mt-space-sm pt-space-xs border-t border-surface-container-high flex items-center justify-between text-label-sm font-bold text-primary">
+<span>Posición Actual</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</button>
+<!-- Slot 2 -->
+<button aria-controls="slot-detail-panel" aria-selected="false" class="posture-slot text-left p-space-md rounded-2xl border-2 border-outline-variant hover:border-primary-container bg-surface-container-lowest focus:ring-4 focus:ring-primary-fixed min-h-[52px] relative transition-all" data-slot="2" role="tab" type="button">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2.5 py-1 bg-surface-container-high text-on-surface-variant rounded-lg font-label-sm text-label-sm font-bold">12:00 - 14:00</span>
+<span class="material-symbols-outlined text-outline">radio_button_unchecked</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mb-1">Lateral Derecho 30°</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Regla de oro: Jamás 90° para no aplastar el hueso de la cadera (trocánter).</p>
+<div class="mt-space-sm pt-space-xs border-t border-surface-container-high flex items-center justify-between text-label-sm font-bold text-outline">
+<span>Siguiente Turno</span>
+<span class="material-symbols-outlined">schedule</span>
+</div>
+</button>
+<!-- Slot 3 -->
+<button aria-controls="slot-detail-panel" aria-selected="false" class="posture-slot text-left p-space-md rounded-2xl border-2 border-outline-variant hover:border-primary-container bg-surface-container-lowest focus:ring-4 focus:ring-primary-fixed min-h-[52px] relative transition-all" data-slot="3" role="tab" type="button">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2.5 py-1 bg-surface-container-high text-on-surface-variant rounded-lg font-label-sm text-label-sm font-bold">14:00 - 16:00</span>
+<span class="material-symbols-outlined text-outline">radio_button_unchecked</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mb-1">Sillón con Cojín</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Sedestación ergonómica. Pies bien apoyados, reposabrazos y cojín visco/aire.</p>
+<div class="mt-space-sm pt-space-xs border-t border-surface-container-high flex items-center justify-between text-label-sm font-bold text-outline">
+<span>Tarde</span>
+<span class="material-symbols-outlined">chair</span>
+</div>
+</button>
+<!-- Slot 4 -->
+<button aria-controls="slot-detail-panel" aria-selected="false" class="posture-slot text-left p-space-md rounded-2xl border-2 border-outline-variant hover:border-primary-container bg-surface-container-lowest focus:ring-4 focus:ring-primary-fixed min-h-[52px] relative transition-all" data-slot="4" role="tab" type="button">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2.5 py-1 bg-surface-container-high text-on-surface-variant rounded-lg font-label-sm text-label-sm font-bold">16:00 - 18:00</span>
+<span class="material-symbols-outlined text-outline">radio_button_unchecked</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mb-1">Lateral Izquierdo 30°</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Almohada entre rodillas para separar cóndilos y almohada dorsal de contención.</p>
+<div class="mt-space-sm pt-space-xs border-t border-surface-container-high flex items-center justify-between text-label-sm font-bold text-outline">
+<span>Reposo</span>
+<span class="material-symbols-outlined">hotel</span>
+</div>
+</button>
+</div>
+<!-- Step Guide Panel for Selected Posture -->
+<div aria-live="polite" class="mt-space-lg bg-surface-container p-space-lg rounded-2xl border border-surface-variant" id="slot-detail-panel" role="region">
+<div class="flex flex-col lg:flex-row gap-space-lg items-start">
+<div class="flex-1 space-y-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-label-md">1</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold" id="panelPostureTitle">
+                Técnica Paso a Paso: Decúbito Supino (Boca Arriba Seguro)
+              </h3>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface" id="panelPostureDesc">
+              Evite elevar el cabecero de la cama a más de 30 grados, salvo durante las comidas. Una inclinación mayor de 30° provoca una fuerza de cizalla intensa que desgarra los capilares del sacro.
+            </p>
+<!-- Anatomical Cushioning Bullet Points -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs" id="panelBullets">
+<div class="bg-surface-container-lowest p-space-sm rounded-xl border border-outline-variant flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-container fill-icon">verified</span>
+<div>
+<strong class="block font-label-md text-label-md text-on-surface">Alivio Total de Talones:</strong>
+<span class="font-body-md text-body-md text-on-surface-variant">Colocar una almohada longitudinal bajo las pantorrillas para que los talones "floten" sin tocar la sábana.</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-xl border border-outline-variant flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary fill-icon">warning</span>
+<div>
+<strong class="block font-label-md text-label-md text-on-surface">Prohibido Rodetes / Donas:</strong>
+<span class="font-body-md text-body-md text-on-surface-variant">Los flotadores o cojines de anillo estrangulan el flujo sanguíneo periférico. Use superficies planas de dispersión.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Clinical Audio Instruction & Checklist in Box -->
+<div class="w-full lg:w-80 bg-surface-container-lowest p-space-md rounded-2xl border border-surface-container-highest space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-primary">Comprobación de Seguridad</span>
+<span class="material-symbols-outlined text-tertiary-container fill-icon">task_alt</span>
+</div>
+<ul class="space-y-2 text-body-md text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">check_box</span>
+                Sábanas bajeras estiradas sin arrugas
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">check_box</span>
+                Cabeza apoyada en almohada baja
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">check_box</span>
+                Pies en ángulo recto (90°) neutro
+              </li>
+</ul>
+<div class="pt-2">
+<div class="text-xs text-on-surface-variant mb-1 font-semibold">Registro del último cambio:</div>
+<div class="text-sm font-bold text-secondary" id="lastChangeTimestamp">Hoy, 10:00 h por Rosa (Hija/Cuidadora)</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CORE FEATURE 2: EXPLORADOR ANATÓMICO INTERACTIVO DE PUNTOS DE PRESIÓN -->
+<section aria-labelledby="anatomia-heading" class="tactile-card bg-surface-container-lowest rounded-2xl p-space-lg md:p-space-xl" id="puntos-presion">
+<div class="max-w-3xl mb-space-lg">
+<div class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-bold mb-1">
+<span class="material-symbols-outlined fill-icon text-lg">accessibility_new</span>
+<span>Mapa Visual de Riesgo Dérmico</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold" id="anatomia-heading">
+          Explorador de Puntos de Presión por Postura
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Las prominencias óseas comprimen el tejido blando contra el colchón o sillón. Seleccione una posición para identificar dónde vigilar el enrojecimiento y cómo protegerlo.
+        </p>
+</div>
+<!-- Posture Filter Selector Buttons -->
+<div aria-label="Elegir postura para ver puntos anatómicos" class="flex flex-wrap gap-space-sm mb-space-lg" role="group">
+<button class="anatomic-tab px-space-md py-space-xs rounded-xl font-label-md text-label-md min-h-[52px] bg-primary text-on-primary tactile-btn flex items-center gap-2 focus:ring-4 focus:ring-primary-fixed" id="viewSupinoBtn" onclick="setAnatomicView('supino')" type="button">
+<span class="material-symbols-outlined fill-icon">single_bed</span>
+<span>Boca Arriba (Supino)</span>
+</button>
+<button class="anatomic-tab px-space-md py-space-xs rounded-xl font-label-md text-label-md min-h-[52px] bg-surface-container-high text-primary hover:bg-surface-container-highest flex items-center gap-2 border border-outline-variant focus:ring-4 focus:ring-primary-fixed" id="viewLateralBtn" onclick="setAnatomicView('lateral')" type="button">
+<span class="material-symbols-outlined">airline_seat_flat</span>
+<span>De Lado (Lateral 30°)</span>
+</button>
+<button class="anatomic-tab px-space-md py-space-xs rounded-xl font-label-md text-label-md min-h-[52px] bg-surface-container-high text-primary hover:bg-surface-container-highest flex items-center gap-2 border border-outline-variant focus:ring-4 focus:ring-primary-fixed" id="viewSillonBtn" onclick="setAnatomicView('sillon')" type="button">
+<span class="material-symbols-outlined">chair</span>
+<span>Sentado en Sillón / Ruedas</span>
+</button>
+</div>
+<!-- Bento-style Split: Anatomical Diagrammatic Representation + Clinical Action Card -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Interactive Visual Hotspot Canvas Container -->
+<div class="lg:col-span-7 bg-surface-container-low p-space-md rounded-2xl border border-surface-container-highest flex flex-col items-center justify-center min-h-[380px] relative">
+<p class="text-xs uppercase font-bold tracking-wider text-outline mb-3">Toque los puntos señalados para ver instrucciones clínicas</p>
+<!-- SVG Body & Interactive Zones (Supino mode default) -->
+<div class="relative w-full max-w-[420px] aspect-[4/3] bg-surface-container-lowest rounded-xl p-4 flex items-center justify-center border border-outline-variant shadow-inner" id="anatomicCanvas">
+<!-- Graphic Silhouette Representation -->
+<svg aria-hidden="true" class="w-full h-full max-h-[260px] text-surface-container-highest" fill="none" viewbox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+<!-- Bed / Mattress Base -->
+<rect fill="#d8e3fb" height="24" rx="8" width="360" x="20" y="160"></rect>
+<!-- Human Body Profile Simplified Reassuring Shape -->
+<path d="M 60 110 C 60 90, 80 90, 85 105 C 95 125, 120 125, 140 120 C 180 110, 220 125, 250 135 C 290 145, 330 148, 345 152 C 348 155, 335 158, 300 156 C 260 155, 230 150, 180 152 C 140 154, 90 152, 60 140 Z" fill="#b4cdff"></path>
+<!-- Pillows Placement Visual -->
+<path d="M 45 130 C 50 115, 80 115, 90 135 Z" fill="#ffdcc3"></path>
+<path d="M 280 155 C 290 145, 320 145, 335 155 Z" fill="#ffdcc3"></path>
+</svg>
+<!-- Hotspots: Sacro, Talones, Omóplatos, Codos, Occipital -->
+<!-- Sacro Hotspot -->
+<button aria-label="Punto crítico: Zona del Sacro" class="point-btn absolute left-[45%] top-[55%] -translate-x-1/2 -translate-y-1/2 min-h-[52px] min-w-[52px] flex items-center justify-center group focus:outline-none" id="point-sacro" onclick="selectPressurePoint('sacro')" type="button">
+<span class="w-7 h-7 rounded-full bg-error text-on-error font-bold text-xs flex items-center justify-center ring-4 ring-error-container shadow-md group-hover:scale-125 transition-transform animate-pulse">!</span>
+<span class="sr-only">Sacro</span>
+</button>
+<!-- Talones Hotspot -->
+<button aria-label="Punto crítico: Talones" class="point-btn absolute left-[82%] top-[68%] -translate-x-1/2 -translate-y-1/2 min-h-[52px] min-w-[52px] flex items-center justify-center group focus:outline-none" id="point-talones" onclick="selectPressurePoint('talones')" type="button">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary font-bold text-xs flex items-center justify-center ring-4 ring-secondary-fixed shadow-md group-hover:scale-125 transition-transform">2</span>
+<span class="sr-only">Talones</span>
+</button>
+<!-- Omóplatos Hotspot -->
+<button aria-label="Punto crítico: Omóplatos y columna" class="point-btn absolute left-[30%] top-[48%] -translate-x-1/2 -translate-y-1/2 min-h-[52px] min-w-[52px] flex items-center justify-center group focus:outline-none" id="point-omoplatos" onclick="selectPressurePoint('omoplatos')" type="button">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-bold text-xs flex items-center justify-center ring-4 ring-primary-fixed shadow-md group-hover:scale-125 transition-transform">3</span>
+<span class="sr-only">Omóplatos</span>
+</button>
+<!-- Occipital Hotspot -->
+<button aria-label="Punto crítico: Occipital (Cabeza)" class="point-btn absolute left-[16%] top-[40%] -translate-x-1/2 -translate-y-1/2 min-h-[52px] min-w-[52px] flex items-center justify-center group focus:outline-none" id="point-occipital" onclick="selectPressurePoint('occipital')" type="button">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-bold text-xs flex items-center justify-center ring-4 ring-primary-fixed shadow-md group-hover:scale-125 transition-transform">4</span>
+<span class="sr-only">Occipital</span>
+</button>
+</div>
+<!-- Legend Bar -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-space-md text-label-sm font-semibold">
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-error"></span> Riesgo Crítico (Sacro)</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-secondary"></span> Riesgo Alto (Talones/Maleolos)</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-primary"></span> Riesgo Moderado</span>
+</div>
+</div>
+<!-- Clinical Action & Protection Detail Box -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded-2xl border-2 border-secondary-fixed space-y-space-md">
+<div class="flex items-center justify-between border-b border-surface-container-high pb-3">
+<div>
+<span class="px-2.5 py-0.5 bg-error-container text-on-error-container text-xs font-bold rounded-full uppercase tracking-wider" id="pointRiskLevel">Máximo Riesgo</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1" id="pointTitle">Región Sacra y Cóccix</h3>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined fill-icon text-2xl" id="pointIcon">healing</span>
+</div>
+</div>
+<!-- Critical Clinical Rule -->
+<div class="p-space-sm bg-error-container/40 rounded-xl border-l-4 border-error space-y-1">
+<p class="font-label-md text-label-md font-bold text-on-error-container flex items-center gap-1">
+<span class="material-symbols-outlined text-base">block</span> REGLA DE ORO INNEGOCIABLE:
+            </p>
+<p class="font-body-md text-body-md text-on-surface font-medium" id="pointGoldRule">
+              Si la zona presenta enrojecimiento que NO blanquea al presionar con el dedo suavemente (Eritema no blanqueable), JAMÁS MASAJEAR. El masaje rompe las micro-fibras capilares ya dañadas y acelera la necrosis profunda.
+            </p>
+</div>
+<!-- Correct Care Plan -->
+<div class="space-y-space-xs">
+<h4 class="font-label-md text-label-md font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary-container">check_circle</span> Acción Preventiva Inmediata:
+            </h4>
+<p class="font-body-md text-body-md text-on-surface" id="pointAction">
+              Aplicar 2 a 3 pulverizaciones de Ácidos Grasos Hiperoxigenados (AGHO) extendiendo suavemente sin frotar con fuerza. En personas de alto riesgo encamadas, colocar apósito hidrocelular multicapa sacral para disipar las fuerzas de cizallamiento y fricción.
+            </p>
+</div>
+<!-- Cushioning technique -->
+<div class="bg-surface-container-low p-space-sm rounded-xl">
+<span class="block text-xs uppercase font-bold text-outline">Cómo posicionar las almohadas:</span>
+<p class="font-body-md text-body-md text-on-surface-variant font-medium mt-1" id="pointCushioning">
+              Colocar cojín lateral bajo la pelvis para despegar el sacro 30 grados de la superficie. Cambiar de lado cada 2 horas sin excepción.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- CORE FEATURE 3: LISTA DE VERIFICACIÓN DIARIA DE LA PIEL & HIDRATACIÓN / NUTRICIÓN -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Skin Daily Inspection Checklist -->
+<section aria-labelledby="checklist-heading" class="lg:col-span-7 tactile-card bg-surface-container-lowest rounded-2xl p-space-lg md:p-space-xl space-y-space-md">
+<div class="flex items-center justify-between border-b border-surface-container-high pb-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold" id="checklist-heading">
+              Inspección Diaria de la Piel (Checklist)
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Revisar minuciosamente durante el aseo matutino y antes de acostar.
+            </p>
+</div>
+<span class="px-3 py-1 bg-surface-container font-label-md text-label-md text-primary font-bold rounded-full" id="checklistCounter">
+            2 / 4 Realizados
+          </span>
+</div>
+<fieldset class="space-y-space-sm">
+<legend class="sr-only">Tareas de control dérmico diario</legend>
+<!-- Item 1 -->
+<label class="flex items-start gap-space-sm p-space-sm rounded-xl border-2 border-outline-variant hover:border-primary cursor-pointer transition-colors bg-surface-container-lowest min-h-[52px]">
+<input checked="" class="check-skin w-6 h-6 mt-1 text-primary rounded focus:ring-4 focus:ring-primary-fixed cursor-pointer" onchange="updateChecklist()" type="checkbox"/>
+<span class="flex-1">
+<strong class="block font-label-md text-label-md text-on-surface">Piel limpia, seca y protegida con AGHO</strong>
+<span class="font-body-md text-body-md text-on-surface-variant">Lavar con agua tibia y jabón neutro sin frotar. Secar con toques suaves de toalla (especialmente pliegues).</span>
+</span>
+</label>
+<!-- Item 2 -->
+<label class="flex items-start gap-space-sm p-space-sm rounded-xl border-2 border-outline-variant hover:border-primary cursor-pointer transition-colors bg-surface-container-lowest min-h-[52px]">
+<input checked="" class="check-skin w-6 h-6 mt-1 text-primary rounded focus:ring-4 focus:ring-primary-fixed cursor-pointer" onchange="updateChecklist()" type="checkbox"/>
+<span class="flex-1">
+<strong class="block font-label-md text-label-md text-on-surface">Sábanas bajeras sin arrugas ni migas</strong>
+<span class="font-body-md text-body-md text-on-surface-variant">Cualquier arruga actúa como un elemento abrasivo rígido bajo el peso corporal continuado.</span>
+</span>
+</label>
+<!-- Item 3 -->
+<label class="flex items-start gap-space-sm p-space-sm rounded-xl border-2 border-outline-variant hover:border-primary cursor-pointer transition-colors bg-surface-container-lowest min-h-[52px]">
+<input class="check-skin w-6 h-6 mt-1 text-primary rounded focus:ring-4 focus:ring-primary-fixed cursor-pointer" onchange="updateChecklist()" type="checkbox"/>
+<span class="flex-1">
+<strong class="block font-label-md text-label-md text-on-surface">Talones suspendidos en el aire</strong>
+<span class="font-body-md text-body-md text-on-surface-variant">Verificar con la mano que cabe perfectamente entre el talón y el colchón (almohada en pantorrilla o talonera).</span>
+</span>
+</label>
+<!-- Item 4 -->
+<label class="flex items-start gap-space-sm p-space-sm rounded-xl border-2 border-outline-variant hover:border-primary cursor-pointer transition-colors bg-surface-container-lowest min-h-[52px]">
+<input class="check-skin w-6 h-6 mt-1 text-primary rounded focus:ring-4 focus:ring-primary-fixed cursor-pointer" onchange="updateChecklist()" type="checkbox"/>
+<span class="flex-1">
+<strong class="block font-label-md text-label-md text-on-surface">Control de humedad e incontinencia</strong>
+<span class="font-body-md text-body-md text-on-surface-variant">Aplicar crema barrera de óxido de zinc o película protectora sin alcohol si usa absorbente de orina.</span>
+</span>
+</label>
+</fieldset>
+<!-- Feedback Notification -->
+<div class="hidden p-space-sm bg-tertiary-fixed text-on-tertiary-fixed rounded-xl flex items-center gap-space-xs font-label-md" id="checkSuccessBadge">
+<span class="material-symbols-outlined fill-icon text-tertiary-container">verified</span>
+<span>¡Excelente! Todas las medidas esenciales del día han sido verificadas con éxito.</span>
+</div>
+</section>
+<!-- Hydration & Tissue Nutrition Tracker (Caregiver Quick-Notes Widget Style) -->
+<section aria-labelledby="nutricion-heading" class="lg:col-span-5 tactile-card bg-[#FFFBEB] rounded-2xl p-space-lg border-l-4 border-secondary space-y-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary fill-icon text-2xl">water_drop</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-secondary-fixed font-bold" id="nutricion-heading">
+              Hidratación y Proteínas
+            </h2>
+<p class="font-label-sm text-label-sm text-on-secondary-fixed-variant">La piel deshidratada se desgarra con facilidad</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+          El colágeno y la dermis necesitan agua y aminoácidos para no colapsar ante la presión. Meta diaria: <strong>1.5 a 2 Litros</strong> (salvo restricción médica).
+        </p>
+<!-- Water Glasses Counter Interactive -->
+<div class="space-y-2">
+<div class="flex justify-between items-center text-label-md font-bold text-on-surface">
+<span>Vasos de agua (aprox. 200ml c/u):</span>
+<span class="text-primary font-extrabold text-lg" id="waterGlassesCount">5 / 8 vasos</span>
+</div>
+<div aria-label="Contador interactivo de vasos de agua" class="grid grid-cols-4 sm:grid-cols-8 gap-2" role="group">
+<!-- 8 Glass Buttons -->
+<button aria-label="Vaso 1 completado" class="glass-btn h-14 rounded-xl border-2 border-primary bg-primary text-on-primary flex items-center justify-center min-h-[52px] min-w-[52px]" id="glass-1" onclick="toggleWaterGlass(1)" type="button">
+<span class="material-symbols-outlined fill-icon text-2xl">local_drink</span>
+</button>
+<button aria-label="Vaso 2 completado" class="glass-btn h-14 rounded-xl border-2 border-primary bg-primary text-on-primary flex items-center justify-center min-h-[52px] min-w-[52px]" id="glass-2" onclick="toggleWaterGlass(2)" type="button">
+<span class="material-symbols-outlined fill-icon text-2xl">local_drink</span>
+</button>
+<button aria-label="Vaso 3 completado" class="glass-btn h-14 rounded-xl border-2 border-primary bg-primary text-on-primary flex items-center justify-center min-h-[52px] min-w-[52px]" id="glass-3" onclick="toggleWaterGlass(3)" type="button">
+<span class="material-symbols-outlined fill-icon text-2xl">local_drink</span>
+</button>
+<button aria-label="Vaso 4 completado" class="glass-btn h-14 rounded-xl border-2 border-primary bg-primary text-on-primary flex items-center justify-center min-h-[52px] min-w-[52px]" id="glass-4" onclick="toggleWaterGlass(4)" type="button">
+<span class="material-symbols-outlined fill-icon text-2xl">local_drink</span>
+</button>
+<button aria-label="Vaso 5 completado" class="glass-btn h-14 rounded-xl border-2 border-primary bg-primary text-on-primary flex items-center justify-center min-h-[52px] min-w-[52px]" id="glass-5" onclick="toggleWaterGlass(5)" type="button">
+<span class="material-symbols-outlined fill-icon text-2xl">local_drink</span>
+</button>
+<button aria-label="Vaso 6 no tomado" class="glass-btn h-14 rounded-xl border-2 border-outline-variant bg-surface-container-lowest text-outline flex items-center justify-center min-h-[52px] min-w-[52px]" id="glass-6" onclick="toggleWaterGlass(6)" type="button">
+<span class="material-symbols-outlined text-2xl">local_drink</span>
+</button>
+<button aria-label="Vaso 7 no tomado" class="glass-btn h-14 rounded-xl border-2 border-outline-variant bg-surface-container-lowest text-outline flex items-center justify-center min-h-[52px] min-w-[52px]" id="glass-7" onclick="toggleWaterGlass(7)" type="button">
+<span class="material-symbols-outlined text-2xl">local_drink</span>
+</button>
+<button aria-label="Vaso 8 no tomado" class="glass-btn h-14 rounded-xl border-2 border-outline-variant bg-surface-container-lowest text-outline flex items-center justify-center min-h-[52px] min-w-[52px]" id="glass-8" onclick="toggleWaterGlass(8)" type="button">
+<span class="material-symbols-outlined text-2xl">local_drink</span>
+</button>
+</div>
+</div>
+<!-- Caregiver Quick-Note on Nutrition -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl border border-secondary/30 space-y-1">
+<strong class="font-label-md text-label-md text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-base">egg_alt</span> Refuerzo Proteico:
+          </strong>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Asegurar aporte de huevos, lácteos, pescado blanco o suplementos hiperproteicos pautados por el médico para favorecer la síntesis de colágeno dérmico.
+          </p>
+</div>
+</section>
+</div>
+<!-- CORE FEATURE 4: EVALUADOR RÁPIDO DE RIESGO CLÍNICO (Escala Braden Simplificada para el Hogar) -->
+<section aria-labelledby="braden-heading" class="tactile-card-elevated bg-surface-container-lowest rounded-2xl p-space-lg md:p-space-xl" id="evaluador">
+<div class="border-b border-surface-container-high pb-space-sm mb-space-lg">
+<div class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-bold mb-1">
+<span class="material-symbols-outlined fill-icon text-lg">fact_check</span>
+<span>Herramienta Clínica Adaptada</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold" id="braden-heading">
+          Calculadora de Riesgo de Escaras (Escala Braden Simplificada)
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+          Responda a las 4 preguntas sobre la situación actual del familiar. El sistema calculará automáticamente el nivel de vulnerabilidad y la recomendación preventiva específica.
+        </p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md" id="bradenForm" onsubmit="event.preventDefault();">
+<!-- Question 1: Movilidad -->
+<div class="p-space-md rounded-2xl bg-surface-container-low border border-surface-container-highest space-y-space-xs flex flex-col justify-between">
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface font-bold mb-1" for="qMobility">
+              1. Nivel de Movilidad
+            </label>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-sm">¿Cuánto se mueve por sí mismo?</p>
+</div>
+<select class="w-full min-h-[54px] text-body-lg font-medium rounded-xl border-2 border-outline focus:border-primary focus:ring-4 focus:ring-primary-fixed bg-surface-container-lowest px-3" id="qMobility" onchange="calculateBradenRisk()">
+<option value="4">Camina frecuentemente (Bajo)</option>
+<option value="3">Camina con ayuda / Bastón</option>
+<option value="2">Pasa casi todo el día en sillón</option>
+<option selected="" value="1">Completamente encamado (Alto)</option>
+</select>
+</div>
+<!-- Question 2: Exposición a Humedad -->
+<div class="p-space-md rounded-2xl bg-surface-container-low border border-surface-container-highest space-y-space-xs flex flex-col justify-between">
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface font-bold mb-1" for="qMoisture">
+              2. Exposición a Humedad
+            </label>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-sm">Sudoración o incontinencia</p>
+</div>
+<select class="w-full min-h-[54px] text-body-lg font-medium rounded-xl border-2 border-outline focus:border-primary focus:ring-4 focus:ring-primary-fixed bg-surface-container-lowest px-3" id="qMoisture" onchange="calculateBradenRisk()">
+<option value="4">Rara vez húmedo (Piel seca)</option>
+<option value="3">Ocasionalmente húmedo</option>
+<option selected="" value="2">A menudo húmedo (Usa pañal)</option>
+<option value="1">Constantemente húmedo</option>
+</select>
+</div>
+<!-- Question 3: Sensibilidad al Dolor -->
+<div class="p-space-md rounded-2xl bg-surface-container-low border border-surface-container-highest space-y-space-xs flex flex-col justify-between">
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface font-bold mb-1" for="qSensory">
+              3. Sensibilidad / Alerta
+            </label>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-sm">¿Avisa si le duele una postura?</p>
+</div>
+<select class="w-full min-h-[54px] text-body-lg font-medium rounded-xl border-2 border-outline focus:border-primary focus:ring-4 focus:ring-primary-fixed bg-surface-container-lowest px-3" id="qSensory" onchange="calculateBradenRisk()">
+<option value="4">Sin alteración (Comunica dolor)</option>
+<option selected="" value="3">Levemente limitado (A veces queja)</option>
+<option value="2">Muy limitado (No siempre avisa)</option>
+<option value="1">Completamente limitada (Coma/Sedado)</option>
+</select>
+</div>
+<!-- Question 4: Nutrición General -->
+<div class="p-space-md rounded-2xl bg-surface-container-low border border-surface-container-highest space-y-space-xs flex flex-col justify-between">
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface font-bold mb-1" for="qNutrition">
+              4. Ingesta Nutricional
+            </label>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-sm">¿Come sus raciones completas?</p>
+</div>
+<select class="w-full min-h-[54px] text-body-lg font-medium rounded-xl border-2 border-outline focus:border-primary focus:ring-4 focus:ring-primary-fixed bg-surface-container-lowest px-3" id="qNutrition" onchange="calculateBradenRisk()">
+<option value="4">Excelente / Come todo</option>
+<option selected="" value="3">Adecuada (Come más de la mitad)</option>
+<option value="2">Probablemente inadecuada</option>
+<option value="1">Muy pobre / Casi nada</option>
+</select>
+</div>
+</form>
+<!-- Dynamic Clinical Output Result Box -->
+<div aria-live="polite" class="mt-space-lg p-space-lg rounded-2xl bg-error-container/30 border-2 border-error space-y-space-sm" id="bradenResultBox" role="region">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="w-12 h-12 rounded-xl bg-error text-on-error flex items-center justify-center font-bold text-xl" id="bradenScoreBadge">9</span>
+<div>
+<span class="text-xs uppercase font-bold tracking-wide text-error">Resultado de la Evaluación:</span>
+<h3 class="font-headline-sm text-headline-sm text-error font-extrabold" id="bradenRiskTitle">RIESGO ALTO DE LESIÓN POR PRESIÓN</h3>
+</div>
+</div>
+<span class="px-4 py-2 bg-error text-on-error rounded-xl font-label-md text-label-md font-bold self-start sm:self-auto">
+            Prioridad Preventiva Inmediata
+          </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-space-xs">
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant space-y-1">
+<strong class="font-label-md text-label-md text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary">bed</span> Superficie Especial de Manejo de la Presión (SEMP):
+            </strong>
+<p class="font-body-md text-body-md text-on-surface" id="bradenSEMPAdvice">
+              Se recomienda de forma prioritaria la instalación de un <strong>colchón dinámico de aire alternante</strong> conectado a compresor continuo para reducir la presión en ciclos regulares.
+            </p>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant space-y-1">
+<strong class="font-label-md text-label-md text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary">schedule</span> Frecuencia de Rotación Mandatoria:
+            </strong>
+<p class="font-body-md text-body-md text-on-surface" id="bradenRotationAdvice">
+              Rotaciones posturales estrictas <strong>cada 2 horas durante el día</strong> y cada 3 horas durante la noche. Alivio total de talones con almohada y protección sacra con apósito de espuma de poliuretano.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- CORE FEATURE 5: GUÍAS EDUCATIVAS MODULARES Y MATERIAL IMPRIMIBLE -->
+<section aria-labelledby="guias-heading" class="space-y-space-md">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+<div>
+<div class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-bold mb-1">
+<span class="material-symbols-outlined fill-icon text-lg">menu_book</span>
+<span>Conocimiento Práctico y Descargas</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold" id="guias-heading">
+            Guías Clínicas Rápidas para la Familia
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+            Pautas ilustradas para evitar errores comunes y saber con exactitud cuándo acudir a enfermería.
+          </p>
+</div>
+<button class="tactile-btn bg-surface-container-lowest border-2 border-primary text-primary hover:bg-surface-container px-space-md py-space-sm rounded-xl font-label-md text-label-md min-h-[52px] min-w-[52px] flex items-center justify-center gap-2 focus:ring-4 focus:ring-primary-fixed" onclick="window.print()" type="button">
+<span class="material-symbols-outlined fill-icon">print</span>
+<span>Imprimir Calendario de Rotación</span>
+</button>
+</div>
+<!-- Bento Grid of Educational Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Card 1 -->
+<article class="tactile-card bg-surface-container-lowest p-space-lg rounded-2xl flex flex-col justify-between space-y-space-sm">
+<div class="space-y-space-xs">
+<div class="w-12 h-12 rounded-xl bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl fill-icon">do_not_disturb_on</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+              ¿Por qué NUNCA se debe frotar o masajear una zona roja?
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              El enrojecimiento que no palidece indica que los vasos ya sufren daño por falta de oxígeno. Frotar con alcohol o colonia desgarra la piel por completo y genera una úlcera abierta en cuestión de horas.
+            </p>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary font-bold">
+<span class="material-symbols-outlined text-sm">lightbulb</span> Solo aplicar AGHO con suavidad
+            </span>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="tactile-card bg-surface-container-lowest p-space-lg rounded-2xl flex flex-col justify-between space-y-space-sm">
+<div class="space-y-space-xs">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl fill-icon">airline_seat_flat_angled</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+              La Regla de los 30 Grados: El Secreto Clínico
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Tanto al colocar de lado como al incorporar el respaldo en la cama, el ángulo jamás debe superar los 30°. Superar este límite multiplica por cuatro el deslizamiento y cizalla contra el colchón.
+            </p>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-bold">
+<span class="material-symbols-outlined text-sm">navigation</span> Ver esquema de almohadas
+            </span>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="tactile-card bg-surface-container-lowest p-space-lg rounded-2xl flex flex-col justify-between space-y-space-sm">
+<div class="space-y-space-xs">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl fill-icon">support_agent</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+              ¿Cuándo contactar al equipo de Enfermería de Enlace?
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Llame de inmediato si observa: ampolla con líquido transparente o sangre, piel agrietada abierta, olor desagradable o aumento súbito de calor y dolor al tacto leve en la zona.
+            </p>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high">
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-bold hover:underline" href="tel:900100200">
+<span class="material-symbols-outlined text-sm">phone</span> Teléfono Gratuito 900 100 200
+            </a>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- IMMUTABLE BOTTOM NAVIGATION FOR MOBILE DEVICES (Shared Components JSON Responsive Logic) -->
+<nav aria-label="Navegación móvil inferior" class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest shadow-lg py-2 px-4 flex items-center justify-around border-t-0">
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm text-label-sm min-h-[52px] min-w-[52px]" href="#protocolo">
+<span class="material-symbols-outlined">menu_book</span>
+<span>Cursos</span>
+</a>
+<a aria-current="page" class="flex flex-col items-center justify-center text-primary font-label-sm text-label-sm min-h-[52px] min-w-[52px] border-b-2 border-primary" href="#rotacion">
+<span class="material-symbols-outlined fill-icon">schedule</span>
+<span>Reloj</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm text-label-sm min-h-[52px] min-w-[52px]" href="#puntos-presion">
+<span class="material-symbols-outlined">accessibility_new</span>
+<span>Puntos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm text-label-sm min-h-[52px] min-w-[52px]" href="#evaluador">
+<span class="material-symbols-outlined">fact_check</span>
+<span>Test</span>
+</a>
+</nav>
+<!-- IMMUTABLE FOOTER (Semantic & Dignified Warm Finish) -->
+<footer class="bg-surface-container-low mt-space-xl border-t border-surface-container-high py-space-xl text-on-surface-variant pb-24 md:pb-space-xl">
+<div class="max-w-[1200px] mx-auto px-margin-md flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined fill-icon">health_and_safety</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-primary font-bold">Aprendamos Juntos | CuidaPiel</p>
+<p class="font-body-md text-body-md">Programa Nacional de Acompañamiento y Dignidad al Cuidador.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md font-label-md text-label-md">
+<span>Avalado por Guías GNEAUPP</span>
+<span class="text-outline">•</span>
+<span>Atención Continuada 24 Horas</span>
+</div>
+</div>
+</footer>
+<!-- JAVASCRIPT: MICRO-INTERACTIONS, CALCULATORS & ACCESSIBILITY SCRIPTS -->
+<script>
+    // --- 1. ACCESSIBILITY: TEXT SIZE CONTROLS ---
+    const btnNormal = document.getElementById('btnFontNormal');
+    const btnLarge = document.getElementById('btnFontLarge');
+    const btnXLarge = document.getElementById('btnFontXLarge');
+
+    btnNormal.addEventListener('click', () => {
+      document.body.classList.remove('text-scale-large', 'text-scale-xlarge');
+    });
+    btnLarge.addEventListener('click', () => {
+      document.body.classList.remove('text-scale-xlarge');
+      document.body.classList.add('text-scale-large');
+    });
+    btnXLarge.addEventListener('click', () => {
+      document.body.classList.remove('text-scale-large');
+      document.body.classList.add('text-scale-xlarge');
+    });
+
+    // --- 2. AUDIO GUIDANCE SIMULATOR WITH PLAY/PAUSE ---
+    const audioBtn = document.getElementById('audioGuideBtn');
+    const audioIcon = document.getElementById('audioIcon');
+    const audioText = document.getElementById('audioText');
+    let isPlaying = false;
+
+    audioBtn.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      if (isPlaying) {
+        audioIcon.innerText = 'pause_circle';
+        audioText.innerText = 'Pausar narración de guía';
+        audioBtn.classList.remove('bg-primary');
+        audioBtn.classList.add('bg-secondary');
+        
+        // Browser Speech Synthesis fallback if available
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+          const utterance = new SpeechSynthesisUtterance("Bienvenido a CuidaPiel. Recuerde que el próximo cambio postural para Don Fernando está programado en 25 minutos. Nunca masajee enrojecimientos en la zona del sacro o talones. Use almohadas para suspender los talones.");
+          utterance.lang = 'es-ES';
+          utterance.rate = 0.95; // comfortable reading pace
+          utterance.onend = () => {
+            audioIcon.innerText = 'volume_up';
+            audioText.innerText = 'Escuchar guía paso a paso';
+            audioBtn.classList.add('bg-primary');
+            audioBtn.classList.remove('bg-secondary');
+            isPlaying = false;
+          };
+          window.speechSynthesis.speak(utterance);
+        }
+      } else {
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+        }
+        audioIcon.innerText = 'volume_up';
+        audioText.innerText = 'Escuchar guía paso a paso';
+        audioBtn.classList.add('bg-primary');
+        audioBtn.classList.remove('bg-secondary');
+      }
+    });
+
+    // --- 3. ROTATION SCHEDULE CLOCK INTERACTION ---
+    const postureSlots = document.querySelectorAll('.posture-slot');
+    const panelTitle = document.getElementById('panelPostureTitle');
+    const panelDesc = document.getElementById('panelPostureDesc');
+    const registerBtn = document.getElementById('btnRegisterDone');
+    const timestampElem = document.getElementById('lastChangeTimestamp');
+
+    const postureData = {
+      '1': {
+        title: 'Técnica Paso a Paso: Decúbito Supino (Boca Arriba Seguro)',
+        desc: 'Evite elevar el cabecero de la cama a más de 30 grados, salvo durante las comidas. Una inclinación mayor de 30° provoca una fuerza de cizalla intensa que desgarra los capilares del sacro. Los talones deben mantenerse completamente en el aire mediante una almohada colocada bajo las pantorrillas.',
+      },
+      '2': {
+        title: 'Técnica Paso a Paso: Decúbito Lateral Derecho 30°',
+        desc: 'Incline el cuerpo hacia la derecha con un ángulo estricto de 30 grados. JAMÁS coloque al paciente a 90 grados exactos, ya que todo el peso aplastaría el trocánter mayor (el hueso saliente de la cadera). Coloque una almohada longitudinal en la espalda para apoyo y otra almohada suave entre ambas rodillas.',
+      },
+      '3': {
+        title: 'Técnica Paso a Paso: Sedestación en Sillón con Cojín Antiescaras',
+        desc: 'Asegure que la pelvis quede bien pegada al fondo del sillón. Utilice un cojín de flotación de aire o viscoelástico. Los pies deben reposar firmes sobre el suelo o reposapiés a 90°. Si el paciente permanece más de 2 horas en sillón, realice micropulsiones para despegar glúteos cada 30 minutos.',
+      },
+      '4': {
+        title: 'Técnica Paso a Paso: Decúbito Lateral Izquierdo 30°',
+        desc: 'Giro lateral hacia el costado izquierdo. Coloque una almohada detrás de la espalda para fijar la inclinación de 30 grados y una almohada entre piernas flexionadas para evitar el roce entre rodillas y tobillos (maleolos). Brazo superior ligeramente flexionado sobre una almohada delantera.',
+      }
+    };
+
+    postureSlots.forEach(slot => {
+      slot.addEventListener('click', () => {
+        postureSlots.forEach(s => {
+          s.setAttribute('aria-selected', 'false');
+          s.classList.remove('border-primary', 'bg-surface-container-low');
+          s.classList.add('border-outline-variant', 'bg-surface-container-lowest');
+          const radioIcon = s.querySelector('.material-symbols-outlined');
+          if (radioIcon) radioIcon.innerText = 'radio_button_unchecked';
+          if (radioIcon) radioIcon.classList.remove('text-primary');
+          if (radioIcon) radioIcon.classList.add('text-outline');
+        });
+
+        slot.setAttribute('aria-selected', 'true');
+        slot.classList.add('border-primary', 'bg-surface-container-low');
+        slot.classList.remove('border-outline-variant', 'bg-surface-container-lowest');
+        const activeRadio = slot.querySelector('.material-symbols-outlined');
+        if (activeRadio) activeRadio.innerText = 'radio_button_checked';
+        if (activeRadio) activeRadio.classList.add('text-primary');
+        if (activeRadio) activeRadio.classList.remove('text-outline');
+
+        const slotId = slot.getAttribute('data-slot');
+        if (postureData[slotId]) {
+          panelTitle.innerText = postureData[slotId].title;
+          panelDesc.innerText = postureData[slotId].desc;
+        }
+      });
+    });
+
+    registerBtn.addEventListener('click', () => {
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+      timestampElem.innerText = `Hoy, ${timeStr} h por Rosa (Guardado exitosamente)`;
+      registerBtn.innerHTML = `<span class="material-symbols-outlined fill-icon">verified</span><span>¡Cambio Registrado!</span>`;
+      registerBtn.classList.remove('bg-tertiary-container');
+      registerBtn.classList.add('bg-tertiary');
+      setTimeout(() => {
+        registerBtn.innerHTML = `<span class="material-symbols-outlined fill-icon">check</span><span>Marcar Cambio Realizado</span>`;
+        registerBtn.classList.add('bg-tertiary-container');
+        registerBtn.classList.remove('bg-tertiary');
+      }, 3000);
+    });
+
+    // --- 4. ANATOMICAL PRESSURE POINTS EXPLORER ---
+    const pressurePointsData = {
+      'sacro': {
+        risk: 'Máximo Riesgo',
+        riskClass: 'bg-error-container text-on-error-container',
+        title: 'Región Sacra y Cóccix',
+        icon: 'healing',
+        goldRule: 'Si la zona presenta enrojecimiento que NO blanquea al presionar con el dedo suavemente (Eritema no blanqueable), JAMÁS MASAJEAR. El masaje rompe las micro-fibras capilares ya dañadas y acelera la necrosis profunda.',
+        action: 'Aplicar 2 a 3 pulverizaciones de Ácidos Grasos Hiperoxigenados (AGHO) extendiendo suavemente sin frotar con fuerza. En personas de alto riesgo encamadas, colocar apósito hidrocelular multicapa sacral para disipar las fuerzas de cizallamiento y fricción.',
+        cushioning: 'Colocar cojín lateral bajo la pelvis para despegar el sacro 30 grados de la superficie. Cambiar de lado cada 2 horas sin excepción.'
+      },
+      'talones': {
+        risk: 'Riesgo Muy Alto',
+        riskClass: 'bg-secondary-fixed text-on-secondary-fixed',
+        title: 'Talones y Tendón de Aquiles',
+        icon: 'footprint',
+        goldRule: 'La piel del talón es sumamente fina y carece de tejido graso protector. El roce continuo con la sábana crea escaras de evolución rápida que pueden comprometer el hueso calcáneo.',
+        action: 'Mantener los talones suspendidos permanentemente en el aire. Aplicar AGHO dos veces al día hidratando toda la superficie del talón y tobillos.',
+        cushioning: 'Utilizar almohada longitudinal en la pantorrilla (desde la rodilla hasta el tobillo) dejando el talón en voladizo libre de contacto, o botas taloneras de protección.'
+      },
+      'omoplatos': {
+        risk: 'Riesgo Moderado',
+        riskClass: 'bg-surface-container-high text-primary',
+        title: 'Omóplatos (Escápulas) y Columna Dorsal',
+        icon: 'accessibility',
+        goldRule: 'Vigilar cuando el respaldo de la cama o sillón permanece elevado por encima de 45 grados por periodos prolongados.',
+        action: 'Asegurar que la sábana esté perfectamente lisa y sin costuras gruesas directamente bajo la espalda. Aplicar loción hidratante emoliente tras el baño diario.',
+        cushioning: 'Colocar almohadas delgadas que distribuyan el peso torácico de forma uniforme sin generar nuevos puntos de fricción.'
+      },
+      'occipital': {
+        risk: 'Riesgo Especial',
+        riskClass: 'bg-surface-container-high text-primary',
+        title: 'Zona Occipital (Cabeza)',
+        icon: 'face',
+        goldRule: 'Riesgo elevado en personas con movilidad cervical muy reducida o estados de sedación/demencia avanzada.',
+        action: 'Inspeccionar el cuero cabelludo occipital a diario. Evitar almohadas excesivamente duras o con fundas sintéticas calurosas que generen sudoración.',
+        cushioning: 'Uso de almohada viscoelástica de baja densidad o almohadilla de gel de descanso anatómico.'
+      }
+    };
+
+    function selectPressurePoint(pointKey) {
+      const data = pressurePointsData[pointKey];
+      if (!data) return;
+
+      document.getElementById('pointRiskLevel').innerText = data.risk;
+      document.getElementById('pointRiskLevel').className = `px-2.5 py-0.5 text-xs font-bold rounded-full uppercase tracking-wider ${data.riskClass}`;
+      document.getElementById('pointTitle').innerText = data.title;
+      document.getElementById('pointGoldRule').innerText = data.goldRule;
+      document.getElementById('pointAction').innerText = data.action;
+      document.getElementById('pointCushioning').innerText = data.cushioning;
+      document.getElementById('pointIcon').innerText = data.icon;
+    }
+
+    function setAnatomicView(view) {
+      const tabs = document.querySelectorAll('.anatomic-tab');
+      tabs.forEach(t => {
+        t.classList.remove('bg-primary', 'text-on-primary', 'tactile-btn');
+        t.classList.add('bg-surface-container-high', 'text-primary');
+      });
+
+      if (view === 'supino') {
+        document.getElementById('viewSupinoBtn').classList.add('bg-primary', 'text-on-primary', 'tactile-btn');
+        document.getElementById('viewSupinoBtn').classList.remove('bg-surface-container-high', 'text-primary');
+        selectPressurePoint('sacro');
+      } else if (view === 'lateral') {
+        document.getElementById('viewLateralBtn').classList.add('bg-primary', 'text-on-primary', 'tactile-btn');
+        document.getElementById('viewLateralBtn').classList.remove('bg-surface-container-high', 'text-primary');
+        // Update tip for lateral
+        document.getElementById('pointRiskLevel').innerText = 'Riesgo Crítico';
+        document.getElementById('pointTitle').innerText = 'Trocánter Mayor (Cadera) y Maleolos';
+        document.getElementById('pointGoldRule').innerText = 'El trocánter es la prominencia lateral de la cadera. Si la persona está a 90° de lado, toda la masa del cuerpo comprime este hueso. Por eso se exige la regla de los 30 grados.';
+        document.getElementById('pointAction').innerText = 'Colocar siempre una almohada entre las dos rodillas para que los huesos internos de las piernas no se presionen entre sí.';
+        document.getElementById('pointCushioning').innerText = 'Almohada de apoyo posterior desde la cintura hasta la espalda para evitar que ruede hacia atrás.';
+      } else if (view === 'sillon') {
+        document.getElementById('viewSillonBtn').classList.add('bg-primary', 'text-on-primary', 'tactile-btn');
+        document.getElementById('viewSillonBtn').classList.remove('bg-surface-container-high', 'text-primary');
+        // Update tip for chair
+        document.getElementById('pointRiskLevel').innerText = 'Riesgo Máximo en Sedestación';
+        document.getElementById('pointTitle').innerText = 'Isquiones (Huesos del Asiento)';
+        document.getElementById('pointGoldRule').innerText = 'Sentado, todo el peso del tronco recae en los dos huesos isquiáticos en un área inferior a 25 cm². Las escaras aquí son profundas y difíciles de curar.';
+        document.getElementById('pointAction').innerText = 'Uso obligatorio de cojín de celdas de aire o espuma perfilada. Nunca usar flotadores o rodetes redondos.';
+        document.getElementById('pointCushioning').innerText = 'Reposapiés adecuado para que las piernas descansen en 90° y los muslos compartan la carga del peso corporal.';
+      }
+    }
+
+    // --- 5. CHECKLIST REAL-TIME COUNTER ---
+    function updateChecklist() {
+      const checkboxes = document.querySelectorAll('.check-skin');
+      const checked = Array.from(checkboxes).filter(c => c.checked).length;
+      const counter = document.getElementById('checklistCounter');
+      const badge = document.getElementById('checkSuccessBadge');
+
+      counter.innerText = `${checked} / ${checkboxes.length} Realizados`;
+      if (checked === checkboxes.length) {
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+
+    // --- 6. WATER GLASSES HYDRATION COUNTER ---
+    let completedGlasses = 5;
+    function toggleWaterGlass(index) {
+      completedGlasses = index;
+      document.getElementById('waterGlassesCount').innerText = `${completedGlasses} / 8 vasos (${completedGlasses * 250} ml)`;
+      
+      for (let i = 1; i <= 8; i++) {
+        const btn = document.getElementById(`glass-${i}`);
+        const icon = btn.querySelector('.material-symbols-outlined');
+        if (i <= completedGlasses) {
+          btn.className = "glass-btn h-14 rounded-xl border-2 border-primary bg-primary text-on-primary flex items-center justify-center min-h-[52px] min-w-[52px]";
+          icon.classList.add('fill-icon');
+        } else {
+          btn.className = "glass-btn h-14 rounded-xl border-2 border-outline-variant bg-surface-container-lowest text-outline flex items-center justify-center min-h-[52px] min-w-[52px]";
+          icon.classList.remove('fill-icon');
+        }
+      }
+    }
+
+    // --- 7. SIMPLIFIED BRADEN CLINICAL CALCULATOR ---
+    function calculateBradenRisk() {
+      const q1 = parseInt(document.getElementById('qMobility').value);
+      const q2 = parseInt(document.getElementById('qMoisture').value);
+      const q3 = parseInt(document.getElementById('qSensory').value);
+      const q4 = parseInt(document.getElementById('qNutrition').value);
+
+      const total = q1 + q2 + q3 + q4; // Range from 4 to 16
+      const scoreBadge = document.getElementById('bradenScoreBadge');
+      const title = document.getElementById('bradenRiskTitle');
+      const box = document.getElementById('bradenResultBox');
+      const sempAdvice = document.getElementById('bradenSEMPAdvice');
+      const rotationAdvice = document.getElementById('bradenRotationAdvice');
+
+      scoreBadge.innerText = total;
+
+      if (total <= 9) {
+        // High Risk
+        box.className = "mt-space-lg p-space-lg rounded-2xl bg-error-container/30 border-2 border-error space-y-space-sm";
+        title.innerText = "RIESGO MUY ALTO DE LESIONES POR PRESIÓN";
+        title.className = "font-headline-sm text-headline-sm text-error font-extrabold";
+        scoreBadge.className = "w-12 h-12 rounded-xl bg-error text-on-error flex items-center justify-center font-bold text-xl";
+        sempAdvice.innerHTML = "Se recomienda de forma prioritaria la instalación de un <strong>colchón dinámico de aire alternante</strong> conectado a compresor continuo.";
+        rotationAdvice.innerHTML = "Rotaciones posturales estrictas <strong>cada 2 horas durante el día</strong> y cada 3 horas durante la noche. Alivio total de talones con almohadas.";
+      } else if (total <= 12) {
+        // Moderate Risk
+        box.className = "mt-space-lg p-space-lg rounded-2xl bg-secondary-fixed/40 border-2 border-secondary space-y-space-sm";
+        title.innerText = "RIESGO MODERADO - PROTOCOLO ACTIVO";
+        title.className = "font-headline-sm text-headline-sm text-secondary font-extrabold";
+        scoreBadge.className = "w-12 h-12 rounded-xl bg-secondary text-on-secondary flex items-center justify-center font-bold text-xl";
+        sempAdvice.innerHTML = "Colchón de espuma viscoelástica de alta densidad con zonificación anatómica o sobrecolchón de aire.";
+        rotationAdvice.innerHTML = "Cambios posturales cada 2 a 3 horas alternando decúbito lateral 30° con supino. Revisión de zonas de roce dos veces al día.";
+      } else {
+        // Low Risk
+        box.className = "mt-space-lg p-space-lg rounded-2xl bg-tertiary-fixed/30 border-2 border-tertiary-container space-y-space-sm";
+        title.innerText = "RIESGO BAJO - MANTENIMIENTO PREVENTIVO";
+        title.className = "font-headline-sm text-headline-sm text-tertiary-container font-extrabold";
+        scoreBadge.className = "w-12 h-12 rounded-xl bg-tertiary-container text-on-tertiary flex items-center justify-center font-bold text-xl";
+        sempAdvice.innerHTML = "Colchón convencional firme con buen soporte. Fomentar la deambulación y movilidad activa del paciente.";
+        rotationAdvice.innerHTML = "Incentivar cambios de peso independientes. Mantener hidratación óptima y buena ingesta proteica.";
+      }
+    }
+  </script>
+</body></html>

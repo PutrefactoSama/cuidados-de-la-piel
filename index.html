@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuidado de la piel en casa | Guía para prevenir lesiones por presión</title>
+  <meta name="description" content="Guía práctica para cuidadores: explore cuidados esenciales, organice cambios de posición, registre la hidratación y reconozca señales de alerta en la piel.">
+  <meta property="og:title" content="Cuidado de la piel en casa">
+  <meta property="og:description" content="Una guía práctica para prevenir lesiones por presión y acompañar la rutina diaria de cuidado.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/images/og.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Enlace accesible de salto al contenido -->
+  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- NAVEGACIÓN PRINCIPAL Y HERRAMIENTAS DE ACCESIBILIDAD -->
+  <header class="top-nav" role="banner">
+    <div class="nav-container">
+      <a class="brand-title" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand-icon" aria-hidden="true">
+          <svg class="svg-icon svg-icon-lg" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M12 8v8M8 12h8"/>
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong>Cuidado en casa</strong>
+          <small>Prevención de lesiones por presión</small>
+        </span>
+      </a>
+
+      <nav class="primary-navigation" aria-label="Navegación principal">
+        <a href="#scene-heading">Aprender</a>
+        <a href="#video-educativo">Video Guía</a>
+        <a href="#dashboard-general">Cuidados</a>
+        <a href="#herramientas-ui">Plan diario</a>
+        <a href="#seccion-consulta">Señales de alerta</a>
+      </nav>
+
+      <div class="accessibility-toolbar" aria-label="Herramientas de accesibilidad">
+        <span class="toolbar-label">Accesibilidad</span>
+        <button id="btn-font-normal" class="btn-tool active" title="Tamaño de texto normal" aria-label="Texto tamaño normal">A</button>
+        <button id="btn-font-lg" class="btn-tool" title="Tamaño de texto grande" aria-label="Texto grande">A+</button>
+        <button id="btn-font-xl" class="btn-tool" title="Tamaño de texto muy grande" aria-label="Texto muy grande">A++</button>
+        
+        <button id="btn-contrast" class="btn-tool" title="Cambiar modo de contraste" aria-label="Modo alto contraste">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor"/>
+          </svg>
+          <span class="tool-label">Contraste</span>
+        </button>
+
+        <button id="btn-print" class="btn-tool" title="Imprimir o guardar como PDF" aria-label="Imprimir guía">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polyline points="6 9 6 2 18 2 18 9"/>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+            <rect x="6" y="14" width="12" height="8"/>
+          </svg>
+          <span class="tool-label">Imprimir</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRESENTACIÓN DE LA GUÍA -->
+  <section class="hero-header" id="inicio">
+    <div class="hero-content">
+      <div class="hero-main">
+        <div class="hero-copy">
+          <span class="hero-badge">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+            Guía práctica para cuidadores
+          </span>
+          <h1 class="hero-title">Cuidar la piel puede ser más simple.</h1>
+          <p class="hero-subtitle">Aprenda qué observar, organice la rutina diaria y reconozca a tiempo las señales que requieren atención.</p>
+
+          <div class="hero-actions" aria-label="Acciones principales">
+            <a class="hero-action hero-action-primary" href="#scene-heading">
+              Comenzar la guía
+              <svg class="svg-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a class="hero-action hero-action-secondary" href="#herramientas-ui">Organizar el día</a>
+          </div>
+
+          <ul class="hero-benefits" aria-label="Características de la guía">
+            <li><strong>7</strong> cuidados esenciales</li>
+            <li>Explicaciones con audio</li>
+            <li>Rutina imprimible</li>
+          </ul>
+        </div>
+
+        <aside class="hero-guide-card" aria-label="Lo que puede hacer con esta guía">
+          <span class="hero-guide-eyebrow">En esta guía puede</span>
+          <ol class="hero-guide-list">
+            <li><span>01</span><div><strong>Explorar</strong><small>Los puntos de cuidado en una habitación.</small></div></li>
+            <li><span>02</span><div><strong>Planificar</strong><small>Cambios de posición e hidratación.</small></div></li>
+            <li><span>03</span><div><strong>Revisar</strong><small>Factores de riesgo y zonas de apoyo.</small></div></li>
+            <li><span>04</span><div><strong>Actuar</strong><small>Ante cambios en la piel o señales de alerta.</small></div></li>
+          </ol>
+          <div class="hero-guide-note">
+            <svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <p>Las lesiones por presión pueden aparecer cuando una zona del cuerpo permanece apoyada por mucho tiempo. La prevención se adapta a cada persona.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCESOS RÁPIDOS POR NECESIDAD -->
+  <section class="journey-section" aria-labelledby="journey-heading">
+    <div class="journey-heading-row">
+      <div>
+        <span class="section-kicker">Elija por dónde comenzar</span>
+        <h2 id="journey-heading">¿Qué necesita hacer ahora?</h2>
+      </div>
+      <p>Puede recorrer la guía completa o ir directamente a una tarea.</p>
+    </div>
+    <div class="journey-grid">
+      <a class="journey-card journey-learn" href="#scene-heading">
+        <span class="journey-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
+        <span><strong>Aprender los cuidados</strong><small>Recorra la habitación y descubra recomendaciones.</small></span>
+        <svg class="svg-icon journey-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a class="journey-card journey-plan" href="#herramientas-ui">
+        <span class="journey-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+        <span><strong>Organizar la rutina</strong><small>Use recordatorios, horarios y registro de agua.</small></span>
+        <svg class="svg-icon journey-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a class="journey-card journey-review" href="#seccion-riesgo">
+        <span class="journey-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+        <span><strong>Revisar riesgos</strong><small>Identifique situaciones que necesitan más cuidado.</small></span>
+        <svg class="svg-icon journey-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a class="journey-card journey-alert" href="#seccion-consulta">
+        <span class="journey-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+        <span><strong>Ver señales de alerta</strong><small>Sepa cuándo aliviar la presión y pedir ayuda.</small></span>
+        <svg class="svg-icon journey-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- BÚSQUEDA RÁPIDA -->
+  <section class="quick-search-section" aria-label="Búsqueda rápida de temas">
+    <div class="search-box">
+      <svg class="svg-icon search-icon" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="text" id="quick-search-input" placeholder="¿Qué necesita encontrar? Pruebe: talones, postura, agua o piel roja" aria-label="Buscar consejo o tema" autocomplete="off">
+      <button type="button" id="search-clear" class="search-clear-btn" aria-label="Limpiar búsqueda">✕</button>
+    </div>
+
+    <!-- Panel de Resultados Instantáneos -->
+    <div id="search-results-dropdown" class="search-results-dropdown" role="region" aria-label="Resultados de búsqueda">
+      <div class="search-results-header">
+        <span id="search-results-count">Resultados</span>
+        <button type="button" id="search-close-dropdown" style="background: none; border: none; font-size: 0.85rem; color: var(--text-muted); cursor: pointer;">Cerrar ✕</button>
+      </div>
+      <div id="search-results-list" class="search-results-list">
+        <!-- Inyectado dinámicamente -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="contenido-principal" class="main-wrapper">
+
+    <!-- SEGUIMIENTO DE PROGRESO DE APRENDIZAJE -->
+    <div class="progress-bar-container" aria-live="polite">
+      <div class="progress-info">
+        <span class="progress-icon" aria-hidden="true">
+          <svg class="svg-icon svg-icon-lg" viewBox="0 0 24 24">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </span>
+        <div>
+          <span style="font-weight: 600;">Su recorrido:</span>
+          <span id="progress-count" class="progress-counter">0 de 7</span>
+        </div>
+      </div>
+      <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Consejos explorados">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <div id="progress-status-text" style="font-size: 0.9rem; color: var(--text-muted); width: 100%;">
+        Seleccione los puntos de la habitación para descubrir los cuidados esenciales.
+      </div>
+    </div>
+
+    <!-- ESCENARIO INTERACTIVO (HABITACIÓN ILUSTRADA) -->
+    <section class="interactive-scene-section" aria-labelledby="scene-heading">
+      <div class="section-header">
+        <h2 id="scene-heading">
+          <svg class="svg-icon svg-icon-lg" viewBox="0 0 24 24" style="color: var(--primary);">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          Aprenda observando una habitación de cuidado
+        </h2>
+        <p>Seleccione cada punto de la imagen para comprender qué revisar y cómo incorporar ese cuidado en la rutina.</p>
+        <button id="btn-start-tour" class="header-tour-btn" type="button">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/>
+          </svg>
+          <span>Comenzar recorrido guiado</span>
+        </button>
+      </div>
+
+      <div class="scene-viewport">
+        <!-- Imagen de fondo de la habitación -->
+        <img 
+          src="images/escena_habitacion.jpg" 
+          alt="Habitación iluminada de una persona mayor con cama articulada, mesa con alimentos saludables, kit de cuidado de piel, sillón y silla de ruedas." 
+          class="scene-image"
+          loading="eager"
+        >
+
+        <!-- Capa con Puntos Interactivos (Hotspots) con Iconos Vectoriales -->
+        <div class="hotspots-layer" role="region" aria-label="Puntos interactivos de la imagen">
+          
+          <!-- 1. PENSAMIENTO DE LA PACIENTE (Recuerde) -->
+          <button 
+            type="button"
+            class="hotspot hotspot-thought" 
+            style="top: 15%; left: 22%;" 
+            data-target="dialog-recuerde"
+            data-advice-id="recuerde"
+            aria-label="Consejo: Recuerde - Su cariño y cuidados"
+            title="Recuerde: Mensaje para el cuidador"
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              <path d="M12 7v4M12 15h.01"/>
+            </svg>
+            <span class="hotspot-tooltip">Recuerde: Mensaje Especial</span>
+          </button>
+
+          <!-- 2. REVISE LA PIEL (En la paciente / piel) -->
+          <button 
+            type="button"
+            class="hotspot" 
+            style="top: 32%; left: 16%;" 
+            data-target="dialog-revision"
+            data-advice-id="revision"
+            aria-label="Consejo: Revise la piel todos los días"
+            title="Revise la piel todos los días"
+          >
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              <circle cx="11" cy="11" r="3"/>
+            </svg>
+            <span class="hotspot-tooltip">Revise la piel todos los días</span>
+          </button>
+
+          <!-- 3. MOVILICE Y ACTIVE (En la paciente) -->
+          <button 
+            type="button"
+            class="hotspot" 
+            style="top: 48%; left: 24%;" 
+            data-target="dialog-movilidad"
+            data-advice-id="movilidad"
+            aria-label="Consejo: Movilice y active a la persona"
+            title="Movilice y active"
+          >
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="5" r="2.5"/>
+              <path d="M9 20l3-6 3 6M6 11l6-2 6 2M12 9v5"/>
+            </svg>
+            <span class="hotspot-tooltip">Movilice y active</span>
+          </button>
+
+          <!-- 4. CAMBIOS DE POSICIÓN EN LA CAMA -->
+          <button 
+            type="button"
+            class="hotspot" 
+            style="top: 40%; left: 53%;" 
+            data-target="dialog-cama"
+            data-advice-id="cama"
+            aria-label="Consejo: Cambios de posición recomendados en la cama"
+            title="Cambios de posición en la cama"
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/>
+              <circle cx="6" cy="12" r="1.5" fill="currentColor"/>
+            </svg>
+            <span class="hotspot-tooltip">Cambios de posición recomendados</span>
+          </button>
+
+          <!-- 5. COMIDA / ALIMENTACIÓN E HIDRATACIÓN -->
+          <button 
+            type="button"
+            class="hotspot" 
+            style="top: 68%; left: 54%;" 
+            data-target="dialog-comida"
+            data-advice-id="comida"
+            aria-label="Consejo: Alimentación e hidratación"
+            title="Alimentación e hidratación"
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+              <line x1="6" y1="1" x2="6" y2="4"/>
+              <line x1="10" y1="1" x2="10" y2="4"/>
+              <line x1="14" y1="1" x2="14" y2="4"/>
+            </svg>
+            <span class="hotspot-tooltip">Alimentación e hidratación</span>
+          </button>
+
+          <!-- 6. PIEL LIMPIA Y SECA (Kit de cuidado y aseo) -->
+          <button 
+            type="button"
+            class="hotspot" 
+            style="top: 80%; left: 18%;" 
+            data-target="dialog-higiene"
+            data-advice-id="higiene"
+            aria-label="Consejo: Mantener piel limpia y seca"
+            title="Mantener piel limpia y seca"
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2v4M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>
+              <path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            </svg>
+            <span class="hotspot-tooltip">Mantener piel limpia y seca</span>
+          </button>
+
+          <!-- 7. SUPERFICIES ADECUADAS (Asiento / Cojines / Silla) -->
+          <button 
+            type="button"
+            class="hotspot" 
+            style="top: 84%; left: 74%;" 
+            data-target="dialog-asiento"
+            data-advice-id="asiento"
+            aria-label="Consejo: Usar superficies adecuadas y cojines de alivio"
+            title="Usar superficies adecuadas"
+          >
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="9" rx="3"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              <line x1="12" y1="15" x2="12" y2="16"/>
+            </svg>
+            <span class="hotspot-tooltip">Usar superficies adecuadas</span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- ACCESO DIRECTO / BOTONES DE APOYO ALTERNATIVO CON ICONOS SVG -->
+      <div class="quick-advice-grid" aria-label="Lista de selección de consejos">
+        
+        <button class="advice-card-btn" data-target="dialog-cama" data-advice-id="cama">
+          <span class="card-icon" aria-hidden="true">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/>
+            </svg>
+          </span>
+          <div class="card-text">
+            <h4>En la cama</h4>
+            <p>Cambios de posición recomendados</p>
+          </div>
+        </button>
+
+        <button class="advice-card-btn" data-target="dialog-comida" data-advice-id="comida">
+          <span class="card-icon" aria-hidden="true">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+              <line x1="6" y1="1" x2="6" y2="4"/>
+              <line x1="10" y1="1" x2="10" y2="4"/>
+            </svg>
+          </span>
+          <div class="card-text">
+            <h4>En la comida</h4>
+            <p>Alimentación e hidratación</p>
+          </div>
+        </button>
+
+        <button class="advice-card-btn" data-target="dialog-asiento" data-advice-id="asiento">
+          <span class="card-icon" aria-hidden="true">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="9" rx="3"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </span>
+          <div class="card-text">
+            <h4>En el asiento y cojines</h4>
+            <p>Usar superficies adecuadas</p>
+          </div>
+        </button>
+
+        <button class="advice-card-btn" data-target="dialog-movilidad" data-advice-id="movilidad">
+          <span class="card-icon" aria-hidden="true">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="5" r="2.5"/>
+              <path d="M9 20l3-6 3 6M6 11l6-2 6 2M12 9v5"/>
+            </svg>
+          </span>
+          <div class="card-text">
+            <h4>En la paciente</h4>
+            <p>Movilice y active</p>
+          </div>
+        </button>
+
+        <button class="advice-card-btn" data-target="dialog-revision" data-advice-id="revision">
+          <span class="card-icon" aria-hidden="true">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </span>
+          <div class="card-text">
+            <h4>La piel de la paciente</h4>
+            <p>Revise la piel todos los días</p>
+          </div>
+        </button>
+
+        <button class="advice-card-btn" data-target="dialog-higiene" data-advice-id="higiene">
+          <span class="card-icon" aria-hidden="true">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M12 2v4M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>
+            </svg>
+          </span>
+          <div class="card-text">
+            <h4>Cuidado de la piel</h4>
+            <p>Mantener piel limpia y seca</p>
+          </div>
+        </button>
+
+        <button class="advice-card-btn" data-target="dialog-recuerde" data-advice-id="recuerde">
+          <span class="card-icon" aria-hidden="true" style="color: #9333ea;">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </span>
+          <div class="card-text">
+            <h4>En su pensamiento</h4>
+            <p>Recuerde: Mensaje para el cuidador</p>
+          </div>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         VIDEO EDUCATIVO Y MOTION GRAPHIC (ROTACIÓN 2H & REGLA 30°)
+         ========================================================================== -->
+    <section class="video-guide-section" id="video-educativo" aria-labelledby="video-guide-heading">
+      <div class="video-guide-header">
+        <div class="video-guide-title-box">
+          <span class="video-badge-tag">
+            <svg class="svg-icon" viewBox="0 0 24 24" style="width: 18px; height: 18px;">
+              <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/>
+            </svg>
+            Video Explicativo de Alta Claridad
+          </span>
+          <h2 id="video-guide-heading" style="margin-top: 10px;">
+            <svg class="svg-icon svg-icon-lg" viewBox="0 0 24 24" style="color: var(--primary);">
+              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+              <line x1="7" y1="2" x2="7" y2="22"></line>
+              <line x1="17" y1="2" x2="17" y2="22"></line>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <line x1="2" y1="7" x2="7" y2="7"></line>
+              <line x1="2" y1="17" x2="7" y2="17"></line>
+              <line x1="17" y1="17" x2="22" y2="17"></line>
+              <line x1="17" y1="7" x2="22" y2="7"></line>
+            </svg>
+            Protocolo Visual: Rotación Cada 2 Horas y Regla de los 30°
+          </h2>
+          <p>
+            Mire esta animación pedagógica de 10 segundos para comprender visualmente el ciclo de cambios posturales de 24 horas y cómo evitar apoyar a la persona a 90° sobre el hueso de la cadera.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contenedor del Reproductor de Video -->
+      <div class="video-player-wrapper">
+        <div class="video-aspect-box">
+          <video id="motion-guide-video" controls preload="metadata" playsinline poster="images/escena_habitacion.jpg">
+            <source src="videos/rotacion-postural.mp4" type="video/mp4">
+            Su navegador no soporta reproducción de video HTML5.
+          </video>
+        </div>
+      </div>
+
+      <!-- Tarjetas de Síntesis del Video -->
+      <div class="video-highlights-grid">
+        <div class="video-highlight-card">
+          <h4>
+            <span style="color: var(--primary); font-weight: 800;">1.</span>
+            Reloj de 2 Horas
+          </h4>
+          <p>Alternar entre decúbito supino (boca arriba), decúbito lateral derecho a 30°, sedestación en sillón y lateral izquierdo a 30°.</p>
+        </div>
+
+        <div class="video-highlight-card">
+          <h4>
+            <span style="color: var(--accent); font-weight: 800;">2.</span>
+            Regla de los 30 Grados
+          </h4>
+          <p>Nunca colocar a 90° de costado directo. Usar cojín o cuña en la espalda para apoyar sobre la masa muscular del glúteo.</p>
+        </div>
+
+        <div class="video-highlight-card">
+          <h4>
+            <span style="color: var(--secondary); font-weight: 800;">3.</span>
+            Talones en el Aire
+          </h4>
+          <p>Colocar almohada debajo de las pantorrillas para que los talones queden totalmente flotantes y sin roce con el colchón.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CATÁLOGO DE CUIDADOS Y HERRAMIENTAS
+         ========================================================================== -->
+    <section class="dashboard-section" id="dashboard-general" aria-labelledby="dashboard-heading">
+      <div class="dashboard-header">
+        <div class="dashboard-title-box">
+          <h2 id="dashboard-heading">
+            <svg class="svg-icon svg-icon-lg" viewBox="0 0 24 24" style="color: var(--primary);">
+              <rect x="3" y="3" width="7" height="7"/>
+              <rect x="14" y="3" width="7" height="7"/>
+              <rect x="14" y="14" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/>
+            </svg>
+            Cuidados y herramientas, en un solo lugar
+          </h2>
+          <p>Revise recomendaciones, abra explicaciones con audio y acceda a apoyos para organizar el cuidado diario.</p>
+        </div>
+      </div>
+
+      <!-- Métricas y Resumen Ejecutivo del Dashboard -->
+      <div class="dashboard-metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div class="metric-content">
+            <strong id="dash-metric-progress">0 / 7</strong>
+            <span>Consejos explorados</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon" style="background: var(--secondary-light); color: var(--secondary);">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div class="metric-content">
+            <strong id="dash-metric-timer">Sin iniciar</strong>
+            <span>Recordatorio de postura</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon" style="background: #e0f2fe; color: #0284c7;">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <div class="metric-content">
+            <strong id="dash-metric-water">0 / 8 registros</strong>
+            <span>Seguimiento de hidratación</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon" style="background: var(--danger-light); color: var(--danger);">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            </svg>
+          </div>
+          <div class="metric-content">
+            <strong>4 Alertas</strong>
+            <span>Signos de consulta</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra de Filtros por Categoría -->
+      <div class="dashboard-filter-bar">
+        <div class="filter-pills" role="tablist" aria-label="Filtros del Dashboard">
+          <button type="button" class="filter-pill-btn active" data-category="all">
+            <span>Ver todo (11)</span>
+          </button>
+          <button type="button" class="filter-pill-btn" data-category="posturas">
+            <span>Cama y posturas</span>
+          </button>
+          <button type="button" class="filter-pill-btn" data-category="piel">
+            <span>Piel e higiene</span>
+          </button>
+          <button type="button" class="filter-pill-btn" data-category="nutricion">
+            <span>Alimentación y agua</span>
+          </button>
+          <button type="button" class="filter-pill-btn" data-category="herramientas">
+            <span>Apoyos para la rutina</span>
+          </button>
+          <button type="button" class="filter-pill-btn" data-category="alertas">
+            <span>Alertas y riesgos</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Cuadrícula de Tarjetas del Dashboard -->
+      <div class="dashboard-cards-grid" id="dashboard-cards-container">
+        
+        <!-- CARD 1: CAMA -->
+        <article class="dash-card" data-category="posturas" data-card-id="cama">
+          <div>
+            <div class="dash-card-header">
+              <div class="dash-card-icon-box">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/>
+                </svg>
+              </div>
+              <span class="dash-card-badge">Rutina personalizada</span>
+            </div>
+            <div class="dash-card-body">
+              <h3>En la Cama: Cambios de Posición</h3>
+              <p>Organice los cambios de posición para reducir el tiempo de apoyo continuo y revisar la respuesta de la piel.</p>
+              <ul class="dash-card-bullets">
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Horarios de referencia que puede marcar durante el día.
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Inclinación de 30° con almohada entre piernas.
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Talones suspendidos en el aire sin tocar colchón.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dash-card-footer">
+            <button type="button" class="btn-card-action" onclick="openAdviceModal('dialog-cama', 'cama')">
+              <span>Ver recomendaciones</span>
+              <svg class="svg-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <button type="button" class="btn-card-audio" onclick="listenModalAudio('dialog-cama')" title="Escuchar este consejo">
+              <svg class="svg-icon" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+              <span>Audio</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 2: NUTRICIÓN -->
+        <article class="dash-card" data-category="nutricion" data-card-id="comida">
+          <div>
+            <div class="dash-card-header">
+              <div class="dash-card-icon-box">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                  <line x1="6" y1="1" x2="6" y2="4"/>
+                  <line x1="10" y1="1" x2="10" y2="4"/>
+                </svg>
+              </div>
+              <span class="dash-card-badge">Cuidado diario</span>
+            </div>
+            <div class="dash-card-body">
+              <h3>Alimentación e Hidratación</h3>
+              <p>Revise ideas de alimentación equilibrada y lleve un registro sencillo de la hidratación diaria.</p>
+              <ul class="dash-card-bullets">
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Proteínas diarias (huevos, pescado, lácteos, legumbres).
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Vitaminas A, C y Zinc en frutas y vegetales.
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Registre la hidratación según la meta indicada para la persona.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dash-card-footer">
+            <button type="button" class="btn-card-action" onclick="openAdviceModal('dialog-comida', 'comida')">
+              <span>Ver orientación</span>
+              <svg class="svg-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <button type="button" class="btn-card-audio" onclick="listenModalAudio('dialog-comida')" title="Escuchar este consejo">
+              <svg class="svg-icon" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+              <span>Audio</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 3: SUPERFICIES -->
+        <article class="dash-card" data-category="posturas" data-card-id="asiento">
+          <div>
+            <div class="dash-card-header">
+              <div class="dash-card-icon-box">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <rect x="3" y="11" width="18" height="9" rx="3"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </div>
+              <span class="dash-card-badge">Alivio de Presión</span>
+            </div>
+            <div class="dash-card-body">
+              <h3>Superficies Adecuadas y Cojines</h3>
+              <p>Conozca qué superficies y apoyos ayudan a redistribuir la presión en la cama y en la silla.</p>
+              <ul class="dash-card-bullets">
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Colchón de aire alternante y cojines viscoelásticos.
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Sábanas 100% lisas sin arrugas ni pliegues.
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Evitar flotadores de rosquilla dura en el sacro.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dash-card-footer">
+            <button type="button" class="btn-card-action" onclick="openAdviceModal('dialog-asiento', 'asiento')">
+              <span>Ver apoyos</span>
+              <svg class="svg-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <button type="button" class="btn-card-audio" onclick="listenModalAudio('dialog-asiento')" title="Escuchar este consejo">
+              <svg class="svg-icon" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+              <span>Audio</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 4: MOVILIDAD -->
+        <article class="dash-card" data-category="posturas" data-card-id="movilidad">
+          <div>
+            <div class="dash-card-header">
+              <div class="dash-card-icon-box">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <circle cx="12" cy="5" r="2.5"/>
+                  <path d="M9 20l3-6 3 6M6 11l6-2 6 2M12 9v5"/>
+                </svg>
+              </div>
+              <span class="dash-card-badge">Movimiento seguro</span>
+            </div>
+            <div class="dash-card-body">
+              <h3>Movilice y Active a la Persona</h3>
+              <p>Incorpore movimientos y cambios de apoyo acordes con la movilidad, la seguridad y la comodidad de la persona.</p>
+              <ul class="dash-card-bullets">
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Movilizaciones activas y asistidas 2-3 veces al día.
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Flexiones de tobillo y estiramientos suaves.
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Cambios de apoyo en silla según el plan de cuidado.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dash-card-footer">
+            <button type="button" class="btn-card-action" onclick="openAdviceModal('dialog-movilidad', 'movilidad')">
+              <span>Ver movimientos</span>
+              <svg class="svg-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <button type="button" class="btn-card-audio" onclick="listenModalAudio('dialog-movilidad')" title="Escuchar este consejo">
+              <svg class="svg-icon" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+              <span>Audio</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 5: REVISIÓN DE PIEL -->
+        <article class="dash-card" data-category="piel" data-card-id="revision">
+          <div>
+            <div class="dash-card-header">
+              <div class="dash-card-icon-box">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+              </div>
+              <span class="dash-card-badge">Inspección Diaria</span>
+            </div>
+            <div class="dash-card-body">
+              <h3>Revise la Piel Todos los Días</h3>
+              <p>Aprenda a observar cambios de color, temperatura, textura o dolor en las zonas que soportan presión.</p>
+              <ul class="dash-card-bullets">
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Revisión diaria con buena luz en baño y rotaciones.
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Inspección de 8 zonas críticas (sacro, talones, caderas).
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Prueba del dedo para eritema no blanqueable.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dash-card-footer">
+            <button type="button" class="btn-card-action" onclick="openAdviceModal('dialog-revision', 'revision')">
+              <span>Ver cómo revisar</span>
+              <svg class="svg-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <button type="button" class="btn-card-audio" onclick="listenModalAudio('dialog-revision')" title="Escuchar este consejo">
+              <svg class="svg-icon" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+              <span>Audio</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 6: HIGIENE Y CUIDADO -->
+        <article class="dash-card" data-category="piel" data-card-id="higiene">
+          <div>
+            <div class="dash-card-header">
+              <div class="dash-card-icon-box">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <path d="M12 2v4M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>
+                </svg>
+              </div>
+              <span class="dash-card-badge">Cuidado Cutáneo</span>
+            </div>
+            <div class="dash-card-body">
+              <h3>Mantener Piel Limpia y Seca</h3>
+              <p>Siga una rutina suave de limpieza, secado y protección para mantener la piel confortable y protegida.</p>
+              <ul class="dash-card-bullets">
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Aseo con agua tibia y jabón neutro (pH 5.5).
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Secado dando suaves toques (¡nunca frotar!).
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Cremas barrera e hidratantes sin masajear huesos.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dash-card-footer">
+            <button type="button" class="btn-card-action" onclick="openAdviceModal('dialog-higiene', 'higiene')">
+              <span>Ver pasos de cuidado</span>
+              <svg class="svg-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <button type="button" class="btn-card-audio" onclick="listenModalAudio('dialog-higiene')" title="Escuchar este consejo">
+              <svg class="svg-icon" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+              <span>Audio</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 7: APOYO AL CUIDADOR -->
+        <article class="dash-card" data-category="piel" data-card-id="recuerde">
+          <div>
+            <div class="dash-card-header">
+              <div class="dash-card-icon-box" style="background: var(--purple-light); color: var(--purple);">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <span class="dash-card-badge badge-heart">Para el Cuidador</span>
+            </div>
+            <div class="dash-card-body">
+              <h3>Los 4 Pilares y Autocuidado</h3>
+              <p>Reúna los cuidados esenciales y recuerde proteger también su propia seguridad y descanso como cuidador.</p>
+              <ul class="dash-card-bullets">
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Pilares: Observe, Cuide, Prevenga, Acompañe.
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Cuidar la espalda: flexione rodillas al levantar.
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Usted no está solo: pida apoyo familiar y médico.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dash-card-footer">
+            <button type="button" class="btn-card-action" style="background: var(--purple);" onclick="openAdviceModal('dialog-recuerde', 'recuerde')">
+              <span>Ver apoyo al cuidador</span>
+              <svg class="svg-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <button type="button" class="btn-card-audio" onclick="listenModalAudio('dialog-recuerde')" title="Escuchar este consejo">
+              <svg class="svg-icon" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+              <span>Audio</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 8: SIMULADOR PRUEBA DEL DEDO -->
+        <article class="dash-card" data-category="herramientas">
+          <div>
+            <div class="dash-card-header">
+              <div class="dash-card-icon-box" style="background: var(--secondary-light); color: var(--secondary);">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+                </svg>
+              </div>
+              <span class="dash-card-badge badge-tool">Aprendizaje visual</span>
+            </div>
+            <div class="dash-card-body">
+              <h3>Práctica guiada: observar una zona enrojecida</h3>
+              <p>Use una demostración educativa para comprender por qué una rojez persistente necesita atención.</p>
+              <ul class="dash-card-bullets">
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Piel sana: palidece al presionar y recupera color.
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Lesión: eritema no blanqueable (alerta médica).
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dash-card-footer">
+            <button type="button" class="btn-card-action" style="background: var(--secondary);" onclick="openToolTab('tab-finger-sim')">
+              <span>Abrir práctica</span>
+              <svg class="svg-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 9: MAPA ANATÓMICO -->
+        <article class="dash-card" data-category="herramientas">
+          <div>
+            <div class="dash-card-header">
+              <div class="dash-card-icon-box" style="background: var(--secondary-light); color: var(--secondary);">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <circle cx="12" cy="7" r="4"/>
+                  <path d="M5.5 21v-2a6.5 6.5 0 0 1 13 0v2"/>
+                </svg>
+              </div>
+              <span class="dash-card-badge badge-tool">Mapa corporal</span>
+            </div>
+            <div class="dash-card-body">
+              <h3>Puntos de Presión por Postura</h3>
+              <p>Identifique las zonas que suelen recibir más presión al estar boca arriba, de lado o sentado.</p>
+              <ul class="dash-card-bullets">
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Supino: Sacro, talones y occipital.
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Lateral: Caderas (trocánteres) y tobillos.
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Sentado: Isquion y cóccix.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dash-card-footer">
+            <button type="button" class="btn-card-action" style="background: var(--secondary);" onclick="openToolTab('tab-body-map')">
+              <span>Abrir mapa corporal</span>
+              <svg class="svg-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 10: TEMPORIZADOR Y RUTINA -->
+        <article class="dash-card" data-category="herramientas">
+          <div>
+            <div class="dash-card-header">
+              <div class="dash-card-icon-box" style="background: var(--secondary-light); color: var(--secondary);">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <span class="dash-card-badge badge-tool">Organización diaria</span>
+            </div>
+            <div class="dash-card-body">
+              <h3>Recordatorio y plan diario</h3>
+              <p>Active un recordatorio y marque los cambios de posición realizados durante el día.</p>
+              <ul class="dash-card-bullets">
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Intervalo de referencia para organizar los cuidados.
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Tabla de turnos (08:00 a 22:00) con guardado.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dash-card-footer">
+            <button type="button" class="btn-card-action" style="background: var(--secondary);" onclick="openToolTab('tab-timer-planner')">
+              <span>Abrir plan diario</span>
+              <svg class="svg-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 11: SIGNOS DE ALARMA -->
+        <article class="dash-card" data-category="alertas">
+          <div>
+            <div class="dash-card-header">
+              <div class="dash-card-icon-box" style="background: var(--danger-light); color: var(--danger);">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                </svg>
+              </div>
+              <span class="dash-card-badge badge-danger">Señales de alerta</span>
+            </div>
+            <div class="dash-card-body">
+              <h3>¿Cuándo Consultar al Equipo de Salud?</h3>
+              <p>Reconozca los cambios que requieren aliviar la presión y contactar al equipo de salud.</p>
+              <ul class="dash-card-bullets">
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Enrojecimiento persistente que no blanquea.
+                </li>
+                <li>
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Ampollas, piel abierta, calor o secreciones.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dash-card-footer">
+            <button type="button" class="btn-card-action" style="background: var(--danger);" onclick="scrollToSection('seccion-consulta')">
+              <span>Ver Signos de Alerta</span>
+              <svg class="svg-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         HERRAMIENTAS PARA LA RUTINA DIARIA
+         ========================================================================== -->
+    <section class="interactive-tools-section" id="herramientas-ui" aria-labelledby="tools-heading">
+      <div class="section-header">
+        <h2 id="tools-heading">
+          <svg class="svg-icon svg-icon-lg" viewBox="0 0 24 24" style="color: var(--secondary);">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          Apoyos para organizar el cuidado diario
+        </h2>
+        <p>Planifique cambios de posición, registre la hidratación y practique cómo observar las zonas de apoyo.</p>
+      </div>
+
+      <!-- Barra de pestañas para las herramientas -->
+      <div class="tools-tab-bar" role="tablist" aria-label="Herramientas interactivas de cuidado">
+        <button class="tool-tab-btn active" data-tab="tab-body-map" role="tab" aria-selected="true">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="7" r="4"/>
+            <path d="M5.5 21v-2a6.5 6.5 0 0 1 13 0v2"/>
+          </svg>
+          Zonas de apoyo
+        </button>
+        <button class="tool-tab-btn" data-tab="tab-finger-sim" role="tab" aria-selected="false">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+          </svg>
+          Observación de la piel
+        </button>
+        <button class="tool-tab-btn" data-tab="tab-timer-planner" role="tab" aria-selected="false">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          Recordatorio y plan
+        </button>
+        <button class="tool-tab-btn" data-tab="tab-hydration" role="tab" aria-selected="false">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </svg>
+          Registro de hidratación
+        </button>
+      </div>
+
+      <!-- PESTAÑA 1: MAPA ANATÓMICO SEGÚN POSTURA -->
+      <div id="tab-body-map" class="tool-pane active" role="tabpanel">
+        <div class="body-map-container">
+          <div class="posture-selector-box">
+            <h4>
+              <svg class="svg-icon" viewBox="0 0 24 24">
+                <path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20"/>
+              </svg>
+              Seleccione la postura de la persona:
+            </h4>
+            <div class="posture-options">
+              <button type="button" class="posture-btn active" data-posture="supine">
+                <svg class="svg-icon svg-icon-lg" viewBox="0 0 24 24" style="color: var(--primary);">
+                  <rect x="2" y="10" width="20" height="8" rx="2"/>
+                  <circle cx="6" cy="14" r="2" fill="currentColor"/>
+                </svg>
+                <div>
+                  <strong>Boca arriba (Decúbito Supino)</strong>
+                  <p style="font-size: 0.82rem; color: var(--text-muted);">Apoyo en espalda, glúteos y talones</p>
+                </div>
+              </button>
+
+              <button type="button" class="posture-btn" data-posture="lateral">
+                <svg class="svg-icon svg-icon-lg" viewBox="0 0 24 24" style="color: var(--primary);">
+                  <path d="M2 14l18-4v6H2z"/>
+                  <circle cx="6" cy="12" r="2" fill="currentColor"/>
+                </svg>
+                <div>
+                  <strong>De lado a 30° (Decúbito Lateral)</strong>
+                  <p style="font-size: 0.82rem; color: var(--text-muted);">Apoyo en cadera, hombro y tobillo</p>
+                </div>
+              </button>
+
+              <button type="button" class="posture-btn" data-posture="seated">
+                <svg class="svg-icon svg-icon-lg" viewBox="0 0 24 24" style="color: var(--primary);">
+                  <circle cx="12" cy="5" r="2"/>
+                  <path d="M9 20l3-6 3 6M9 10h6v6"/>
+                </svg>
+                <div>
+                  <strong>Sentado en Silla / Sillón</strong>
+                  <p style="font-size: 0.82rem; color: var(--text-muted);">Apoyo en isquion, sacro y omóplatos</p>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <div class="body-canvas-box">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h4 id="posture-map-title" style="color: var(--primary-dark); font-size: 1.15rem; font-weight: 700;">
+                Zonas de Mayor Presión: Boca Arriba
+              </h4>
+              <span id="posture-map-badge" style="font-size: 0.8rem; background: var(--primary-light); color: var(--primary-dark); padding: 4px 10px; border-radius: var(--radius-full); font-weight: 700;">
+                5 puntos críticos
+              </span>
+            </div>
+            
+            <div id="body-points-container" class="body-points-list">
+              <!-- Contenido inyectado dinámicamente según postura -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PESTAÑA 2: SIMULADOR VISUAL DE LA PRUEBA DEL DEDO -->
+      <div id="tab-finger-sim" class="tool-pane" role="tabpanel">
+        <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 20px;">
+          Compare dos ejemplos educativos para reconocer por qué un cambio de color persistente merece atención.
+        </p>
+
+        <div class="finger-test-container">
+          <!-- Caso 1: Piel Sana -->
+          <div class="finger-test-card">
+            <h4 style="color: var(--success); font-size: 1.15rem;">
+              <svg class="svg-icon" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Ejemplo A: el color se aclara
+            </h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Presione el círculo para hacer la prueba</p>
+            
+            <div id="patch-healthy" class="skin-patch skin-healthy" role="button" tabindex="0" aria-label="Presionar parche de piel sana">
+              <span>Presione aquí</span>
+            </div>
+
+            <div id="feedback-healthy" class="test-feedback-box">
+              <strong>Instrucción:</strong> Toque el círculo para ver un ejemplo de un cambio de color que desaparece al liberar la presión.
+            </div>
+          </div>
+
+          <!-- Caso 2: cambio persistente que requiere atención -->
+          <div class="finger-test-card">
+            <h4 style="color: var(--danger); font-size: 1.15rem;">
+              <svg class="svg-icon" viewBox="0 0 24 24">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              </svg>
+              Ejemplo B: el color persiste
+            </h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Presione el círculo para hacer la prueba</p>
+
+            <div id="patch-unblanchable" class="skin-patch skin-unblanchable" role="button" tabindex="0" aria-label="Presionar parche de piel con lesión">
+              <span>Presione aquí</span>
+            </div>
+
+            <div id="feedback-unblanchable" class="test-feedback-box">
+              <strong>Instrucción:</strong> Toque el círculo. Si una zona real <em>no se aclara</em>, alivie la presión y contacte al equipo de salud.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PESTAÑA 3: TEMPORIZADOR Y PLANIFICADOR 2H -->
+      <div id="tab-timer-planner" class="tool-pane" role="tabpanel">
+        <div class="rotation-timer-container">
+          <div class="timer-box">
+            <svg class="svg-icon svg-icon-xl" viewBox="0 0 24 24" style="margin: 0 auto;">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <h4 style="font-size: 1.25rem; margin-top: 8px;">Recordatorio de cambio de posición</h4>
+            <div id="timer-display" class="timer-display">02:00:00</div>
+            <p style="font-size: 0.88rem; opacity: 0.9; margin-bottom: 15px;">Intervalo inicial de 2 horas: ajústelo al plan indicado y a la respuesta de la piel</p>
+            <div class="timer-controls">
+              <button id="btn-timer-toggle" class="btn btn-timer">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/>
+                </svg>
+                <span id="timer-btn-text">Iniciar</span>
+              </button>
+              <button id="btn-timer-reset" class="btn" style="background: rgba(255,255,255,0.2); color: white;">
+                Reiniciar
+              </button>
+            </div>
+          </div>
+
+          <div class="schedule-planner-box">
+            <h4 style="color: var(--primary-dark); font-size: 1.15rem; margin-bottom: 6px;">
+              Registro de cambios de posición
+            </h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Marque los cambios realizados y use el registro para conversar con el equipo de cuidado:</p>
+            
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Hora</th>
+                  <th>Posición de referencia</th>
+                  <th style="text-align: center;">¿Realizado?</th>
+                </tr>
+              </thead>
+              <tbody id="schedule-table-body">
+                <tr>
+                  <td><strong>08:00 hrs</strong></td>
+                  <td>Decúbito Supino (Boca arriba)</td>
+                  <td style="text-align: center;"><input type="checkbox" class="schedule-check"></td>
+                </tr>
+                <tr>
+                  <td><strong>10:00 hrs</strong></td>
+                  <td>Lateral Derecho 30° (Almohada entre piernas)</td>
+                  <td style="text-align: center;"><input type="checkbox" class="schedule-check"></td>
+                </tr>
+                <tr>
+                  <td><strong>12:00 hrs</strong></td>
+                  <td>Decúbito Supino (Boca arriba / Almuerzo)</td>
+                  <td style="text-align: center;"><input type="checkbox" class="schedule-check"></td>
+                </tr>
+                <tr>
+                  <td><strong>14:00 hrs</strong></td>
+                  <td>Lateral Izquierdo 30° (Almohada de apoyo)</td>
+                  <td style="text-align: center;"><input type="checkbox" class="schedule-check"></td>
+                </tr>
+                <tr>
+                  <td><strong>16:00 hrs</strong></td>
+                  <td>Sillón / Sedestación con cojín</td>
+                  <td style="text-align: center;"><input type="checkbox" class="schedule-check"></td>
+                </tr>
+                <tr>
+                  <td><strong>18:00 hrs</strong></td>
+                  <td>Decúbito Supino (Boca arriba)</td>
+                  <td style="text-align: center;"><input type="checkbox" class="schedule-check"></td>
+                </tr>
+                <tr>
+                  <td><strong>20:00 hrs</strong></td>
+                  <td>Lateral Derecho 30° (Higiene y descanso)</td>
+                  <td style="text-align: center;"><input type="checkbox" class="schedule-check"></td>
+                </tr>
+                <tr>
+                  <td><strong>22:00 hrs</strong></td>
+                  <td>Decúbito Supino (Nocturno)</td>
+                  <td style="text-align: center;"><input type="checkbox" class="schedule-check"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- PESTAÑA 4: REGISTRO DIARIO DE AGUA -->
+      <div id="tab-hydration" class="tool-pane" role="tabpanel">
+        <div class="hydration-tracker-box">
+          <h4 style="color: var(--primary-dark); font-size: 1.3rem;">
+            Registro diario de hidratación
+          </h4>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Marque cada vaso a medida que la persona tome líquidos. Ajuste la meta a las indicaciones de su equipo de salud.
+          </p>
+
+          <div class="glasses-grid" id="glasses-container">
+            <!-- 8 vasos interactivos generados por JS -->
+          </div>
+
+          <div class="hydration-summary" id="hydration-summary-text">
+            Vasos completados hoy: <span id="glasses-count-display">0</span> de 8 (0 Litros)
+          </div>
+          <p id="hydration-advice-text" style="font-size: 0.9rem; color: var(--text-muted); margin-top: 8px;">
+            Una buena hidratación mantiene la elasticidad de la piel y previene fisuras.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECCIÓN 1: ¿QUIÉNES TIENEN MAYOR RIESGO? -->
+    <section class="risk-section" id="seccion-riesgo" aria-labelledby="risk-heading">
+      <div class="section-header">
+        <h2 id="risk-heading">
+          <svg class="svg-icon svg-icon-lg" viewBox="0 0 24 24" style="color: var(--primary);">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          ¿Quiénes tienen mayor riesgo?
+        </h2>
+        <p>Reconocer estas situaciones ayuda a decidir dónde poner más atención y cuándo solicitar una valoración profesional.</p>
+      </div>
+
+      <div class="risk-grid">
+        <div class="risk-card">
+          <div class="risk-icon-box" aria-hidden="true">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M2 19h20M2 5v14M22 11v8M2 11h18a2 2 0 0 1 2 2v2H2"/>
+              <circle cx="7" cy="8" r="2.5"/>
+            </svg>
+          </div>
+          <h3>Movilidad reducida</h3>
+          <p>Personas que permanecen encamadas o necesitan ayuda total para cambiar de postura.</p>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-icon-box" aria-hidden="true">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="7" r="4"/>
+              <path d="M5.5 21v-2a6.5 6.5 0 0 1 13 0v2"/>
+              <path d="M9 7h6"/>
+            </svg>
+          </div>
+          <h3>Adultos mayores</h3>
+          <p>La piel de personas mayores es más fina, pierde elasticidad y capa grasa protectora.</p>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-icon-box" aria-hidden="true">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <circle cx="16" cy="4" r="2"/>
+              <path d="M14.5 9h-4l-1.5 7h5"/>
+              <circle cx="9" cy="18" r="4"/>
+              <path d="M17 18h2"/>
+            </svg>
+          </div>
+          <h3>En silla de ruedas</h3>
+          <p>La presión se concentra de manera intensa en los glúteos, isquion y zona lumbar.</p>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-icon-box" aria-hidden="true">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <h3>Piel húmeda</h3>
+          <p>Sudoración excesiva o incontinencia urinaria/fecal que debilita y reblandece la piel.</p>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-icon-box" aria-hidden="true">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/>
+              <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/>
+              <circle cx="20" cy="10" r="2"/>
+            </svg>
+          </div>
+          <h3>Enfermedades crónicas</h3>
+          <p>Diabetes, problemas circulatorios, desnutrición o baja ingesta de agua.</p>
+        </div>
+      </div>
+
+      <!-- Autoevaluación interactiva -->
+      <div class="risk-checklist-box">
+        <div class="checklist-title">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+            <path d="M9 14l2 2 4-4"/>
+          </svg>
+          <span>Revisión orientativa de factores:</span>
+        </div>
+        <p style="font-size: 0.95rem; color: #78350f; margin-bottom: 12px;">Marque las situaciones presentes. Este apoyo no calcula un diagnóstico ni reemplaza una valoración clínica.</p>
+        <div class="checklist-items">
+          <label class="check-item">
+            <input type="checkbox" class="risk-check-input"> Pasa más de 4 horas seguidas en cama o sentado.
+          </label>
+          <label class="check-item">
+            <input type="checkbox" class="risk-check-input"> Presenta incontinencia de orina o deposiciones.
+          </label>
+          <label class="check-item">
+            <input type="checkbox" class="risk-check-input"> Come poco o no bebe suficiente agua.
+          </label>
+          <label class="check-item">
+            <input type="checkbox" class="risk-check-input"> Tiene diabetes o problemas circulatorios.
+          </label>
+          <label class="check-item">
+            <input type="checkbox" class="risk-check-input"> No puede levantarse o girar sin ayuda.
+          </label>
+        </div>
+        <div id="risk-evaluation-result"></div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: ¿CUÁNDO CONSULTAR? (SIGNOS DE ALERTA) -->
+    <section class="consultation-section" id="seccion-consulta" aria-labelledby="consult-heading">
+      <div class="consultation-header">
+        <div class="consultation-icon-box" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <div>
+          <h2 id="consult-heading">¿Cuándo consultar al equipo de salud?</h2>
+          <p style="color: #9f1239; font-size: 1.05rem;">Alivie la presión sobre la zona y contacte al equipo de salud si observa alguno de estos cambios:</p>
+        </div>
+      </div>
+
+      <div class="alarm-signs-grid">
+        <div class="alarm-card">
+          <h4>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="4" fill="currentColor"/>
+            </svg>
+            Enrojecimiento persistente
+          </h4>
+          <p>Zona roja sobre un hueso que <strong>no desaparece</strong> ni palidece al presionar suavemente durante unos segundos.</p>
+        </div>
+
+        <div class="alarm-card">
+          <h4>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14h-2v-2h2zm0-4h-2V7h2z"/>
+            </svg>
+            Piel abierta o ampollas
+          </h4>
+          <p>Aparición de grietas, pérdida de la capa superficial de la piel, ampollas con líquido o pequeñas úlceras.</p>
+        </div>
+
+        <div class="alarm-card">
+          <h4>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+            </svg>
+            Cambios de temperatura y dolor
+          </h4>
+          <p>Sensación de calor intenso al tacto, hinchazón, endurecimiento del área o manifestación de dolor.</p>
+        </div>
+
+        <div class="alarm-card">
+          <h4>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            Coloración oscura o secreción
+          </h4>
+          <p>Piel violácea, morada, negra (tejido muerto) o con presencia de mal olor o secreciones.</p>
+        </div>
+      </div>
+
+      <div class="consult-reminder">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        <span>¡Recuerde! La detección temprana previene complicaciones graves e infecciones. No aplique alcohol ni cremas sin indicación profesional sobre piel abierta.</span>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: RECONOCIMIENTO Y APOYO AL CUIDADOR -->
+    <section class="caregiver-support-section" aria-labelledby="caregiver-heading">
+      <span class="caregiver-badge">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        Para la Familia y Cuidadores
+      </span>
+      <h2 class="caregiver-title" id="caregiver-heading">Cuidar también incluye cuidarse</h2>
+      <p class="caregiver-quote">Su observación y constancia son una parte importante del bienestar diario.</p>
+
+      <div class="caregiver-tips-grid">
+        <div class="caregiver-tip-card">
+          <h4>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+            Observe
+          </h4>
+          <p>Mire la piel todos los días con luz adecuada. La vista y el tacto suave son sus mejores herramientas.</p>
+        </div>
+
+        <div class="caregiver-tip-card">
+          <h4>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            Cuide
+          </h4>
+          <p>Realice la higiene suave, sin frotar con fuerza. Hidrate y asegúrese de que la ropa no tenga arrugas.</p>
+        </div>
+
+        <div class="caregiver-tip-card">
+          <h4>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Prevenga
+          </h4>
+          <p>Siga el horario individual de cambios de posición y use los apoyos indicados para la cama o la silla.</p>
+        </div>
+
+        <div class="caregiver-tip-card">
+          <h4>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="8.5" cy="7" r="4"/>
+              <polyline points="17 11 19 13 23 9"/>
+            </svg>
+            Acompañe
+          </h4>
+          <p>Usted no está solo. Pida ayuda a otros familiares y a los profesionales de salud siempre que lo necesite.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       MODALES DETALLADOS (<dialog>) PARA CADA BOTÓN DE CONSEJO
+       ========================================================================== -->
+
+  <!-- 1. MODAL: CAMBIOS DE POSICIÓN EN LA CAMA -->
+  <dialog id="dialog-cama" class="advice-dialog" aria-labelledby="dialog-cama-title">
+    <div class="dialog-header">
+      <div class="dialog-title-box">
+        <span class="dialog-header-icon" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/>
+          </svg>
+        </span>
+        <h3 id="dialog-cama-title">En la Cama: Cambios de Posición Recomendados</h3>
+      </div>
+      <button class="dialog-close-btn" aria-label="Cerrar ventana">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="dialog-body">
+      <div class="dialog-tts-control">
+        <span class="dialog-tts-label">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+          ¿Prefiere escuchar la explicación?
+        </span>
+        <button class="btn-speech">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/>
+          </svg>
+          <span>Escuchar consejo</span>
+        </button>
+      </div>
+
+      <div class="dialog-content-block">
+        <h4>
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          Regla de oro de los cambios posturales:
+        </h4>
+        <ul class="custom-list">
+          <li><strong>En cama:</strong> Siga un intervalo individualizado según movilidad, piel, comodidad y superficie de apoyo. Dos horas puede ser una referencia inicial cuando así lo indique el plan.</li>
+          <li><strong>En silla o sillón:</strong> Ayude a cambiar los puntos de apoyo con la frecuencia acordada para la persona y revise su comodidad.</li>
+        </ul>
+      </div>
+
+      <div class="dialog-content-block">
+        <h4>
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polyline points="23 4 23 10 17 10"/>
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+          </svg>
+          Secuencia de rotación recomendada:
+        </h4>
+        <div class="rotation-scheme">
+          <div class="rotation-step">
+            <div class="step-time">08:00 hrs</div>
+            <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="10" width="20" height="8" rx="2"/>
+              <circle cx="6" cy="14" r="2" fill="currentColor"/>
+            </svg>
+            <div class="step-name">Decúbito Supino<br><small>(Boca arriba)</small></div>
+          </div>
+          <div class="rotation-step">
+            <div class="step-time">10:00 hrs</div>
+            <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 14l18-4v6H2z"/>
+              <circle cx="6" cy="12" r="2" fill="currentColor"/>
+            </svg>
+            <div class="step-name">Lateral Derecho<br><small>(De lado derecho 30°)</small></div>
+          </div>
+          <div class="rotation-step">
+            <div class="step-time">12:00 hrs</div>
+            <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="10" width="20" height="8" rx="2"/>
+              <circle cx="6" cy="14" r="2" fill="currentColor"/>
+            </svg>
+            <div class="step-name">Decúbito Supino<br><small>(Boca arriba)</small></div>
+          </div>
+          <div class="rotation-step">
+            <div class="step-time">14:00 hrs</div>
+            <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 14L4 10v6h18z"/>
+              <circle cx="18" cy="12" r="2" fill="currentColor"/>
+            </svg>
+            <div class="step-name">Lateral Izquierdo<br><small>(De lado izquierdo 30°)</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dialog-content-block">
+        <h4>
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+          Consejos prácticos para la colocación:
+        </h4>
+        <ul class="custom-list">
+          <li>Al colocar a la persona de lado, use una inclinación de unos <strong>30 grados</strong> (no apoye directo sobre el hueso de la cadera).</li>
+          <li>Coloque una almohada o cojín suave entre las rodillas y tobillos para evitar el roce directo hueso con hueso.</li>
+          <li>Coloque una almohada bajo la pantorrilla para que los <strong>talones queden suspendidos en el aire</strong> sin tocar el colchón.</li>
+          <li>No arrastre a la persona al moverla; use la técnica y los apoyos indicados para reducir el roce y proteger también al cuidador.</li>
+        </ul>
+      </div>
+
+      <div class="dialog-tip-box">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        <span><em>Consejo: Lleve un pequeño cuaderno o anote en un reloj los horarios de rotación para mantener una rutina ordenada.</em></span>
+      </div>
+    </div>
+
+    <div class="dialog-footer">
+      <button class="btn btn-close-dialog" style="background: var(--primary); color: white;">Entendido</button>
+    </div>
+  </dialog>
+
+  <!-- 2. MODAL: ALIMENTACIÓN E HIDRATACIÓN -->
+  <dialog id="dialog-comida" class="advice-dialog" aria-labelledby="dialog-comida-title">
+    <div class="dialog-header">
+      <div class="dialog-title-box">
+        <span class="dialog-header-icon" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+            <line x1="6" y1="1" x2="6" y2="4"/>
+            <line x1="10" y1="1" x2="10" y2="4"/>
+          </svg>
+        </span>
+        <h3 id="dialog-comida-title">En la Comida: Alimentación e Hidratación</h3>
+      </div>
+      <button class="dialog-close-btn" aria-label="Cerrar ventana">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="dialog-body">
+      <div class="dialog-tts-control">
+        <span class="dialog-tts-label">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+          ¿Prefiere escuchar la explicación?
+        </span>
+        <button class="btn-speech">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/>
+          </svg>
+          <span>Escuchar consejo</span>
+        </button>
+      </div>
+
+      <div class="dialog-content-block">
+        <p>Una alimentación equilibrada y una hidratación óptima fortalecen las capas internas de la piel, haciéndola más resistente y acelerando la cicatrización.</p>
+      </div>
+
+      <div class="dialog-content-block">
+        <h4>
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          1. Proteínas (Los bloques de la piel):
+        </h4>
+        <ul class="custom-list">
+          <li>Son esenciales para mantener el tejido muscular y cutáneo.</li>
+          <li><strong>Alimentos recomendados:</strong> Huevos, pollo, pescados (como el salmón), lácteos (leche, queso, yogur) y legumbres (lentejas, porotos, garbanzos).</li>
+        </ul>
+      </div>
+
+      <div class="dialog-content-block">
+        <h4>
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v4l3 3"/>
+          </svg>
+          2. Vitaminas y Minerales (Defensa y colágeno):
+        </h4>
+        <ul class="custom-list">
+          <li><strong>Vitamina C y A:</strong> Frutas cítricas, frutillas, kiwi, zanahorias, tomates y verduras de hoja verde.</li>
+          <li><strong>Zinc:</strong> Ayuda a reparar la piel dañada.</li>
+        </ul>
+      </div>
+
+      <div class="dialog-content-block">
+        <h4>
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </svg>
+          3. Hidratación constante:
+        </h4>
+        <ul class="custom-list">
+          <li>Ofrezca líquidos de acuerdo con la meta individual indicada, considerando restricciones, preferencias y capacidad para tragar.</li>
+          <li>Puede complementar con sopas nutritivas, infusiones o gelatinas.</li>
+          <li>La piel deshidratada se vuelve frágil y se agrieta con facilidad.</li>
+        </ul>
+      </div>
+
+      <div class="dialog-tip-box">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        <span><em>Si a la persona le cuesta tragar, solicite una evaluación profesional antes de cambiar la consistencia de alimentos o líquidos.</em></span>
+      </div>
+    </div>
+
+    <div class="dialog-footer">
+      <button class="btn btn-close-dialog" style="background: var(--primary); color: white;">Entendido</button>
+    </div>
+  </dialog>
+
+  <!-- 3. MODAL: USAR SUPERFICIES ADECUADAS -->
+  <dialog id="dialog-asiento" class="advice-dialog" aria-labelledby="dialog-asiento-title">
+    <div class="dialog-header">
+      <div class="dialog-title-box">
+        <span class="dialog-header-icon" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <rect x="3" y="11" width="18" height="9" rx="3"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </span>
+        <h3 id="dialog-asiento-title">En el Asiento y Cama: Superficies Adecuadas</h3>
+      </div>
+      <button class="dialog-close-btn" aria-label="Cerrar ventana">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="dialog-body">
+      <div class="dialog-tts-control">
+        <span class="dialog-tts-label">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+          ¿Prefiere escuchar la explicación?
+        </span>
+        <button class="btn-speech">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/>
+          </svg>
+          <span>Escuchar consejo</span>
+        </button>
+      </div>
+
+      <div class="dialog-content-block">
+        <h4>
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Superficies de Alivio de Presión:
+        </h4>
+        <ul class="custom-list">
+          <li><strong>Colchones especiales:</strong> Utilice sobrecolchones de aire alternante (tipo panal de abeja o tubos) o colchones viscoelásticos que redistribuyan el peso corporal.</li>
+          <li><strong>Cojines para sillas y sillones:</strong> Si la persona pasa tiempo sentada o en silla de ruedas, utilice cojines viscoelásticos o de celdas de aire diseñados para personas con movilidad reducida.</li>
+          <li><strong>Evite los flotadores tipo rosquilla dura:</strong> Pueden cortar la circulación sanguínea central en la zona sacra. Prefiera cojines con descarga anatómica.</li>
+        </ul>
+      </div>
+
+      <div class="dialog-content-block">
+        <h4>
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <line x1="2" y1="10" x2="22" y2="10"/>
+          </svg>
+          Cuidado con sábanas y ropa:
+        </h4>
+        <ul class="custom-list">
+          <li>Mantenga las sábanas de la cama <strong>completamente lisas y estiradas</strong>, sin arrugas ni pliegues que actúen como puntos de presión.</li>
+          <li>Verifique que la ropa sea suave y no tenga botones, costuras gruesas o cierres sobre las zonas de apoyo.</li>
+          <li>No coloque objetos (como mandos, tubos o pinzas) bajo el cuerpo de la persona.</li>
+        </ul>
+      </div>
+
+      <div class="dialog-tip-box">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        <span><em>Importante: Los colchones y cojines especiales ayudan enormemente, pero NO reemplazan los cambios de posición periódicos.</em></span>
+      </div>
+    </div>
+
+    <div class="dialog-footer">
+      <button class="btn btn-close-dialog" style="background: var(--primary); color: white;">Entendido</button>
+    </div>
+  </dialog>
+
+  <!-- 4. MODAL: MOVILICE Y ACTIVE -->
+  <dialog id="dialog-movilidad" class="advice-dialog" aria-labelledby="dialog-movilidad-title">
+    <div class="dialog-header">
+      <div class="dialog-title-box">
+        <span class="dialog-header-icon" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="5" r="2.5"/>
+            <path d="M9 20l3-6 3 6M6 11l6-2 6 2M12 9v5"/>
+          </svg>
+        </span>
+        <h3 id="dialog-movilidad-title">En la Paciente: Movilice y Active</h3>
+      </div>
+      <button class="dialog-close-btn" aria-label="Cerrar ventana">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="dialog-body">
+      <div class="dialog-tts-control">
+        <span class="dialog-tts-label">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+          ¿Prefiere escuchar la explicación?
+        </span>
+        <button class="btn-speech">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/>
+          </svg>
+          <span>Escuchar consejo</span>
+        </button>
+      </div>
+
+      <div class="dialog-content-block">
+        <p>El movimiento activa la circulación de la sangre, lleva oxígeno a los tejidos y mantiene las articulaciones flexibles y libres de rigidez.</p>
+      </div>
+
+      <div class="dialog-content-block">
+        <h4>
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M18 15l-6-6-6 6"/>
+          </svg>
+          Movilidad Activa y Asistida:
+        </h4>
+        <ul class="custom-list">
+          <li><strong>Fomente la autonomía:</strong> Anime a la persona a moverse por sí misma en la medida de sus capacidades (mover tobillos, flexionar rodillas, extender brazos).</li>
+          <li><strong>Movilizaciones pasivas suaves:</strong> Si la persona no puede moverse sola, el cuidador puede realizar flexiones y extensiones lentas y suaves de brazos, piernas y tobillos 2 a 3 veces al día.</li>
+          <li><strong>Cambio de ambiente:</strong> Si es seguro, alterne periodos entre la cama, el sillón cómodo y pequeñas caminatas con andador o bastón.</li>
+          <li><strong>Pausas de alivio en silla:</strong> Si la persona está en silla de ruedas, ayúdela a inclinarse ligeramente hacia un lado y luego hacia el otro cada 30 a 60 minutos para liberar la presión.</li>
+        </ul>
+      </div>
+
+      <div class="dialog-tip-box">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        <span><em>Nunca fuerce un movimiento si la persona manifiesta dolor. Realícelo con calma y siguiendo las indicaciones de seguridad.</em></span>
+      </div>
+    </div>
+
+    <div class="dialog-footer">
+      <button class="btn btn-close-dialog" style="background: var(--primary); color: white;">Entendido</button>
+    </div>
+  </dialog>
+
+  <!-- 5. MODAL: REVISE LA PIEL TODOS LOS DÍAS -->
+  <dialog id="dialog-revision" class="advice-dialog" aria-labelledby="dialog-revision-title">
+    <div class="dialog-header">
+      <div class="dialog-title-box">
+        <span class="dialog-header-icon" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </span>
+        <h3 id="dialog-revision-title">La Piel de la Paciente: Revise Todos los Días</h3>
+      </div>
+      <button class="dialog-close-btn" aria-label="Cerrar ventana">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="dialog-body">
+      <div class="dialog-tts-control">
+        <span class="dialog-tts-label">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+          ¿Prefiere escuchar la explicación?
+        </span>
+        <button class="btn-speech">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/>
+          </svg>
+          <span>Escuchar consejo</span>
+        </button>
+      </div>
+
+      <div class="dialog-content-block">
+        <p>Revise la piel de cuerpo entero al menos <strong>una vez al día</strong>, preferentemente durante el baño o en los cambios de postura, con buena iluminación.</p>
+      </div>
+
+      <div class="dialog-content-block">
+        <h4>
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          Puntos críticos de mayor presión a inspeccionar:
+        </h4>
+        <div class="pressure-points-tags">
+          <span class="pressure-tag">1. Cabeza y Nuca (Occipital)</span>
+          <span class="pressure-tag">2. Hombros y Omóplatos</span>
+          <span class="pressure-tag">3. Codos</span>
+          <span class="pressure-tag">4. Sacro (Columna baja / rabadilla)</span>
+          <span class="pressure-tag">5. Caderas (Trocánteres)</span>
+          <span class="pressure-tag">6. Glúteos</span>
+          <span class="pressure-tag">7. Rodillas</span>
+          <span class="pressure-tag">8. Talones y Tobillos</span>
+        </div>
+      </div>
+
+      <div class="dialog-content-block">
+        <h4>
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+          </svg>
+          La técnica de la prueba del dedo:
+        </h4>
+        <ul class="custom-list">
+          <li>Si observa un área enrojecida, presione suavemente con la yema del dedo durante 3 segundos y suelte.</li>
+          <li><strong>Piel sana:</strong> Al retirar el dedo, la piel se pone blanca momentáneamente y recupera su color en 1-2 segundos.</li>
+          <li><strong>Cambio persistente de color:</strong> Si la zona no se aclara al presionar o cambia respecto de la piel cercana, puede ser una señal temprana de lesión. Alivie la presión y contacte al equipo de salud.</li>
+        </ul>
+      </div>
+
+      <div class="dialog-tip-box">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        <span><em>Tome una fotografía con buena luz si nota un área sospechosa para que el médico o enfermera pueda evaluar su evolución.</em></span>
+      </div>
+    </div>
+
+    <div class="dialog-footer">
+      <button class="btn btn-close-dialog" style="background: var(--primary); color: white;">Entendido</button>
+    </div>
+  </dialog>
+
+  <!-- 6. MODAL: MANTENER PIEL LIMPIA Y SECA -->
+  <dialog id="dialog-higiene" class="advice-dialog" aria-labelledby="dialog-higiene-title">
+    <div class="dialog-header">
+      <div class="dialog-title-box">
+        <span class="dialog-header-icon" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M12 2v4M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>
+          </svg>
+        </span>
+        <h3 id="dialog-higiene-title">Cuidado de la Piel: Mantener Limpia y Seca</h3>
+      </div>
+      <button class="dialog-close-btn" aria-label="Cerrar ventana">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="dialog-body">
+      <div class="dialog-tts-control">
+        <span class="dialog-tts-label">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+          ¿Prefiere escuchar la explicación?
+        </span>
+        <button class="btn-speech">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/>
+          </svg>
+          <span>Escuchar consejo</span>
+        </button>
+      </div>
+
+      <div class="dialog-content-block">
+        <h4>
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </svg>
+          1. Higiene suave:
+        </h4>
+        <ul class="custom-list">
+          <li>Lave la piel diariamente con agua tibia y jabones neutros o limpiadores con pH similar al de la piel (pH 5.5).</li>
+          <li>Limpie con especial dedicación tras episodios de sudoración, orina o deposiciones para evitar la irritación por humedad.</li>
+          <li><strong>Secado sin frotar:</strong> Seque la piel dando suaves toques con una toalla de algodón suave, prestando especial atención a los pliegues (debajo del pecho, ingles, entre los dedos). ¡Nunca frote con fuerza!</li>
+        </ul>
+      </div>
+
+      <div class="dialog-content-block">
+        <h4>
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          2. Hidratación y Protección:
+        </h4>
+        <ul class="custom-list">
+          <li>Aplique cremas hidratantes o lociones emolientes en todo el cuerpo para mantener la piel flexible.</li>
+          <li>Use <strong>aceites de ácidos grasos hiperoxigenados (AGHO)</strong> en zonas de apoyo si están indicados.</li>
+          <li><strong>¡NO masajear sobre huesos prominentes!</strong> El masaje enérgico sobre zonas óseas puede romper vasos sanguíneos debilitados.</li>
+          <li>En caso de incontinencia, aplique cremas barrera (con óxido de zinc o dimeticona) para aislar la piel de la humedad.</li>
+        </ul>
+      </div>
+
+      <div class="dialog-tip-box">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        <span><em>Cambie los pañales o absorbentes tan pronto como estén húmedos.</em></span>
+      </div>
+    </div>
+
+    <div class="dialog-footer">
+      <button class="btn btn-close-dialog" style="background: var(--primary); color: white;">Entendido</button>
+    </div>
+  </dialog>
+
+  <!-- 7. MODAL: RECUERDE (PENSAMIENTO DE LA PACIENTE) -->
+  <dialog id="dialog-recuerde" class="advice-dialog" aria-labelledby="dialog-recuerde-title">
+    <div class="dialog-header thought-header">
+      <div class="dialog-title-box">
+        <span class="dialog-header-icon" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </span>
+        <h3 id="dialog-recuerde-title">Recuerde: Mensaje para el Cuidador</h3>
+      </div>
+      <button class="dialog-close-btn" aria-label="Cerrar ventana">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="dialog-body">
+      <div class="dialog-tts-control">
+        <span class="dialog-tts-label">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+          ¿Prefiere escuchar la explicación?
+        </span>
+        <button class="btn-speech">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/>
+          </svg>
+          <span>Escuchar consejo</span>
+        </button>
+      </div>
+
+      <div class="dialog-content-block">
+        <div style="background: #fae8ff; border-left: 5px solid #a855f7; padding: 16px; border-radius: var(--radius-sm); margin-bottom: 20px;">
+          <h4 style="color: #6b21a8; font-size: 1.2rem; margin-bottom: 6px;">
+            <svg class="svg-icon" viewBox="0 0 24 24" style="color: #9333ea;">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            "Prevenir es más fácil que tratar"
+          </h4>
+          <p style="color: #581c87; font-size: 1rem;">Pequeñas acciones todos los días marcan una gran diferencia en la salud, comodidad y calidad de vida de su ser querido.</p>
+        </div>
+      </div>
+
+      <div class="dialog-content-block">
+        <h4>
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Los 4 Pilares del Cuidado Diario:
+        </h4>
+        <ul class="custom-list">
+          <li><strong>1. Observe:</strong> Mire la piel a diario en busca de cambios mínimos de color.</li>
+          <li><strong>2. Cuide:</strong> Limpie con suavidad e hidrate sin frotar.</li>
+          <li><strong>3. Prevenga:</strong> Rote de posición y use superficies que alivien la presión.</li>
+          <li><strong>4. Acompañe:</strong> Brinde cariño, paciencia y conversación nutritiva.</li>
+        </ul>
+      </div>
+
+      <div class="dialog-content-block">
+        <h4>
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          Autocuidado del Cuidador:
+        </h4>
+        <ul class="custom-list">
+          <li>Usted como cuidador es una pieza fundamental. Para cuidar bien, <strong>usted también debe cuidarse</strong>.</li>
+          <li>Cuide su espalda y utilice técnicas de movilización seguras; pida ayuda o equipos de apoyo cuando sean necesarios.</li>
+          <li>Tómese pausas de descanso y no dude en pedir apoyo a otros familiares o redes de salud.</li>
+        </ul>
+      </div>
+
+      <div class="dialog-tip-box" style="background: #fdf4ff; border-color: #d946ef; color: #86198f;">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <span><em>¡Muchas gracias por su dedicación, entrega y cariño diario!</em></span>
+      </div>
+    </div>
+
+    <div class="dialog-footer">
+      <button class="btn btn-close-dialog" style="background: #9333ea; color: white;">Entendido</button>
+    </div>
+  </dialog>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <svg class="svg-icon svg-icon-lg" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M12 8v8M8 12h8"/>
+        </svg>
+        <span>Cuidado de la piel en casa</span>
+      </div>
+      <p class="footer-text">Guía educativa para acompañar la prevención cotidiana: observación de la piel, cambios de posición, higiene, apoyos, alimentación, hidratación y señales de alerta. Adapte la rutina con el equipo de salud.</p>
+      <div class="footer-copy">
+        &copy; 2026 Guía de cuidado en casa. Información clara para familiares y cuidadores.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -430,7 +430,7 @@ const postureData = {
         name: 'Orejas y Pómulos',
         risk: 'Bajo',
         riskClass: 'point-medium',
-        tip: 'Verifique que la oreja no quede doblada sobre la枕 almohada.'
+        tip: 'Verifique que la oreja no quede doblada sobre la almohada.'
       }
     ]
   },
@@ -863,6 +863,16 @@ const knowledgeBase = [
     iconSvg: '<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>',
     keywords: 'registro agua vasos meta hidratacion diaria 8 vasos 2 litros líquidos beber contador',
     snippet: 'Registre los líquidos y adapte la referencia a la meta indicada para la persona.'
+  },
+  {
+    id: 'video_educativo',
+    type: 'section',
+    target: 'video-educativo',
+    title: 'Video Guía: Rotación cada 2 Horas y Regla de los 30°',
+    category: 'Video y Animación',
+    iconSvg: '<polygon points="5 3 19 12 5 21 5 3"/>',
+    keywords: 'video animacion motion graphic rotacion 2 horas regla 30 grados trocanter talones flotantes explicacion visual postura reloj',
+    snippet: 'Animación pedagógica que muestra el ciclo de giros y cómo evitar apoyar a 90° sobre la cadera.'
   }
 ];
 

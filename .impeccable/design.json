@@ -1,0 +1,741 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-01T19:42:58+00:00",
+  "title": "Design System: CuidaPiel",
+  "extensions": {
+    "colorMeta": {
+      "cielo": {
+        "role": "primary",
+        "displayName": "Arpillera Night Indigo",
+        "canonical": "#1f2a6e",
+        "oklch": "oklch(32.1% 0.118 271.1)",
+        "tonalRamp": [
+          "oklch(15.0% 0.118 271.1)",
+          "oklch(26.4% 0.118 271.1)",
+          "oklch(37.9% 0.118 271.1)",
+          "oklch(49.3% 0.118 271.1)",
+          "oklch(60.7% 0.118 271.1)",
+          "oklch(72.1% 0.118 271.1)",
+          "oklch(83.6% 0.118 271.1)",
+          "oklch(95.0% 0.118 271.1)"
+        ]
+      },
+      "cielo-hondo": {
+        "role": "primary",
+        "displayName": "Deep Sky Indigo",
+        "canonical": "#141b4d",
+        "oklch": "oklch(25.1% 0.092 272.0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.092 272.0)",
+          "oklch(26.4% 0.092 272.0)",
+          "oklch(37.9% 0.092 272.0)",
+          "oklch(49.3% 0.092 272.0)",
+          "oklch(60.7% 0.092 272.0)",
+          "oklch(72.1% 0.092 272.0)",
+          "oklch(83.6% 0.092 272.0)",
+          "oklch(95.0% 0.092 272.0)"
+        ]
+      },
+      "cielo-claro": {
+        "role": "primary",
+        "displayName": "Dusk Indigo",
+        "canonical": "#3a4aa6",
+        "oklch": "oklch(45.0% 0.148 271.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.148 271.7)",
+          "oklch(26.4% 0.148 271.7)",
+          "oklch(37.9% 0.148 271.7)",
+          "oklch(49.3% 0.148 271.7)",
+          "oklch(60.7% 0.148 271.7)",
+          "oklch(72.1% 0.148 271.7)",
+          "oklch(83.6% 0.148 271.7)",
+          "oklch(95.0% 0.148 271.7)"
+        ]
+      },
+      "noche": {
+        "role": "primary",
+        "displayName": "Midnight",
+        "canonical": "#0e1440",
+        "oklch": "oklch(21.9% 0.083 271.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.083 271.7)",
+          "oklch(26.4% 0.083 271.7)",
+          "oklch(37.9% 0.083 271.7)",
+          "oklch(49.3% 0.083 271.7)",
+          "oklch(60.7% 0.083 271.7)",
+          "oklch(72.1% 0.083 271.7)",
+          "oklch(83.6% 0.083 271.7)",
+          "oklch(95.0% 0.083 271.7)"
+        ]
+      },
+      "sol": {
+        "role": "secondary",
+        "displayName": "Arpillera Sun",
+        "canonical": "#f4b400",
+        "oklch": "oklch(80.8% 0.166 82.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.166 82.7)",
+          "oklch(26.4% 0.166 82.7)",
+          "oklch(37.9% 0.166 82.7)",
+          "oklch(49.3% 0.166 82.7)",
+          "oklch(60.7% 0.166 82.7)",
+          "oklch(72.1% 0.166 82.7)",
+          "oklch(83.6% 0.166 82.7)",
+          "oklch(95.0% 0.166 82.7)"
+        ]
+      },
+      "sol-claro": {
+        "role": "secondary",
+        "displayName": "Pale Sun",
+        "canonical": "#ffe08a",
+        "oklch": "oklch(91.4% 0.111 90.3)",
+        "tonalRamp": [
+          "oklch(15.0% 0.111 90.3)",
+          "oklch(26.4% 0.111 90.3)",
+          "oklch(37.9% 0.111 90.3)",
+          "oklch(49.3% 0.111 90.3)",
+          "oklch(60.7% 0.111 90.3)",
+          "oklch(72.1% 0.111 90.3)",
+          "oklch(83.6% 0.111 90.3)",
+          "oklch(95.0% 0.111 90.3)"
+        ]
+      },
+      "turquesa": {
+        "role": "tertiary",
+        "displayName": "Lagoon Turquoise",
+        "canonical": "#0b6e75",
+        "oklch": "oklch(49.1% 0.081 202.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.081 202.8)",
+          "oklch(26.4% 0.081 202.8)",
+          "oklch(37.9% 0.081 202.8)",
+          "oklch(49.3% 0.081 202.8)",
+          "oklch(60.7% 0.081 202.8)",
+          "oklch(72.1% 0.081 202.8)",
+          "oklch(83.6% 0.081 202.8)",
+          "oklch(95.0% 0.081 202.8)"
+        ]
+      },
+      "turquesa-claro": {
+        "role": "tertiary",
+        "displayName": "Sea Glass",
+        "canonical": "#8fe0d8",
+        "oklch": "oklch(85.2% 0.080 187.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.080 187.8)",
+          "oklch(26.4% 0.080 187.8)",
+          "oklch(37.9% 0.080 187.8)",
+          "oklch(49.3% 0.080 187.8)",
+          "oklch(60.7% 0.080 187.8)",
+          "oklch(72.1% 0.080 187.8)",
+          "oklch(83.6% 0.080 187.8)",
+          "oklch(95.0% 0.080 187.8)"
+        ]
+      },
+      "fucsia": {
+        "role": "tertiary",
+        "displayName": "Arpillera Fuchsia",
+        "canonical": "#a3195b",
+        "oklch": "oklch(47.5% 0.177 358.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.177 358.5)",
+          "oklch(26.4% 0.177 358.5)",
+          "oklch(37.9% 0.177 358.5)",
+          "oklch(49.3% 0.177 358.5)",
+          "oklch(60.7% 0.177 358.5)",
+          "oklch(72.1% 0.177 358.5)",
+          "oklch(83.6% 0.177 358.5)",
+          "oklch(95.0% 0.177 358.5)"
+        ]
+      },
+      "fucsia-claro": {
+        "role": "tertiary",
+        "displayName": "Rose Wash",
+        "canonical": "#f8b4d4",
+        "oklch": "oklch(84.2% 0.088 349.3)",
+        "tonalRamp": [
+          "oklch(15.0% 0.088 349.3)",
+          "oklch(26.4% 0.088 349.3)",
+          "oklch(37.9% 0.088 349.3)",
+          "oklch(49.3% 0.088 349.3)",
+          "oklch(60.7% 0.088 349.3)",
+          "oklch(72.1% 0.088 349.3)",
+          "oklch(83.6% 0.088 349.3)",
+          "oklch(95.0% 0.088 349.3)"
+        ]
+      },
+      "cordillera": {
+        "role": "tertiary",
+        "displayName": "Cordillera Green",
+        "canonical": "#2b6e3a",
+        "oklch": "oklch(48.1% 0.107 148.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.107 148.4)",
+          "oklch(26.4% 0.107 148.4)",
+          "oklch(37.9% 0.107 148.4)",
+          "oklch(49.3% 0.107 148.4)",
+          "oklch(60.7% 0.107 148.4)",
+          "oklch(72.1% 0.107 148.4)",
+          "oklch(83.6% 0.107 148.4)",
+          "oklch(95.0% 0.107 148.4)"
+        ]
+      },
+      "cordillera-claro": {
+        "role": "tertiary",
+        "displayName": "Meadow Wash",
+        "canonical": "#b4e6a8",
+        "oklch": "oklch(87.4% 0.098 139.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.098 139.6)",
+          "oklch(26.4% 0.098 139.6)",
+          "oklch(37.9% 0.098 139.6)",
+          "oklch(49.3% 0.098 139.6)",
+          "oklch(60.7% 0.098 139.6)",
+          "oklch(72.1% 0.098 139.6)",
+          "oklch(83.6% 0.098 139.6)",
+          "oklch(95.0% 0.098 139.6)"
+        ]
+      },
+      "lila": {
+        "role": "tertiary",
+        "displayName": "Violet Hill",
+        "canonical": "#5a3a93",
+        "oklch": "oklch(43.3% 0.141 296.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.141 296.7)",
+          "oklch(26.4% 0.141 296.7)",
+          "oklch(37.9% 0.141 296.7)",
+          "oklch(49.3% 0.141 296.7)",
+          "oklch(60.7% 0.141 296.7)",
+          "oklch(72.1% 0.141 296.7)",
+          "oklch(83.6% 0.141 296.7)",
+          "oklch(95.0% 0.141 296.7)"
+        ]
+      },
+      "lila-claro": {
+        "role": "tertiary",
+        "displayName": "Lavender Wash",
+        "canonical": "#d4c4f2",
+        "oklch": "oklch(84.8% 0.065 300.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.065 300.9)",
+          "oklch(26.4% 0.065 300.9)",
+          "oklch(37.9% 0.065 300.9)",
+          "oklch(49.3% 0.065 300.9)",
+          "oklch(60.7% 0.065 300.9)",
+          "oklch(72.1% 0.065 300.9)",
+          "oklch(83.6% 0.065 300.9)",
+          "oklch(95.0% 0.065 300.9)"
+        ]
+      },
+      "naranjo": {
+        "role": "tertiary",
+        "displayName": "Copper Orange",
+        "canonical": "#c4501a",
+        "oklch": "oklch(57.6% 0.161 41.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.161 41.8)",
+          "oklch(26.4% 0.161 41.8)",
+          "oklch(37.9% 0.161 41.8)",
+          "oklch(49.3% 0.161 41.8)",
+          "oklch(60.7% 0.161 41.8)",
+          "oklch(72.1% 0.161 41.8)",
+          "oklch(83.6% 0.161 41.8)",
+          "oklch(95.0% 0.161 41.8)"
+        ]
+      },
+      "naranjo-claro": {
+        "role": "tertiary",
+        "displayName": "Apricot Wash",
+        "canonical": "#ffc6a3",
+        "oklch": "oklch(86.9% 0.080 52.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.080 52.9)",
+          "oklch(26.4% 0.080 52.9)",
+          "oklch(37.9% 0.080 52.9)",
+          "oklch(49.3% 0.080 52.9)",
+          "oklch(60.7% 0.080 52.9)",
+          "oklch(72.1% 0.080 52.9)",
+          "oklch(83.6% 0.080 52.9)",
+          "oklch(95.0% 0.080 52.9)"
+        ]
+      },
+      "alarma": {
+        "role": "error",
+        "displayName": "Clinical Red",
+        "canonical": "#b3261e",
+        "oklch": "oklch(50.1% 0.178 28.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.178 28.7)",
+          "oklch(26.4% 0.178 28.7)",
+          "oklch(37.9% 0.178 28.7)",
+          "oklch(49.3% 0.178 28.7)",
+          "oklch(60.7% 0.178 28.7)",
+          "oklch(72.1% 0.178 28.7)",
+          "oklch(83.6% 0.178 28.7)",
+          "oklch(95.0% 0.178 28.7)"
+        ]
+      },
+      "alarma-claro": {
+        "role": "error",
+        "displayName": "Blush Alert",
+        "canonical": "#ffd3cf",
+        "oklch": "oklch(90.3% 0.050 24.2)",
+        "tonalRamp": [
+          "oklch(15.0% 0.050 24.2)",
+          "oklch(26.4% 0.050 24.2)",
+          "oklch(37.9% 0.050 24.2)",
+          "oklch(49.3% 0.050 24.2)",
+          "oklch(60.7% 0.050 24.2)",
+          "oklch(72.1% 0.050 24.2)",
+          "oklch(83.6% 0.050 24.2)",
+          "oklch(95.0% 0.050 24.2)"
+        ]
+      },
+      "lienzo": {
+        "role": "neutral",
+        "displayName": "Linen",
+        "canonical": "#fcfaf5",
+        "oklch": "oklch(98.5% 0.007 88.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.007 88.6)",
+          "oklch(26.4% 0.007 88.6)",
+          "oklch(37.9% 0.007 88.6)",
+          "oklch(49.3% 0.007 88.6)",
+          "oklch(60.7% 0.007 88.6)",
+          "oklch(72.1% 0.007 88.6)",
+          "oklch(83.6% 0.007 88.6)",
+          "oklch(95.0% 0.007 88.6)"
+        ]
+      },
+      "lienzo-2": {
+        "role": "neutral",
+        "displayName": "Raw Linen",
+        "canonical": "#f1eee6",
+        "oklch": "oklch(94.9% 0.011 89.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.011 89.7)",
+          "oklch(26.4% 0.011 89.7)",
+          "oklch(37.9% 0.011 89.7)",
+          "oklch(49.3% 0.011 89.7)",
+          "oklch(60.7% 0.011 89.7)",
+          "oklch(72.1% 0.011 89.7)",
+          "oklch(83.6% 0.011 89.7)",
+          "oklch(95.0% 0.011 89.7)"
+        ]
+      },
+      "tinta": {
+        "role": "neutral",
+        "displayName": "Indigo Ink",
+        "canonical": "#141b4d",
+        "oklch": "oklch(25.1% 0.092 272.0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.092 272.0)",
+          "oklch(26.4% 0.092 272.0)",
+          "oklch(37.9% 0.092 272.0)",
+          "oklch(49.3% 0.092 272.0)",
+          "oklch(60.7% 0.092 272.0)",
+          "oklch(72.1% 0.092 272.0)",
+          "oklch(83.6% 0.092 272.0)",
+          "oklch(95.0% 0.092 272.0)"
+        ]
+      },
+      "tinta-suave": {
+        "role": "neutral",
+        "displayName": "Faded Ink",
+        "canonical": "#3b4270",
+        "oklch": "oklch(39.5% 0.078 275.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.078 275.7)",
+          "oklch(26.4% 0.078 275.7)",
+          "oklch(37.9% 0.078 275.7)",
+          "oklch(49.3% 0.078 275.7)",
+          "oklch(60.7% 0.078 275.7)",
+          "oklch(72.1% 0.078 275.7)",
+          "oklch(83.6% 0.078 275.7)",
+          "oklch(95.0% 0.078 275.7)"
+        ]
+      },
+      "piel-sana": {
+        "role": "tertiary",
+        "displayName": "Healthy Skin",
+        "canonical": "#f5b49a",
+        "oklch": "oklch(82.4% 0.084 42.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.084 42.7)",
+          "oklch(26.4% 0.084 42.7)",
+          "oklch(37.9% 0.084 42.7)",
+          "oklch(49.3% 0.084 42.7)",
+          "oklch(60.7% 0.084 42.7)",
+          "oklch(72.1% 0.084 42.7)",
+          "oklch(83.6% 0.084 42.7)",
+          "oklch(95.0% 0.084 42.7)"
+        ]
+      },
+      "hilo-blanco": {
+        "role": "neutral",
+        "displayName": "White Thread",
+        "canonical": "rgba(255, 255, 255, 0.72)",
+        "tonalRamp": [
+          "rgba(255, 255, 255, 0.12)",
+          "rgba(255, 255, 255, 0.20)",
+          "rgba(255, 255, 255, 0.28)",
+          "rgba(255, 255, 255, 0.35)",
+          "rgba(255, 255, 255, 0.50)",
+          "rgba(255, 255, 255, 0.60)",
+          "rgba(255, 255, 255, 0.72)",
+          "rgba(255, 255, 255, 0.85)"
+        ],
+        "note": "Translucent thread; ramp steps alpha (as used across the build) instead of lightness."
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Felt Display",
+        "purpose": "Hero headline only; Londrina Solid 900, uppercase, max 12ch; locks to 2.45rem below 600px."
+      },
+      "headline": {
+        "displayName": "Section Headline",
+        "purpose": "Section titles; Londrina Solid 400, uppercase, max 16ch."
+      },
+      "title": {
+        "displayName": "Panel Title",
+        "purpose": "Care-panel titles and the quiz statement; Londrina Solid 400, uppercase."
+      },
+      "title-sm": {
+        "displayName": "Cloth Subhead",
+        "purpose": "Subheads sewn on cloth (risk factors, last 7 days, badges, footer) and the Mi día patch title; uppercase."
+      },
+      "numeral": {
+        "displayName": "Readout Numeral",
+        "purpose": "Live counts and times; 3.4rem next-change time, stepping down to 2–2.6rem in smaller patches."
+      },
+      "heading": {
+        "displayName": "Patch Heading",
+        "purpose": "Headings inside linen patches and semáforo lights; Atkinson 800."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Hero and section intros; 1.375rem from 900px; max 38–54ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All prose at 19px; the reading floor never drops below 1rem."
+      },
+      "label": {
+        "displayName": "Button Label",
+        "purpose": "Buttons and legends; Atkinson 800, sentence case."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Notes, dates, footer text."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sombra-baja",
+        "value": "0 4px 10px -4px rgba(10, 14, 50, 0.45), 0 1px 2px rgba(10, 14, 50, 0.2)",
+        "purpose": "Resting buttons, selected care tab and position tile, stepper keys, slider thumb, chart tooltip."
+      },
+      {
+        "name": "sombra",
+        "value": "0 10px 22px -10px rgba(10, 14, 50, 0.55), 0 2px 5px rgba(10, 14, 50, 0.22)",
+        "purpose": "Linen patches, semáforo lights, toast, button hover."
+      },
+      {
+        "name": "band-drop",
+        "value": "0 18px 30px -18px rgba(5, 8, 30, 0.7)",
+        "purpose": "Under each fabric band only."
+      },
+      {
+        "name": "dialog-drop",
+        "value": "0 30px 60px -20px rgba(5, 8, 30, 0.7)",
+        "purpose": "Search dialog over a 72% midnight backdrop."
+      },
+      {
+        "name": "luz-activa",
+        "value": "0 0 0 5px var(--sol), 0 22px 34px -16px rgba(5, 8, 30, 0.8)",
+        "purpose": "The semáforo light that applies today."
+      },
+      {
+        "name": "pressed",
+        "value": "0 1px 3px rgba(10, 14, 50, 0.35)",
+        "purpose": "Button :active, sunk 1px."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 4px solid var(--sol); outline-offset: 3px; box-shadow: 0 0 0 7px var(--cielo-hondo)",
+        "purpose": "Global :focus-visible ring (custom tiles: 4px sol outline, 2px offset)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Every state transition and sewing animation."
+      },
+      {
+        "name": "control",
+        "value": "160–180ms",
+        "purpose": "Button lift/press, tab and listen background changes."
+      },
+      {
+        "name": "light",
+        "value": "300ms",
+        "purpose": "Semáforo light activation (scale 1.02 + ring)."
+      },
+      {
+        "name": "toast",
+        "value": "320ms",
+        "purpose": "Toast rises 24px and fades in."
+      },
+      {
+        "name": "fill",
+        "value": "420–500ms",
+        "purpose": "Water glass filling, thread progress bar scaleX."
+      },
+      {
+        "name": "needle",
+        "value": "600ms",
+        "purpose": "Risk-scale needle slide."
+      },
+      {
+        "name": "cruz",
+        "value": "260ms + 160ms delay",
+        "purpose": "Cross-stitch X: two strokes drawn in sequence."
+      },
+      {
+        "name": "coser",
+        "value": "900ms",
+        "purpose": "New thread-clock arc sews itself in (stroke-dashoffset); knot pops after 600ms."
+      },
+      {
+        "name": "bordado",
+        "value": "900ms",
+        "purpose": "Newly earned badge: scale 0.6→1.12→1 with a small rotation."
+      },
+      {
+        "name": "latido",
+        "value": "2.4s infinite",
+        "purpose": "Dashed pulse ring on pressure points; removed under reduced motion."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "1ms",
+        "purpose": "prefers-reduced-motion collapses all animation and transition durations to 1ms."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "single-column-floor",
+        "value": "380px",
+        "purpose": "Below: position tiles and quiz answers stack to one column."
+      },
+      {
+        "name": "hero-compact",
+        "value": "600px",
+        "purpose": "Below: hero h1 2.45rem, ghost alarm button hidden (bottom nav carries Alarma)."
+      },
+      {
+        "name": "wide-gutter",
+        "value": "700px",
+        "purpose": "Gutter 32px, patch padding 30px, band inset 20px, toolbar labels inline."
+      },
+      {
+        "name": "desktop-chrome",
+        "value": "900px",
+        "purpose": "Bottom nav hides, band padding 96/104px, section head goes two-column, lead 1.375rem."
+      },
+      {
+        "name": "two-column",
+        "value": "960px",
+        "purpose": "Hero, causes and care tour split; care tabs become a sticky column."
+      },
+      {
+        "name": "two-column-tools",
+        "value": "1000px",
+        "purpose": "Mi día, quiz, semáforo and skin-check grids split."
+      },
+      {
+        "name": "full-nav",
+        "value": "1180px",
+        "purpose": "Desktop section links appear in the top bar."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (Sol)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Sun-yellow sewn patch with an inner running stitch; one per decision.",
+      "html": "<button class=\"ds-btn-sol\" type=\"button\">Empezar el recorrido <svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/></svg></button>",
+      "css": ".ds-btn-sol { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 56px; padding: 0.6rem 1.4rem; border: 2px solid transparent; border-radius: 16px 12px 16px 12px / 12px 16px 12px 16px; background: var(--sol, #f4b400); color: var(--cielo-hondo, #141b4d); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 800; font-size: 1.125rem; line-height: 1.15; box-shadow: 0 4px 10px -4px rgba(10, 14, 50, 0.45), 0 1px 2px rgba(10, 14, 50, 0.2); cursor: pointer; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-sol:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -10px rgba(10, 14, 50, 0.55), 0 2px 5px rgba(10, 14, 50, 0.22); } .ds-btn-sol:active { transform: translateY(1px); box-shadow: 0 1px 3px rgba(10, 14, 50, 0.35); } .ds-btn-sol:focus-visible { outline: 4px solid var(--sol, #f4b400); outline-offset: 3px; box-shadow: 0 0 0 7px var(--cielo-hondo, #141b4d); } .ds-btn-sol::after { content: \"\"; position: absolute; inset: 5px; border: 3px dashed color-mix(in srgb, var(--cielo-hondo, #141b4d) 38%, transparent); border-radius: inherit; pointer-events: none; } .ds-icon { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Sky Button (Cielo)",
+      "kind": "button",
+      "refersTo": "button-cielo",
+      "description": "Indigo sewn patch with white-thread stitch; quick logs and next steps on linen.",
+      "html": "<button class=\"ds-btn-cielo\" type=\"button\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8\"/><path d=\"M21 3v5h-5\"/></svg> Ya cambié de posición</button>",
+      "css": ".ds-btn-cielo { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 56px; padding: 0.6rem 1.4rem; border: 2px solid transparent; border-radius: 16px 12px 16px 12px / 12px 16px 12px 16px; background: var(--cielo, #1f2a6e); color: #fff; font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 800; font-size: 1.125rem; line-height: 1.15; box-shadow: 0 4px 10px -4px rgba(10, 14, 50, 0.45), 0 1px 2px rgba(10, 14, 50, 0.2); cursor: pointer; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-cielo:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -10px rgba(10, 14, 50, 0.55), 0 2px 5px rgba(10, 14, 50, 0.22); } .ds-btn-cielo:active { transform: translateY(1px); box-shadow: 0 1px 3px rgba(10, 14, 50, 0.35); } .ds-btn-cielo:focus-visible { outline: 4px solid var(--sol, #f4b400); outline-offset: 3px; box-shadow: 0 0 0 7px var(--cielo-hondo, #141b4d); } .ds-btn-cielo::after { content: \"\"; position: absolute; inset: 5px; border: 3px dashed var(--hilo-blanco, rgba(255, 255, 255, 0.72)); border-radius: inherit; pointer-events: none; } .ds-icon { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Secondary Button (Linen)",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Linen face, solid indigo edge, no stitch: secondary actions never look like placeholders.",
+      "html": "<button class=\"ds-btn-linen\" type=\"button\">Siguiente cuidado <svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-linen { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 56px; padding: 0.6rem 1.4rem; border: 2px solid rgba(20, 27, 77, 0.22); border-radius: 16px 12px 16px 12px / 12px 16px 12px 16px; background: var(--lienzo, #fcfaf5); color: var(--tinta, #141b4d); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 800; font-size: 1.125rem; line-height: 1.15; box-shadow: 0 4px 10px -4px rgba(10, 14, 50, 0.45), 0 1px 2px rgba(10, 14, 50, 0.2); cursor: pointer; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-linen:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -10px rgba(10, 14, 50, 0.55), 0 2px 5px rgba(10, 14, 50, 0.22); } .ds-btn-linen:active { transform: translateY(1px); box-shadow: 0 1px 3px rgba(10, 14, 50, 0.35); } .ds-btn-linen:focus-visible { outline: 4px solid var(--sol, #f4b400); outline-offset: 3px; box-shadow: 0 0 0 7px var(--cielo-hondo, #141b4d); } .ds-icon { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Linen Patch",
+      "kind": "card",
+      "refersTo": "patch",
+      "description": "The reading surface: woven linen, hand-cut corners, inner stitch dyed with the patch's hue mixed into deep indigo.",
+      "html": "<article class=\"ds-patch\"><h3 class=\"ds-patch-title\">Cambie de posición</h3><p class=\"ds-patch-text\">Moverse deja que la sangre vuelva a la piel que estaba apretada.</p></article>",
+      "css": ".ds-patch { --hilo: color-mix(in srgb, var(--fucsia, #a3195b) 82%, var(--cielo-hondo, #141b4d)); position: relative; max-width: 420px; padding: 30px; background: repeating-linear-gradient(0deg, rgba(20, 27, 77, 0.028) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(20, 27, 77, 0.022) 0 1px, transparent 1px 3px), var(--lienzo, #fcfaf5); color: var(--tinta, #141b4d); border-radius: 26px 18px 28px 16px / 18px 26px 16px 28px; box-shadow: 0 10px 22px -10px rgba(10, 14, 50, 0.55), 0 2px 5px rgba(10, 14, 50, 0.22); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); } .ds-patch::before { content: \"\"; position: absolute; inset: 9px; border: 3.5px dashed var(--hilo); border-radius: inherit; pointer-events: none; } .ds-patch > * { position: relative; margin: 0; } .ds-patch-title { font-family: var(--f-display, \"Londrina Solid\", \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 400; text-transform: uppercase; font-size: 2.4rem; line-height: 0.98; letter-spacing: 0.01em; } .ds-patch-text { margin-top: 10px; font-size: 1.25rem; line-height: 1.45; color: var(--tinta-suave, #3b4270); }"
+    },
+    {
+      "name": "Fabric Band",
+      "kind": "custom",
+      "refersTo": "band",
+      "description": "Section fabric: saturated hue under a faint weave, pinked zigzag top and bottom, inset white running-stitch seam.",
+      "html": "<div class=\"ds-band-stage\"><section class=\"ds-band\"><h2 class=\"ds-band-title\">¿Por qué aparece una lesión por presión?</h2><p class=\"ds-band-text\">La presión aprieta la piel contra el hueso y la sangre deja de llegar.</p></section></div>",
+      "css": ".ds-band-stage { background: var(--cielo, #1f2a6e); padding: 28px 12px; } .ds-band { --band: var(--turquesa, #0b6e75); position: relative; padding: 48px 36px 52px; color: #fff; font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0 1px, transparent 1px 3px), var(--band); outline: 3px dashed var(--hilo-blanco, rgba(255, 255, 255, 0.72)); outline-offset: -12px; box-shadow: 0 18px 30px -18px rgba(5, 8, 30, 0.7); } .ds-band::before { content: \"\"; position: absolute; left: 0; right: 0; top: -13px; height: 14px; background: linear-gradient(-45deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x, linear-gradient(45deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x; } .ds-band::after { content: \"\"; position: absolute; left: 0; right: 0; top: calc(100% - 1px); height: 14px; background: linear-gradient(-135deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x, linear-gradient(135deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x; } .ds-band-title { margin: 0; max-width: 16ch; font-family: var(--f-display, \"Londrina Solid\", \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 400; text-transform: uppercase; font-size: clamp(2.15rem, 1.5rem + 2.6vw, 3.4rem); line-height: 0.98; letter-spacing: 0.01em; } .ds-band-text { margin: 14px 0 0; max-width: 54ch; font-size: 1.25rem; line-height: 1.5; }"
+    },
+    {
+      "name": "Semáforo Light (Rojo)",
+      "kind": "custom",
+      "refersTo": "luz-rojo",
+      "description": "Alarm light as a sewn patch: hue + bulb icon + colour-named title + what-to-do box; shown in its active (applies today) state with the sol ring.",
+      "html": "<div class=\"ds-luz is-activa\"><span class=\"ds-luz-bulbo\"><svg class=\"ds-luz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/></svg></span><div class=\"ds-luz-body\"><h3 class=\"ds-luz-title\">Rojo: consulte hoy</h3><p class=\"ds-luz-que\">Zona roja que no se pone blanca al presionar, ampolla o piel abierta.</p><p class=\"ds-luz-hacer\">No apoye a la persona sobre esa zona y consulte hoy a su equipo de salud.</p></div></div>",
+      "css": ".ds-luz { position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 16px; align-items: start; max-width: 520px; padding: 22px; border-radius: 26px 18px 28px 16px / 18px 26px 16px 28px; background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0 1px, transparent 1px 3px), var(--alarma, #b3261e); color: #fff; box-shadow: 0 10px 22px -10px rgba(10, 14, 50, 0.55), 0 2px 5px rgba(10, 14, 50, 0.22); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-luz::before { content: \"\"; position: absolute; inset: 8px; border: 3px dashed rgba(255, 255, 255, 0.7); border-radius: inherit; pointer-events: none; } .ds-luz > * { position: relative; } .ds-luz.is-activa { transform: scale(1.02); box-shadow: 0 0 0 5px var(--sol, #f4b400), 0 22px 34px -16px rgba(5, 8, 30, 0.8); } .ds-luz-bulbo { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: #fff; color: var(--alarma, #b3261e); } .ds-luz-icon { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; } .ds-luz-title { margin: 0; font-size: 1.375rem; font-weight: 800; line-height: 1.2; } .ds-luz-que { margin: 4px 0 0; font-size: 1.0625rem; line-height: 1.5; } .ds-luz-hacer { margin: 10px 0 0; padding: 10px 12px; border-radius: 12px; background: rgba(0, 0, 0, 0.22); font-weight: 700; font-size: 1.0625rem; line-height: 1.45; }"
+    },
+    {
+      "name": "Care Tab",
+      "kind": "nav",
+      "refersTo": "cuidado-tab",
+      "description": "Tab on the sol band; selected tab is the only tab state sewn down (inner white stitch).",
+      "html": "<div class=\"ds-tabs-stage\" role=\"tablist\"><button class=\"ds-tab\" role=\"tab\" aria-selected=\"true\"><span class=\"ds-tab-num\"><svg class=\"ds-tab-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8\"/><path d=\"M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4\"/><path d=\"M12 4v6\"/><path d=\"M2 18h20\"/></svg></span>Cambie de posición</button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\"><span class=\"ds-tab-num\"><svg class=\"ds-tab-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z\"/><path d=\"M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97\"/></svg></span>Piel limpia y seca</button></div>",
+      "css": ".ds-tabs-stage { display: flex; flex-direction: column; gap: 10px; max-width: 300px; padding: 20px; background: var(--sol, #f4b400); } .ds-tab { position: relative; display: flex; align-items: center; gap: 12px; min-height: 60px; padding: 10px 16px 10px 12px; border: 0; border-radius: 16px 12px 16px 12px / 12px 16px 12px 16px; background: rgba(255, 255, 255, 0.55); color: var(--cielo-hondo, #141b4d); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 800; font-size: 1.0625rem; text-align: left; cursor: pointer; transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-tab:hover { background: rgba(255, 255, 255, 0.8); } .ds-tab:focus-visible { outline: 4px solid var(--sol, #f4b400); outline-offset: 3px; box-shadow: 0 0 0 7px var(--cielo-hondo, #141b4d); } .ds-tab[aria-selected=\"true\"] { background: var(--cielo-hondo, #141b4d); color: #fff; box-shadow: 0 4px 10px -4px rgba(10, 14, 50, 0.45), 0 1px 2px rgba(10, 14, 50, 0.2); } .ds-tab[aria-selected=\"true\"]::after { content: \"\"; position: absolute; inset: 5px; border: 2px dashed var(--hilo-blanco, rgba(255, 255, 255, 0.72)); border-radius: inherit; pointer-events: none; } .ds-tab-num { display: grid; place-items: center; width: 38px; height: 38px; flex: none; border-radius: 50%; background: var(--sol, #f4b400); color: var(--cielo-hondo, #141b4d); border: 2px solid rgba(20, 27, 77, 0.45); } .ds-tab-icon { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Cross-Stitch Checkbox",
+      "kind": "input",
+      "refersTo": "cruz-box",
+      "description": "Daily check row: solid-edged box; checking stitches a fuchsia X, stroke by stroke.",
+      "html": "<label class=\"ds-cruz\"><input type=\"checkbox\" checked><span class=\"ds-cruz-box\" aria-hidden=\"true\"><svg viewBox=\"0 0 30 30\"><path d=\"M7 7l16 16\"/><path d=\"M23 7L7 23\"/></svg></span><span class=\"ds-cruz-text\"><strong>Revisé la piel con buena luz</strong><span>Sacro, glúteos, talones, caderas, codos y nuca.</span></span></label>",
+      "css": ".ds-cruz { position: relative; display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: start; max-width: 420px; padding: 10px 12px; border-radius: 14px; background: var(--lienzo-2, #f1eee6); color: var(--tinta, #141b4d); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); cursor: pointer; } .ds-cruz input { position: absolute; opacity: 0; width: 1px; height: 1px; } .ds-cruz-box { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 10px; background: #fff; border: 3px solid rgba(20, 27, 77, 0.45); } .ds-cruz-box svg { width: 30px; height: 30px; } .ds-cruz-box path { fill: none; stroke: var(--fucsia, #a3195b); stroke-width: 4.5; stroke-linecap: round; stroke-dasharray: 32; stroke-dashoffset: 32; transition: stroke-dashoffset 260ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-cruz-box path + path { transition-delay: 160ms; } .ds-cruz input:checked ~ .ds-cruz-box { border-color: var(--fucsia, #a3195b); } .ds-cruz input:checked ~ .ds-cruz-box path { stroke-dashoffset: 0; } .ds-cruz input:focus-visible ~ .ds-cruz-box { outline: 4px solid var(--sol, #f4b400); outline-offset: 2px; } .ds-cruz-text strong { display: block; font-size: 1.0625rem; line-height: 1.3; } .ds-cruz-text span { display: block; margin-top: 2px; font-size: 0.9375rem; line-height: 1.35; color: var(--tinta-suave, #3b4270); }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Raw-linen field with a solid 3px deep-indigo edge; focus rings the whole field in sol.",
+      "html": "<label class=\"ds-search\"><svg class=\"ds-search-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m21 21-4.34-4.34\"/><circle cx=\"11\" cy=\"11\" r=\"8\"/></svg><input type=\"search\" placeholder=\"Busque: talones, agua, ampolla…\" aria-label=\"Buscar\"></label>",
+      "css": ".ds-search { display: flex; align-items: center; gap: 10px; max-width: 520px; padding: 0 14px; border-radius: 14px; background: var(--lienzo-2, #f1eee6); border: 3px solid var(--cielo-hondo, #141b4d); color: var(--tinta, #141b4d); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); } .ds-search:focus-within { outline: 4px solid var(--sol, #f4b400); outline-offset: 2px; } .ds-search input { flex: 1; min-height: 56px; border: 0; background: transparent; font: inherit; font-size: 1.25rem; color: inherit; outline: none; } .ds-search input::placeholder { color: var(--tinta-suave, #3b4270); } .ds-search-icon { width: 1.5em; height: 1.5em; flex: none; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Bottom Navigation",
+      "kind": "nav",
+      "refersTo": "bottomnav",
+      "description": "Phone-only 76px bar on deep sky with a dashed seam; Alarma always last and always sol.",
+      "html": "<nav class=\"ds-bottomnav\" aria-label=\"Accesos rápidos\"><a href=\"#\" aria-current=\"true\"><svg class=\"ds-bn-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\"/><path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/></svg>Inicio</a><a href=\"#\"><svg class=\"ds-bn-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v16\"/><path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\"/></svg>Aprender</a><a href=\"#\"><svg class=\"ds-bn-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 2v3\"/><path d=\"M16 2v3\"/><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M3 9h18\"/><path d=\"m9 15 2 2 4-4\"/></svg>Mi día</a><a href=\"#\"><svg class=\"ds-bn-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><line x1=\"6\" x2=\"10\" y1=\"11\" y2=\"11\"/><line x1=\"8\" x2=\"8\" y1=\"9\" y2=\"13\"/><line x1=\"15\" x2=\"15.01\" y1=\"12\" y2=\"12\"/><line x1=\"18\" x2=\"18.01\" y1=\"10\" y2=\"10\"/><path d=\"M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z\"/></svg>Jugar</a><a href=\"#\" class=\"is-alarma\"><svg class=\"ds-bn-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/></svg>Alarma</a></nav>",
+      "css": ".ds-bottomnav { display: grid; grid-template-columns: repeat(5, 1fr); max-width: 420px; background: var(--cielo-hondo, #141b4d); border-top: 2px dashed rgba(255, 255, 255, 0.28); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); } .ds-bottomnav a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-width: 0; min-height: 76px; color: #fff; text-decoration: none; font-size: 0.9375rem; font-weight: 700; text-align: center; } .ds-bottomnav a:hover, .ds-bottomnav a[aria-current=\"true\"] { background: rgba(255, 255, 255, 0.1); } .ds-bottomnav a:focus-visible { outline: 4px solid var(--sol, #f4b400); outline-offset: 3px; box-shadow: 0 0 0 7px var(--cielo-hondo, #141b4d); border-radius: 10px; } .ds-bottomnav a.is-alarma { color: var(--sol, #f4b400); } .ds-bn-icon { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Night-Sky Arpillera",
+    "overview": "CuidaPiel is sewn, not printed. It takes the form of a Chilean arpillera: scraps of saturated cloth stitched onto a sack-cloth ground to tell a story. Here the ground is a deep indigo night sky with a stitched cordillera, little houses and a sun. Each section of the guide is a band of coloured fabric cut with pinking shears and sewn onto that sky with a running stitch. The reading happens on linen patches stitched onto the bands. Every daily action the family logs becomes another stitch: an arc of thread on the clock, a cross stitch on the checklist, an embroidered badge.\n\nThe system is built for older patients and carers with low vision, tremor and little digital experience, so the textile world never costs legibility. Body text is a large hyperlegible humanist sans on linen at about 15:1 contrast. Controls are fat and easy to hit, with 48px as the minimum and 56px for standard buttons. Every alarm carries an icon and words, never colour alone. The density is generous: one idea per patch and one decision per control. The display letters are blocky caps that look cut from felt and appliquéd on, which gives the page a handmade voice. The prose stays plain and calm. The system explicitly rejects the white clinical health app with its row of identical white cards and a teal accent.\n\nDepth is cloth lying on cloth: sky, then band, then patch, with short, soft shadows tinted indigo. Motion means sewing. A new clock arc draws itself like a stitch pulled through, a knot pops in, and a new badge spins into place as if embroidered. All motion collapses when `prefers-reduced-motion` is set.",
+    "keyCharacteristics": [
+      "Deep indigo sky as the permanent ground, with no white pages.",
+      "Saturated fabric bands with zigzag pinked edges and an inset running-stitch seam.",
+      "Linen reading patches with hand-cut asymmetric corners and a dashed thread dyed to match the patch.",
+      "Londrina Solid uppercase display over Atkinson Hyperlegible Next body at 19px.",
+      "A sun-yellow primary action, with a stitch earned only by primary actions and sewn-down surfaces.",
+      "Clinical colour always paired with an icon and text, plus high-contrast and three text-size modes built in."
+    ],
+    "rules": [
+      {
+        "name": "The Sky Ground Rule",
+        "body": "The page is never white. Cielo is the ground under everything, and linen appears only as a sewn patch with its stitched edge.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dyed Thread Rule",
+        "body": "Stitches are never grey. On dark or saturated cloth the thread is white (hilo-blanco). On linen it is the patch's hue mixed into deep indigo: `color-mix(in srgb, <hue> 82%, var(--cielo-hondo))`.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sun Means Act Rule",
+        "body": "Sol yellow marks what to do now: primary buttons, the focus ring, pressed toggles and numbered steps. On a sol surface the ink is always cielo-hondo.",
+        "section": "colors"
+      },
+      {
+        "name": "The Red Is Clinical Rule",
+        "body": "Alarma red is spent only on clinical warning: pressure points, \"Evite\", the rojo light, a position change that is overdue, and the urgencia thread. A wrong quiz answer is naranjo, never alarma.",
+        "section": "colors"
+      },
+      {
+        "name": "The Never Color Alone Rule",
+        "body": "Every status colour travels with an icon and words. The semáforo lights carry a bulb icon and a \"Verde / Amarillo / Rojo / Urgencia\" title, the Haga and Evite lists carry a check or a cross, and the risk scale carries labels.",
+        "section": "colors"
+      },
+      {
+        "name": "The Felt Caps Rule",
+        "body": "Londrina Solid is set in uppercase and used only for display: headlines, panel titles, the brand, numerals and the pillar ribbon. Buttons, labels, legends and prose are always set in Atkinson Hyperlegible Next.",
+        "section": "typography"
+      },
+      {
+        "name": "The 19-Pixel Floor Rule",
+        "body": "Body text is 1.1875rem. Reading text never drops below 1rem, and every size is set in rem, so the Letra control (100%, 112.5% and 125% on `html[data-texto]`) scales the whole page.",
+        "section": "typography"
+      },
+      {
+        "name": "The Inset Band Rule",
+        "body": "A band never touches the viewport edge and never butts against the next band. The sky must always show around it.",
+        "section": "layout"
+      },
+      {
+        "name": "The Cloth-on-Cloth Rule",
+        "body": "Shadows are short, soft and indigo-tinted. Never use black, never use a hard offset, and never use a glow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Lift Rule",
+        "body": "A button rises 2px and gains the full shadow on hover, and sinks 1px with a near-flat shadow when pressed (180ms on `--ease-out`).",
+        "section": "elevation"
+      },
+      {
+        "name": "The Hand-Cut Corner Rule",
+        "body": "Surfaces that represent a piece of cloth (patches, lights, buttons, tabs) use the asymmetric radii above. Symmetric radii are kept for controls nested inside cloth.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Earned Stitch Rule",
+        "body": "The running stitch marks only what is sewn down: patch and light edges, the primary sol and cielo buttons, section seams, the selected care tab, and embroidered ornaments (pillar ribbon, badges, thread clock, brand mark). Idle secondary buttons, checkboxes, radio and position tiles, chips, inputs and tiles keep solid edges, because older users with little digital experience read a dashed-only outline as a placeholder or a disabled control.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** set every page on the cielo sky and put any reading longer than a short list on a linen patch with the `--trama-clara` weave.",
+      "**Do** give every patch its own thread: `--hilo: color-mix(in srgb, <patch hue> 82%, var(--cielo-hondo))`, 3.5px dashed, inset 9px.",
+      "**Do** keep every touch target at 48px or more: 56px buttons, 48px small buttons and listen pills, 60px tabs and position tiles, and 52px option tiles and segments.",
+      "**Do** pair every status colour with an icon and words, as the semáforo, the Haga/Evite lists and judged quiz answers do.",
+      "**Do** use the one focus ring everywhere: a 4px sol outline, a 3px offset and a 7px cielo-hondo halo (4px sol, 2px offset on custom tiles).",
+      "**Do** set sizes in rem and colours through `:root` tokens, so the Letra sizes (112.5% and 125%) and `html[data-contraste=\"alto\"]` reach every new component.",
+      "**Do** draw icons from the Lucide stroke sprite at stroke 2.1 with round caps and joins, sized 1.5em (1.15em in buttons), and coloured by currentColor.",
+      "**Do** animate on `--ease-out` (`cubic-bezier(0.16, 1, 0.3, 1)`), keep control transitions at 160–180ms, and let `prefers-reduced-motion` collapse everything to 1ms."
+    ],
+    "donts": [
+      "**Don't** build the white clinical health app: a white page of identical cards with a teal accent.",
+      "**Don't** put a running stitch on an idle secondary button, checkbox, radio or position tile, chip, input or tile. Those keep solid edges.",
+      "**Don't** set Londrina Solid in lowercase, in buttons, in form labels or in paragraphs.",
+      "**Don't** use grey. Borders are indigo at 22–45% alpha or white thread, and shadows are tinted indigo. Never use black shadows or hard offset shadows.",
+      "**Don't** spend alarma red on anything but clinical warning. Quiz mistakes are naranjo.",
+      "**Don't** let a band run to the viewport edge or touch the next band.",
+      "**Don't** add a small uppercase label above a headline. A section head is its headline, one sentence and the Escuchar button."
+    ]
+  }
+}

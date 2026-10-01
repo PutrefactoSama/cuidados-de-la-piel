@@ -14,6 +14,7 @@ Visualmente es una **arpillera chilena**: cielo índigo con cordillera, parches 
 | **Revisar la piel** | Mapa de puntos de presión en tres posturas (boca arriba, de lado, sentado) y simulador de la **prueba del dedo** (zona que blanquea y zona que no). |
 | **Mi día** | Reloj de hilo de 24 h con los cambios de posición (intervalo de 2, 3 o 4 h según el equipo de salud; 1 h si está sentado), registro de vasos de agua, lista de revisión diaria con punto cruz y resumen de los últimos 7 días. Se puede imprimir. |
 | **Aprenda jugando** | Diez afirmaciones «¿mito o verdad?», insignias bordadas y **Mi progreso**: historial de partidas con gráfico, comparación entre la primera y la última, y temas para repasar. |
+| **Mis desafíos de hospitalización** | Prueba de ingreso (12 preguntas, forma A) → desafío diario de 3 preguntas con racha → 3 desafíos prácticos (almohadas, puntos de presión, semáforo de la piel) → prueba de alta (forma B, paralela) → resumen de ingreso y alta por tema, exportable en CSV, imprimible y copiable. Usa un código seudónimo, nunca nombre ni RUT. |
 | **¿Cuándo pedir ayuda?** | Semáforo (verde, amarillo, rojo y urgencia) con un revisor de señales que indica qué hacer. |
 | **Mi riesgo** | Autoevaluación orientativa de 6 preguntas inspirada en la escala de Braden (puntaje de 6 a 23). |
 | **Para quien cuida** | Apoyo a la persona cuidadora. |
@@ -33,6 +34,13 @@ El contenido se revisó contra la evidencia:
 
 Se eliminaron afirmaciones sin respaldo de la versión anterior («95 % prevenible», «Protocolo Oficial», el aval institucional y un teléfono de ejemplo). El video se volvió a generar con el texto corregido.
 
+## Evaluación durante la hospitalización
+
+- El banco de preguntas está en `js/banco.js`: 12 competencias en 6 dominios, con formas paralelas A y B y un pool diario. **Está en proceso de validación.**
+- El protocolo de validación (I-CVI, κ\*, S-CVI, entrevistas cognitivas, KR-20, análisis de ingreso frente a alta) está en `docs/validacion-banco.md`.
+- La planilla para el panel de expertos, con fórmulas automáticas, es `docs/validacion-expertos.xlsx`. Se regenera con `node scripts/exportar-banco.mjs && python3 scripts/generar-planilla-validacion.py`.
+- Cada paciente descarga al alta un CSV con una fila y las mismas columnas. Para analizar el grupo, basta juntar los archivos.
+
 ## Estructura
 
 ```
@@ -40,6 +48,10 @@ Se eliminaron afirmaciones sin respaldo de la versión anterior («95 % prevenib
 ├── index.html               # Página única con todo el contenido
 ├── css/styles.css           # Mundo arpillera: tokens, parches, bandas, accesibilidad, impresión
 ├── js/app.js                # Interacciones: reloj, agua, juego, mapa, prueba del dedo, semáforo, riesgo, TTS
+├── js/banco.js              # Banco de preguntas (formas A/B y pool diario)
+├── js/desafios.js           # Desafíos de hospitalización: ingreso, diario, prácticos, alta, CSV
+├── docs/                    # Protocolo de validación, banco exportado y planilla de expertos
+├── scripts/                 # Exportación del banco y generador de la planilla
 ├── fonts/                   # Atkinson Hyperlegible Next y Londrina Solid (OFL), alojadas en el sitio
 ├── images/                  # Ilustraciones (WebP), íconos y póster del video
 ├── videos/                  # Video de rotación postural y su composición HyperFrames

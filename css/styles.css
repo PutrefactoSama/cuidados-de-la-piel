@@ -3183,6 +3183,596 @@ html {
   transform-origin: center;
 }
 
+/* ---------- Mis desafíos de hospitalización ---------- */
+.band-naranjo {
+  --band: var(--naranjo);
+}
+.desafios-grid {
+  display: grid;
+  gap: 22px;
+}
+@media (min-width: 1000px) {
+  .desafios-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+.desafios-grid > *,
+.desafio-col > * {
+  min-width: 0;
+}
+.desafio-col {
+  display: grid;
+  gap: 22px;
+}
+.desafios .patch {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+.revision-final {
+  margin-top: 22px;
+}
+.pasos {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+.pasos li {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+.paso-num {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--naranjo);
+  color: #fff;
+  font-family: var(--f-display);
+  font-size: 1.6rem;
+}
+.pasos strong {
+  display: block;
+  font-size: 1.1875rem;
+}
+.pasos span:not(.paso-num) {
+  display: block;
+  font-size: 1.0625rem;
+  color: var(--tinta-suave);
+}
+.desafio-nota {
+  font-size: 1rem;
+  color: var(--tinta-suave);
+}
+.campo {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.campo-label {
+  font-weight: 800;
+  font-size: 1.125rem;
+}
+.campo input {
+  width: 100%;
+  min-width: 0;
+  min-height: 56px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 3px solid rgba(20, 27, 77, 0.35);
+  background: #fff;
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.campo input::placeholder {
+  color: #6b6f8f;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.campo input:focus-visible {
+  border-color: var(--cielo-hondo);
+}
+.campo input[aria-invalid="true"] {
+  border-color: var(--alarma);
+}
+.campo-ayuda {
+  font-size: 1rem;
+  color: var(--tinta-suave);
+}
+.campo-error {
+  font-weight: 800;
+  color: var(--alarma);
+}
+.campo-error:empty {
+  display: none;
+}
+.prueba-pregunta {
+  font-family: var(--f-display);
+  font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.3rem);
+  line-height: 1.06;
+}
+.prueba-pregunta:focus {
+  outline: none;
+}
+.alternativas {
+  display: grid;
+  gap: 10px;
+}
+.alternativa {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  align-items: center;
+  min-height: 60px;
+  padding: 10px 14px;
+  border: 3px solid transparent;
+  border-radius: 14px;
+  background: var(--lienzo-2);
+  color: var(--tinta);
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  transition:
+    border-color 160ms var(--ease-out),
+    background-color 160ms var(--ease-out);
+}
+.alternativa:hover:not([disabled]) {
+  border-color: rgba(20, 27, 77, 0.3);
+}
+.alt-marca {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(20, 27, 77, 0.35);
+  background: #fff;
+  font-family: var(--f-display);
+  font-size: 1.3rem;
+}
+.alt-marca .icon {
+  opacity: 0;
+}
+.alternativa[aria-checked="true"] {
+  border-color: var(--cielo-hondo);
+  background: #fff;
+}
+.alternativa[aria-checked="true"] .alt-marca {
+  background: var(--cielo-hondo);
+  border-color: var(--cielo-hondo);
+  color: #fff;
+}
+.alternativa[aria-checked="true"] .alt-marca .icon {
+  opacity: 1;
+}
+.alternativa[disabled] {
+  cursor: default;
+}
+.alternativa.is-correct {
+  border-color: var(--cordillera);
+  background: var(--cordillera-claro);
+}
+.alternativa.is-correct .alt-marca {
+  background: var(--cordillera);
+  border-color: var(--cordillera);
+  color: #fff;
+}
+.alternativa.is-wrong {
+  border-color: var(--naranjo);
+  background: var(--naranjo-claro);
+}
+.prueba-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+.resultado-grande {
+  font-size: 1.125rem;
+}
+.resultado-grande strong {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 2.2rem;
+  margin-right: 4px;
+}
+.dominios {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.dominios li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: var(--lienzo-2);
+  font-weight: 700;
+  font-size: 1.0625rem;
+}
+.puntos-dom {
+  display: inline-flex;
+  gap: 6px;
+  flex: none;
+}
+.puntos-dom i {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(20, 27, 77, 0.4);
+  background: #fff;
+}
+.puntos-dom i.is-on {
+  border-color: var(--lila);
+  background: var(--lila);
+}
+.puntos-dom.post i.is-on {
+  border-color: var(--cordillera);
+  background: var(--cordillera);
+}
+.revision-lista {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+.revision-lista li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--lienzo-2);
+  font-size: 1rem;
+}
+.revision-lista strong {
+  display: block;
+  font-size: 1.0625rem;
+}
+.revision-lista .is-bien .icon {
+  color: var(--cordillera);
+}
+.revision-lista .is-mal .icon {
+  color: var(--alarma);
+}
+.revision-final summary {
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1.125rem;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.diario-dia {
+  font-size: 1.0625rem;
+}
+.puntadas-dias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.puntadas-dias i {
+  width: 26px;
+  height: 7px;
+  border-radius: 4px;
+  background: rgba(20, 27, 77, 0.15);
+}
+.puntadas-dias i.is-on {
+  background: var(--naranjo);
+}
+.diario-paso {
+  font-weight: 800;
+  color: var(--tinta-suave);
+}
+.diario-listo {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--cordillera-claro);
+  font-size: 1.125rem;
+}
+.diario-listo .icon {
+  width: 36px;
+  height: 36px;
+  color: var(--cordillera);
+}
+.practicos-lista {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+.practicos-lista li {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--lienzo-2);
+}
+.practicos-lista li .btn {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+@media (min-width: 560px) {
+  .practicos-lista li {
+    grid-template-columns: 52px 1fr auto;
+  }
+  .practicos-lista li .btn {
+    grid-column: auto;
+  }
+}
+.practico-icono {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--naranjo);
+  color: #fff;
+}
+.practicos-lista strong {
+  display: block;
+  font-size: 1.125rem;
+}
+.practicos-lista span:not(.practico-icono) {
+  display: block;
+  font-size: 1rem;
+  color: var(--tinta-suave);
+}
+.practicos-lista .practico-mejor {
+  font-weight: 800;
+  color: var(--cordillera);
+}
+.practico-cab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.practico-cab h4 {
+  font-family: var(--f-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.practico-cab .link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.practico-consigna {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+.practico-consigna:focus {
+  outline: none;
+}
+.practico-figura {
+  position: relative;
+  border-radius: 16px;
+  background: #eef0fb;
+  overflow: hidden;
+}
+.practico-figura svg {
+  width: 100%;
+  height: auto;
+}
+.practico-mapa {
+  margin-top: 0;
+}
+.zona {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+}
+.zona > span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px dashed var(--cielo-hondo);
+  background: rgba(255, 255, 255, 0.9);
+  color: #fff;
+}
+.zona .icon {
+  width: 18px;
+  height: 18px;
+  stroke-width: 3.2;
+  display: none;
+}
+.zona[aria-checked="true"] > span {
+  border-style: solid;
+  background: var(--cielo-hondo);
+}
+.zona[aria-checked="true"] .z-check {
+  display: block;
+}
+.zona.is-correct > span {
+  border: 3px solid #fff;
+  background: var(--cordillera);
+}
+.zona.is-wrong > span {
+  border: 3px solid #fff;
+  background: var(--naranjo);
+}
+.zona.is-wrong .z-check {
+  display: none;
+}
+.zona.is-wrong .z-x {
+  display: block;
+}
+.zona.is-faltante > span {
+  border: 3px dashed var(--cordillera);
+  background: var(--cordillera-claro);
+}
+.practico-cuenta {
+  font-weight: 800;
+}
+.caso {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--lienzo-2);
+  font-size: 1.1875rem;
+  font-weight: 700;
+}
+.caso-piel {
+  width: 64px;
+  height: 64px;
+  border-radius: 46% 54% 50% 50% / 52% 46% 54% 48%;
+  background:
+    radial-gradient(circle, var(--piel-caso) 0 34%, transparent 62%),
+    #f2b8a0;
+}
+.luces-botones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.luz-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 64px;
+  padding: 8px;
+  border: 3px solid transparent;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 1.125rem;
+}
+.luz-btn-verde {
+  background: var(--cordillera);
+  color: #fff;
+}
+.luz-btn-amarillo {
+  background: var(--sol);
+  color: var(--cielo-hondo);
+}
+.luz-btn-rojo {
+  background: var(--alarma);
+  color: #fff;
+}
+.luz-btn-urgencia {
+  background: var(--lienzo);
+  color: var(--tinta);
+  border-color: var(--alarma);
+}
+.luz-btn.is-correct {
+  box-shadow:
+    0 0 0 4px #fff,
+    0 0 0 8px var(--cielo-hondo);
+}
+.luz-btn.is-wrong span {
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+}
+.luz-btn[disabled] {
+  cursor: default;
+}
+.resumen-meta {
+  font-weight: 700;
+  color: var(--tinta-suave);
+}
+.resumen-meta span {
+  white-space: nowrap;
+}
+.resumen-totales {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: start;
+  align-items: center;
+  gap: 8px 18px;
+}
+.resumen-totales div {
+  display: grid;
+}
+.resumen-totales span {
+  font-weight: 800;
+  color: var(--tinta-suave);
+}
+.resumen-totales strong {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 3.4rem;
+  line-height: 1;
+}
+.resumen-totales small {
+  font-size: 1.6rem;
+}
+.resumen-flecha .icon {
+  width: 36px;
+  height: 36px;
+  color: var(--naranjo);
+}
+.resumen-dif {
+  grid-column: 1 / -1;
+  font-weight: 800;
+  font-size: 1.1875rem;
+  color: var(--cordillera);
+}
+.tabla-dominios {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.0625rem;
+}
+.tabla-dominios th,
+.tabla-dominios td {
+  padding: 10px 6px;
+  border-bottom: 1px solid #e2dccd;
+  text-align: center;
+}
+.tabla-dominios th[scope="row"],
+.tabla-dominios thead th:first-child {
+  text-align: left;
+}
+.tabla-dominios thead th {
+  font-size: 1rem;
+  color: var(--tinta-suave);
+}
+.resumen-lista {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.resumen-lista li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--lienzo-2);
+  font-size: 1.0625rem;
+}
+.resumen-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 /* ---------- Alto contraste ---------- */
 html[data-contraste="alto"] {
   --cielo: #000;
@@ -3245,6 +3835,7 @@ html[data-contraste="alto"] .riesgo-resultado,
 html[data-contraste="alto"] .video-frame {
   outline: 3px solid #fff;
 }
+html[data-contraste="alto"] .alternativa,
 html[data-contraste="alto"] .opcion label,
 html[data-contraste="alto"] .senal,
 html[data-contraste="alto"] .cruz,
@@ -3356,6 +3947,19 @@ html[data-contraste="alto"] .insignia span {
   a[href^="http"]::after {
     content: " (" attr(href) ")";
     font-size: 9pt;
+  }
+  /* Resumen de desafíos: solo esa sección */
+  html.imprimiendo-desafios .hero,
+  html.imprimiendo-desafios .footer,
+  html.imprimiendo-desafios main > section:not(#desafios),
+  html.imprimiendo-desafios #desafios .section-head p,
+  html.imprimiendo-desafios #desafios .resumen-acciones,
+  html.imprimiendo-desafios #desafios .link-btn,
+  html.imprimiendo-desafios #desafios button {
+    display: none !important;
+  }
+  html.imprimiendo-desafios .revision-final {
+    display: none;
   }
   /* «Imprimir mi día»: solo el resumen del día y el semáforo */
   html.imprimiendo-dia .hero,

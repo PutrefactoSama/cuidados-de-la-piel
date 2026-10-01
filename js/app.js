@@ -1254,7 +1254,7 @@
   /* ==========================================================
      Navegación inferior: sección actual
      ========================================================== */
-  const MAPA_NAV = { inicio: "#inicio", porque: "#porque", cuidados: "#porque", video: "#porque", revisar: "#porque", "mi-dia": "#mi-dia", jugar: "#jugar", alarma: "#alarma" };
+  const MAPA_NAV = { inicio: "#inicio", porque: "#porque", cuidados: "#porque", video: "#porque", revisar: "#porque", "mi-dia": "#mi-dia", jugar: "#jugar", desafios: "#jugar", alarma: "#alarma" };
   const navLinks = $$(".bottomnav a");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(

@@ -1,0 +1,16 @@
+{
+  "name": "CuidaPiel · Prevención de lesiones por presión",
+  "short_name": "CuidaPiel",
+  "description": "Guía interactiva para prevenir lesiones por presión en casa y llevar el control diario de los cuidados.",
+  "lang": "es-CL",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1f2a6e",
+  "theme_color": "#141b4d",
+  "icons": [
+    { "src": "images/icono.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "images/icono-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "images/icono-180.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

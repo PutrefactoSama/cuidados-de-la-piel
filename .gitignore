@@ -5,3 +5,9 @@ node_modules/
 *.log
 dist/
 .cache/
+
+# Impeccable: capturas y contrato de diseño (solo desarrollo, no se publican)
+.impeccable/review/
+.impeccable/surfaces/
+.impeccable/mocks/
+.impeccable/build/

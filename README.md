@@ -1,68 +1,64 @@
-# 🛡️ Cuidados de la Piel: Guía Interactiva para la Prevención de Lesiones por Presión
+# CuidaPiel · Guía interactiva para prevenir lesiones por presión
 
-Una aplicación web educativa e interactiva diseñada especialmente para adultos mayores, familiares y cuidadores de personas en situación de reposo o movilidad reducida.
+Aplicación web para **pacientes y familias** (Chile), pensada primero para el celular en casa y también para tablet en consulta u hospital. Enseña por qué aparecen las lesiones por presión («escaras»), ayuda a llevar los cuidados diarios y deja claro cuándo consultar.
 
----
+Visualmente es una **arpillera chilena**: cielo índigo con cordillera, parches de tela cosidos, pespuntes y bordes de tijera zigzag.
 
-## 🌟 Características Principales
+## Qué puede hacer el paciente
 
-1. **🏨 Habitación Interactiva Guiada (Interactive Hotspots)**:
-   - Navegación visual sobre puntos clave de la habitación (Cama, Alimentación, Superficies de apoyo, Movilización, Revisión de piel, Higiene y Apoyo al cuidador).
-   - Diálogos modales accesibles `<dialog>` con explicaciones clínicas claras y comprensibles.
-   - Modo de paseo guiado automático (*Guided Tour*).
+| Sección | Interacción |
+|---|---|
+| **¿Por qué aparece?** | Simulador del corte de la piel: al mover el «hilo» del tiempo, la presión aplasta los vasos y el tejido cambia de color. Un botón muestra cómo vuelve la sangre al cambiar de posición. |
+| **Seis cuidados** | Recorrido por pestañas (cambios de posición, piel limpia y seca, revisión diaria, colchón y cojín, movimiento, alimentación e hidratación), con listas «Haga / Evite». Cada cuidado se puede marcar como aprendido. |
+| **Video** | Animación de la rotación postural, compuesta con HyperFrames (`videos/rotacion-postural/`). |
+| **Revisar la piel** | Mapa de puntos de presión en tres posturas (boca arriba, de lado, sentado) y simulador de la **prueba del dedo** (zona que blanquea y zona que no). |
+| **Mi día** | Reloj de hilo de 24 h con los cambios de posición (intervalo de 2, 3 o 4 h según el equipo de salud; 1 h si está sentado), registro de vasos de agua, lista de revisión diaria con punto cruz y resumen de los últimos 7 días. Se puede imprimir. |
+| **Aprenda jugando** | Diez afirmaciones «¿mito o verdad?», insignias bordadas y **Mi progreso**: historial de partidas con gráfico, comparación entre la primera y la última, y temas para repasar. |
+| **¿Cuándo pedir ayuda?** | Semáforo (verde, amarillo, rojo y urgencia) con un revisor de señales que indica qué hacer. |
+| **Mi riesgo** | Autoevaluación orientativa de 6 preguntas inspirada en la escala de Braden (puntaje de 6 a 23). |
+| **Para quien cuida** | Apoyo a la persona cuidadora. |
 
-2. **🗂️ Dashboard Modular por Tarjetas**:
-   - Tarjetas categorizadas (*Cama y Posturas, Piel e Higiene, Nutrición y Agua, Herramientas, Alertas*).
-   - Métricas en tiempo real del progreso de aprendizaje y registro de cuidados.
+Accesibilidad: tipografía Atkinson Hyperlegible Next (diseñada para baja visión), tres tamaños de letra, modo de alto contraste, lectura en voz alta en español, uso completo con teclado y respeto de `prefers-reduced-motion`.
 
-3. **🔍 Buscador Inteligente en Tiempo Real**:
-   - Panel de resultados instantáneo insensible a tildes y mayúsculas con coincidencia difusa y apertura directa de consejos.
+**Privacidad:** todo se guarda solo en el dispositivo (`localStorage`). No hay servidor ni cuentas, y la página no publica números de teléfono.
 
-4. **♿ Accesibilidad Universal (a11y)**:
-   - Control de tamaño de texto (Normal / Grande / Extra Grande).
-   - Modo de Alto Contraste para personas con baja visión.
-   - Narrador por voz integrado (**Text-to-Speech**) en español para lectura automática de consejos.
-   - Navegación completa por teclado y semántica HTML5 pura.
+## Base clínica
 
-5. **🛠️ Herramientas Prácticas y Simuladores**:
-   - **🎯 Mapa Anatómico de Presión**: Zonas críticas según la postura (Boca arriba, De lado 30°, Sentado en silla).
-   - **👆 Simulador de la "Prueba del Dedo"**: Diferenciación táctil e interactiva entre eritema blanqueable (piel sana) y no blanqueable (Lesión Grado 1).
-   - **⏰ Temporizador y Planificador de 2 Horas**: Cuenta regresiva y tabla de horarios (08:00 a 22:00) persistente en `localStorage`.
-   - **💧 Registro Diario de Hidratación**: Rastreador interactivo de 8 vasos de agua con cálculo de litros.
+El contenido se revisó contra la evidencia:
 
----
+- **EPUAP/NPIAP/PPPIA 2019**, guía internacional de prevención y tratamiento de lesiones por presión.
+- **Cochrane 2026** (CD009958.pub4): la frecuencia de los cambios de posición tiene evidencia de certeza muy baja (2 h frente a 4 h, RR 1,05). Por eso el intervalo es configurable y se remite al equipo de salud.
+- **Cochrane 2024** (CD009362.pub4): los ácidos grasos (AGHO) tienen evidencia de certeza muy baja. Se presentan como complemento que nunca reemplaza los cambios de posición.
+- **Escala de Braden** (Bergstrom y Braden, 1987), con puntos de corte orientativos.
 
-## 🚀 Despliegue en Render
+Se eliminaron afirmaciones sin respaldo de la versión anterior («95 % prevenible», «Protocolo Oficial», el aval institucional y un teléfono de ejemplo). El video se volvió a generar con el texto corregido.
 
-Este proyecto está configurado para desplegarse como un **Static Site** en [Render](https://render.com).
-
-### Pasos para desplegar:
-1. Conecta tu cuenta de GitHub a **Render**.
-2. Selecciona **New +** -> **Static Site**.
-3. Elige el repositorio `PutrefactoSama/cuidados-de-la-piel`.
-4. Render detectará automáticamente el archivo `render.yaml`:
-   - **Build Command**: *(dejar vacío)*
-   - **Publish Directory**: `.`
-5. Haz clic en **Create Static Site**. ¡Tu aplicación estará en vivo con HTTPS en segundos!
-
----
-
-## 💻 Estructura del Proyecto
+## Estructura
 
 ```
 .
-├── index.html            # Estructura principal, modales y componentes accesibles
-├── css/
-│   └── styles.css        # Diseño responsivo, alto contraste, modales y animaciones
-├── js/
-│   └── app.js           # Lógica interactiva, búsqueda en vivo, TTS, mapa anatómico y temporizador
-├── images/               # Ilustraciones y recursos visuales
-├── render.yaml           # Configuración de despliegue en Render
-├── .gitignore            # Archivos excluidos del control de versiones
-└── README.md             # Documentación del proyecto
+├── index.html               # Página única con todo el contenido
+├── css/styles.css           # Mundo arpillera: tokens, parches, bandas, accesibilidad, impresión
+├── js/app.js                # Interacciones: reloj, agua, juego, mapa, prueba del dedo, semáforo, riesgo, TTS
+├── fonts/                   # Atkinson Hyperlegible Next y Londrina Solid (OFL), alojadas en el sitio
+├── images/                  # Ilustraciones (WebP), íconos y póster del video
+├── videos/                  # Video de rotación postural y su composición HyperFrames
+├── manifest.webmanifest     # Permite «Agregar a pantalla de inicio»
+├── PRODUCT.md / DESIGN.md   # Contexto de producto y sistema visual
+└── render.yaml              # Despliegue en Render (sitio estático)
 ```
 
----
+No requiere compilación ni dependencias: es HTML, CSS y JS sin compilar.
 
-## 👥 Créditos y Enfoque Clínico
-Desarrollado con base en las guías clínicas de prevención de úlceras por presión (NPUAP/EPUAP), promoviendo los 4 pilares esenciales: **Observe, Cuide, Prevenga y Acompañe**.
+## Desarrollo local
+
+```bash
+python3 -m http.server 8000
+# abrir http://localhost:8000
+```
+
+Para volver a generar el video: `cd videos/rotacion-postural && npm run render`.
+
+## Despliegue en Render
+
+Está configurado como **Static Site** (`render.yaml`): sin comando de compilación y publicando la carpeta `.`.

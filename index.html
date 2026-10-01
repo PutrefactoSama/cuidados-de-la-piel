@@ -135,27 +135,7 @@
 <!-- ============ Héroe ============ -->
 <section class="hero" id="inicio" aria-labelledby="hero-titulo">
   <div class="hero-sky" aria-hidden="true">
-    <svg viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax meet">
-      <!-- sol y nubes -->
-      <circle cx="1352" cy="96" r="58" fill="none" stroke="#f4b400" stroke-width="7" stroke-dasharray="4 10" stroke-linecap="round"/>
-      <circle cx="1352" cy="96" r="40" fill="#f4b400" stroke="rgba(20,27,77,.35)" stroke-width="2.5" stroke-dasharray="6 5"/>
-      <path transform="translate(-300 120)" d="M842 66c-4-18 14-30 30-22 6-16 32-18 40-2 16-6 32 6 28 22 12 4 12 22-2 24h-90c-14-2-18-18-6-22z" fill="#fff" stroke="rgba(31,42,110,.35)" stroke-width="2.5" stroke-dasharray="6 5"/>
-            <!-- cordillera -->
-      <path d="M0 300 120 172l80 58 130-140 120 130 110-80 130 110 130-140 140 120 120-80 130 90 120-120 110 90v190H0z" fill="#5a3a93" stroke="rgba(255,255,255,.4)" stroke-width="3" stroke-dasharray="8 7"/>
-      <path d="M300 122l30-32 32 38-16-6-16 12-16-10zM790 142l30-32 30 34-15-5-15 10-16-8zM1300 152l30-32 28 30-14-4-14 9-16-7zM536 164l24-24 24 26-12-4-12 8-12-6z" fill="#fff"/>
-      <path d="M0 330c150-70 260-30 380-60 140-35 220 30 380 10 140-18 240-50 380-10 120 30 220-15 300 0v130H0z" fill="#138a8f" stroke="rgba(255,255,255,.45)" stroke-width="3" stroke-dasharray="8 7"/>
-      <!-- casitas -->
-      <g stroke="rgba(20,27,77,.35)" stroke-width="2" stroke-dasharray="5 4">
-        <path d="M178 262h40v34h-40z" fill="#f4b400"/><path d="M172 264l26-22 26 22z" fill="#a3195b"/>
-        <path d="M232 252h34v30h-34z" fill="#fff"/><path d="M227 254l22-19 22 19z" fill="#c4501a"/>
-        <path d="M1028 250h40v34h-40z" fill="#a3195b"/><path d="M1022 252l26-22 26 22z" fill="#f4b400"/>
-        <path d="M1086 262h34v30h-34z" fill="#f8b4d4"/><path d="M1081 264l22-19 22 19z" fill="#5a3a93"/>
-        <path d="M640 276h36v30h-36z" fill="#c4501a"/><path d="M635 278l23-20 23 20z" fill="#fff"/>
-      </g>
-      <g fill="#141b4d"><rect x="191" y="272" width="12" height="12"/><rect x="243" y="262" width="11" height="11"/><rect x="1041" y="260" width="12" height="12"/><rect x="1097" y="272" width="11" height="11"/><rect x="652" y="286" width="11" height="11"/></g>
-      <path d="M0 372c200-44 330-14 520-30 180-15 300 30 480 8 180-20 300 6 440-12v62H0z" fill="#2b6e3a" stroke="rgba(255,255,255,.45)" stroke-width="3" stroke-dasharray="8 7"/>
-      <path d="M90 360c10-24 30-24 40 0M360 352c10-22 28-22 38 0M880 366c10-22 28-22 38 0M1240 356c10-22 28-22 38 0" fill="none" stroke="#b4e6a8" stroke-width="5" stroke-linecap="round"/>
-    </svg>
+    <svg viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax meet"><use href="#cordillera" width="1440" height="400"/></svg>
   </div>
 
   <div class="wrap hero-grid">
@@ -165,6 +145,9 @@
       <div class="hero-actions">
         <a class="btn btn-sol" href="#porque">Empezar el recorrido <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
         <a class="btn btn-fantasma hero-alarma" href="#alarma"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-triangle-alert"/></svg> ¿Cuándo consultar?</a>
+      </div>
+      <div class="hero-montes" aria-hidden="true">
+        <svg viewBox="330 60 780 340" preserveAspectRatio="xMidYMax slice"><use href="#cordillera" width="1440" height="400"/></svg>
       </div>
     </div>
 
@@ -251,7 +234,7 @@
             <text x="30" y="234" fill="#141b4d">Grasa</text>
             <text x="300" y="262" fill="#141b4d">Piel</text>
             <text x="30" y="318" fill="#fff">Colchón</text>
-            <text x="236" y="22" fill="#fff" class="no-leer">Peso</text>
+            <text x="236" y="22" fill="#141b4d" class="no-leer">Peso</text>
           </g>
         </svg>
 
@@ -492,7 +475,7 @@
 </section>
 
 <!-- ============ Video ============ -->
-<section class="band band-hondo video" id="video" aria-labelledby="video-titulo" data-buscar="Video cambio de posición|video regla 30 grados almohada rodillas talones">
+<section class="seccion-cielo video" id="video" aria-labelledby="video-titulo" data-buscar="Video cambio de posición|video regla 30 grados almohada rodillas talones">
   <div class="wrap video-grid">
     <div class="patch video-frame">
       <video id="videoGuia" controls preload="none" playsinline poster="images/video-poster.svg" aria-describedby="video-desc">
@@ -747,7 +730,7 @@
 </section>
 
 <!-- ============ ¿Cuándo consultar? ============ -->
-<section class="band band-lienzo" id="alarma" aria-labelledby="alarma-titulo" data-buscar="Cuándo consultar|señales de alarma semáforo ampolla herida fiebre mal olor urgencia CESFAM">
+<section class="seccion-cielo" id="alarma" aria-labelledby="alarma-titulo" data-buscar="Cuándo consultar|señales de alarma semáforo ampolla herida fiebre mal olor urgencia CESFAM">
   <div class="wrap">
     <div class="section-head">
       <h2 class="h2" id="alarma-titulo">¿Cuándo pedir ayuda?</h2>
@@ -755,39 +738,6 @@
       <button class="listen" type="button" data-leer="alarma" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-volume-2"/></svg>Escuchar</button>
     </div>
     <div class="semaforo-grid">
-      <ul class="luces" id="luces">
-        <li class="luz luz-verde" data-luz="verde">
-          <span class="luz-bulbo"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg></span>
-          <div>
-            <h3>Verde: siga con sus cuidados</h3>
-            <p class="luz-que">Piel entera, sin zonas rojas, o con un enrojecimiento que se pone blanco al presionar y desaparece al quitar el apoyo.</p>
-          </div>
-        </li>
-        <li class="luz luz-amarillo" data-luz="amarillo">
-          <span class="luz-bulbo"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></span>
-          <div>
-            <h3>Amarillo: refuerce y vigile</h3>
-            <p class="luz-que">Zona roja que sí se pone blanca al presionar, piel irritada por la humedad o la persona come y bebe muy poco.</p>
-            <p class="luz-hacer">Quite el apoyo de esa zona, cambie de posición más seguido, mantenga la piel seca y vuelva a mirar en unas horas. Si no mejora, consulte.</p>
-          </div>
-        </li>
-        <li class="luz luz-rojo" data-luz="rojo">
-          <span class="luz-bulbo"><svg class="icon" aria-hidden="true"><use href="#i-triangle-alert"/></svg></span>
-          <div>
-            <h3>Rojo: consulte hoy</h3>
-            <p class="luz-que">Zona roja que no se pone blanca al presionar, ampolla, piel abierta, zona morada u oscura, o una zona dura, caliente, hinchada o dolorosa.</p>
-            <p class="luz-hacer">No apoye a la persona sobre esa zona y consulte hoy a su equipo de salud (CESFAM o atención domiciliaria).</p>
-          </div>
-        </li>
-        <li class="luz luz-urgencia" data-luz="urgencia">
-          <span class="luz-bulbo"><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg></span>
-          <div>
-            <h3>Urgencia: no espere</h3>
-            <p class="luz-que">Una herida con mal olor, pus o enrojecimiento que se extiende, junto con fiebre, escalofríos, mucho decaimiento o confusión.</p>
-            <p class="luz-hacer">Acuda al servicio de urgencia más cercano (SAPU, SAR u hospital).</p>
-          </div>
-        </li>
-      </ul>
 
       <form class="patch revisor" id="revisor">
         <fieldset>
@@ -806,6 +756,43 @@
         <p class="revisor-resultado" id="revisorResultado" aria-live="polite" data-nivel="verde">Si no marca nada y la piel se ve sana, está en verde: siga con sus cuidados de cada día.</p>
         <button class="link-btn" type="reset">Limpiar lo marcado</button>
       </form>
+      <ul class="luces" id="luces">
+        <li class="luz luz-verde" data-luz="verde">
+          <span class="luz-bulbo"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg></span>
+          <div>
+            <h3>Verde: siga con sus cuidados</h3>
+            <p class="luz-marca"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Esto le corresponde hoy</p>
+            <p class="luz-que">Piel entera, sin zonas rojas, o con un enrojecimiento que se pone blanco al presionar y desaparece al quitar el apoyo.</p>
+          </div>
+        </li>
+        <li class="luz luz-amarillo" data-luz="amarillo">
+          <span class="luz-bulbo"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></span>
+          <div>
+            <h3>Amarillo: refuerce y vigile</h3>
+            <p class="luz-marca"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Esto le corresponde hoy</p>
+            <p class="luz-que">Zona roja que sí se pone blanca al presionar, piel irritada por la humedad o la persona come y bebe muy poco.</p>
+            <p class="luz-hacer">Quite el apoyo de esa zona, cambie de posición más seguido, mantenga la piel seca y vuelva a mirar en unas horas. Si no mejora, consulte.</p>
+          </div>
+        </li>
+        <li class="luz luz-rojo" data-luz="rojo">
+          <span class="luz-bulbo"><svg class="icon" aria-hidden="true"><use href="#i-triangle-alert"/></svg></span>
+          <div>
+            <h3>Rojo: consulte hoy</h3>
+            <p class="luz-marca"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Esto le corresponde hoy</p>
+            <p class="luz-que">Zona roja que no se pone blanca al presionar, ampolla, piel abierta, zona morada u oscura, o una zona dura, caliente, hinchada o dolorosa.</p>
+            <p class="luz-hacer">No apoye a la persona sobre esa zona y consulte hoy a su equipo de salud (CESFAM o atención domiciliaria).</p>
+          </div>
+        </li>
+        <li class="luz luz-urgencia" data-luz="urgencia">
+          <span class="luz-bulbo"><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg></span>
+          <div>
+            <h3>Urgencia: no espere</h3>
+            <p class="luz-marca"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Esto le corresponde hoy</p>
+            <p class="luz-que">Una herida con mal olor, pus o enrojecimiento que se extiende, junto con fiebre, escalofríos, mucho decaimiento o confusión.</p>
+            <p class="luz-hacer">Acuda al servicio de urgencia más cercano (SAPU, SAR u hospital).</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
@@ -820,7 +807,7 @@
     </div>
     <form class="riesgo-form" id="riesgoForm">
       <fieldset class="patch pregunta">
-        <legend><small>Sentir y avisar</small>¿Siente y puede avisar si algo le molesta o le duele?</legend>
+        <legend>¿Siente y puede avisar si algo le molesta o le duele?</legend>
         <ul class="opciones">
           <li class="opcion"><input type="radio" name="sensibilidad" id="s4" value="4"><label for="s4">Sí, siente y avisa sin problema</label></li>
           <li class="opcion"><input type="radio" name="sensibilidad" id="s3" value="3"><label for="s3">Le cuesta un poco sentir o avisar</label></li>
@@ -829,7 +816,7 @@
         </ul>
       </fieldset>
       <fieldset class="patch pregunta">
-        <legend><small>Humedad</small>¿Qué tan seguido está húmeda la piel (sudor, orina, deposiciones)?</legend>
+        <legend>¿Qué tan seguido está húmeda la piel (sudor, orina, deposiciones)?</legend>
         <ul class="opciones">
           <li class="opcion"><input type="radio" name="humedad" id="h4" value="4"><label for="h4">Rara vez</label></li>
           <li class="opcion"><input type="radio" name="humedad" id="h3" value="3"><label for="h3">A veces: un cambio extra al día</label></li>
@@ -838,7 +825,7 @@
         </ul>
       </fieldset>
       <fieldset class="patch pregunta">
-        <legend><small>Actividad</small>¿Cuánto camina?</legend>
+        <legend>¿Cuánto camina?</legend>
         <ul class="opciones">
           <li class="opcion"><input type="radio" name="actividad" id="a4" value="4"><label for="a4">Camina con frecuencia</label></li>
           <li class="opcion"><input type="radio" name="actividad" id="a3" value="3"><label for="a3">Camina poco, distancias cortas</label></li>
@@ -847,7 +834,7 @@
         </ul>
       </fieldset>
       <fieldset class="patch pregunta">
-        <legend><small>Movilidad</small>¿Puede cambiar de posición por sí misma?</legend>
+        <legend>¿Puede cambiar de posición por sí misma?</legend>
         <ul class="opciones">
           <li class="opcion"><input type="radio" name="movilidad" id="m4" value="4"><label for="m4">Sí, se mueve sola y seguido</label></li>
           <li class="opcion"><input type="radio" name="movilidad" id="m3" value="3"><label for="m3">Se mueve sola, pero poco</label></li>
@@ -856,7 +843,7 @@
         </ul>
       </fieldset>
       <fieldset class="patch pregunta">
-        <legend><small>Alimentación</small>¿Cuánto come de cada comida?</legend>
+        <legend>¿Cuánto come de cada comida?</legend>
         <ul class="opciones">
           <li class="opcion"><input type="radio" name="nutricion" id="n4" value="4"><label for="n4">Todo o casi todo</label></li>
           <li class="opcion"><input type="radio" name="nutricion" id="n3" value="3"><label for="n3">Más de la mitad</label></li>
@@ -865,7 +852,7 @@
         </ul>
       </fieldset>
       <fieldset class="patch pregunta">
-        <legend><small>Roce</small>Al moverla, ¿se desliza en la cama o en la silla?</legend>
+        <legend>Al moverla, ¿se desliza en la cama o en la silla?</legend>
         <ul class="opciones">
           <li class="opcion"><input type="radio" name="roce" id="r3" value="3"><label for="r3">No, se acomoda sola sin deslizarse</label></li>
           <li class="opcion"><input type="radio" name="roce" id="r2" value="2"><label for="r2">Se desliza un poco; necesita algo de ayuda</label></li>
@@ -929,7 +916,7 @@
         </ol>
       </div>
     </div>
-    <p class="creditos">Tipografías Atkinson Hyperlegible Next y Londrina Solid (SIL Open Font License). Íconos Lucide (licencia ISC). Ilustraciones de tela hechas para CuidaPiel.</p>
+    <p class="creditos">Tipografías Atkinson Hyperlegible Next y Londrina Solid (SIL Open Font License). Íconos Lucide (licencia ISC). Escenas ilustradas del proyecto CuidaPiel y dibujos vectoriales de tela creados para esta guía.</p>
   </div>
 </footer>
 
@@ -967,6 +954,27 @@
 <!-- Figuras de tela para el mapa de puntos de presión -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
+    <symbol id="cordillera" viewBox="0 0 1440 400">
+      <!-- sol y nubes -->
+      <circle cx="1352" cy="96" r="58" fill="none" stroke="#f4b400" stroke-width="7" stroke-dasharray="4 10" stroke-linecap="round"/>
+      <circle cx="1352" cy="96" r="40" fill="#f4b400" stroke="rgba(20,27,77,.35)" stroke-width="2.5" stroke-dasharray="6 5"/>
+      <path transform="translate(-300 120)" d="M842 66c-4-18 14-30 30-22 6-16 32-18 40-2 16-6 32 6 28 22 12 4 12 22-2 24h-90c-14-2-18-18-6-22z" fill="#fff" stroke="rgba(31,42,110,.35)" stroke-width="2.5" stroke-dasharray="6 5"/>
+            <!-- cordillera -->
+      <path d="M0 300 120 172l80 58 130-140 120 130 110-80 130 110 130-140 140 120 120-80 130 90 120-120 110 90v190H0z" fill="#5a3a93" stroke="rgba(255,255,255,.4)" stroke-width="3" stroke-dasharray="8 7"/>
+      <path d="M300 122l30-32 32 38-16-6-16 12-16-10zM790 142l30-32 30 34-15-5-15 10-16-8zM1300 152l30-32 28 30-14-4-14 9-16-7zM536 164l24-24 24 26-12-4-12 8-12-6z" fill="#fff"/>
+      <path d="M0 330c150-70 260-30 380-60 140-35 220 30 380 10 140-18 240-50 380-10 120 30 220-15 300 0v130H0z" fill="#138a8f" stroke="rgba(255,255,255,.45)" stroke-width="3" stroke-dasharray="8 7"/>
+      <!-- casitas -->
+      <g stroke="rgba(20,27,77,.35)" stroke-width="2" stroke-dasharray="5 4">
+        <path d="M178 262h40v34h-40z" fill="#f4b400"/><path d="M172 264l26-22 26 22z" fill="#a3195b"/>
+        <path d="M232 252h34v30h-34z" fill="#fff"/><path d="M227 254l22-19 22 19z" fill="#c4501a"/>
+        <path d="M1028 250h40v34h-40z" fill="#a3195b"/><path d="M1022 252l26-22 26 22z" fill="#f4b400"/>
+        <path d="M1086 262h34v30h-34z" fill="#f8b4d4"/><path d="M1081 264l22-19 22 19z" fill="#5a3a93"/>
+        <path d="M640 276h36v30h-36z" fill="#c4501a"/><path d="M635 278l23-20 23 20z" fill="#fff"/>
+      </g>
+      <g fill="#141b4d"><rect x="191" y="272" width="12" height="12"/><rect x="243" y="262" width="11" height="11"/><rect x="1041" y="260" width="12" height="12"/><rect x="1097" y="272" width="11" height="11"/><rect x="652" y="286" width="11" height="11"/></g>
+      <path d="M0 372c200-44 330-14 520-30 180-15 300 30 480 8 180-20 300 6 440-12v62H0z" fill="#2b6e3a" stroke="rgba(255,255,255,.45)" stroke-width="3" stroke-dasharray="8 7"/>
+      <path d="M90 360c10-24 30-24 40 0M360 352c10-22 28-22 38 0M880 366c10-22 28-22 38 0M1240 356c10-22 28-22 38 0" fill="none" stroke="#b4e6a8" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
     <symbol id="fig-supino" viewBox="0 0 400 230">
       <rect x="8" y="170" width="384" height="34" rx="12" fill="#3a4aa6"/>
       <path d="M20 186h360" stroke="rgba(255,255,255,.5)" stroke-width="2.5" stroke-dasharray="7 6"/>

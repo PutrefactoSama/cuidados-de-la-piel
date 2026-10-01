@@ -64,11 +64,16 @@
   --alarma-claro: #ffd3cf;
 
   /* Lienzo de lectura */
-  --lienzo: #ffffff;
-  --lienzo-2: #f3f4fb;
+  --lienzo: #fcfaf5;
+  --lienzo-2: #f1eee6;
   --tinta: #141b4d;
   --tinta-suave: #3b4270;
-  --hilo-blanco: rgba(255, 255, 255, 0.62);
+  --hilo-blanco: rgba(255, 255, 255, 0.72);
+  /* Trama de tela: urdimbre y trama muy tenues */
+  --trama-clara: repeating-linear-gradient(0deg, rgba(20, 27, 77, 0.028) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(20, 27, 77, 0.022) 0 1px, transparent 1px 3px);
+  --trama-oscura: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0 1px, transparent 1px 3px);
 
   /* Piel (diagramas) */
   --piel: #f0a27e;
@@ -344,7 +349,7 @@ html {
   gap: 0.6rem;
   min-height: 56px;
   padding: 0.6rem 1.4rem;
-  border: 0;
+  border: 2px solid rgba(20, 27, 77, 0.22);
   border-radius: var(--r-btn);
   background: var(--btn-bg);
   color: var(--btn-fg);
@@ -361,11 +366,12 @@ html {
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
-.btn::after {
+.btn-sol::after,
+.btn-cielo::after {
   content: "";
   position: absolute;
   inset: 5px;
-  border: 2px dashed var(--btn-hilo);
+  border: 3px dashed var(--btn-hilo);
   border-radius: inherit;
   pointer-events: none;
 }
@@ -384,6 +390,11 @@ html {
   transform: none;
   box-shadow: none;
 }
+.btn-sol,
+.btn-cielo,
+.btn-alarma {
+  border-color: transparent;
+}
 .btn-sol {
   --btn-bg: var(--sol);
   --btn-fg: var(--cielo-hondo);
@@ -396,12 +407,8 @@ html {
 .btn-fantasma {
   --btn-bg: transparent;
   --btn-fg: #fff;
-  --btn-hilo: var(--hilo-blanco);
   box-shadow: none;
-}
-.btn-fantasma::after {
-  inset: 0;
-  border-width: 2.5px;
+  border: 2.5px solid rgba(255, 255, 255, 0.85);
 }
 .btn-fantasma:hover {
   background: rgba(255, 255, 255, 0.1);
@@ -429,7 +436,7 @@ html {
   min-height: 48px;
   padding: 0.35rem 1rem 0.35rem 0.8rem;
   border-radius: 999px;
-  border: 2px dashed currentColor;
+  border: 2px solid currentColor;
   background: transparent;
   font-weight: 700;
   font-size: 1rem;
@@ -688,6 +695,30 @@ html {
 }
 
 
+/* Franja de cordillera en el celular: el parche "Mi día" va cosido encima */
+.hero-montes {
+  display: none;
+}
+@media (max-width: 959px) {
+  .hero-sky {
+    display: none;
+  }
+  .hero-montes {
+    display: block;
+    height: 150px;
+    margin: 6px calc(var(--gutter) * -1) -78px;
+    pointer-events: none;
+  }
+  .hero-montes svg {
+    width: 100%;
+    height: 100%;
+  }
+  .dia-mini {
+    position: relative;
+    z-index: 1;
+  }
+}
+
 /* Cinta bordada al pie de la arpillera */
 .pilares {
   display: flex;
@@ -710,7 +741,7 @@ html {
   padding: 8px 16px 8px 12px;
   border-radius: 999px;
   background: rgba(14, 20, 64, 0.72);
-  border: 2px dashed var(--hilo-blanco);
+  border: 3px dashed var(--hilo-blanco);
   font-family: var(--f-display);
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -724,9 +755,9 @@ html {
 
 /* ---------- Parche (superficie de lectura) ---------- */
 .patch {
-  --hilo: color-mix(in srgb, var(--cielo) 40%, transparent);
+  --hilo: color-mix(in srgb, var(--cielo) 82%, var(--cielo-hondo));
   position: relative;
-  background: var(--lienzo);
+  background: var(--trama-clara), var(--lienzo);
   color: var(--tinta);
   border-radius: var(--r-patch);
   box-shadow: var(--sombra);
@@ -736,7 +767,7 @@ html {
   content: "";
   position: absolute;
   inset: 9px;
-  border: 2.5px dashed var(--hilo);
+  border: 3.5px dashed var(--hilo);
   border-radius: inherit;
   pointer-events: none;
 }
@@ -751,7 +782,7 @@ html {
 
 /* Parche "Mi día" del héroe */
 .dia-mini {
-  --hilo: color-mix(in srgb, var(--cordillera) 55%, transparent);
+  --hilo: color-mix(in srgb, var(--cordillera) 82%, var(--cielo-hondo));
   display: grid;
   gap: 14px;
   padding: 18px;
@@ -829,11 +860,29 @@ html {
   --band: var(--turquesa);
   --band-fg: #fff;
   --band-hilo: var(--hilo-blanco);
+  --band-inset: 6px;
   position: relative;
-  background: var(--band);
+  width: calc(100% - var(--band-inset) * 2);
+  max-width: 1360px;
+  margin: 44px auto;
+  background: var(--trama-oscura), var(--band);
   color: var(--band-fg);
-  padding-block: 64px 72px;
-  margin-top: 14px;
+  padding-block: 56px 64px;
+  outline: 3px dashed var(--band-hilo);
+  outline-offset: -9px;
+  box-shadow: 0 18px 30px -18px rgba(5, 8, 30, 0.7);
+}
+.band > .wrap {
+  padding-inline: 20px;
+}
+@media (min-width: 700px) {
+  .band {
+    --band-inset: 20px;
+    outline-offset: -14px;
+  }
+  .band > .wrap {
+    padding-inline: 40px;
+  }
 }
 /* Borde de tijera zigzag */
 .band::before {
@@ -847,14 +896,17 @@ html {
     linear-gradient(-45deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x,
     linear-gradient(45deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x;
 }
-/* Pespunte bajo el borde */
+/* Borde de tijera zigzag inferior */
 .band::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  top: 12px;
-  border-top: 3px dashed var(--band-hilo);
+  top: calc(100% - 1px);
+  height: 14px;
+  background:
+    linear-gradient(-135deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x,
+    linear-gradient(135deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x;
   pointer-events: none;
 }
 @media (min-width: 900px) {
@@ -868,7 +920,17 @@ html {
 .band-sol {
   --band: var(--sol);
   --band-fg: var(--cielo-hondo);
-  --band-hilo: rgba(20, 27, 77, 0.42);
+  --band-hilo: rgba(20, 27, 77, 0.5);
+}
+/* Secciones directamente sobre el cielo índigo */
+.seccion-cielo {
+  color: #fff;
+  padding-block: 40px 48px;
+}
+@media (min-width: 900px) {
+  .seccion-cielo {
+    padding-block: 64px 72px;
+  }
 }
 .band-fucsia {
   --band: var(--fucsia);
@@ -937,7 +999,7 @@ html {
   }
 }
 .corte {
-  --hilo: color-mix(in srgb, var(--turquesa) 50%, transparent);
+  --hilo: color-mix(in srgb, var(--turquesa) 82%, var(--cielo-hondo));
 }
 .corte-svg {
   width: 100%;
@@ -1049,7 +1111,7 @@ html {
   height: 52px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.16);
-  border: 2px dashed var(--hilo-blanco);
+  border: 2px solid var(--hilo-blanco);
 }
 .causa h3 {
   font-size: 1.25rem;
@@ -1168,7 +1230,7 @@ html {
   border-radius: 50%;
   background: var(--sol);
   color: var(--cielo-hondo);
-  border: 2px dashed rgba(20, 27, 77, 0.45);
+  border: 2px solid rgba(20, 27, 77, 0.45);
   flex: none;
 }
 .cuidado-tab-num .icon {
@@ -1190,7 +1252,7 @@ html {
 }
 
 .cuidado-panel {
-  --hilo: color-mix(in srgb, var(--sol) 75%, var(--cielo-hondo));
+  --hilo: color-mix(in srgb, var(--fucsia) 82%, var(--cielo-hondo));
   display: grid;
   gap: 22px;
 }
@@ -1384,7 +1446,7 @@ html {
   color: var(--cielo-hondo);
   font-family: var(--f-display);
   font-size: 1.75rem;
-  border: 3px dashed rgba(20, 27, 77, 0.4);
+  border: 3px solid rgba(20, 27, 77, 0.35);
 }
 
 /* ---------- Revisar la piel ---------- */
@@ -1399,7 +1461,7 @@ html {
   }
 }
 .mapa {
-  --hilo: color-mix(in srgb, var(--fucsia) 50%, transparent);
+  --hilo: color-mix(in srgb, var(--fucsia) 82%, var(--cielo-hondo));
 }
 .segmented {
   display: flex;
@@ -1523,7 +1585,7 @@ html {
 
 /* Prueba del dedo */
 .dedo {
-  --hilo: color-mix(in srgb, var(--fucsia) 50%, transparent);
+  --hilo: color-mix(in srgb, var(--fucsia) 82%, var(--cielo-hondo));
 }
 .dedo-pasos {
   margin: 12px 0 18px;
@@ -1655,7 +1717,7 @@ html {
   gap: 22px;
 }
 .reloj {
-  --hilo: color-mix(in srgb, var(--cordillera) 55%, transparent);
+  --hilo: color-mix(in srgb, var(--cordillera) 82%, var(--cielo-hondo));
 }
 .reloj-top {
   display: grid;
@@ -1853,7 +1915,7 @@ html {
 
 /* Agua */
 .agua {
-  --hilo: color-mix(in srgb, var(--turquesa) 55%, transparent);
+  --hilo: color-mix(in srgb, var(--turquesa) 82%, var(--cielo-hondo));
 }
 .agua-head {
   display: flex;
@@ -1944,7 +2006,7 @@ html {
 
 /* Lista de revisión con punto cruz */
 .revision {
-  --hilo: color-mix(in srgb, var(--fucsia) 45%, transparent);
+  --hilo: color-mix(in srgb, var(--fucsia) 82%, var(--cielo-hondo));
 }
 .cruz-lista {
   list-style: none;
@@ -1974,7 +2036,7 @@ html {
   height: 44px;
   border-radius: 10px;
   background: #fff;
-  border: 3px dashed rgba(20, 27, 77, 0.45);
+  border: 3px solid rgba(20, 27, 77, 0.45);
   display: grid;
   place-items: center;
 }
@@ -1998,7 +2060,6 @@ html {
   stroke-dashoffset: 0;
 }
 .cruz input:checked ~ .cruz-box {
-  border-style: solid;
   border-color: var(--fucsia);
 }
 .cruz input:focus-visible ~ .cruz-box {
@@ -2064,7 +2125,7 @@ html {
   padding: 10px 2px;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.12);
-  border: 2px dashed transparent;
+  border: 2px solid transparent;
   text-align: center;
   font-size: clamp(0.75rem, 3.4vw, 0.875rem);
   font-weight: 700;
@@ -2102,7 +2163,7 @@ html {
   }
 }
 .quiz {
-  --hilo: color-mix(in srgb, var(--lila) 50%, transparent);
+  --hilo: color-mix(in srgb, var(--lila) 82%, var(--cielo-hondo));
   display: grid;
   align-content: start;
   gap: 18px;
@@ -2219,7 +2280,7 @@ html {
 
 /* Mi progreso: columnas de aciertos por partida */
 .progreso {
-  --hilo: color-mix(in srgb, var(--lila) 50%, transparent);
+  --hilo: color-mix(in srgb, var(--lila) 82%, var(--cielo-hondo));
   display: grid;
   gap: 14px;
 }
@@ -2233,8 +2294,9 @@ html {
   display: grid;
   grid-template-columns: 2rem 1fr;
   gap: 8px;
-  height: 210px;
+  height: 230px;
   padding-top: 26px;
+  padding-bottom: 30px;
 }
 .progreso-eje {
   display: flex;
@@ -2277,6 +2339,7 @@ html {
 }
 .progreso-col {
   position: relative;
+  overflow: visible;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -2289,6 +2352,25 @@ html {
 .progreso-col:hover,
 .progreso-col:focus-visible {
   background: rgba(90, 58, 147, 0.08);
+}
+.progreso-barra::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 6px;
+  bottom: 4px;
+  border-left: 2px dashed rgba(255, 255, 255, 0.7);
+  transform: translateX(-1px);
+}
+.progreso-fecha {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--tinta-suave);
+  white-space: nowrap;
 }
 .progreso-barra {
   position: relative;
@@ -2386,7 +2468,7 @@ html {
   padding: 10px 12px;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.1);
-  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.25);
 }
 .insignia svg {
   width: 76px;
@@ -2444,34 +2526,55 @@ html {
 }
 .luz {
   --luz: var(--cordillera);
-  --luz-claro: var(--cordillera-claro);
   --luz-fg: #fff;
+  --luz-hilo: rgba(255, 255, 255, 0.7);
+  --luz-hacer: rgba(0, 0, 0, 0.22);
+  --bulbo: #fff;
+  --bulbo-fg: var(--cordillera);
+  position: relative;
   display: grid;
   grid-template-columns: 64px 1fr;
   gap: 16px;
   align-items: start;
-  padding: 18px;
+  padding: 22px;
   border-radius: var(--r-patch);
-  background: #fff;
-  box-shadow: var(--sombra-baja);
-  border: 3px solid transparent;
+  background: var(--trama-oscura), var(--luz);
+  color: var(--luz-fg);
+  box-shadow: var(--sombra);
   transition:
     transform 300ms var(--ease-out),
-    border-color 300ms var(--ease-out),
     box-shadow 300ms var(--ease-out);
+}
+.luz::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 3px dashed var(--luz-hilo);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.luz > * {
+  position: relative;
 }
 .luz-amarillo {
   --luz: var(--sol);
-  --luz-claro: #fff1c2;
   --luz-fg: var(--cielo-hondo);
+  --luz-hilo: rgba(20, 27, 77, 0.5);
+  --luz-hacer: rgba(255, 255, 255, 0.5);
+  --bulbo: var(--cielo-hondo);
+  --bulbo-fg: var(--sol);
 }
 .luz-rojo {
   --luz: var(--alarma);
-  --luz-claro: var(--alarma-claro);
+  --bulbo-fg: var(--alarma);
 }
 .luz-urgencia {
-  --luz: var(--cielo-hondo);
-  --luz-claro: #dfe2f6;
+  --luz: var(--lienzo);
+  --luz-fg: var(--tinta);
+  --luz-hilo: var(--alarma);
+  --luz-hacer: var(--alarma-claro);
+  --bulbo: var(--alarma);
+  --bulbo-fg: #fff;
 }
 .luz-bulbo {
   display: grid;
@@ -2479,9 +2582,8 @@ html {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: var(--luz);
-  color: var(--luz-fg);
-  box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.4);
+  background: var(--bulbo);
+  color: var(--bulbo-fg);
 }
 .luz-bulbo .icon {
   width: 32px;
@@ -2501,20 +2603,34 @@ html {
   margin-top: 10px;
   padding: 10px 12px;
   border-radius: 12px;
-  background: var(--luz-claro);
+  background: var(--luz-hacer);
   font-weight: 700;
   font-size: 1.0625rem;
 }
-.luz.is-activa {
-  border-color: var(--luz);
-  transform: scale(1.02);
-  box-shadow: var(--sombra);
+.luz-marca {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  margin-block: 6px 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--cielo-hondo);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9375rem;
+  width: fit-content;
 }
-.luz.is-apagada {
-  opacity: 0.55;
+.luz.is-activa {
+  transform: scale(1.02);
+  box-shadow:
+    0 0 0 5px var(--sol),
+    0 22px 34px -16px rgba(5, 8, 30, 0.8);
+}
+.luz.is-activa .luz-marca {
+  display: inline-flex;
 }
 .revisor {
-  --hilo: color-mix(in srgb, var(--cielo) 35%, transparent);
+  --hilo: color-mix(in srgb, var(--cielo) 82%, var(--cielo-hondo));
 }
 .revisor fieldset {
   border: 0;
@@ -2554,7 +2670,7 @@ html {
   cursor: pointer;
 }
 .senal:has(input:checked) {
-  background: #e3e6f8;
+  background: #e6e2f2;
   box-shadow: inset 0 0 0 3px var(--cielo-hondo);
 }
 .revisor-resultado {
@@ -2590,7 +2706,7 @@ html {
   }
 }
 .pregunta {
-  --hilo: color-mix(in srgb, var(--turquesa) 45%, transparent);
+  --hilo: color-mix(in srgb, var(--turquesa) 82%, var(--cielo-hondo));
   border: 0;
   margin: 0;
 }
@@ -2765,7 +2881,7 @@ html {
   padding: 14px 16px;
   border-radius: var(--r-patch);
   background: rgba(255, 255, 255, 0.12);
-  border: 2px dashed var(--hilo-blanco);
+  border: 2px solid rgba(255, 255, 255, 0.35);
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.35;
@@ -2909,7 +3025,7 @@ html {
   min-height: 44px;
   padding: 6px 14px;
   border-radius: 999px;
-  border: 2px dashed rgba(20, 27, 77, 0.4);
+  border: 2px solid rgba(20, 27, 77, 0.35);
   background: #fff;
   font-weight: 700;
   font-size: 1rem;
@@ -3092,6 +3208,23 @@ html[data-contraste="alto"] .patch,
 html[data-contraste="alto"] .luz {
   border: 3px solid #000;
   outline: 3px solid #fff;
+  background: #fff;
+  color: #000;
+}
+html[data-contraste="alto"] .luz-hacer {
+  background: #fff;
+  border: 2px solid #000;
+}
+html[data-contraste="alto"] .luz-bulbo {
+  background: #000;
+  color: #ffe500;
+}
+html[data-contraste="alto"] .band {
+  background: #000;
+  outline-color: #fff;
+}
+html[data-contraste="alto"] .hero-montes {
+  display: none;
 }
 html[data-contraste="alto"] .patch::before {
   border-color: #000;
@@ -3180,10 +3313,16 @@ html[data-contraste="alto"] .insignia span {
   }
   .band,
   .hero,
-  .footer {
+  .footer,
+  .seccion-cielo {
     background: #fff !important;
     color: #000 !important;
     padding-block: 12pt !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+  .hero-montes {
+    display: none !important;
   }
   .band::before,
   .band::after,
@@ -3217,5 +3356,40 @@ html[data-contraste="alto"] .insignia span {
   a[href^="http"]::after {
     content: " (" attr(href) ")";
     font-size: 9pt;
+  }
+  /* «Imprimir mi día»: solo el resumen del día y el semáforo */
+  html.imprimiendo-dia .hero,
+  html.imprimiendo-dia .footer,
+  html.imprimiendo-dia main > section:not(#mi-dia):not(#alarma),
+  html.imprimiendo-dia #mi-dia .dia-grid,
+  html.imprimiendo-dia #mi-dia .semana,
+  html.imprimiendo-dia #mi-dia .section-head p,
+  html.imprimiendo-dia #mi-dia .section-head .btn,
+  html.imprimiendo-dia #alarma .revisor,
+  html.imprimiendo-dia #alarma .section-head p,
+  html.imprimiendo-dia .luz-marca {
+    display: none !important;
+  }
+  html.imprimiendo-dia .luz {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none;
+    border: 1pt solid #999;
+    break-inside: avoid;
+  }
+  html.imprimiendo-dia .luz::before {
+    display: none;
+  }
+  html.imprimiendo-dia .luz-hacer {
+    background: #f2f2f2 !important;
+  }
+  html.imprimiendo-dia .seccion-cielo,
+  html.imprimiendo-dia .band {
+    background: #fff !important;
+    color: #000 !important;
+    outline: 0;
+    margin: 0;
+    width: auto;
+    padding-block: 6pt !important;
   }
 }

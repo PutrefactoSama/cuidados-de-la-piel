@@ -493,8 +493,10 @@
       <p><strong>Cambios de posición:</strong></p><ul>${filas}</ul>
       <p><strong>Agua:</strong> ${dia.agua} de ${prefs.aguaMeta} vasos.</p>
       <p><strong>Revisión:</strong></p><ul>${checks}</ul>`;
+    document.documentElement.classList.add("imprimiendo-dia");
     window.print();
   }
+  window.addEventListener("afterprint", () => document.documentElement.classList.remove("imprimiendo-dia"));
   $("#btnImprimir").addEventListener("click", imprimir);
   $("#btnImprimir2").addEventListener("click", imprimir);
 
@@ -913,6 +915,10 @@
     comida: "Coma bien y tome agua",
   };
   const fechaCorta = (iso) => new Date(iso).toLocaleDateString("es-CL", { day: "numeric", month: "short" }).replace(".", "");
+  const fechaMini = (iso) => {
+    const d = new Date(iso);
+    return `${d.getDate()}/${d.getMonth() + 1}`;
+  };
   function renderProgreso() {
     const todas = store.get("partidas", []);
     const resumen = $("#progresoResumen");
@@ -959,13 +965,17 @@
       const barra = document.createElement("span");
       barra.className = "progreso-barra";
       barra.style.setProperty("--h", `${(pt.aciertos / pt.total) * 100}%`);
-      if (i === 0 || i === visibles.length - 1) {
-        const v = document.createElement("span");
-        v.className = "progreso-valor";
-        v.textContent = pt.aciertos;
-        barra.appendChild(v);
-      }
+      const v = document.createElement("span");
+      v.className = "progreso-valor";
+      v.textContent = pt.aciertos;
+      barra.appendChild(v);
       b.appendChild(barra);
+      if (visibles.length <= 6 || i % 2 === visibles.length % 2 || i === visibles.length - 1) {
+        const f = document.createElement("span");
+        f.className = "progreso-fecha";
+        f.textContent = fechaMini(pt.fecha);
+        b.appendChild(f);
+      }
       const mostrar = () => {
         tip.hidden = false;
         tip.textContent = "";
@@ -1040,7 +1050,6 @@
     r.textContent = RESULTADOS[nivel];
     $$(".luz").forEach((l) => {
       l.classList.toggle("is-activa", marcadas.length > 0 && l.dataset.luz === nivel);
-      l.classList.toggle("is-apagada", marcadas.length > 0 && l.dataset.luz !== nivel);
     });
   }
   revisor.addEventListener("change", evaluarSemaforo);

@@ -2941,6 +2941,17 @@ html {
 .footer-intro {
   margin-top: 10px;
 }
+.fuentes-box summary {
+  cursor: pointer;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 8px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  color: var(--turquesa-claro);
+}
 .fuentes {
   margin-top: 12px;
   padding-left: 1.3em;

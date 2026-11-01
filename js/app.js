@@ -387,7 +387,7 @@
     savePrefs();
     renderAvisos();
     const permitido = "Notification" in window && Notification.permission === "granted";
-    toast(permitido ? "Le avisaremos cuando toque cambiar de posición, con la página abierta." : "Verá el aviso en esta página. Manténgala abierta.");
+    toast(permitido ? "Le avisaremos cuando toque cambiar de posición (con la página abierta)." : "Verá el aviso en esta página. Manténgala abierta.");
   });
   function revisarAviso() {
     const prox = proximoCambio();
@@ -690,7 +690,7 @@
     mapaStage.setAttribute("aria-labelledby", btn.id);
     $("#mapaUse").setAttribute("href", `#fig-${posturaActual}`);
     renderPuntos();
-    puntoInfo.innerHTML = `<h3>Toque un número</h3><p>Verá por qué esa zona sufre y cómo protegerla.</p>`;
+    puntoInfo.innerHTML = `<h3>Toque un número</h3><p>Verá cómo proteger esa zona.</p>`;
     if (foco) btn.focus();
   }
   posturaTabs.forEach((b, i) => {
@@ -1037,10 +1037,10 @@
      ========================================================== */
   const revisor = $("#revisor");
   const RESULTADOS = {
-    verde: "Si no marca nada y la piel se ve sana, está en verde: siga con sus cuidados de cada día.",
-    amarillo: "Amarillo: refuerce los cuidados y vigile. Quite el apoyo de esa zona, cambie de posición más seguido y vuelva a mirar en unas horas. Si no mejora, consulte.",
-    rojo: "Rojo: consulte hoy a su equipo de salud (CESFAM o atención domiciliaria). Mientras tanto, no apoye a la persona sobre esa zona.",
-    urgencia: "Urgencia: acuda ahora al servicio de urgencia más cercano (SAPU, SAR u hospital).",
+    verde: "Sin marcas y con la piel sana: verde. Siga con sus cuidados.",
+    amarillo: "Amarillo: quite el apoyo de esa zona, cambie de posición más seguido y vuelva a mirar en unas horas. Si no mejora, consulte.",
+    rojo: "Rojo: no apoye esa zona y consulte hoy a su equipo de salud (CESFAM o atención domiciliaria).",
+    urgencia: "Urgencia: vaya ahora a la urgencia más cercana (SAPU, SAR u hospital).",
   };
   function evaluarSemaforo() {
     const marcadas = $$("input:checked", revisor).map((i) => i.value);
@@ -1061,10 +1061,10 @@
   const riesgoForm = $("#riesgoForm");
   const CAMPOS = ["sensibilidad", "humedad", "actividad", "movilidad", "nutricion", "roce"];
   const NIVELES = [
-    { max: 12, t: "Riesgo alto", d: "Converse pronto con su equipo de salud sobre un colchón o cojín especial y un plan de cambios de posición. Revise la piel al menos dos veces al día y use el registro de «Mi día»." },
-    { max: 14, t: "Riesgo moderado", d: "Cambie de posición con regularidad, use cojín antiescaras al estar sentado y revise la piel todos los días. Comente el resultado con su equipo de salud." },
+    { max: 12, t: "Riesgo alto", d: "Hable pronto con su equipo de salud sobre colchón o cojín especial y un plan de cambios de posición. Revise la piel dos veces al día." },
+    { max: 14, t: "Riesgo moderado", d: "Cambie de posición con regularidad, use cojín antiescaras al sentarse y revise la piel cada día. Comente el resultado con su equipo." },
     { max: 18, t: "Riesgo bajo", d: "Mantenga los cuidados diarios: moverse, piel limpia y seca, buena alimentación y revisión de la piel." },
-    { max: 23, t: "Sin riesgo aparente", d: "Siga activo. Si la salud cambia, por ejemplo tras una hospitalización o si pasa más tiempo en cama, vuelva a responder." },
+    { max: 23, t: "Sin riesgo aparente", d: "Siga activo. Si su salud cambia, vuelva a responder." },
   ];
   function evaluarRiesgo(guardar) {
     const datos = new FormData(riesgoForm);

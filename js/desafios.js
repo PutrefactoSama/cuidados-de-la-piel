@@ -102,10 +102,10 @@
           <h3 class="h3">Cómo funciona</h3>
           <ol class="pasos">
             <li><span class="paso-num">1</span><div><strong>Prueba de ingreso</strong><span>12 preguntas, unos 5 minutos. Muestra lo que ya sabe.</span></div></li>
-            <li><span class="paso-num">2</span><div><strong>Un desafío cada día</strong><span>3 preguntas con explicación y 3 desafíos prácticos para tocar y aprender.</span></div></li>
-            <li><span class="paso-num">3</span><div><strong>Prueba de alta</strong><span>Otras 12 preguntas, parecidas a las del ingreso, para ver cuánto aprendió.</span></div></li>
+            <li><span class="paso-num">2</span><div><strong>Un desafío cada día</strong><span>3 preguntas cortas y desafíos prácticos.</span></div></li>
+            <li><span class="paso-num">3</span><div><strong>Prueba de alta</strong><span>Otras 12 preguntas para ver cuánto aprendió.</span></div></li>
           </ol>
-          <p class="desafio-nota">Sus respuestas quedan solo en este equipo. Al alta podrá descargar o imprimir el resumen para su equipo de salud. Las preguntas están en proceso de validación por un panel de expertos.</p>
+          <p class="desafio-nota">Sus respuestas quedan solo en este equipo. Al alta podrá descargar o imprimir el resumen. Preguntas en validación por expertos.</p>
         </div>
         <form class="patch desafio-inicio" id="formInicio" novalidate>
           <h3 class="h3">Empezar</h3>

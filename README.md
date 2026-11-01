@@ -2,7 +2,7 @@
 
 Aplicación web para **pacientes y familias** (Chile), pensada primero para el celular en casa y también para tablet en consulta u hospital. Enseña por qué aparecen las lesiones por presión («escaras»), ayuda a llevar los cuidados diarios y deja claro cuándo consultar.
 
-Visualmente es una **arpillera chilena**: cielo índigo con cordillera, parches de tela cosidos, pespuntes y bordes de tijera zigzag.
+Visualmente es una **arpillera chilena de día**: fondo de lino crudo, cordillera bajo un cielo de mañana, telas de tonos suaves cosidas, pespuntes y bordes de tijera zigzag. El único color intenso es el rojo clínico de las alarmas.
 
 ## Qué puede hacer el paciente
 
@@ -46,7 +46,7 @@ Se eliminaron afirmaciones sin respaldo de la versión anterior («95 % prevenib
 ```
 .
 ├── index.html               # Página única con todo el contenido
-├── css/styles.css           # Mundo arpillera: tokens, parches, bandas, accesibilidad, impresión
+├── css/styles.css           # Arpillera de día: tokens, parches, bandas, accesibilidad, impresión
 ├── js/app.js                # Interacciones: reloj, agua, juego, mapa, prueba del dedo, semáforo, riesgo, TTS
 ├── js/banco.js              # Banco de preguntas (formas A/B y pool diario)
 ├── js/desafios.js           # Desafíos de hospitalización: ingreso, diario, prácticos, alta, CSV

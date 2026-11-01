@@ -1,6 +1,6 @@
 /* ==========================================================================
-   CuidaPiel · Arpillera chilena
-   Cielo índigo, parches de tela cosidos, pespuntes y bordes de tijera zigzag.
+   CuidaPiel · Arpillera chilena, de día
+   Lino crudo, telas de tonos suaves cosidas, pespuntes y bordes de tijera zigzag.
    ========================================================================== */
 
 @font-face {
@@ -41,39 +41,58 @@
 
 /* ---------- Tokens ---------- */
 :root {
-  /* Tela de fondo: cielo de arpillera */
-  --cielo: #1f2a6e;
-  --cielo-hondo: #141b4d;
-  --cielo-claro: #3a4aa6;
-  --noche: #0e1440;
+  /* Tela de fondo: lino crudo a la luz del día */
+  --fondo: #f4eee3;
+  --fondo-fg: var(--tinta);
+  --fondo-fg-suave: var(--tinta-suave);
+  --cielo-dia: #e4ebf1;
+  --barra: #fbf8f2;
+  --barra-fg: var(--tinta);
+  /* Añil: el único tono hondo, reservado para selección y tinta sobre ocre */
+  --cielo: #3d4a86;
+  --cielo-hondo: #2c3568;
+  --cielo-claro: #8fa3c4;
+  /* Lino tostado del pie */
+  --noche: #ebe4d6;
 
-  /* Parches */
-  --turquesa: #0b6e75;
-  --turquesa-claro: #8fe0d8;
-  --sol: #f4b400;
-  --sol-claro: #ffe08a;
-  --fucsia: #a3195b;
-  --fucsia-claro: #f8b4d4;
-  --cordillera: #2b6e3a;
-  --cordillera-claro: #b4e6a8;
-  --lila: #5a3a93;
-  --lila-claro: #d4c4f2;
-  --naranjo: #c4501a;
-  --naranjo-claro: #ffc6a3;
+  /* Hilos de color: acentos apagados, aptos para texto e íconos */
+  --turquesa: #2e6e6a;
+  --turquesa-claro: #d8eae4;
+  --sol: #e2b04a;
+  --sol-hondo: #a87a22;
+  --sol-claro: #f7e6bd;
+  --fucsia: #95475f;
+  --fucsia-claro: #f3dfe4;
+  --cordillera: #3d6b4b;
+  --cordillera-claro: #dceada;
+  --lila: #5e5491;
+  --lila-claro: #e5e1f2;
+  --naranjo: #a6553a;
+  --naranjo-claro: #f6dfd3;
   --alarma: #b3261e;
-  --alarma-claro: #ffd3cf;
+  --alarma-claro: #f9dcd8;
+
+  /* Telas de las franjas: lavados suaves de cada hilo */
+  --tela-turquesa: #dcebe6;
+  --tela-sol: #f6e7c4;
+  --tela-fucsia: #f3e1e5;
+  --tela-cordillera: #e1ebdd;
+  --tela-lila: #e8e4f3;
+  --tela-naranjo: #f6e3d8;
+  --tela-cielo: #e2e8f2;
 
   /* Lienzo de lectura */
-  --lienzo: #fcfaf5;
-  --lienzo-2: #f1eee6;
-  --tinta: #141b4d;
-  --tinta-suave: #3b4270;
+  --lienzo: #fffdf8;
+  --lienzo-2: #f3eee4;
+  --tinta: #1f2547;
+  --tinta-suave: #4a4f6e;
   --hilo-blanco: rgba(255, 255, 255, 0.72);
+  --hilo-tinta: rgba(31, 37, 71, 0.28);
   /* Trama de tela: urdimbre y trama muy tenues */
-  --trama-clara: repeating-linear-gradient(0deg, rgba(20, 27, 77, 0.028) 0 1px, transparent 1px 3px),
-    repeating-linear-gradient(90deg, rgba(20, 27, 77, 0.022) 0 1px, transparent 1px 3px);
-  --trama-oscura: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 3px),
-    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0 1px, transparent 1px 3px);
+  --trama-clara: repeating-linear-gradient(0deg, rgba(31, 37, 71, 0.026) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(31, 37, 71, 0.02) 0 1px, transparent 1px 3px);
+  --trama-oscura: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.3) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(31, 37, 71, 0.03) 0 1px, transparent 1px 3px);
 
   /* Piel (diagramas) */
   --piel: #f0a27e;
@@ -84,8 +103,8 @@
 
   --r-patch: 26px 18px 28px 16px / 18px 26px 16px 28px;
   --r-btn: 16px 12px 16px 12px / 12px 16px 12px 16px;
-  --sombra: 0 10px 22px -10px rgba(10, 14, 50, 0.55), 0 2px 5px rgba(10, 14, 50, 0.22);
-  --sombra-baja: 0 4px 10px -4px rgba(10, 14, 50, 0.45), 0 1px 2px rgba(10, 14, 50, 0.2);
+  --sombra: 0 10px 24px -14px rgba(31, 37, 71, 0.32), 0 2px 5px rgba(31, 37, 71, 0.08);
+  --sombra-baja: 0 4px 10px -6px rgba(31, 37, 71, 0.32), 0 1px 2px rgba(31, 37, 71, 0.08);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --gutter: 16px;
@@ -127,8 +146,8 @@ body {
   font-family: var(--f-body);
   font-size: 1.1875rem;
   line-height: 1.55;
-  color: var(--tinta);
-  background: var(--cielo);
+  color: var(--fondo-fg);
+  background: var(--fondo);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   padding-bottom: calc(var(--bottomnav-h) + env(safe-area-inset-bottom, 0px));
@@ -193,18 +212,18 @@ a {
 }
 
 html {
-  scrollbar-color: var(--cielo-claro) var(--cielo-hondo);
+  scrollbar-color: var(--cielo-claro) var(--fondo);
 }
 ::-webkit-scrollbar {
   width: 12px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--cielo-hondo);
+  background: var(--fondo);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--cielo-claro);
   border-radius: 10px;
-  border: 3px solid var(--cielo-hondo);
+  border: 3px solid var(--fondo);
 }
 
 .icon {
@@ -406,12 +425,12 @@ html {
 }
 .btn-fantasma {
   --btn-bg: transparent;
-  --btn-fg: #fff;
+  --btn-fg: var(--tinta);
   box-shadow: none;
-  border: 2.5px solid rgba(255, 255, 255, 0.85);
+  border: 2px solid rgba(31, 37, 71, 0.4);
 }
 .btn-fantasma:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(31, 37, 71, 0.06);
   box-shadow: none;
 }
 .btn-alarma {
@@ -443,7 +462,7 @@ html {
   transition: background-color 160ms var(--ease-out);
 }
 .listen:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(31, 37, 71, 0.06);
 }
 .listen[aria-pressed="true"] {
   background: var(--sol);
@@ -456,9 +475,9 @@ html {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: var(--cielo-hondo);
-  color: #fff;
-  border-bottom: 2px dashed rgba(255, 255, 255, 0.28);
+  background: var(--barra);
+  color: var(--barra-fg);
+  border-bottom: 2px dashed var(--hilo-tinta);
 }
 .topbar-inner {
   display: flex;
@@ -521,14 +540,13 @@ html {
   font-weight: 700;
   font-size: 1rem;
   white-space: nowrap;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--barra-fg);
 }
 .mainnav a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: rgba(31, 37, 71, 0.06);
 }
 .mainnav a.is-alarma {
-  color: var(--sol-claro);
+  color: var(--alarma);
 }
 .tools {
   display: flex;
@@ -546,13 +564,13 @@ html {
   border: 0;
   border-radius: 12px;
   background: transparent;
-  color: #fff;
+  color: var(--barra-fg);
   font-size: 0.8125rem;
   font-weight: 700;
   line-height: 1.1;
 }
 .tool:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(31, 37, 71, 0.06);
 }
 .tool[aria-pressed="true"] {
   background: var(--sol);
@@ -586,8 +604,9 @@ html {
   z-index: 40;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  background: var(--cielo-hondo);
-  border-top: 2px dashed rgba(255, 255, 255, 0.28);
+  background: var(--barra);
+  border-top: 2px dashed var(--hilo-tinta);
+  box-shadow: 0 -8px 20px -16px rgba(31, 37, 71, 0.4);
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 @media (min-width: 900px) {
@@ -603,7 +622,7 @@ html {
   gap: 3px;
   min-width: 0;
   min-height: var(--bottomnav-h);
-  color: #fff;
+  color: var(--barra-fg);
   text-decoration: none;
   font-size: clamp(0.75rem, 3.6vw, 0.9375rem);
   font-weight: 700;
@@ -614,18 +633,18 @@ html {
   height: 26px;
 }
 .bottomnav a.is-alarma {
-  color: var(--sol);
+  color: var(--alarma);
 }
 .bottomnav a[aria-current="true"] {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(31, 37, 71, 0.07);
 }
 
 /* ---------- Héroe ---------- */
 .hero {
   position: relative;
   overflow: hidden;
-  color: #fff;
-  background: var(--cielo);
+  color: var(--fondo-fg);
+  background: linear-gradient(180deg, var(--cielo-dia) 0%, var(--fondo) 78%);
   padding-top: 22px;
   padding-bottom: 26px;
   isolation: isolate;
@@ -663,7 +682,7 @@ html {
 }
 .hero .lead {
   margin-top: 14px;
-  color: rgba(255, 255, 255, 0.94);
+  color: var(--fondo-fg-suave);
 }
 @media (max-width: 599px) {
   .hero .h1 {
@@ -740,8 +759,10 @@ html {
   gap: 8px;
   padding: 8px 16px 8px 12px;
   border-radius: 999px;
-  background: rgba(14, 20, 64, 0.72);
-  border: 3px dashed var(--hilo-blanco);
+  background: var(--lienzo);
+  color: var(--tinta);
+  border: 2.5px dashed var(--hilo-tinta);
+  box-shadow: var(--sombra-baja);
   font-family: var(--f-display);
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -857,9 +878,9 @@ html {
 
 /* ---------- Bandas de tela (secciones) ---------- */
 .band {
-  --band: var(--turquesa);
-  --band-fg: #fff;
-  --band-hilo: var(--hilo-blanco);
+  --band: var(--tela-turquesa);
+  --band-fg: var(--tinta);
+  --band-hilo: color-mix(in srgb, var(--turquesa) 42%, transparent);
   --band-inset: 6px;
   position: relative;
   width: calc(100% - var(--band-inset) * 2);
@@ -868,9 +889,9 @@ html {
   background: var(--trama-oscura), var(--band);
   color: var(--band-fg);
   padding-block: 56px 64px;
-  outline: 3px dashed var(--band-hilo);
+  outline: 2.5px dashed var(--band-hilo);
   outline-offset: -9px;
-  box-shadow: 0 18px 30px -18px rgba(5, 8, 30, 0.7);
+  box-shadow: 0 16px 28px -24px rgba(31, 37, 71, 0.45);
 }
 .band > .wrap {
   padding-inline: 20px;
@@ -915,16 +936,15 @@ html {
   }
 }
 .band-turquesa {
-  --band: var(--turquesa);
+  --band: var(--tela-turquesa);
 }
 .band-sol {
-  --band: var(--sol);
-  --band-fg: var(--cielo-hondo);
-  --band-hilo: rgba(20, 27, 77, 0.5);
+  --band: var(--tela-sol);
+  --band-hilo: color-mix(in srgb, var(--sol-hondo) 50%, transparent);
 }
 /* Secciones directamente sobre el cielo índigo */
 .seccion-cielo {
-  color: #fff;
+  color: var(--fondo-fg);
   padding-block: 40px 48px;
 }
 @media (min-width: 900px) {
@@ -933,24 +953,26 @@ html {
   }
 }
 .band-fucsia {
-  --band: var(--fucsia);
+  --band: var(--tela-fucsia);
+  --band-hilo: color-mix(in srgb, var(--fucsia) 40%, transparent);
 }
 .band-cordillera {
-  --band: var(--cordillera);
+  --band: var(--tela-cordillera);
+  --band-hilo: color-mix(in srgb, var(--cordillera) 42%, transparent);
 }
 .band-lila {
-  --band: var(--lila);
+  --band: var(--tela-lila);
+  --band-hilo: color-mix(in srgb, var(--lila) 40%, transparent);
 }
 .band-lienzo {
   --band: var(--lienzo-2);
   --band-fg: var(--tinta);
-  --band-hilo: rgba(20, 27, 77, 0.3);
+  --band-hilo: var(--hilo-tinta);
 }
-.band-cielo {
-  --band: var(--cielo);
-}
+.band-cielo,
 .band-hondo {
-  --band: var(--cielo-hondo);
+  --band: var(--tela-cielo);
+  --band-hilo: color-mix(in srgb, var(--cielo) 40%, transparent);
 }
 
 .section-head {
@@ -1110,8 +1132,9 @@ html {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.16);
-  border: 2px solid var(--hilo-blanco);
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid var(--band-hilo);
+  color: var(--turquesa);
 }
 .causa h3 {
   font-size: 1.25rem;
@@ -1120,12 +1143,12 @@ html {
 }
 .causa p {
   font-size: 1.0625rem;
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--tinta-suave);
 }
 .riesgo-lista {
   margin-top: 28px;
   padding-top: 24px;
-  border-top: 3px dashed var(--hilo-blanco);
+  border-top: 2.5px dashed var(--band-hilo);
 }
 .riesgo-lista h3 {
   font-family: var(--f-display);
@@ -1148,7 +1171,7 @@ html {
 }
 .riesgo-lista li .icon {
   margin-top: 2px;
-  color: var(--turquesa-claro);
+  color: var(--turquesa);
 }
 
 /* ---------- Los cuidados (recorrido) ---------- */
@@ -1297,7 +1320,7 @@ html {
   display: grid;
   place-items: center;
   padding: 18px;
-  background: var(--fucsia);
+  background: var(--fucsia-claro);
 }
 .cuidado-fig.is-mapa svg {
   width: 100%;
@@ -1404,8 +1427,7 @@ html {
 }
 .video-frame {
   padding: 12px;
-  --hilo: rgba(255, 255, 255, 0.5);
-  background: var(--cielo-hondo);
+  --hilo: color-mix(in srgb, var(--cielo-claro) 70%, var(--cielo-hondo));
 }
 .video-frame video {
   width: 100%;
@@ -1414,7 +1436,7 @@ html {
   aspect-ratio: 16 / 9;
 }
 .video-texto {
-  color: #fff;
+  color: var(--fondo-fg);
 }
 .video-texto .lead {
   margin: 14px 0 24px;
@@ -1446,7 +1468,7 @@ html {
   color: var(--cielo-hondo);
   font-family: var(--f-display);
   font-size: 1.75rem;
-  border: 3px solid rgba(20, 27, 77, 0.35);
+  border: 2px solid rgba(31, 37, 71, 0.25);
 }
 
 /* ---------- Revisar la piel ---------- */
@@ -2099,7 +2121,7 @@ html {
 
 /* Semana */
 .semana {
-  color: #fff;
+  color: var(--band-fg);
 }
 .semana {
   margin-top: 36px;
@@ -2124,15 +2146,15 @@ html {
   gap: 4px;
   padding: 10px 2px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.6);
   border: 2px solid transparent;
   text-align: center;
   font-size: clamp(0.75rem, 3.4vw, 0.875rem);
   font-weight: 700;
 }
 .semana-dia.is-hoy {
-  border-color: var(--hilo-blanco);
-  background: rgba(255, 255, 255, 0.2);
+  border-color: color-mix(in srgb, var(--cordillera) 70%, transparent);
+  background: var(--lienzo);
 }
 .semana-dia b {
   font-family: var(--f-display);
@@ -2143,12 +2165,12 @@ html {
 .semana-dia .estrella {
   width: 20px;
   height: 20px;
-  color: var(--sol);
+  color: var(--sol-hondo);
 }
 .semana-nota {
   margin-top: 12px;
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--tinta-suave);
 }
 
 /* ---------- Jugar ---------- */
@@ -2383,7 +2405,7 @@ html {
 }
 .progreso-col:hover .progreso-barra,
 .progreso-col:focus-visible .progreso-barra {
-  background: #7452b3;
+  background: #4c4378;
 }
 .progreso-valor {
   position: absolute;
@@ -2445,7 +2467,7 @@ html {
 }
 
 .insignias {
-  color: #fff;
+  color: var(--band-fg);
 }
 .insignias h3 {
   font-family: var(--f-display);
@@ -2467,8 +2489,8 @@ html {
   align-items: center;
   padding: 10px 12px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.55);
+  border: 2px solid color-mix(in srgb, var(--lila) 22%, transparent);
 }
 .insignia svg {
   width: 76px;
@@ -2487,11 +2509,11 @@ html {
 }
 .insignia span {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--tinta-suave);
 }
 .insignia.is-ganada {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: var(--sol-claro);
+  background: var(--lienzo);
+  border-color: var(--sol);
 }
 .insignia.is-nueva svg {
   animation: bordado 900ms var(--ease-out);
@@ -2525,12 +2547,13 @@ html {
   gap: 14px;
 }
 .luz {
-  --luz: var(--cordillera);
-  --luz-fg: #fff;
-  --luz-hilo: rgba(255, 255, 255, 0.7);
-  --luz-hacer: rgba(0, 0, 0, 0.22);
-  --bulbo: #fff;
-  --bulbo-fg: var(--cordillera);
+  --luz: var(--cordillera-claro);
+  --luz-fg: var(--tinta);
+  --luz-titulo: var(--cordillera);
+  --luz-hilo: color-mix(in srgb, var(--cordillera) 50%, transparent);
+  --luz-hacer: rgba(255, 255, 255, 0.72);
+  --bulbo: var(--cordillera);
+  --bulbo-fg: #fff;
   position: relative;
   display: grid;
   grid-template-columns: 64px 1fr;
@@ -2557,24 +2580,25 @@ html {
   position: relative;
 }
 .luz-amarillo {
-  --luz: var(--sol);
-  --luz-fg: var(--cielo-hondo);
-  --luz-hilo: rgba(20, 27, 77, 0.5);
-  --luz-hacer: rgba(255, 255, 255, 0.5);
-  --bulbo: var(--cielo-hondo);
-  --bulbo-fg: var(--sol);
+  --luz: var(--sol-claro);
+  --luz-titulo: var(--tinta);
+  --luz-hilo: color-mix(in srgb, var(--sol-hondo) 55%, transparent);
+  --bulbo: var(--sol);
+  --bulbo-fg: var(--cielo-hondo);
 }
 .luz-rojo {
-  --luz: var(--alarma);
-  --bulbo-fg: var(--alarma);
+  --luz: var(--alarma-claro);
+  --luz-titulo: var(--alarma);
+  --luz-hilo: color-mix(in srgb, var(--alarma) 55%, transparent);
+  --bulbo: var(--alarma);
 }
 .luz-urgencia {
   --luz: var(--lienzo);
-  --luz-fg: var(--tinta);
+  --luz-titulo: var(--alarma);
   --luz-hilo: var(--alarma);
   --luz-hacer: var(--alarma-claro);
   --bulbo: var(--alarma);
-  --bulbo-fg: #fff;
+  box-shadow: inset 0 0 0 3px var(--alarma), var(--sombra);
 }
 .luz-bulbo {
   display: grid;
@@ -2591,6 +2615,7 @@ html {
   stroke-width: 2.4;
 }
 .luz h3 {
+  color: var(--luz-titulo);
   font-size: 1.375rem;
   font-weight: 800;
   line-height: 1.2;
@@ -2623,8 +2648,8 @@ html {
 .luz.is-activa {
   transform: scale(1.02);
   box-shadow:
-    0 0 0 5px var(--sol),
-    0 22px 34px -16px rgba(5, 8, 30, 0.8);
+    0 0 0 4px var(--sol-hondo),
+    0 18px 30px -18px rgba(31, 37, 71, 0.45);
 }
 .luz.is-activa .luz-marca {
   display: inline-flex;
@@ -2685,13 +2710,13 @@ html {
   background: var(--cordillera-claro);
 }
 .revisor-resultado[data-nivel="amarillo"] {
-  background: #fff1c2;
+  background: var(--sol-claro);
 }
 .revisor-resultado[data-nivel="rojo"] {
   background: var(--alarma-claro);
 }
 .revisor-resultado[data-nivel="urgencia"] {
-  background: var(--cielo-hondo);
+  background: var(--alarma);
   color: #fff;
 }
 
@@ -2778,10 +2803,8 @@ html {
   outline-offset: 2px;
 }
 .riesgo-resultado {
-  --hilo: rgba(255, 255, 255, 0.5);
+  --hilo: color-mix(in srgb, var(--turquesa) 82%, var(--cielo-hondo));
   margin-top: 22px;
-  background: var(--cielo-hondo);
-  color: #fff;
 }
 .riesgo-resultado h3 {
   font-family: var(--f-display);
@@ -2827,11 +2850,11 @@ html {
   left: var(--pos, 0%);
   width: 4px;
   height: calc(100% + 18px);
-  background: #fff;
+  background: var(--cielo-hondo);
   border-radius: 4px;
   transform: translateX(-50%);
   transition: left 600ms var(--ease-out);
-  box-shadow: 0 0 0 2px var(--cielo-hondo);
+  box-shadow: 0 0 0 2px var(--lienzo);
 }
 .riesgo-nota {
   margin-top: 16px;
@@ -2866,7 +2889,7 @@ html {
   margin-top: 18px;
 }
 .cuidador-cita span {
-  color: var(--sol-claro);
+  color: var(--fucsia);
 }
 .cuidador-tips {
   list-style: none;
@@ -2880,8 +2903,8 @@ html {
   align-items: center;
   padding: 14px 16px;
   border-radius: var(--r-patch);
-  background: rgba(255, 255, 255, 0.12);
-  border: 2px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.62);
+  border: 2px solid color-mix(in srgb, var(--fucsia) 22%, transparent);
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.35;
@@ -2899,7 +2922,7 @@ html {
 /* ---------- Pie ---------- */
 .footer {
   background: var(--noche);
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--fondo-fg);
   padding-block: 56px 40px;
   margin-top: 0;
   position: relative;
@@ -2931,7 +2954,6 @@ html {
   text-transform: uppercase;
   font-size: 1.9rem;
   line-height: 1;
-  color: #fff;
 }
 .footer p,
 .footer li {
@@ -2950,7 +2972,7 @@ html {
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 0.2em;
-  color: var(--turquesa-claro);
+  color: var(--turquesa);
 }
 .fuentes {
   margin-top: 12px;
@@ -2959,7 +2981,7 @@ html {
   gap: 8px;
 }
 .fuentes a {
-  color: var(--turquesa-claro);
+  color: var(--turquesa);
   word-break: break-word;
 }
 .footer-acciones {
@@ -2972,14 +2994,14 @@ html {
   margin-top: 18px;
   padding: 14px 16px;
   border-radius: 14px;
-  border: 2px dashed rgba(255, 255, 255, 0.35);
+  border: 2px dashed var(--hilo-tinta);
 }
 .creditos {
   margin-top: 32px;
   padding-top: 18px;
-  border-top: 2px dashed rgba(255, 255, 255, 0.2);
+  border-top: 2px dashed var(--hilo-tinta);
   font-size: 0.9375rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--fondo-fg-suave);
 }
 
 /* ---------- Búsqueda ---------- */
@@ -2992,10 +3014,10 @@ html {
   border-radius: var(--r-patch);
   background: #fff;
   color: var(--tinta);
-  box-shadow: 0 30px 60px -20px rgba(5, 8, 30, 0.7);
+  box-shadow: 0 30px 60px -24px rgba(31, 37, 71, 0.45);
 }
 .buscador::backdrop {
-  background: rgba(14, 20, 64, 0.72);
+  background: rgba(31, 37, 71, 0.35);
 }
 .buscador-inner {
   padding: 18px;
@@ -3196,7 +3218,8 @@ html {
 
 /* ---------- Mis desafíos de hospitalización ---------- */
 .band-naranjo {
-  --band: var(--naranjo);
+  --band: var(--tela-naranjo);
+  --band-hilo: color-mix(in srgb, var(--naranjo) 40%, transparent);
 }
 .desafios-grid {
   display: grid;
@@ -3786,6 +3809,12 @@ html {
 
 /* ---------- Alto contraste ---------- */
 html[data-contraste="alto"] {
+  --fondo: #000;
+  --fondo-fg: #fff;
+  --fondo-fg-suave: #fff;
+  --cielo-dia: #000;
+  --barra: #000;
+  --barra-fg: #fff;
   --cielo: #000;
   --cielo-hondo: #000;
   --noche: #000;
@@ -3799,8 +3828,7 @@ html[data-contraste="alto"] {
   --tinta-suave: #000;
   --hilo-blanco: #fff;
 }
-html[data-contraste="alto"] .band-sol,
-html[data-contraste="alto"] .band-lienzo {
+html[data-contraste="alto"] .band {
   --band: #000;
   --band-fg: #fff;
   --band-hilo: #fff;
@@ -3863,8 +3891,49 @@ html[data-contraste="alto"] .hilo-progress span {
 }
 html[data-contraste="alto"] .muted,
 html[data-contraste="alto"] .causa p,
+html[data-contraste="alto"] .causa-icon,
+html[data-contraste="alto"] .riesgo-lista li .icon,
+html[data-contraste="alto"] .semana-nota,
 html[data-contraste="alto"] .insignia span {
   color: inherit;
+}
+html[data-contraste="alto"] .causa-icon,
+html[data-contraste="alto"] .semana-dia,
+html[data-contraste="alto"] .insignia,
+html[data-contraste="alto"] .cuidador-tips li {
+  background: transparent;
+  border: 2px solid #fff;
+}
+html[data-contraste="alto"] .semana-dia.is-hoy {
+  border-width: 4px;
+}
+html[data-contraste="alto"] .btn-fantasma {
+  --btn-fg: #fff;
+  border-color: #fff;
+}
+html[data-contraste="alto"] .mainnav a.is-alarma,
+html[data-contraste="alto"] .bottomnav a.is-alarma,
+html[data-contraste="alto"] .cuidador-cita span,
+html[data-contraste="alto"] .footer a,
+html[data-contraste="alto"] .fuentes-box summary {
+  color: #ffe500;
+}
+html[data-contraste="alto"] .topbar,
+html[data-contraste="alto"] .bottomnav {
+  border-color: #fff;
+}
+html[data-contraste="alto"] .luz h3 {
+  color: #000;
+}
+html[data-contraste="alto"] .luz::before {
+  border-color: #000;
+}
+html[data-contraste="alto"] .aviso-legal,
+html[data-contraste="alto"] .creditos {
+  border-color: #fff;
+}
+html[data-contraste="alto"] .toast {
+  outline: 3px solid #fff;
 }
 
 /* ---------- Movimiento reducido ---------- */

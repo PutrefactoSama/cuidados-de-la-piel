@@ -2951,6 +2951,20 @@ html {
   color: var(--turquesa-claro);
   word-break: break-word;
 }
+.fuentes-box summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  cursor: pointer;
+  list-style: none;
+}
+.fuentes-box summary::-webkit-details-marker {
+  display: none;
+}
+.fuentes-box[open] summary .icon {
+  transform: rotate(180deg);
+}
 .footer-acciones {
   display: flex;
   flex-wrap: wrap;

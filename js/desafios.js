@@ -101,11 +101,11 @@
         <div class="patch desafio-intro">
           <h3 class="h3">Cómo funciona</h3>
           <ol class="pasos">
-            <li><span class="paso-num">1</span><div><strong>Prueba de ingreso</strong><span>12 preguntas, unos 5 minutos. Muestra lo que ya sabe.</span></div></li>
-            <li><span class="paso-num">2</span><div><strong>Un desafío cada día</strong><span>3 preguntas con explicación y 3 desafíos prácticos para tocar y aprender.</span></div></li>
-            <li><span class="paso-num">3</span><div><strong>Prueba de alta</strong><span>Otras 12 preguntas, parecidas a las del ingreso, para ver cuánto aprendió.</span></div></li>
+            <li><span class="paso-num">1</span><div><strong>Prueba de ingreso</strong><span>12 preguntas, unos 5 minutos.</span></div></li>
+            <li><span class="paso-num">2</span><div><strong>Un desafío cada día</strong><span>3 preguntas y 3 desafíos prácticos.</span></div></li>
+            <li><span class="paso-num">3</span><div><strong>Prueba de alta</strong><span>12 preguntas parecidas, al irse a casa.</span></div></li>
           </ol>
-          <p class="desafio-nota">Sus respuestas quedan solo en este equipo. Al alta podrá descargar o imprimir el resumen para su equipo de salud. Las preguntas están en proceso de validación por un panel de expertos.</p>
+          <p class="desafio-nota">Sus respuestas quedan solo en este equipo. Las preguntas están en proceso de validación.</p>
         </div>
         <form class="patch desafio-inicio" id="formInicio" novalidate>
           <h3 class="h3">Empezar</h3>
@@ -113,7 +113,7 @@
             <span class="campo-label">Código que le dio su equipo (opcional)</span>
             <input id="codigoPaciente" name="codigo" type="text" inputmode="text" autocomplete="off" maxlength="16" placeholder="Por ejemplo: CP-0042" value="${esc(ev.codigo || "")}" aria-describedby="codigoAyuda codigoError">
           </label>
-          <p class="campo-ayuda" id="codigoAyuda">Use solo el código que le entregue enfermería o farmacia. No escriba su nombre ni su RUT.</p>
+          <p class="campo-ayuda" id="codigoAyuda">No escriba su nombre ni su RUT.</p>
           <p class="campo-error" id="codigoError" role="alert"></p>
           <button class="btn btn-sol btn-block" type="submit">${icon("arrow-right")}Comenzar la prueba de ingreso</button>
         </form>
@@ -125,7 +125,7 @@
       const error = $("#codigoError", app);
       const pareceRut = /^\d{1,2}\.?\d{3}\.?\d{3}-?[\dkK]$/.test(valor) || /^\d{7,9}[\dkK]?$/.test(valor.replace(/[.-]/g, ""));
       if (valor && pareceRut) {
-        error.textContent = "Eso parece un RUT. Por privacidad, use el código que le dio su equipo, no sus datos personales.";
+        error.textContent = "Eso parece un RUT. Use solo el código que le dio su equipo.";
         $("#codigoPaciente", app).setAttribute("aria-invalid", "true");
         return;
       }
@@ -159,7 +159,7 @@
         <div class="alternativas" role="radiogroup" aria-labelledby="pruebaPregunta">
           ${it.op.map((o, i) => `<button type="button" class="alternativa" role="radio" aria-checked="${elegido === i}" data-i="${i}" tabindex="${elegido === i || (elegido === undefined && i === 0) ? 0 : -1}"><span class="alt-marca" aria-hidden="true">${"ABC"[i]}</span><span>${esc(o)}</span></button>`).join("")}
         </div>
-        <p class="desafio-nota">En esta prueba no se muestran las respuestas correctas hasta el final. Responda lo que haría usted.</p>
+        <p class="desafio-nota">Las respuestas correctas se muestran al final.</p>
         <div class="prueba-acciones">
           <button class="btn" type="button" id="pruebaAtras" ${c.i === 0 ? "disabled" : ""}>${icon("chevron-left")}Anterior</button>
           <button class="btn btn-sol" type="button" id="pruebaSig" ${elegido === undefined ? "disabled" : ""}>${ultima ? "Terminar y ver resultado" : "Siguiente"}${icon(ultima ? "check" : "chevron-right")}</button>
@@ -303,7 +303,7 @@
 
           <section class="patch alta" aria-labelledby="altaTit">
             <h3 class="h3" id="altaTit">Prueba de alta</h3>
-            <p>Hágala el día en que se va a su casa. Son 12 preguntas parecidas a las del ingreso.</p>
+            <p>Hágala el día en que se va a su casa.</p>
             <button class="btn btn-cielo btn-block" type="button" id="btnAlta">${icon("arrow-right")}Comenzar la prueba de alta</button>
           </section>
         </div>
@@ -315,7 +315,7 @@
       enfocar("#verRevisionPre");
     });
     $("#btnAlta", app).addEventListener("click", () => {
-      if (nDia === 0 && !window.confirm("Hizo la prueba de ingreso hoy. Lo ideal es hacer la de alta al irse a su casa. ¿Quiere comenzarla igual?")) return;
+      if (nDia === 0 && !window.confirm("La prueba de alta se hace al irse a casa. ¿Quiere comenzarla igual?")) return;
       ev.enCurso = { tipo: "post", i: 0, resp: {} };
       guardar();
       render();
@@ -333,7 +333,7 @@
     const estado = ev.diarios[hoy] || { ids: items.map((x) => x.id), resp: {}, completo: false };
     if (estado.completo) {
       const bien = Object.values(estado.resp).filter((r) => r.ok).length;
-      cuerpo.innerHTML = `<p class="diario-listo">${icon("badge-check", "icon")}<span><strong>¡Desafío de hoy completo!</strong> ${bien} de 3 correctas. Vuelva mañana por uno nuevo.</span></p>`;
+      cuerpo.innerHTML = `<p class="diario-listo">${icon("badge-check", "icon")}<span><strong>¡Listo por hoy!</strong> ${bien} de 3 correctas. Vuelva mañana.</span></p>`;
       return;
     }
     const idx = estado.ids.findIndex((id) => !estado.resp[id]);
@@ -382,9 +382,9 @@
 
   /* ---------- Desafíos prácticos ---------- */
   const PRACTICOS = {
-    almohadas: { titulo: "Ponga las almohadas", desc: "Elija dónde van las almohadas para proteger talones, cadera y rodillas.", icono: "bed-double", max: 3 },
-    puntos: { titulo: "Encuentre los puntos de presión", desc: "Toque en la figura las 5 zonas que más sufren boca arriba.", icono: "eye", max: 5 },
-    piel: { titulo: "¿Qué hago con esta piel?", desc: "Lea cada situación y elija el color del semáforo.", icono: "triangle-alert", max: 5 },
+    almohadas: { titulo: "Ponga las almohadas", desc: "¿Dónde van las almohadas?", icono: "bed-double", max: 3 },
+    puntos: { titulo: "Encuentre los puntos de presión", desc: "Toque las 5 zonas de riesgo.", icono: "eye", max: 5 },
+    piel: { titulo: "¿Qué hago con esta piel?", desc: "Elija el color del semáforo.", icono: "triangle-alert", max: 5 },
   };
   function registrarPractico(id, puntos) {
     const r = ev.practicos[id] || { primero: null, mejor: 0, intentos: 0 };
@@ -432,7 +432,7 @@
     let puntos = 0;
     const paso1 = () => {
       cuerpo.innerHTML = `${cabeceraPractico("almohadas")}
-        <p class="practico-consigna">Paso 1 de 2. Está boca arriba. ¿Dónde pone la almohada para que los talones queden en el aire?</p>
+        <p class="practico-consigna">Paso 1 de 2. Boca arriba: ¿dónde va la almohada para que los talones queden en el aire?</p>
         <div class="practico-figura"><svg viewBox="0 88 400 126" aria-hidden="true"><use href="#fig-supino-sin" width="400" height="230" id="almUse"/><g id="almExtra"></g></svg></div>
         <div class="alternativas" id="almOps">
           <button type="button" class="alternativa" data-op="talones"><span class="alt-marca" aria-hidden="true">A</span><span>Debajo de los talones</span></button>
@@ -463,8 +463,8 @@
           const fb = $("#almFb", cuerpo);
           fb.hidden = false;
           fb.innerHTML = ok
-            ? "<strong>¡Correcto!</strong><span>Con la almohada bajo las pantorrillas y las rodillas apenas dobladas, los talones quedan flotando.</span>"
-            : `<strong>No exactamente.</strong><span>${op === "talones" ? "Bajo los talones, la presión sigue sobre el talón." : "Solo bajo las rodillas, los talones siguen apoyados en el colchón."} La almohada va bajo las pantorrillas.</span>`;
+            ? "<strong>¡Correcto!</strong><span>Bajo las pantorrillas, los talones quedan en el aire.</span>"
+            : "<strong>No exactamente.</strong><span>Así el talón sigue apoyado. Va bajo las pantorrillas.</span>";
           $("#almSig", cuerpo).hidden = false;
           $("#almSig", cuerpo).focus({ preventScroll: true });
         })
@@ -476,7 +476,7 @@
     };
     const paso2 = () => {
       cuerpo.innerHTML = `${cabeceraPractico("almohadas")}
-        <p class="practico-consigna">Paso 2 de 2. Está de lado, inclinado unos 30°. Marque los 2 lugares donde van las almohadas.</p>
+        <p class="practico-consigna">Paso 2 de 2. De lado, a 30°: marque los 2 lugares de las almohadas.</p>
         <div class="practico-figura"><svg viewBox="0 84 400 130" aria-hidden="true"><use href="#fig-lado-sin" width="400" height="230"/><g id="almExtra2"></g></svg></div>
         <div class="alternativas" id="almOps2">
           <button type="button" class="alternativa" role="checkbox" aria-checked="false" data-op="espalda"><span class="alt-marca" aria-hidden="true">${icon("check")}</span><span>En la espalda</span></button>
@@ -520,7 +520,7 @@
         registrarPractico("almohadas", puntos);
         const fb = $("#almFb2", cuerpo);
         fb.hidden = false;
-        fb.innerHTML = `<strong>Resultado: ${puntos} de 3.</strong><span>Van en la espalda, para mantener la inclinación de 30°, y entre las rodillas. Debajo de la cadera la almohada aprieta justo el hueso que hay que proteger.</span>`;
+        fb.innerHTML = `<strong>Resultado: ${puntos} de 3.</strong><span>Van en la espalda y entre las rodillas. Bajo la cadera, aprieta el hueso.</span>`;
         e.currentTarget.outerHTML = `<button class="btn btn-cielo" type="button" id="almFin">${icon("check")}Listo</button>`;
         $("#almFin", cuerpo).addEventListener("click", cerrarPractico);
         $("#almFin", cuerpo).focus({ preventScroll: true });
@@ -543,7 +543,7 @@
     ];
     const [vx, vy, vw, vh] = [0, 88, 400, 126];
     cuerpo.innerHTML = `${cabeceraPractico("puntos")}
-      <p class="practico-consigna">Toque las 5 zonas que más sufren cuando la persona está boca arriba. Luego toque «Revisar».</p>
+      <p class="practico-consigna">Toque las 5 zonas que más sufren boca arriba y luego «Revisar».</p>
       <div class="practico-figura mapa-stage practico-mapa">
         <svg viewBox="${vx} ${vy} ${vw} ${vh}" aria-hidden="true"><use href="#fig-supino" width="400" height="230"/></svg>
         <div>${ZONAS.map((z) => `<button type="button" class="zona" role="checkbox" aria-checked="false" aria-label="${z.n}" data-z="${z.id}" style="left:${(((z.x - vx) / vw) * 100).toFixed(2)}%;top:${(((z.y - vy) / vh) * 100).toFixed(2)}%"><span aria-hidden="true">${icon("check", "z-check")}${icon("x", "z-x")}</span></button>`).join("")}</div>
@@ -583,7 +583,7 @@
       registrarPractico("puntos", pts);
       const fb = $("#zonasFb", cuerpo);
       fb.hidden = false;
-      fb.innerHTML = `<strong>Resultado: ${pts} de 5.</strong><span>Boca arriba sufren la nuca, los omóplatos, los codos, el sacro y los talones: son huesos con poca grasa encima. ${malas ? "El pecho, el abdomen y el muslo no se apoyan en el colchón en esta posición." : ""}</span>`;
+      fb.innerHTML = `<strong>Resultado: ${pts} de 5.</strong><span>Nuca, omóplatos, codos, sacro y talones: huesos con poca grasa. ${malas ? "Pecho, abdomen y muslo no se apoyan." : ""}</span>`;
       e.currentTarget.outerHTML = `<button class="btn btn-cielo" type="button" id="zonasFin">${icon("check")}Listo</button>`;
       $("#zonasFin", cuerpo).addEventListener("click", cerrarPractico);
       $("#zonasFin", cuerpo).focus({ preventScroll: true });
@@ -593,11 +593,11 @@
   // 3) Semáforo: ¿qué hago con esta piel?
   function practicoPiel(cuerpo) {
     const CASOS = [
-      { t: "Zona roja en el sacro. Al presionarla con el dedo se pone blanca y luego vuelve el color.", r: "amarillo", e: "Si blanquea, la sangre circula: quite el apoyo y vuelva a mirar en unas horas.", piel: "#e0685c" },
-      { t: "Zona roja en el talón que NO se pone blanca al presionar.", r: "rojo", e: "Es una lesión por presión inicial: no la apoye y consulte hoy.", piel: "#b8323e" },
-      { t: "La piel del codo está entera, sin cambios de color ni dolor.", r: "verde", e: "Piel sana: siga con sus cuidados de cada día.", piel: "#f2b8a0" },
-      { t: "Herida en la cadera con pus y mal olor. La persona tiene fiebre y está confundida.", r: "urgencia", e: "Puede ser una infección grave: acuda a un servicio de urgencia.", piel: "#7a2a3e" },
-      { t: "Apareció una ampolla en el talón.", r: "rojo", e: "Una ampolla es una lesión: quite el apoyo y consulte hoy.", piel: "#d77d6b" },
+      { t: "Zona roja en el sacro que se pone blanca al presionar.", r: "amarillo", e: "La sangre circula: quite el apoyo y vuelva a mirar en unas horas.", piel: "#e0685c" },
+      { t: "Zona roja en el talón que NO se pone blanca al presionar.", r: "rojo", e: "Lesión inicial: no la apoye y consulte hoy.", piel: "#b8323e" },
+      { t: "Piel del codo entera, sin cambios de color ni dolor.", r: "verde", e: "Piel sana: siga con sus cuidados.", piel: "#f2b8a0" },
+      { t: "Herida con pus y mal olor, con fiebre y confusión.", r: "urgencia", e: "Puede ser una infección grave: vaya a urgencia.", piel: "#7a2a3e" },
+      { t: "Apareció una ampolla en el talón.", r: "rojo", e: "Una ampolla es una lesión: no la apoye y consulte hoy.", piel: "#d77d6b" },
     ];
     const orden = CASOS.map((_, i) => i).sort(() => Math.random() - 0.5);
     const LUCES = [
@@ -644,7 +644,7 @@
           return;
         }
         registrarPractico("piel", pts);
-        cuerpo.innerHTML = `${cabeceraPractico("piel")}<div class="quiz-feedback"><strong>Resultado: ${pts} de ${CASOS.length}.</strong><span>Repase el semáforo en «¿Cuándo pedir ayuda?» cuando quiera.</span></div><button class="btn btn-cielo" type="button" id="pielFin">${icon("check")}Listo</button>`;
+        cuerpo.innerHTML = `${cabeceraPractico("piel")}<div class="quiz-feedback"><strong>Resultado: ${pts} de ${CASOS.length}.</strong></div><button class="btn btn-cielo" type="button" id="pielFin">${icon("check")}Listo</button>`;
         $("#practicoVolver", cuerpo).addEventListener("click", cerrarPractico);
         $("#pielFin", cuerpo).addEventListener("click", cerrarPractico);
         $("#pielFin", cuerpo).focus({ preventScroll: true });
@@ -692,7 +692,7 @@
           </section>
           <section class="patch" aria-labelledby="compartirTit">
             <h3 class="h3" id="compartirTit">Compartir con su equipo</h3>
-            <p>Descargue el resumen o muéstrelo a enfermería o farmacia antes de irse.</p>
+            <p>Muéstrelo a su equipo antes de irse.</p>
             <div class="resumen-acciones">
               <button class="btn btn-sol" type="button" id="btnCsv">${icon("arrow-down")}Descargar resumen (CSV)</button>
               <button class="btn" type="button" id="btnCopiar">${icon("list-checks")}Copiar resumen</button>
@@ -719,7 +719,7 @@
       window.print();
     });
     $("#btnNueva", app).addEventListener("click", () => {
-      if (!window.confirm("¿Comenzar una nueva hospitalización? El resumen actual se guardará en el historial de este equipo y los desafíos empezarán de cero.")) return;
+      if (!window.confirm("¿Comenzar una nueva hospitalización? El resumen actual quedará archivado en este equipo.")) return;
       const archivo = leer(ARCHIVO, []);
       archivo.push(filaCsv());
       escribir(ARCHIVO, archivo.slice(-20));

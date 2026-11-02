@@ -458,7 +458,7 @@
             $("#almUse", cuerpo).setAttribute("href", "#fig-supino");
           } else {
             const [x, y, rx] = POS[op];
-            extra.innerHTML = `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="7" fill="#fff" stroke="#141b4d" stroke-width="2"/><circle cx="370" cy="160" r="12" fill="none" stroke="#b3261e" stroke-width="4"/>`;
+            extra.innerHTML = `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="7" fill="#fff" stroke="#1f2547" stroke-width="2"/><circle cx="370" cy="160" r="12" fill="none" stroke="#b3261e" stroke-width="4"/>`;
           }
           const fb = $("#almFb", cuerpo);
           fb.hidden = false;
@@ -487,8 +487,8 @@
         <button class="btn btn-sol" type="button" id="almRevisar">Revisar</button>`;
       $("#practicoVolver", cuerpo).addEventListener("click", cerrarPractico);
       const DIBUJO = {
-        espalda: '<rect x="96" y="96" width="132" height="18" rx="9" fill="#fff" stroke="#141b4d" stroke-width="2"/>',
-        rodillas: '<ellipse cx="300" cy="150" rx="24" ry="9" fill="#fff" stroke="#141b4d" stroke-width="2"/>',
+        espalda: '<rect x="96" y="96" width="132" height="18" rx="9" fill="#fff" stroke="#1f2547" stroke-width="2"/>',
+        rodillas: '<ellipse cx="300" cy="150" rx="24" ry="9" fill="#fff" stroke="#1f2547" stroke-width="2"/>',
         cadera: '<ellipse cx="228" cy="168" rx="26" ry="7" fill="#fff" stroke="#b3261e" stroke-width="2"/>',
       };
       const extra = $("#almExtra2", cuerpo);

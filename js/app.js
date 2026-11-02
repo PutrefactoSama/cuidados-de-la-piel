@@ -103,10 +103,10 @@
      Mi día: datos
      ========================================================== */
   const POS = {
-    supino: { label: "Boca arriba", color: "#e2b04a", consejo: "con los talones en el aire y la cabecera baja" },
-    derecho: { label: "Lado derecho", color: "#2e6e6a", consejo: "inclinado unos 30°, con almohada en la espalda y entre las rodillas" },
-    izquierdo: { label: "Lado izquierdo", color: "#95475f", consejo: "inclinado unos 30°, con almohada en la espalda y entre las rodillas" },
-    sentado: { label: "Sentado", color: "#5e5491", consejo: "con cojín antiescaras y los pies apoyados" },
+    supino: { label: "Boca arriba", color: "#d6a95b", consejo: "con los talones en el aire y la cabecera baja" },
+    derecho: { label: "Lado derecho", color: "#689e99", consejo: "inclinado unos 30°, con almohada en la espalda y entre las rodillas" },
+    izquierdo: { label: "Lado izquierdo", color: "#c07b8e", consejo: "inclinado unos 30°, con almohada en la espalda y entre las rodillas" },
+    sentado: { label: "Sentado", color: "#918ac0", consejo: "con cojín antiescaras y los pies apoyados" },
   };
   const CHECKS = 5;
 
@@ -170,20 +170,20 @@
     svg.textContent = "";
     const R = 82;
     const ahora = Date.now();
-    el("circle", { cx: CX, cy: CY, r: 106, fill: "#f3f1ea" }, svg);
+    el("circle", { cx: CX, cy: CY, r: 106, fill: "#f6f3ec" }, svg);
     // noche (22:00 a 07:00)
     const hoy = new Date();
     const a22 = angulo(new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate(), 22).getTime());
     const a07 = angulo(new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate(), 7).getTime());
     const noche = arco(a22, a07, 98);
     const [nx0, ny0] = punto(a22, 98);
-    el("path", { d: `M${CX} ${CY}L${nx0} ${ny0}${noche.d.replace(/^M[^A]+/, "")}Z`, fill: "rgba(94,84,145,.14)" }, svg);
-    el("circle", { cx: CX, cy: CY, r: 101, fill: "none", stroke: "rgba(31,37,71,.35)", "stroke-width": 2, "stroke-dasharray": "5 4" }, svg);
+    el("path", { d: `M${CX} ${CY}L${nx0} ${ny0}${noche.d.replace(/^M[^A]+/, "")}Z`, fill: "rgba(104,97,145,.12)" }, svg);
+    el("circle", { cx: CX, cy: CY, r: 101, fill: "none", stroke: "rgba(47,54,73,.35)", "stroke-width": 2, "stroke-dasharray": "5 4" }, svg);
     // marcas de hora
     for (let h = 0; h < 24; h++) {
       const a = (h / 24) * Math.PI * 2 - Math.PI / 2;
       const [x, y] = punto(a, 94);
-      el("circle", { cx: x.toFixed(2), cy: y.toFixed(2), r: h % 6 === 0 ? 3.4 : 1.8, fill: "#1f2547", opacity: h % 6 === 0 ? 0.8 : 0.4 }, svg);
+      el("circle", { cx: x.toFixed(2), cy: y.toFixed(2), r: h % 6 === 0 ? 3.4 : 1.8, fill: "#2f3649", opacity: h % 6 === 0 ? 0.8 : 0.4 }, svg);
     }
     if (!mini) {
       [
@@ -194,19 +194,19 @@
       ].forEach(([h, t]) => {
         const a = (h / 24) * Math.PI * 2 - Math.PI / 2;
         const [x, y] = punto(a, 67);
-        const tx = el("text", { x: x.toFixed(1), y: (y + 6).toFixed(1), "text-anchor": "middle", "font-size": 17, "font-weight": 800, fill: "#1f2547", "font-family": "Atkinson Hyperlegible Next, sans-serif" }, svg);
+        const tx = el("text", { x: x.toFixed(1), y: (y + 6).toFixed(1), "text-anchor": "middle", "font-size": 17, "font-weight": 800, fill: "#2f3649", "font-family": "Atkinson Hyperlegible Next, sans-serif" }, svg);
         tx.textContent = t;
       });
     }
     // hilo guía
-    el("circle", { cx: CX, cy: CY, r: R, fill: "none", stroke: "rgba(31,37,71,.12)", "stroke-width": 12 }, svg);
+    el("circle", { cx: CX, cy: CY, r: R, fill: "none", stroke: "rgba(47,54,73,.12)", "stroke-width": 12 }, svg);
 
     // hilos de cada posición
     const turns = dia.turns;
     turns.forEach((t, i) => {
       const fin = i < turns.length - 1 ? turns[i + 1].t : ahora;
       const a = arco(angulo(t.t), angulo(fin), R);
-      const color = POS[t.pos] ? POS[t.pos].color : "#1f2547";
+      const color = POS[t.pos] ? POS[t.pos].color : "#2f3649";
       const p = el("path", { d: a.d, fill: "none", stroke: color, "stroke-width": 12, "stroke-linecap": "round", class: "puntada" }, svg);
       p.style.setProperty("--len", a.len.toFixed(1));
       if (!reduceMotion && t.t === ultimoNuevo) p.classList.add("is-nueva");
@@ -215,7 +215,7 @@
     // nudos
     turns.forEach((t) => {
       const [x, y] = punto(angulo(t.t), R);
-      const color = POS[t.pos] ? POS[t.pos].color : "#1f2547";
+      const color = POS[t.pos] ? POS[t.pos].color : "#2f3649";
       const c = el("circle", { cx: x.toFixed(2), cy: y.toFixed(2), r: 8.5, fill: color, stroke: "#fff", "stroke-width": 3, class: "nudo" }, svg);
       if (!reduceMotion && t.t === ultimoNuevo) c.classList.add("is-nuevo");
     });
@@ -223,16 +223,16 @@
     const prox = proximoCambio();
     if (prox && dateKey(new Date(prox)) === diaKey) {
       const [x, y] = punto(angulo(prox), R);
-      el("circle", { cx: x.toFixed(2), cy: y.toFixed(2), r: 10, fill: "#fff", stroke: "#1f2547", "stroke-width": 2.5, "stroke-dasharray": "3 3" }, svg);
+      el("circle", { cx: x.toFixed(2), cy: y.toFixed(2), r: 10, fill: "#fff", stroke: "#2f3649", "stroke-width": 2.5, "stroke-dasharray": "3 3" }, svg);
     }
     // aguja (hora actual)
     const an = angulo(ahora);
     const [hx, hy] = punto(an, R - 18);
     const [tx, ty] = punto(an + Math.PI, 14);
-    el("line", { x1: tx.toFixed(2), y1: ty.toFixed(2), x2: hx.toFixed(2), y2: hy.toFixed(2), stroke: "#1f2547", "stroke-width": 4, "stroke-linecap": "round" }, svg);
+    el("line", { x1: tx.toFixed(2), y1: ty.toFixed(2), x2: hx.toFixed(2), y2: hy.toFixed(2), stroke: "#2f3649", "stroke-width": 3, "stroke-linecap": "round" }, svg);
     const [ex, ey] = punto(an + Math.PI, 9);
-    el("ellipse", { cx: ex.toFixed(2), cy: ey.toFixed(2), rx: 3, ry: 3, fill: "#f3f1ea", stroke: "#1f2547", "stroke-width": 2 }, svg);
-    el("circle", { cx: CX, cy: CY, r: 5, fill: "#e2b04a", stroke: "#1f2547", "stroke-width": 2 }, svg);
+    el("ellipse", { cx: ex.toFixed(2), cy: ey.toFixed(2), rx: 3, ry: 3, fill: "#f6f3ec", stroke: "#2f3649", "stroke-width": 2 }, svg);
+    el("circle", { cx: CX, cy: CY, r: 5, fill: "#eac788", stroke: "#2f3649", "stroke-width": 2 }, svg);
   }
 
   /* ---------- Render de "Mi día" ---------- */
@@ -405,7 +405,7 @@
   }
 
   /* ---------- Agua ---------- */
-  const VASO_SVG = `<svg viewBox="0 0 40 52" aria-hidden="true"><path class="agua-nivel" d="M9.4 22h21.2l-2.1 23.2a3 3 0 0 1-3 2.8H14.5a3 3 0 0 1-3-2.8z" fill="#6fa8a1"/><path d="M6 4h28l-3.6 41.4a4 4 0 0 1-4 3.6H13.6a4 4 0 0 1-4-3.6z" fill="none" stroke="#1f2547" stroke-width="2.6" stroke-linejoin="round"/><path d="M8.6 14h22.8" stroke="#1f2547" stroke-width="2" stroke-dasharray="3 3" opacity=".45"/></svg>`;
+  const VASO_SVG = `<svg viewBox="0 0 40 52" aria-hidden="true"><path class="agua-nivel" d="M9.4 22h21.2l-2.1 23.2a3 3 0 0 1-3 2.8H14.5a3 3 0 0 1-3-2.8z" fill="#9dc8c3"/><path d="M6 4h28l-3.6 41.4a4 4 0 0 1-4 3.6H13.6a4 4 0 0 1-4-3.6z" fill="none" stroke="#555c6c" stroke-width="2.6" stroke-linejoin="round"/><path d="M8.6 14h22.8" stroke="#2f3649" stroke-width="2" stroke-dasharray="3 3" opacity=".45"/></svg>`;
   function renderAgua() {
     const ul = $("#vasos");
     ul.textContent = "";

@@ -103,10 +103,10 @@
      Mi día: datos
      ========================================================== */
   const POS = {
-    supino: { label: "Boca arriba", color: "#e2b04a", consejo: "con los talones en el aire y la cabecera baja" },
-    derecho: { label: "Lado derecho", color: "#2e6e6a", consejo: "inclinado unos 30°, con almohada en la espalda y entre las rodillas" },
-    izquierdo: { label: "Lado izquierdo", color: "#95475f", consejo: "inclinado unos 30°, con almohada en la espalda y entre las rodillas" },
-    sentado: { label: "Sentado", color: "#5e5491", consejo: "con cojín antiescaras y los pies apoyados" },
+    supino: { label: "Boca arriba", color: "#e2b04a", consejo: "talones en el aire" },
+    derecho: { label: "Lado derecho", color: "#2e6e6a", consejo: "a 30°, con almohadas" },
+    izquierdo: { label: "Lado izquierdo", color: "#95475f", consejo: "a 30°, con almohadas" },
+    sentado: { label: "Sentado", color: "#5e5491", consejo: "con cojín y pies apoyados" },
   };
   const CHECKS = 5;
 
@@ -259,7 +259,7 @@
     $("#diaMiniFecha").textContent = fechaLarga();
     $("#diaMiniLabel").textContent = prox ? "Próximo cambio de posición" : "Cambios de hoy";
     $("#diaMiniHora").textContent = prox ? horaTxt : "0";
-    $("#diaMiniEn").textContent = prox ? enTxt : "Toque el botón cada vez que cambie de posición";
+    $("#diaMiniEn").textContent = prox ? enTxt : "Toque el botón al cambiar de posición";
     diaMini.classList.toggle("is-due", vencido);
     $("#diaMiniAgua").textContent = `${dia.agua} de ${prefs.aguaMeta} vasos`;
     $("#diaMiniRevision").textContent = `Revisión ${dia.checks.filter(Boolean).length} de ${CHECKS}`;
@@ -267,14 +267,14 @@
     $("#relojLabel").textContent = prox ? "Próximo cambio de posición" : "Cambios de hoy";
     $("#relojHora").textContent = prox ? horaTxt : "0";
     const relojEn = $("#relojEn");
-    relojEn.textContent = prox ? enTxt : "Registre abajo el primer cambio del día";
+    relojEn.textContent = prox ? enTxt : "Registre el primer cambio";
     relojEn.classList.toggle("is-due", vencido);
     $("#avisoCambio").classList.toggle("is-visible", vencido);
     $("#relojUltimo").textContent = u
-      ? `Último cambio: ${hora(u.t)}, ${POS[u.pos].label.toLowerCase()}${u.pos === "sentado" ? " (sentado: le recordamos cada hora)" : ""}.`
+      ? `Último: ${hora(u.t)}, ${POS[u.pos].label.toLowerCase()}${u.pos === "sentado" ? " (sentado: aviso cada hora)" : ""}.`
       : "";
     const s = sugerencia();
-    $("#relojSugerencia").textContent = `Sugerencia para el próximo cambio: ${POS[s].label.toLowerCase()}, ${POS[s].consejo}.`;
+    $("#relojSugerencia").textContent = `Siguiente: ${POS[s].label.toLowerCase()}, ${POS[s].consejo}.`;
 
     dibujarReloj(relojMini, true);
     dibujarReloj(relojGrande, false);
@@ -311,7 +311,7 @@
     renderSemana();
     preseleccionar();
     const prox = proximoCambio();
-    toast(`Registrado: ${POS[pos].label.toLowerCase()} a las ${hora(t)}. Próximo cambio a las ${hora(prox)}.`);
+    toast(`Registrado: ${POS[pos].label.toLowerCase()}. Próximo cambio: ${hora(prox)}.`);
   }
 
   $("#relojForm").addEventListener("submit", (e) => {
@@ -387,7 +387,7 @@
     savePrefs();
     renderAvisos();
     const permitido = "Notification" in window && Notification.permission === "granted";
-    toast(permitido ? "Le avisaremos cuando toque cambiar de posición (con la página abierta)." : "Verá el aviso en esta página. Manténgala abierta.");
+    toast(permitido ? "Aviso activado. Mantenga la página abierta." : "Verá el aviso aquí. Mantenga la página abierta.");
   });
   function revisarAviso() {
     const prox = proximoCambio();
@@ -515,10 +515,10 @@
   const corteHoras = $("#corteHoras");
   const flujos = $$(".flujo", corteSvg);
   const ESTADOS = [
-    [0, 0, "Piel sana: la sangre circula y lleva oxígeno a todos los tejidos."],
-    [1.5, 1, "El peso aprieta los vasos sanguíneos: llega menos sangre a la piel."],
-    [3, 2, "La piel enrojece: está avisando. Si cambia de posición ahora, se recupera."],
-    [6, 3, "Puede haber daño en las capas profundas, aunque la piel todavía se vea entera."],
+    [0, 0, "Piel sana: la sangre circula bien."],
+    [1.5, 1, "El peso aprieta los vasos: llega menos sangre."],
+    [3, 2, "La piel se pone roja: es un aviso. Cambie de posición ahora."],
+    [6, 3, "Puede haber daño por dentro, aunque la piel se vea entera."],
   ];
   function horasTxt(v) {
     return `${String(v).replace(".", ",")} h`;
@@ -539,7 +539,7 @@
   corteRange.addEventListener("input", () => actualizarCorte(Number(corteRange.value)));
   $("#corteCambiar").addEventListener("click", () => {
     const desde = Number(corteRange.value);
-    const fin = "¡Bien! Al cambiar de posición la sangre vuelve a la piel. Por eso hay que moverse con regularidad.";
+    const fin = "¡Bien! Al moverse, la sangre vuelve a la piel.";
     if (reduceMotion || desde === 0) {
       corteRange.value = 0;
       actualizarCorte(0, fin);
@@ -633,25 +633,25 @@
      ========================================================== */
   const PUNTOS = {
     supino: [
-      { x: 44, y: 154, n: "Nuca", por: "El hueso de la parte de atrás de la cabeza se apoya siempre en el mismo punto de la almohada.", pro: "Almohada blanda; cambie el apoyo de la cabeza en cada cambio de posición." },
-      { x: 100, y: 166, n: "Omóplatos", por: "Los huesos de la espalda alta quedan apoyados en el colchón.", pro: "Sábanas estiradas y cambios de posición regulares." },
-      { x: 150, y: 156, n: "Codos", por: "Quedan apoyados en la cama y tienen muy poca grasa que los proteja.", pro: "Apoye los brazos sobre una almohada blanda." },
-      { x: 232, y: 166, n: "Sacro y cóccix", por: "Es la zona donde más aparecen lesiones: allí se concentra el peso al estar boca arriba.", pro: "Cabecera baja (máximo 30°) y alterne con posiciones de lado." },
-      { x: 368, y: 154, n: "Talones", por: "Tienen muy poca grasa y soportan el peso de las piernas.", pro: "Almohada bajo las pantorrillas para que los talones queden en el aire." },
+      { x: 44, y: 154, n: "Nuca", por: "Se apoya siempre en el mismo punto de la almohada.", pro: "Almohada blanda y cambie el apoyo de la cabeza." },
+      { x: 100, y: 166, n: "Omóplatos", por: "Se apoyan en el colchón.", pro: "Sábanas estiradas y cambios de posición." },
+      { x: 150, y: 156, n: "Codos", por: "Tienen muy poca grasa que los proteja.", pro: "Brazos sobre una almohada blanda." },
+      { x: 232, y: 166, n: "Sacro y cóccix", por: "Aquí aparecen más lesiones: carga el peso boca arriba.", pro: "Cabecera baja (máximo 30°) y alterne de lado." },
+      { x: 368, y: 154, n: "Talones", por: "Poca grasa y cargan el peso de las piernas.", pro: "Almohada bajo las pantorrillas: talones en el aire." },
     ],
     lado: [
-      { x: 40, y: 150, n: "Oreja", por: "Queda apretada entre la cabeza y la almohada.", pro: "Almohada blanda y revise que la oreja no quede doblada." },
-      { x: 96, y: 168, n: "Hombro", por: "Recibe el peso de la parte alta del cuerpo.", pro: "Inclínese solo unos 30°, con una almohada en la espalda." },
-      { x: 228, y: 168, n: "Cadera", por: "El hueso de la cadera queda muy expuesto si se acuesta completamente de lado.", pro: "Nunca de lado completo (90°): solo unos 30° de inclinación." },
-      { x: 298, y: 166, n: "Rodillas", por: "El hueso de una rodilla aprieta a la otra.", pro: "Ponga una almohada entre las rodillas." },
-      { x: 366, y: 168, n: "Tobillos", por: "El hueso del tobillo roza el colchón y el otro pie.", pro: "La almohada entre las piernas debe llegar hasta los tobillos." },
+      { x: 40, y: 150, n: "Oreja", por: "Queda apretada contra la almohada.", pro: "Almohada blanda y que la oreja no quede doblada." },
+      { x: 96, y: 168, n: "Hombro", por: "Carga el peso de la parte alta del cuerpo.", pro: "Inclínese solo 30°, con almohada en la espalda." },
+      { x: 228, y: 168, n: "Cadera", por: "Queda muy expuesta si está completamente de lado.", pro: "Nunca de lado completo (90°): solo 30°." },
+      { x: 298, y: 166, n: "Rodillas", por: "Una rodilla aprieta a la otra.", pro: "Almohada entre las rodillas." },
+      { x: 366, y: 168, n: "Tobillos", por: "Rozan el colchón y el otro pie.", pro: "La almohada entre las piernas debe llegar a los tobillos." },
     ],
     sentado: [
-      { x: 122, y: 78, n: "Omóplatos", por: "La espalda alta se apoya en el respaldo.", pro: "Respaldo acolchado y cambios de apoyo frecuentes." },
-      { x: 162, y: 110, n: "Codos", por: "Descansan sobre los apoyabrazos.", pro: "Apoyabrazos acolchados o una almohada blanda." },
-      { x: 124, y: 142, n: "Sacro y cóccix", por: "Si la persona se resbala en la silla, el peso cae sobre el cóccix.", pro: "Siéntela bien atrás, con la espalda recta y apoyada." },
-      { x: 184, y: 146, n: "Glúteos", por: "Los huesos de sentarse (isquiones) soportan casi todo el peso del cuerpo.", pro: "Cojín antiescaras, nunca de rosca, y cambios de apoyo cada 15 a 30 minutos." },
-      { x: 266, y: 206, n: "Talones y pies", por: "Pueden quedar apretados contra el suelo o el apoyapiés.", pro: "Pies bien apoyados y calcetines sin costuras apretadas." },
+      { x: 122, y: 78, n: "Omóplatos", por: "Se apoyan en el respaldo.", pro: "Respaldo acolchado y cambios de apoyo." },
+      { x: 162, y: 110, n: "Codos", por: "Descansan en los apoyabrazos.", pro: "Apoyabrazos acolchados o una almohada." },
+      { x: 124, y: 142, n: "Sacro y cóccix", por: "Carga el peso si la persona se resbala.", pro: "Siéntela bien atrás, con la espalda apoyada." },
+      { x: 184, y: 146, n: "Glúteos", por: "Cargan casi todo el peso al estar sentado.", pro: "Cojín antiescaras (nunca de rosca) y cambie el apoyo cada 15 a 30 minutos." },
+      { x: 266, y: 206, n: "Talones y pies", por: "Pueden quedar apretados contra el suelo.", pro: "Pies apoyados y calcetines sin costuras apretadas." },
     ],
   };
   const VISTAS = { supino: [0, 88, 400, 126], lado: [0, 84, 400, 130], sentado: [70, 14, 260, 204] };
@@ -738,17 +738,17 @@
       const ms = performance.now() - inicio;
       if (ms < 900) {
         dedoResultado.dataset.tipo = "";
-        dedoResultado.textContent = "Mantenga presionado un poco más, unos 3 segundos, y luego suelte.";
+        dedoResultado.textContent = "Mantenga presionado 3 segundos y suelte.";
         return;
       }
       if (btn.dataset.blanquea === "si") {
         btn.classList.add("is-blanched");
         requestAnimationFrame(() => requestAnimationFrame(() => btn.classList.remove("is-blanched")));
         dedoResultado.dataset.tipo = "bien";
-        dedoResultado.textContent = `${nombre} se puso blanca y luego recuperó su color: la sangre todavía circula. Quite el apoyo de esa zona y vuelva a revisarla en unas horas.`;
+        dedoResultado.textContent = `${nombre} se puso blanca: la sangre circula. Quite el apoyo y vuelva a mirar en unas horas.`;
       } else {
         dedoResultado.dataset.tipo = "alerta";
-        dedoResultado.textContent = `${nombre} siguió roja: no se puso blanca. Es una lesión por presión inicial (categoría 1). No apoye esa zona y avise hoy a su equipo de salud.`;
+        dedoResultado.textContent = `${nombre} siguió roja: es una lesión inicial. No apoye esa zona y avise hoy a su equipo.`;
       }
     };
     btn.addEventListener("pointerdown", (e) => {
@@ -778,16 +778,16 @@
      Juego: ¿mito o verdad?
      ========================================================== */
   const PREGUNTAS = [
-    { tema: "piel", t: "Masajear una zona enrojecida ayuda a que circule la sangre.", r: "mito", e: "Frotar o masajear una zona roja puede dañar aún más los tejidos. Quite el apoyo de esa zona y avise si no mejora." },
-    { tema: "posicion", t: "De lado, es mejor quedar solo un poco inclinado, unos 30°, que completamente de lado.", r: "verdad", e: "Completamente de lado, todo el peso cae sobre el hueso de la cadera. Con unos 30° y una almohada en la espalda, el peso se reparte." },
-    { tema: "superficie", t: "Un cojín con forma de rosca, con hoyo al centro, es ideal para no hacer presión.", r: "mito", e: "Las roscas o flotadores aprietan la piel alrededor del hoyo y dificultan la circulación. Use un cojín antiescaras." },
-    { tema: "posicion", t: "Los talones deben quedar «flotando», sin tocar el colchón.", r: "verdad", e: "Ponga la almohada bajo las pantorrillas, no bajo los talones, con las rodillas apenas dobladas." },
+    { tema: "piel", t: "Masajear una zona enrojecida ayuda a que circule la sangre.", r: "mito", e: "Frotar una zona roja la daña más. Quite el apoyo y avise si no mejora." },
+    { tema: "posicion", t: "De lado, es mejor quedar inclinado unos 30° que completamente de lado.", r: "verdad", e: "Completamente de lado, el peso cae sobre la cadera. A 30°, se reparte." },
+    { tema: "superficie", t: "Un cojín de rosca (con hoyo al centro) es ideal para no hacer presión.", r: "mito", e: "La rosca aprieta la piel alrededor del hoyo. Use un cojín antiescaras." },
+    { tema: "posicion", t: "Los talones deben quedar «flotando», sin tocar el colchón.", r: "verdad", e: "La almohada va bajo las pantorrillas, no bajo los talones." },
     { tema: "superficie", t: "Si tengo un colchón antiescaras, ya no necesito cambiar de posición.", r: "mito", e: "El colchón ayuda, pero no reemplaza los cambios de posición." },
-    { tema: "revise", t: "En piel morena u oscura, el enrojecimiento puede no notarse.", r: "verdad", e: "Por eso hay que fijarse también en el calor, la dureza, la hinchazón, el dolor o un color más oscuro o morado." },
-    { tema: "posicion", t: "Para acomodar a la persona en la cama, conviene arrastrarla con cuidado.", r: "mito", e: "Arrastrar produce roce y daña la piel. Levántela con una sábana y con ayuda de otra persona." },
-    { tema: "comida", t: "Comer proteínas y tomar agua ayuda a que la piel resista mejor.", r: "verdad", e: "La piel necesita proteínas, energía y agua para mantenerse firme y repararse." },
-    { tema: "revise", t: "Una lesión por presión siempre empieza como una herida abierta.", r: "mito", e: "Suele empezar como una zona roja que no se pone blanca al presionar, o como piel morada o dura. A veces el daño empieza por dentro." },
-    { tema: "piel", t: "Poner alcohol o colonia sobre la piel la protege.", r: "mito", e: "El alcohol y la colonia resecan la piel y la vuelven más frágil. Mejor una crema hidratante sin perfume." },
+    { tema: "revise", t: "En piel morena u oscura, el enrojecimiento puede no notarse.", r: "verdad", e: "Fíjese también en calor, dureza, hinchazón, dolor o color más oscuro." },
+    { tema: "posicion", t: "Para acomodar a la persona en la cama, conviene arrastrarla con cuidado.", r: "mito", e: "Arrastrar daña la piel. Levántela con una sábana, entre dos." },
+    { tema: "comida", t: "Comer proteínas y tomar agua ayuda a que la piel resista mejor.", r: "verdad", e: "La piel necesita proteínas, energía y agua para repararse." },
+    { tema: "revise", t: "Una lesión por presión siempre empieza como una herida abierta.", r: "mito", e: "Suele empezar como una zona roja que no se pone blanca, o piel morada o dura." },
+    { tema: "piel", t: "Poner alcohol o colonia sobre la piel la protege.", r: "mito", e: "Resecan la piel. Mejor una crema sin perfume." },
   ];
   const INSIGNIAS = {
     puntada: "Primera puntada",
@@ -899,7 +899,7 @@
     $("#quizPregunta").hidden = true;
     $("#quizFinal").hidden = false;
     $("#quizFinalTitulo").textContent = n >= 8 ? `¡${n} de 10! Es un guardián de la piel.` : n >= 5 ? `${n} de 10: ¡va muy bien!` : `${n} de 10: cada intento enseña.`;
-    $("#quizFinalTexto").textContent = `Su mejor resultado: ${mejor} de 10. Repase los seis cuidados y vuelva a jugar cuando quiera.`;
+    $("#quizFinalTexto").textContent = `Su mejor resultado: ${mejor} de 10.`;
     renderHilo();
     $("#quizOtraVez").focus({ preventScroll: true });
   });
@@ -942,11 +942,11 @@
     };
     if (todas.length === 1) {
       linea("Primera partida: ", `${ultima.aciertos} de ${ultima.total}`);
-      resumen.append(". Juegue otra vez otro día para ver si mejora.");
+      resumen.append(". Vuelva a jugar otro día y compare.");
     } else {
       linea("Primera partida: ", `${primera.aciertos} de ${primera.total}`);
       linea(" · Última: ", `${ultima.aciertos} de ${ultima.total}`);
-      resumen.append(delta > 0 ? ` · ¡Mejoró ${delta} ${delta === 1 ? "acierto" : "aciertos"}!` : delta === 0 ? " · Se mantiene igual." : ` · ${-delta} menos que la primera vez: repase los cuidados.`);
+      resumen.append(delta > 0 ? ` · ¡Mejoró ${delta} ${delta === 1 ? "acierto" : "aciertos"}!` : delta === 0 ? " · Se mantiene igual." : ` · ${-delta} menos: repase los cuidados.`);
     }
     // columnas: últimas 10 partidas
     const visibles = todas.slice(-10);
@@ -1037,10 +1037,10 @@
      ========================================================== */
   const revisor = $("#revisor");
   const RESULTADOS = {
-    verde: "Sin marcas y con la piel sana: verde. Siga con sus cuidados.",
-    amarillo: "Amarillo: quite el apoyo de esa zona, cambie de posición más seguido y vuelva a mirar en unas horas. Si no mejora, consulte.",
-    rojo: "Rojo: no apoye esa zona y consulte hoy a su equipo de salud (CESFAM o atención domiciliaria).",
-    urgencia: "Urgencia: vaya ahora a la urgencia más cercana (SAPU, SAR u hospital).",
+    verde: "Sin señales: verde. Siga con sus cuidados.",
+    amarillo: "Amarillo: refuerce los cuidados y vigile.",
+    rojo: "Rojo: consulte hoy a su equipo de salud.",
+    urgencia: "Urgencia: vaya ahora al servicio de urgencia.",
   };
   function evaluarSemaforo() {
     const marcadas = $$("input:checked", revisor).map((i) => i.value);
@@ -1061,10 +1061,10 @@
   const riesgoForm = $("#riesgoForm");
   const CAMPOS = ["sensibilidad", "humedad", "actividad", "movilidad", "nutricion", "roce"];
   const NIVELES = [
-    { max: 12, t: "Riesgo alto", d: "Hable pronto con su equipo de salud sobre colchón o cojín especial y un plan de cambios de posición. Revise la piel dos veces al día." },
-    { max: 14, t: "Riesgo moderado", d: "Cambie de posición con regularidad, use cojín antiescaras al sentarse y revise la piel cada día. Comente el resultado con su equipo." },
-    { max: 18, t: "Riesgo bajo", d: "Mantenga los cuidados diarios: moverse, piel limpia y seca, buena alimentación y revisión de la piel." },
-    { max: 23, t: "Sin riesgo aparente", d: "Siga activo. Si su salud cambia, vuelva a responder." },
+    { max: 12, t: "Riesgo alto", d: "Hable pronto con su equipo sobre un colchón o cojín especial y un plan de cambios de posición. Revise la piel dos veces al día." },
+    { max: 14, t: "Riesgo moderado", d: "Cambie de posición seguido, use cojín antiescaras y revise la piel cada día. Coméntelo con su equipo." },
+    { max: 18, t: "Riesgo bajo", d: "Siga con los seis cuidados de cada día." },
+    { max: 23, t: "Sin riesgo aparente", d: "Siga activo. Si pasa más tiempo en cama, vuelva a responder." },
   ];
   function evaluarRiesgo(guardar) {
     const datos = new FormData(riesgoForm);
@@ -1207,7 +1207,7 @@
     if (!hits.length) {
       const li = document.createElement("li");
       li.className = "buscador-vacio";
-      li.textContent = "No encontramos nada con esas palabras. Pruebe con otra, por ejemplo «talones» o «agua».";
+      li.textContent = "No hay resultados. Pruebe con «talones» o «agua».";
       resultados.appendChild(li);
       return;
     }

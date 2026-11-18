@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CuidaPiel · Arpillera chilena, de mañana
+   CuidaPiel · Arpillera chilena, de mañana · recorrido guiado
    Lino marfil, telas teñidas como acuarela, pespuntes finos y bordes de tijera zigzag.
    Sin superficies oscuras: solo el rojo clínico conserva toda su fuerza.
    ========================================================================== */
@@ -153,7 +153,7 @@ html {
   scroll-padding-top: calc(var(--topbar-h) + 12px);
   scroll-padding-bottom: calc(var(--bottomnav-h) + 16px);
 }
-@media (min-width: 900px) {
+@media (min-width: 1100px) {
   html {
     scroll-padding-bottom: 0;
   }
@@ -176,7 +176,7 @@ body {
   -webkit-font-smoothing: antialiased;
   padding-bottom: calc(var(--bottomnav-h) + env(safe-area-inset-bottom, 0px));
 }
-@media (min-width: 900px) {
+@media (min-width: 1100px) {
   body {
     padding-bottom: 0;
   }
@@ -310,11 +310,9 @@ html {
 
 /* Las columnas nunca crecen más que la pantalla */
 .hero-grid > *,
-.porque-grid > *,
-.cuidados > *,
-.cuidado-panel > *,
-.video-grid > *,
-.revisar-grid > *,
+.inicio-fila > *,
+.paso-cols > *,
+.ruta-item > *,
 .dia-grid > *,
 .dia-col > *,
 .juego-grid > *,
@@ -550,7 +548,7 @@ html {
 .mainnav {
   display: none;
 }
-@media (min-width: 1180px) {
+@media (min-width: 1100px) {
   .mainnav {
     display: flex;
     gap: 4px;
@@ -572,8 +570,15 @@ html {
 .mainnav a:hover {
   background: rgba(47, 54, 73, 0.06);
 }
+.mainnav a[aria-current] {
+  background: rgba(47, 54, 73, 0.06);
+  box-shadow: inset 0 -3px 0 var(--sol-hondo);
+}
 .mainnav a.is-alarma {
   color: var(--alarma);
+}
+.mainnav a.is-alarma[aria-current] {
+  box-shadow: inset 0 -3px 0 var(--alarma);
 }
 .tools {
   display: flex;
@@ -631,13 +636,13 @@ html {
   bottom: 0;
   z-index: 40;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   background: var(--barra);
   border-top: 2px dashed var(--hilo-tinta);
   box-shadow: 0 -8px 20px -16px rgba(47, 54, 73, 0.24);
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
-@media (min-width: 900px) {
+@media (min-width: 1100px) {
   .bottomnav {
     display: none;
   }
@@ -663,46 +668,75 @@ html {
 .bottomnav a.is-alarma {
   color: var(--alarma);
 }
-.bottomnav a[aria-current="true"] {
+.bottomnav a[aria-current] {
   background: rgba(47, 54, 73, 0.07);
+  box-shadow: inset 0 3px 0 var(--sol-hondo);
+  font-weight: 800;
+}
+.bottomnav a.is-alarma[aria-current] {
+  box-shadow: inset 0 3px 0 var(--alarma);
 }
 
-/* ---------- Héroe ---------- */
+/* ---------- Pantallas: una a la vez ---------- */
+/* Sin JavaScript se ve todo, como una sola página larga. */
+.js .vista:not(.is-activa) {
+  display: none;
+}
+.js .footer:not(.is-visible) {
+  display: none;
+}
+[tabindex="-1"]:focus {
+  outline: none;
+}
+.vista.band {
+  margin-block: 22px 40px;
+  padding-block: 40px 52px;
+}
+@media (min-width: 900px) {
+  .vista.band {
+    margin-block: 34px 56px;
+    padding-block: 64px 80px;
+  }
+}
+.volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 48px;
+  margin: -8px 0 10px -8px;
+  padding: 6px 12px 6px 6px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  text-decoration: none;
+  color: var(--band-fg, var(--tinta));
+}
+.volver:hover {
+  background: rgba(47, 54, 73, 0.06);
+}
+
+/* ---------- Inicio: tres pasos ---------- */
 .hero {
   position: relative;
   overflow: hidden;
   color: var(--fondo-fg);
-  background: linear-gradient(180deg, var(--cielo-dia) 0%, var(--fondo) 78%);
-  padding-top: 22px;
-  padding-bottom: 26px;
+  background: linear-gradient(180deg, var(--cielo-dia) 0%, var(--fondo) 46%);
+  padding-top: 26px;
+  padding-bottom: 48px;
   isolation: isolate;
-}
-.hero-sky {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-}
-.hero-sky svg {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: max(100%, 900px);
-  height: auto;
-  transform: translateX(-50%);
 }
 .hero-grid {
   display: grid;
-  gap: 20px;
+  gap: 22px;
 }
 @media (min-width: 960px) {
   .hero {
     padding-top: 64px;
   }
   .hero-grid {
-    grid-template-columns: 1.15fr 0.85fr;
-    align-items: start;
-    gap: 48px;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 56px;
   }
 }
 .hero h1 {
@@ -719,51 +753,194 @@ html {
   .hero .lead {
     font-size: 1.125rem;
   }
-  .hero-actions {
-    margin-top: 18px;
-  }
-  .hero-alarma {
-    display: none !important;
-  }
 }
-.hero-actions {
+
+/* Título de cada parche de Inicio: número cosido + verbo */
+.patch-titulo {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  margin-top: 22px;
+  font-family: var(--f-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  line-height: 1;
 }
-.hero-actions .btn-sol {
-  flex: 1 1 260px;
-  max-width: 340px;
-}
-.hero-actions .btn-fantasma {
-  flex: 0 1 auto;
+.num-disc {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--sol-claro);
+  color: var(--titulo-sol);
+  border: 2px solid color-mix(in srgb, var(--sol-hondo) 40%, transparent);
+  font-size: 1.4rem;
 }
 
+/* 1 · Aprenda: su siguiente paso */
+.sig {
+  --hilo: var(--sol);
+  display: grid;
+  gap: 8px;
+}
+.sig-estado {
+  margin-top: 8px;
+  font-weight: 700;
+  color: var(--tinta-suave);
+}
+.sig-leccion {
+  font-family: var(--f-display);
+  text-transform: uppercase;
+  font-size: clamp(2rem, 1.6rem + 1.4vw, 2.6rem);
+  line-height: 1;
+}
+.sig-meta {
+  color: var(--tinta-suave);
+}
+.sig-progreso {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin: 6px 0 10px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.sig-progreso .hilo-progress {
+  flex: 1 1 140px;
+}
+.sig-todas {
+  justify-self: center;
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  font-weight: 700;
+  color: var(--tinta-suave);
+}
 
-/* Franja de cordillera en el celular: el parche "Mi día" va cosido encima */
+/* La cordillera cosida entre el cielo y los parches */
 .hero-montes {
-  display: none;
+  height: 150px;
+  margin-top: 18px;
+  margin-bottom: -86px;
+  pointer-events: none;
 }
-@media (max-width: 959px) {
-  .hero-sky {
-    display: none;
-  }
+.hero-montes svg {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 960px) {
   .hero-montes {
-    display: block;
-    height: 150px;
-    margin: 6px calc(var(--gutter) * -1) -78px;
-    pointer-events: none;
+    height: 230px;
+    margin-top: -40px;
+    margin-bottom: -120px;
   }
-  .hero-montes svg {
-    width: 100%;
-    height: 100%;
+}
+.inicio-fila {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 22px;
+}
+@media (min-width: 900px) {
+  .inicio-fila {
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: stretch;
   }
-  .dia-mini {
-    position: relative;
-    z-index: 1;
+}
+
+/* 3 · Pida ayuda a tiempo */
+.ayuda {
+  --hilo: color-mix(in srgb, var(--alarma) 45%, transparent);
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+.ayuda-texto {
+  margin-top: 8px;
+  font-weight: 700;
+  font-size: 1.1875rem;
+}
+.ayuda-nota {
+  color: var(--tinta-suave);
+}
+.ayuda .btn {
+  margin-top: 8px;
+}
+.btn-aviso {
+  --btn-bg: var(--alarma-claro);
+  --btn-fg: var(--alarma);
+  border-color: color-mix(in srgb, var(--alarma) 55%, transparent);
+}
+
+/* Más herramientas */
+.mas {
+  margin-top: 40px;
+}
+.mas-titulo {
+  font-family: var(--f-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.mas-lista {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+@media (min-width: 800px) {
+  .mas-lista {
+    grid-template-columns: 1fr 1fr;
   }
+}
+.mas-item {
+  display: grid;
+  grid-template-columns: 52px 1fr 24px;
+  gap: 14px;
+  align-items: center;
+  height: 100%;
+  min-height: 76px;
+  padding: 12px 14px;
+  border-radius: var(--r-btn);
+  background: var(--lienzo);
+  border: 2px solid rgba(47, 54, 73, 0.1);
+  box-shadow: var(--sombra-baja);
+  text-decoration: none;
+  transition:
+    transform 180ms var(--ease-out),
+    box-shadow 180ms var(--ease-out);
+}
+.mas-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra);
+}
+.mas-icono {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--lila-claro);
+  color: var(--lila);
+}
+.mas-texto strong {
+  display: block;
+  font-size: 1.125rem;
+  line-height: 1.25;
+}
+.mas-texto span {
+  display: block;
+  margin-top: 2px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--tinta-suave);
+}
+.mas-flecha {
+  color: var(--tinta-suave);
 }
 
 /* Cinta bordada al pie de la arpillera */
@@ -777,7 +954,7 @@ html {
 }
 @media (min-width: 960px) {
   .pilares {
-    margin-top: 232px;
+    margin-top: 36px;
     gap: 14px;
   }
 }
@@ -846,12 +1023,6 @@ html {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-}
-.dia-mini-title {
-  font-family: var(--f-display);
-  font-size: 1.75rem;
-  text-transform: uppercase;
-  line-height: 1;
 }
 .dia-mini-date {
   font-size: 0.9375rem;
@@ -1011,7 +1182,7 @@ html {
 }
 /* Titulares tono sobre tono: cada tela escribe con su propia tinta */
 .band .section-head .h2,
-.band .riesgo-lista h3,
+.band .rep-cabecera .h2,
 .band .semana h3,
 .band .insignias h3 {
   color: var(--band-titulo);
@@ -1050,23 +1221,13 @@ html {
   }
 }
 
-/* ---------- ¿Por qué se forma? ---------- */
-.porque-grid {
-  display: grid;
-  gap: 22px;
-}
-@media (min-width: 960px) {
-  .porque-grid {
-    grid-template-columns: 1.25fr 0.75fr;
-    gap: 32px;
-    align-items: start;
-  }
-}
+/* ---------- Simulador del corte de la piel ---------- */
 .corte {
   --hilo: var(--turquesa-medio);
 }
 .corte-svg {
   width: 100%;
+  max-width: 560px;
   height: auto;
   border-radius: 18px;
   overflow: visible;
@@ -1085,6 +1246,7 @@ html {
   font-size: 1.125rem;
 }
 .corte-horas {
+  white-space: nowrap;
   font-family: var(--f-display);
   font-size: 2rem;
   line-height: 1;
@@ -1178,7 +1340,7 @@ html {
   border: 2px solid var(--band-hilo);
   color: var(--turquesa);
 }
-.causa h3 {
+.causa h4 {
   font-size: 1.25rem;
   font-weight: 800;
   line-height: 1.25;
@@ -1187,163 +1349,450 @@ html {
   font-size: 1.0625rem;
   color: var(--tinta-suave);
 }
-.riesgo-lista {
-  margin-top: 28px;
-  padding-top: 24px;
-  border-top: 2px dashed var(--band-hilo);
-}
-.riesgo-lista h3 {
-  font-family: var(--f-display);
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: 1.75rem;
-  line-height: 1;
-  margin-bottom: 12px;
-}
-.riesgo-lista ul {
+.riesgo-items {
   display: grid;
-  gap: 8px;
+  gap: 10px;
+  margin-top: 14px;
   list-style: none;
 }
-.riesgo-lista li {
+.riesgo-items li {
   display: flex;
   gap: 10px;
   align-items: flex-start;
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
 }
-.riesgo-lista li .icon {
+.riesgo-items li .icon {
   margin-top: 2px;
   color: var(--turquesa);
 }
 
-/* ---------- Los cuidados (recorrido) ---------- */
-.cuidados {
-  display: grid;
-  gap: 18px;
-}
-@media (min-width: 960px) {
-  .cuidados {
-    grid-template-columns: 300px 1fr;
-    gap: 28px;
-    align-items: start;
-  }
-}
-.cuidados-tabs {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 6px 2px 12px;
-  margin-inline: calc(var(--gutter) * -1);
-  padding-inline: var(--gutter);
-  scrollbar-width: none;
-}
-.cuidados-tabs::-webkit-scrollbar {
+/* ---------- Aprender: la ruta de lecciones ---------- */
+.js #aprender[data-modo="ruta"] .reproductor,
+.js #aprender[data-modo="leccion"] .ruta {
   display: none;
 }
-@media (min-width: 960px) {
-  .cuidados-tabs {
-    flex-direction: column;
-    overflow: visible;
-    margin: 0;
-    padding: 0;
-    position: sticky;
-    top: calc(var(--topbar-h) + 20px);
-  }
+.ruta .section-head {
+  margin-bottom: 18px;
 }
-.cuidado-tab {
-  position: relative;
-  flex: none;
-  scroll-snap-align: start;
+.ruta-progreso {
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-height: 60px;
-  padding: 10px 16px 10px 12px;
-  border: 0;
-  border-radius: var(--r-btn);
-  background: rgba(255, 255, 255, 0.6);
-  box-shadow: inset 0 0 0 1.5px rgba(47, 54, 73, 0.07);
-  color: var(--tinta);
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  max-width: 720px;
+  margin-bottom: 26px;
   font-weight: 800;
-  font-size: 1.0625rem;
-  text-align: left;
-  transition:
-    background-color 180ms var(--ease-out),
-    transform 180ms var(--ease-out);
 }
-.cuidado-tab:hover {
-  background: rgba(255, 255, 255, 0.8);
+.ruta-progreso .hilo-progress {
+  flex: 1 1 160px;
 }
-.cuidado-tab[aria-selected="true"] {
-  background: var(--lienzo);
-  color: var(--tinta);
-  box-shadow: inset 0 0 0 2px var(--sol-hondo), var(--sombra-baja);
+.ruta-lista {
+  position: relative;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  max-width: 720px;
 }
-.cuidado-tab[aria-selected="true"]::after {
+/* El hilo que une las lecciones */
+.ruta-lista::before {
   content: "";
   position: absolute;
-  inset: 5px;
-  border: 2px dashed color-mix(in srgb, var(--sol-hondo) 42%, transparent);
-  border-radius: inherit;
-  pointer-events: none;
+  left: 40px;
+  top: 30px;
+  bottom: 30px;
+  border-left: 2px dashed var(--band-hilo);
 }
-.cuidado-tab-num {
+.ruta-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px 1fr auto 24px;
+  gap: 14px;
+  align-items: center;
+  min-height: 80px;
+  padding: 12px 14px;
+  border-radius: var(--r-btn);
+  background: rgba(255, 255, 255, 0.66);
+  box-shadow: inset 0 0 0 1.5px rgba(47, 54, 73, 0.07);
+  text-decoration: none;
+  transition:
+    transform 180ms var(--ease-out),
+    box-shadow 180ms var(--ease-out),
+    background-color 180ms var(--ease-out);
+}
+.ruta-item:hover {
+  background: var(--lienzo);
+  transform: translateY(-2px);
+}
+.ruta-item.is-actual {
+  background: var(--lienzo);
+  box-shadow: inset 0 0 0 2px var(--sol-hondo), var(--sombra);
+}
+.ruta-num {
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: var(--lienzo);
   color: var(--titulo-sol);
   border: 2px solid color-mix(in srgb, var(--sol-hondo) 35%, transparent);
-  flex: none;
+  font-family: var(--f-display);
+  font-size: 1.6rem;
 }
-.cuidado-tab[aria-selected="true"] .cuidado-tab-num {
+.ruta-item.is-actual .ruta-num {
   background: var(--sol);
   color: var(--tinta);
   border-color: transparent;
 }
-.cuidado-tab-num .icon {
-  width: 22px;
-  height: 22px;
-}
-.cuidado-tab.is-learned .cuidado-tab-num {
+.ruta-item.is-aprendida .ruta-num {
   background: var(--cordillera-claro);
   color: var(--cordillera);
   border-color: color-mix(in srgb, var(--cordillera) 45%, transparent);
 }
-.cuidado-tab-text {
-  white-space: nowrap;
+.ruta-num .icon {
+  width: 26px;
+  height: 26px;
+  stroke-width: 3;
 }
-@media (min-width: 960px) {
-  .cuidado-tab-text {
-    white-space: normal;
+.ruta-texto strong {
+  display: block;
+  font-size: 1.1875rem;
+  line-height: 1.25;
+}
+.ruta-texto span {
+  display: block;
+  margin-top: 2px;
+  font-size: 1rem;
+  color: var(--tinta-suave);
+}
+.ruta-estado {
+  font-weight: 800;
+  font-size: 1rem;
+}
+.ruta-estado:empty {
+  display: none;
+}
+.ruta-item.is-actual .ruta-estado {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--sol-claro);
+  box-shadow: inset 0 0 0 1.5px var(--sol-hondo);
+}
+.ruta-item.is-aprendida .ruta-estado {
+  color: var(--cordillera);
+}
+.ruta-flecha {
+  color: var(--tinta-suave);
+}
+@media (max-width: 479px) {
+  .ruta-item {
+    grid-template-columns: 52px 1fr 24px;
+  }
+  .ruta-estado {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
+    margin-top: -6px;
+  }
+  .ruta-flecha {
+    grid-column: 3;
+    grid-row: 1 / span 2;
   }
 }
 
-.cuidado-panel {
-  --hilo: var(--fucsia-medio);
+/* ---------- Aprender: el reproductor (un paso a la vez) ---------- */
+.rep-cabecera {
   display: grid;
-  gap: 22px;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 4px 12px;
+  margin-bottom: 20px;
 }
-@media (min-width: 760px) {
-  .cuidado-panel {
-    grid-template-columns: 1fr 0.9fr;
-    gap: 28px;
-    align-items: start;
-  }
+.rep-cabecera .volver {
+  justify-self: start;
+  margin-bottom: 0;
 }
-.cuidado-panel[hidden] {
+.rep-cabecera .h2 {
+  grid-column: 1 / -1;
+  max-width: 20ch;
+  margin-top: 6px;
+}
+.rep-progreso {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+}
+.rep-pasos {
+  list-style: none;
+  display: flex;
+  gap: 6px;
+  max-width: 520px;
+}
+.rep-pasos li {
+  flex: 1;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(47, 54, 73, 0.1);
+}
+.rep-pasos li.is-hecho {
+  background: var(--cordillera-medio);
+}
+.rep-pasos li.is-actual {
+  background: var(--sol);
+  box-shadow: inset 0 0 0 2px var(--sol-hondo);
+}
+.rep-cuenta {
+  margin-top: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--tinta-suave);
+}
+.rep-patch {
+  --hilo: var(--band-hilo);
+  max-width: 1040px;
+}
+.js .leccion:not(.is-activa),
+.js .leccion .paso:not(.is-activo),
+.js .paso-fin:not(.is-activo),
+.js .leccion-titulo {
   display: none;
 }
-.cuidado-panel .h3 {
+html:not(.js) .rep-cabecera,
+html:not(.js) .rep-nav,
+html:not(.js) .paso-fin,
+html:not(.js) .ruta-progreso,
+html:not(.js) .paso[data-tipo="comprobar"],
+html:not(.js) .paso[data-tipo="hoy"] {
+  display: none;
+}
+html:not(.js) .leccion + .leccion {
+  margin-top: 48px;
+}
+.leccion-titulo {
   font-family: var(--f-display);
   font-weight: 400;
   text-transform: uppercase;
-  font-size: clamp(2rem, 1.5rem + 1.6vw, 2.75rem);
-  line-height: 0.98;
+  font-size: 2rem;
+  margin-bottom: 12px;
 }
+.paso + .paso {
+  margin-top: 32px;
+}
+.js .paso + .paso {
+  margin-top: 0;
+}
+.paso.is-activo {
+  animation: paso-entra 320ms var(--ease-out);
+}
+@keyframes paso-entra {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+.paso-titulo {
+  font-family: var(--f-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(1.9rem, 1.5rem + 1.4vw, 2.6rem);
+  line-height: 1;
+}
+.paso-cols {
+  display: grid;
+  gap: 24px;
+}
+@media (min-width: 760px) {
+  .paso-cols {
+    grid-template-columns: 1fr 0.85fr;
+    gap: 32px;
+    align-items: start;
+  }
+}
+.paso-sub {
+  margin: 20px 0 12px;
+  font-weight: 800;
+  font-size: 1.125rem;
+}
+.paso-nota {
+  margin-top: 20px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--lienzo-2);
+  font-size: 1.0625rem;
+}
+.paso .haga,
+.paso .evite {
+  margin-top: 16px;
+}
+.paso .haga-title {
+  margin-top: 20px;
+}
+.paso > .corte,
+.paso > .mapa,
+.paso > .dedo,
+.paso > .video-frame,
+.paso > .luces {
+  margin-top: 18px;
+}
+.luces-leccion {
+  max-width: 640px;
+}
+
+/* Compruebe lo aprendido */
+.comprobar {
+  display: grid;
+  gap: 16px;
+  max-width: 720px;
+  margin-top: 16px;
+}
+.comp-paso {
+  font-weight: 800;
+  color: var(--tinta-suave);
+}
+.comprobar .quiz-afirmacion {
+  font-size: clamp(1.55rem, 1.3rem + 1vw, 2.1rem);
+  line-height: 1.08;
+}
+.comprobar .quiz-afirmacion:focus {
+  outline: none;
+}
+.comp-sig {
+  justify-self: start;
+}
+.comp-listo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--cordillera-claro);
+  font-weight: 700;
+}
+.comp-listo .icon {
+  color: var(--cordillera);
+}
+.comprobar > .btn {
+  justify-self: start;
+}
+
+/* Hágalo hoy */
+.paso[data-tipo="hoy"] > .btn {
+  margin-top: 18px;
+}
+.hoy-posiciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  max-width: 560px;
+  margin-top: 18px;
+}
+@media (max-width: 380px) {
+  .hoy-posiciones {
+    grid-template-columns: 1fr;
+  }
+}
+.hoy-posiciones > * {
+  min-width: 0;
+}
+.hoy-posiciones .btn {
+  justify-content: flex-start;
+  min-height: 60px;
+  padding-inline: 0.85rem;
+  text-align: left;
+}
+.hoy-posiciones .dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  flex: none;
+  background: var(--c);
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.55);
+}
+.hoy-estado {
+  margin: 14px 0 4px;
+  font-weight: 700;
+  color: var(--cordillera);
+}
+.hoy-estado:empty {
+  display: none;
+}
+.paso[data-tipo="hoy"] .small {
+  margin-top: 12px;
+}
+
+/* Fin de la lección */
+.paso-fin {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 18px 0 6px;
+  text-align: center;
+}
+.fin-medalla {
+  width: 104px;
+  height: 104px;
+}
+.paso-fin.is-activo .fin-medalla {
+  animation: bordado 900ms var(--ease-out);
+}
+.paso-fin .cuidado-why {
+  max-width: 40ch;
+}
+.fin-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Atrás / Siguiente: siempre a mano, pegados al borde inferior */
+.rep-nav {
+  position: sticky;
+  bottom: calc(var(--bottomnav-h) + env(safe-area-inset-bottom, 0px) + 10px);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 32px -10px -10px;
+  padding: 10px;
+  border-radius: var(--r-btn);
+  background: color-mix(in srgb, var(--lienzo) 92%, transparent);
+  box-shadow: 0 -10px 22px -18px rgba(47, 54, 73, 0.35);
+}
+@supports (backdrop-filter: blur(6px)) {
+  .rep-nav {
+    backdrop-filter: blur(6px);
+  }
+}
+@media (min-width: 1100px) {
+  .rep-nav {
+    bottom: 16px;
+  }
+}
+.rep-nav[hidden] {
+  display: none;
+}
+.rep-nav .btn {
+  flex: 0 1 auto;
+  min-width: 0;
+  padding-inline: 1rem;
+}
+.rep-nav[data-tipo="comprobar"] {
+  position: static;
+  box-shadow: none;
+}
+.rep-nav #repSig {
+  margin-left: auto;
+}
+.rep-aviso {
+  margin-left: auto;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--tinta-suave);
+  text-align: right;
+}
+
 .cuidado-why {
   margin-top: 10px;
   font-size: 1.25rem;
@@ -1422,19 +1871,6 @@ html {
   background: var(--alarma-claro);
   color: var(--alarma);
 }
-.cuidado-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 24px;
-}
-.cuidados-progress {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 26px;
-  font-weight: 800;
-}
 .hilo-progress {
   position: relative;
   flex: 1;
@@ -1462,20 +1898,13 @@ html {
 }
 
 /* ---------- Video ---------- */
-.video-grid {
-  display: grid;
-  gap: 24px;
-}
-@media (min-width: 960px) {
-  .video-grid {
-    grid-template-columns: 1.35fr 0.65fr;
-    align-items: center;
-    gap: 40px;
-  }
-}
 .video-frame {
-  padding: 12px;
-  --hilo: var(--cielo-claro);
+  max-width: 760px;
+  padding: 8px;
+  border-radius: 20px 14px 22px 12px;
+  background: var(--lienzo-2);
+  outline: 2px dashed var(--cielo-claro);
+  outline-offset: 4px;
 }
 .video-frame video {
   width: 100%;
@@ -1487,21 +1916,16 @@ html {
 .video-frame video::-webkit-media-controls-panel {
   background-image: linear-gradient(180deg, transparent 0%, rgba(47, 54, 73, 0.42) 100%);
 }
-.video-texto {
-  color: var(--fondo-fg);
-}
-.video-texto .lead {
-  margin: 14px 0 24px;
-}
 .video-claves {
   list-style: none;
   display: grid;
-  gap: 16px;
+  gap: 12px;
+  margin: 16px 0 22px;
   counter-reset: clave;
 }
 .video-claves li {
   display: grid;
-  grid-template-columns: 52px 1fr;
+  grid-template-columns: 44px 1fr;
   gap: 14px;
   align-items: center;
   font-size: 1.1875rem;
@@ -1513,26 +1937,20 @@ html {
   content: counter(clave);
   display: grid;
   place-items: center;
-  width: 52px;
-  height: 52px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: var(--sol-claro);
   color: var(--titulo-sol);
   font-family: var(--f-display);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   border: 2px solid color-mix(in srgb, var(--sol-hondo) 40%, transparent);
 }
 
-/* ---------- Revisar la piel ---------- */
-.revisar-grid {
-  display: grid;
-  gap: 24px;
-}
-@media (min-width: 1000px) {
-  .revisar-grid {
-    grid-template-columns: 1.2fr 0.8fr;
-    align-items: start;
-  }
+/* ---------- Mapa de puntos de presión y prueba del dedo ---------- */
+.mapa,
+.dedo {
+  max-width: 640px;
 }
 .mapa {
   --hilo: var(--fucsia-medio);
@@ -1571,7 +1989,7 @@ html {
   box-shadow: inset 0 0 0 2px var(--cielo), var(--sombra-baja);
 }
 .mapa-posturas {
-  margin-top: 14px;
+  margin-top: 0;
 }
 .mapa-stage {
   position: relative;
@@ -1665,10 +2083,11 @@ html {
   --hilo: var(--fucsia-medio);
 }
 .dedo-pasos {
-  margin: 12px 0 18px;
+  margin: 0 0 18px;
   font-size: 1.125rem;
 }
 .dedo-muestras {
+  max-width: 420px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
@@ -3193,7 +3612,7 @@ html {
   transform: translate(-50%, 0);
   opacity: 1;
 }
-@media (min-width: 900px) {
+@media (min-width: 1100px) {
   .toast {
     bottom: 28px;
   }
@@ -3912,6 +4331,10 @@ html[data-contraste="alto"] :focus-visible {
   outline: 4px solid #ffe500;
   box-shadow: 0 0 0 7px #000;
 }
+html[data-contraste="alto"] [tabindex="-1"]:focus {
+  outline: none;
+  box-shadow: none;
+}
 html[data-contraste="alto"] .segmented button[aria-selected="true"],
 html[data-contraste="alto"] .segmented button[aria-pressed="true"],
 html[data-contraste="alto"] .segmented button[aria-checked="true"] {
@@ -3949,18 +4372,6 @@ html[data-contraste="alto"] .hero-montes {
 html[data-contraste="alto"] .patch::before {
   border-color: #000;
 }
-html[data-contraste="alto"] .hero-sky {
-  display: none;
-}
-html[data-contraste="alto"] .cuidado-tab {
-  background: #fff;
-  color: #000;
-  border: 3px solid #fff;
-}
-html[data-contraste="alto"] .cuidado-tab[aria-selected="true"] {
-  background: #ffe500;
-  color: #000;
-}
 html[data-contraste="alto"] .riesgo-resultado,
 html[data-contraste="alto"] .video-frame {
   outline: 3px solid #fff;
@@ -3983,7 +4394,7 @@ html[data-contraste="alto"] .hilo-progress span {
 html[data-contraste="alto"] .muted,
 html[data-contraste="alto"] .causa p,
 html[data-contraste="alto"] .causa-icon,
-html[data-contraste="alto"] .riesgo-lista li .icon,
+html[data-contraste="alto"] .riesgo-items li .icon,
 html[data-contraste="alto"] .semana-nota,
 html[data-contraste="alto"] .insignia span {
   color: inherit;
@@ -4026,6 +4437,47 @@ html[data-contraste="alto"] .creditos {
 html[data-contraste="alto"] .toast {
   outline: 3px solid #fff;
 }
+html[data-contraste="alto"] .ruta-item,
+html[data-contraste="alto"] .mas-item {
+  background: #fff;
+  color: #000;
+  border: 3px solid #fff;
+}
+html[data-contraste="alto"] .ruta-item.is-actual {
+  background: #ffe500;
+}
+html[data-contraste="alto"] .ruta-texto span,
+html[data-contraste="alto"] .mas-texto span,
+html[data-contraste="alto"] .ruta-flecha,
+html[data-contraste="alto"] .mas-flecha,
+html[data-contraste="alto"] .rep-cuenta,
+html[data-contraste="alto"] .sig-estado,
+html[data-contraste="alto"] .sig-meta,
+html[data-contraste="alto"] .ayuda-nota {
+  color: inherit;
+}
+html[data-contraste="alto"] .rep-pasos li {
+  background: rgba(255, 255, 255, 0.35);
+}
+html[data-contraste="alto"] .rep-pasos li.is-hecho,
+html[data-contraste="alto"] .rep-pasos li.is-actual {
+  background: #ffe500;
+}
+html[data-contraste="alto"] .rep-nav {
+  background: #fff;
+  border: 3px solid #000;
+}
+html[data-contraste="alto"] .volver,
+html[data-contraste="alto"] .ruta-progreso {
+  color: #fff;
+}
+html[data-contraste="alto"] .ruta-lista::before {
+  border-color: #fff;
+}
+html[data-contraste="alto"] .mainnav a[aria-current],
+html[data-contraste="alto"] .bottomnav a[aria-current] {
+  box-shadow: inset 0 -4px 0 #ffe500;
+}
 
 /* ---------- Movimiento reducido ---------- */
 @media (prefers-reduced-motion: reduce) {
@@ -4060,8 +4512,9 @@ html[data-contraste="alto"] .toast {
   }
   .topbar,
   .bottomnav,
-  .hero-sky,
-  .hero-actions,
+  .hero-montes,
+  .mas,
+  .pilares,
   .listen,
   .video,
   .juego,
@@ -4098,14 +4551,19 @@ html[data-contraste="alto"] .toast {
   .patch::before {
     display: none;
   }
-  .cuidado-panel[hidden] {
-    display: grid !important;
+  /* Una lección se imprime completa: todas sus ideas, sin ejercicios */
+  .js .leccion.is-activa .paso[data-tipo="idea"] {
+    display: block !important;
     break-inside: avoid;
     margin-top: 12pt;
   }
-  .cuidados-tabs,
-  .cuidado-actions,
-  .cuidado-fig {
+  .rep-nav,
+  .rep-pasos,
+  .volver,
+  .cuidado-fig,
+  .paso[data-tipo="practica"],
+  .paso[data-tipo="comprobar"],
+  .paso[data-tipo="hoy"] {
     display: none !important;
   }
   .solo-impresion {
@@ -4131,6 +4589,11 @@ html[data-contraste="alto"] .toast {
   }
   html.imprimiendo-desafios .revision-final {
     display: none;
+  }
+  html.imprimiendo-desafios #desafios,
+  html.imprimiendo-dia #mi-dia,
+  html.imprimiendo-dia #alarma {
+    display: block !important;
   }
   /* «Imprimir mi día»: solo el resumen del día y el semáforo */
   html.imprimiendo-dia .hero,

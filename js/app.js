@@ -1,4 +1,5 @@
-/* CuidaPiel · lógica de la guía interactiva.
+/* CuidaPiel · lógica de la guía paso a paso.
+   Una pantalla a la vez: Inicio, Aprender (lecciones por pasos), Mi día y ¿Cuándo consultar?
    Todo se guarda solo en este equipo (localStorage). */
 (() => {
   "use strict";
@@ -278,9 +279,10 @@
 
     dibujarReloj(relojMini, true);
     dibujarReloj(relojGrande, false);
-    document.title = vencido ? "(!) Hora de cambiar de posición · CuidaPiel" : tituloBase;
+    document.title = vencido ? "(!) Hora de cambiar de posición · CuidaPiel" : tituloVista;
   }
   const tituloBase = document.title;
+  let tituloVista = tituloBase;
 
   function renderRegistro() {
     const ol = $("#registro");
@@ -560,71 +562,330 @@
   actualizarCorte(0);
 
   /* ==========================================================
-     Cuidados: pestañas y aprendidos
+     Ruta de aprendizaje: lecciones por pasos
+     Cada lección: lo esencial → práctica → comprobar (¿verdad o mito?) → hacerlo hoy.
      ========================================================== */
-  const tabs = $$(".cuidado-tab");
-  const aprendidos = new Set(store.get("aprendidos", []));
-  function seleccionarCuidado(tab, foco) {
-    tabs.forEach((t) => {
-      const activo = t === tab;
-      t.setAttribute("aria-selected", String(activo));
-      t.tabIndex = activo ? 0 : -1;
-      $("#" + t.getAttribute("aria-controls")).hidden = !activo;
-    });
-    if (foco) tab.focus();
-    tab.scrollIntoView({ block: "nearest", inline: "nearest", behavior: reduceMotion ? "auto" : "smooth" });
-    detenerLectura();
-  }
-  tabs.forEach((t, i) => {
-    t.addEventListener("click", () => seleccionarCuidado(t));
-    t.addEventListener("keydown", (e) => {
-      let j = null;
-      if (e.key === "ArrowRight" || e.key === "ArrowDown") j = (i + 1) % tabs.length;
-      if (e.key === "ArrowLeft" || e.key === "ArrowUp") j = (i - 1 + tabs.length) % tabs.length;
-      if (e.key === "Home") j = 0;
-      if (e.key === "End") j = tabs.length - 1;
-      if (j !== null) {
-        e.preventDefault();
-        seleccionarCuidado(tabs[j], true);
-      }
+  const vistaAprender = $("#aprender");
+  const leccionFin = $("#leccionFin");
+  const LECCIONES = $$(".leccion").map((art, i) => ({
+    id: art.dataset.leccion,
+    n: i + 1,
+    titulo: art.dataset.titulo,
+    min: Number(art.dataset.min) || 3,
+    tela: art.dataset.tela,
+    art,
+    pasos: $$(":scope > .paso", art),
+  }));
+  const TOTAL = LECCIONES.length;
+  const TELAS = [...new Set(LECCIONES.map((l) => l.tela).concat("sol"))];
+  const leccionPorId = (id) => LECCIONES.find((l) => l.id === id) || null;
+  const aprendidos = new Set(store.get("aprendidos", []).filter(leccionPorId));
+  // Quien ya aprendió una lección no está obligado a repetir la comprobación
+  const comprobadas = new Set(store.get("comprobadas", []).concat([...aprendidos]));
+  let rutaPos = store.get("ruta", null); // { leccion, paso } para continuar donde quedó
+  let leccionActual = null;
+  let pasoActual = 0; // índice del paso; pasos.length = pantalla final
+
+  const siguientePendiente = () => LECCIONES.find((l) => !aprendidos.has(l.id)) || null;
+  const enCurso = (l) => !!(rutaPos && rutaPos.leccion === l.id && rutaPos.paso > 0);
+
+  // La lección del semáforo muestra las mismas luces de «¿Cuándo consultar?»
+  $$("[data-luces]").forEach((ul) => {
+    ul.dataset.luces.split(" ").forEach((nivel) => {
+      const luz = $(`#luces [data-luz="${nivel}"]`);
+      if (!luz) return;
+      const copia = luz.cloneNode(true);
+      copia.removeAttribute("data-luz");
+      const marca = copia.querySelector(".luz-marca");
+      if (marca) marca.remove();
+      ul.appendChild(copia);
     });
   });
-  $$("[data-siguiente]").forEach((b) =>
-    b.addEventListener("click", () => {
-      const i = tabs.findIndex((t) => t.getAttribute("aria-selected") === "true");
-      const sig = tabs[(i + 1) % tabs.length];
-      seleccionarCuidado(sig);
-      const panel = $("#" + sig.getAttribute("aria-controls"));
-      const top = panel.getBoundingClientRect().top;
-      if (top < 80 || top > window.innerHeight * 0.6) {
-        $("#cuidados .cuidados").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
-      }
-    })
-  );
-  function renderAprendidos() {
-    tabs.forEach((t) => {
-      const id = $("#" + t.getAttribute("aria-controls")).dataset.cuidado;
-      t.classList.toggle("is-learned", aprendidos.has(id));
-    });
-    $$("[data-aprendido]").forEach((b) => {
-      const ok = aprendidos.has(b.dataset.aprendido);
-      b.setAttribute("aria-pressed", String(ok));
-      b.querySelector("span").textContent = ok ? "Aprendido" : "Lo aprendí";
-      b.classList.toggle("btn-sol", !ok);
-      b.classList.toggle("btn-cielo", ok);
+
+  /* ---------- Inicio: su siguiente paso ---------- */
+  function renderSiguiente() {
+    const n = aprendidos.size;
+    const pend = siguientePendiente();
+    $("#sigCuenta").textContent = `${n} de ${TOTAL} lecciones aprendidas`;
+    $("#sigBarra").style.setProperty("--p", (n / TOTAL).toFixed(3));
+    const btn = $("#sigBtn");
+    if (!pend) {
+      $("#sigEstado").textContent = "¡Ruta completa!";
+      $("#sigLeccion").textContent = "Repase para no olvidar";
+      $("#sigMeta").textContent = "Juegue a «mito o verdad» o vuelva a una lección.";
+      btn.href = "#/jugar";
+      btn.querySelector("span").textContent = "Repasar jugando";
+      return;
+    }
+    const nuevo = n === 0 && !enCurso(pend);
+    $("#sigEstado").textContent = nuevo ? "Empiece aquí" : enCurso(pend) ? "Continúe donde quedó" : "Su siguiente lección";
+    $("#sigLeccion").textContent = pend.titulo;
+    $("#sigMeta").textContent = `Lección ${pend.n} de ${TOTAL} · ${pend.min} minutos`;
+    btn.href = `#/aprender/${pend.id}`;
+    btn.querySelector("span").textContent = nuevo ? "Empezar" : "Continuar";
+  }
+
+  /* ---------- La ruta: lista de lecciones ---------- */
+  function renderRuta() {
+    const ol = $("#rutaLista");
+    ol.textContent = "";
+    const pend = siguientePendiente();
+    LECCIONES.forEach((l) => {
+      const hecha = aprendidos.has(l.id);
+      const actual = pend === l;
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.className = "ruta-item" + (hecha ? " is-aprendida" : "") + (actual ? " is-actual" : "");
+      a.href = `#/aprender/${l.id}`;
+      if (actual) a.setAttribute("aria-current", "step");
+      a.innerHTML = `<span class="ruta-num" aria-hidden="true">${hecha ? '<svg class="icon"><use href="#i-check"/></svg>' : l.n}</span>
+        <span class="ruta-texto"><strong></strong><span></span></span>
+        <span class="ruta-estado"></span>
+        <svg class="icon ruta-flecha" aria-hidden="true"><use href="#i-chevron-right"/></svg>`;
+      a.querySelector("strong").textContent = l.titulo;
+      a.querySelector(".ruta-texto span").textContent = `Lección ${l.n} · ${l.min} minutos`;
+      a.querySelector(".ruta-estado").textContent = hecha ? "Aprendida" : actual ? (enCurso(l) ? "Continuar" : "Empezar") : "";
+      li.appendChild(a);
+      ol.appendChild(li);
     });
     const n = aprendidos.size;
-    $("#cuidadosCuenta").textContent = `${n} de 6 aprendidos`;
-    $("#cuidadosBarra").style.setProperty("--p", (n / 6).toFixed(3));
+    $("#rutaCuenta").textContent = `${n} de ${TOTAL} lecciones aprendidas`;
+    $("#rutaBarra").style.setProperty("--p", (n / TOTAL).toFixed(3));
   }
-  $$("[data-aprendido]").forEach((b) =>
+
+  function aplicarTela(tela) {
+    TELAS.forEach((t) => vistaAprender.classList.remove(`band-${t}`));
+    vistaAprender.classList.add(`band-${tela}`);
+  }
+  function mostrarRuta() {
+    leccionActual = null;
+    vistaAprender.dataset.modo = "ruta";
+    delete vistaAprender.dataset.leccion;
+    aplicarTela("sol");
+    renderRuta();
+  }
+
+  /* ---------- El reproductor: un paso a la vez ---------- */
+  function mostrarPaso(l, idx) {
+    const total = l.pasos.length;
+    const comp = l.pasos.findIndex((p) => p.dataset.tipo === "comprobar");
+    // No se llega al final sin pasar por la comprobación
+    if (comp >= 0 && idx > comp && !comprobadas.has(l.id)) idx = comp;
+    idx = Math.max(0, Math.min(Number.isFinite(idx) ? idx : 0, total));
+    leccionActual = l;
+    pasoActual = idx;
+    const fin = idx === total;
+    vistaAprender.dataset.modo = "leccion";
+    vistaAprender.dataset.leccion = l.id;
+    aplicarTela(l.tela);
+    LECCIONES.forEach((x) => {
+      x.art.classList.toggle("is-activa", x === l && !fin);
+      x.pasos.forEach((p, i) => p.classList.toggle("is-activo", x === l && i === idx));
+    });
+    leccionFin.classList.toggle("is-activo", fin);
+    $("#repTitulo").textContent = l.titulo;
+    const ol = $("#repPasos");
+    ol.textContent = "";
+    for (let i = 0; i < total; i++) {
+      const li = document.createElement("li");
+      if (fin || i < idx) li.className = "is-hecho";
+      else if (i === idx) li.className = "is-actual";
+      ol.appendChild(li);
+    }
+    $("#repCuenta").textContent = fin ? `Lección ${l.n} de ${TOTAL} · Terminada` : `Lección ${l.n} de ${TOTAL} · Paso ${idx + 1} de ${total}`;
+    if (fin) {
+      terminarLeccion(l);
+    } else {
+      const paso = l.pasos[idx];
+      if (paso.dataset.tipo === "comprobar") prepararComprobar(l, paso);
+      if (paso.dataset.tipo === "hoy") prepararHoy(paso);
+      rutaPos = { leccion: l.id, paso: idx };
+      store.set("ruta", rutaPos);
+    }
+    renderNav();
+  }
+  function renderNav() {
+    const l = leccionActual;
+    if (!l) return;
+    const total = l.pasos.length;
+    const fin = pasoActual === total;
+    $("#repNav").hidden = fin;
+    if (fin) return;
+    const bloqueado = l.pasos[pasoActual].dataset.tipo === "comprobar" && !comprobadas.has(l.id);
+    // En la comprobación la barra no flota: así nunca tapa los botones Verdad y Mito
+    $("#repNav").dataset.tipo = l.pasos[pasoActual].dataset.tipo;
+    const sig = $("#repSig");
+    sig.hidden = bloqueado;
+    $("#repAviso").hidden = !bloqueado;
+    sig.querySelector("span").textContent = pasoActual === total - 1 ? "Terminar la lección" : "Siguiente";
+  }
+  function avanzar() {
+    const l = leccionActual;
+    if (!l) return;
+    const sig = pasoActual + 1;
+    ir(sig >= l.pasos.length ? `aprender/${l.id}/fin` : `aprender/${l.id}/${sig + 1}`);
+  }
+  $("#repSig").addEventListener("click", avanzar);
+  $("#repAtras").addEventListener("click", () => {
+    if (!leccionActual) return;
+    ir(pasoActual === 0 ? "aprender" : `aprender/${leccionActual.id}/${pasoActual}`);
+  });
+
+  function terminarLeccion(l) {
+    aprendidos.add(l.id);
+    store.set("aprendidos", [...aprendidos]);
+    rutaPos = null;
+    store.set("ruta", null);
+    const n = aprendidos.size;
+    const pend = siguientePendiente();
+    const sig = $("#finSig");
+    const otra = $("#finOtra");
+    if (pend) {
+      $("#finTitulo").textContent = "¡Lección aprendida!";
+      $("#finTexto").textContent = `Lleva ${n} de ${TOTAL} lecciones. Sigue: ${pend.titulo}.`;
+      sig.href = `#/aprender/${pend.id}`;
+      sig.querySelector("span").textContent = "Siguiente lección";
+      otra.href = "#/aprender";
+      otra.querySelector("span").textContent = "Ver todas las lecciones";
+    } else {
+      $("#finTitulo").textContent = "¡Completó la ruta!";
+      $("#finTexto").textContent = "Ya sabe cómo proteger la piel. Ahora lo importante es hacerlo cada día.";
+      sig.href = "#/mi-dia";
+      sig.querySelector("span").textContent = "Ir a Mi día";
+      otra.href = "#/jugar";
+      otra.querySelector("span").textContent = "Repasar jugando";
+      ganarInsignia("aprendiz");
+    }
+  }
+
+  /* ---------- Comprobar: ¿verdad o mito? con repaso de lo que falló ---------- */
+  const compEstado = new Map(); // lección → { cola, total, n, fallidas }
+  function iniciarComprobar(l) {
+    const items = PREGUNTAS.filter((q) => q.tema === l.id);
+    compEstado.set(l.id, { cola: items.slice(), total: items.length, n: 0, fallidas: new Set() });
+  }
+  function prepararComprobar(l, paso) {
+    const caja = $("[data-comprobar]", paso);
+    if (comprobadas.has(l.id) && !compEstado.has(l.id)) {
+      caja.innerHTML = `<p class="comp-listo"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg><span>Ya comprobó esta lección. Puede seguir o responder de nuevo.</span></p>
+        <button class="btn" type="button"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-rotate-ccw"/></svg><span>Responder de nuevo</span></button>`;
+      $("button", caja).addEventListener("click", () => {
+        iniciarComprobar(l);
+        renderComprobar(l, caja);
+        $(".quiz-afirmacion", caja).focus({ preventScroll: true });
+      });
+      return;
+    }
+    if (!compEstado.has(l.id)) iniciarComprobar(l);
+    renderComprobar(l, caja);
+  }
+  function renderComprobar(l, caja) {
+    const st = compEstado.get(l.id);
+    const q = st.cola[0];
+    const repaso = st.fallidas.has(q);
+    caja.innerHTML = `<p class="comp-paso"></p>
+      <p class="quiz-afirmacion" tabindex="-1"></p>
+      <div class="quiz-opciones">
+        <button class="btn" type="button" data-resp="verdad"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>Verdad</button>
+        <button class="btn" type="button" data-resp="mito"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-circle-x"/></svg>Mito</button>
+      </div>
+      <div class="quiz-feedback" role="status" hidden><strong></strong><span></span></div>
+      <button class="btn btn-sol comp-sig" type="button" hidden><span></span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>`;
+    $(".comp-paso", caja).textContent = repaso ? "Repasemos esta frase: ¿verdad o mito?" : `Pregunta ${st.n + 1} de ${st.total}: ¿verdad o mito?`;
+    $(".quiz-afirmacion", caja).textContent = `«${q.t}»`;
+    const botones = $$("[data-resp]", caja);
+    botones.forEach((b) =>
+      b.addEventListener("click", () => {
+        const ok = b.dataset.resp === q.r;
+        st.cola.shift();
+        if (!repaso) st.n += 1;
+        if (!ok) {
+          st.fallidas.add(q);
+          st.cola.push(q);
+        }
+        botones.forEach((o) => {
+          o.disabled = true;
+          if (o.dataset.resp === q.r) o.classList.add("is-correct");
+          else if (o === b) o.classList.add("is-wrong");
+        });
+        const titulo = ok ? "¡Correcto!" : `No exactamente: es ${q.r === "mito" ? "un mito" : "verdad"}.`;
+        const texto = ok ? q.e : `${q.e} Se la preguntaremos otra vez.`;
+        const fb = $(".quiz-feedback", caja);
+        fb.querySelector("strong").textContent = titulo;
+        fb.querySelector("span").textContent = texto;
+        fb.hidden = false;
+        const listo = st.cola.length === 0;
+        if (listo) {
+          comprobadas.add(l.id);
+          store.set("comprobadas", [...comprobadas]);
+          compEstado.delete(l.id);
+        }
+        const sig = $(".comp-sig", caja);
+        const ultimo = pasoActual === l.pasos.length - 1;
+        sig.querySelector("span").textContent = listo ? (ultimo ? "Terminar la lección" : "Continuar") : ok ? "Siguiente pregunta" : "Seguir";
+        sig.hidden = false;
+        sig.addEventListener("click", () => {
+          if (listo) {
+            avanzar();
+            return;
+          }
+          renderComprobar(l, caja);
+          $(".quiz-afirmacion", caja).focus({ preventScroll: true });
+          narrarPaso();
+        });
+        ganarInsignia("puntada");
+        // Al aprobar, el botón del paso hace lo mismo que «Continuar»: se deja uno solo
+        renderNav();
+        if (listo) $("#repSig").hidden = true;
+        sig.focus({ preventScroll: true });
+        if (narrando) {
+          tts.cancel();
+          decir(`${titulo} ${texto}`);
+        }
+      })
+    );
+  }
+
+  /* ---------- Hágalo hoy: la lección se convierte en un registro de «Mi día» ---------- */
+  function prepararHoy(paso) {
+    const botones = $$("[data-hoy]", paso);
+    const estado = $(".hoy-estado", paso);
+    const [tipo, arg] = botones[0].dataset.hoy.split(":");
+    estado.textContent = "";
+    botones.forEach((b) => (b.disabled = false));
+    if (tipo === "check" && dia.checks[Number(arg)]) {
+      botones[0].disabled = true;
+      estado.textContent = "Listo: quedó marcado en su revisión de hoy.";
+    }
+    if (tipo === "agua" && dia.agua) estado.textContent = `Lleva ${dia.agua} de ${prefs.aguaMeta} vasos hoy.`;
+    if (tipo === "cambio" && ultimoTurno()) estado.textContent = `Último cambio registrado: ${hora(ultimoTurno().t)}. Próximo: ${hora(proximoCambio())}.`;
+  }
+  $$("[data-hoy]").forEach((b) =>
     b.addEventListener("click", () => {
-      const id = b.dataset.aprendido;
-      if (aprendidos.has(id)) aprendidos.delete(id);
-      else aprendidos.add(id);
-      store.set("aprendidos", [...aprendidos]);
-      renderAprendidos();
-      if (aprendidos.size === 6) ganarInsignia("aprendiz");
+      const paso = b.closest(".paso");
+      const [tipo, arg] = b.dataset.hoy.split(":");
+      if (tipo === "cambio") {
+        registrarCambio(arg);
+        prepararHoy(paso);
+        $$("[data-hoy]", paso).forEach((o) => (o.disabled = true));
+        return;
+      }
+      if (tipo === "agua") {
+        if (dia.agua < prefs.aguaMeta) dia.agua += 1;
+        guardarDia();
+        renderAgua();
+        renderEstado();
+        toast(dia.agua >= prefs.aguaMeta ? "¡Meta de agua cumplida!" : "Vaso de agua marcado.");
+      }
+      if (tipo === "check") {
+        dia.checks[Number(arg)] = true;
+        guardarDia();
+        renderChecks();
+        renderEstado();
+        renderSemana();
+        toast("Marcado en su revisión de hoy.");
+      }
+      prepararHoy(paso);
     })
   );
 
@@ -777,7 +1038,15 @@
   /* ==========================================================
      Juego: ¿mito o verdad?
      ========================================================== */
+  // Cada frase pertenece a una lección: sirve para comprobarla y para el juego de repaso.
   const PREGUNTAS = [
+    { tema: "porque", t: "Una lesión por presión aparece cuando el peso aprieta la piel contra el hueso por mucho tiempo.", r: "verdad", e: "Sin sangre ni oxígeno, la piel se daña. Por eso hay que cambiar de posición con regularidad." },
+    { tema: "porque", t: "Si la piel se ve entera, es seguro que no hay daño por dentro.", r: "mito", e: "El daño puede empezar en las capas profundas, aunque la piel todavía se vea entera." },
+    { tema: "movimiento", t: "Sentado en una silla, hay que cambiar el apoyo más seguido que en la cama.", r: "verdad", e: "Sentado, casi todo el peso cae sobre los glúteos. Si puede, cambie el apoyo cada 15 a 30 minutos, inclinándose adelante o a un lado." },
+    { tema: "movimiento", t: "Si la persona puede moverse sola, es mejor que se quede quieta para no cansarse.", r: "mito", e: "Moverse ayuda a la circulación y mantiene la fuerza. Anímela a moverse por sí misma todo lo que pueda." },
+    { tema: "comida", t: "Si la persona come muy poco durante varios días, no hace falta avisar.", r: "mito", e: "Si come poco o baja de peso, avise a su equipo de salud: pueden indicarle suplementos." },
+    { tema: "alarma", t: "Una zona roja que no se pone blanca al presionar puede esperar hasta el próximo control.", r: "mito", e: "Es luz roja: no apoye esa zona y consulte hoy a su equipo de salud (CESFAM o atención domiciliaria)." },
+    { tema: "alarma", t: "Una herida con mal olor o pus, junto con fiebre o confusión, es una urgencia.", r: "verdad", e: "No espere: vaya a la urgencia más cercana (SAPU, SAR u hospital)." },
     { tema: "piel", t: "Masajear una zona enrojecida ayuda a que circule la sangre.", r: "mito", e: "Frotar o masajear una zona roja puede dañar aún más los tejidos. Quite el apoyo de esa zona y avise si no mejora." },
     { tema: "posicion", t: "De lado, es mejor quedar solo un poco inclinado, unos 30°, que completamente de lado.", r: "verdad", e: "Completamente de lado, todo el peso cae sobre el hueso de la cadera. Con unos 30° y una almohada en la espalda, el peso se reparte." },
     { tema: "superficie", t: "Un cojín con forma de rosca, con hoyo al centro, es ideal para no hacer presión.", r: "mito", e: "Las roscas o flotadores aprietan la piel alrededor del hoyo y dificultan la circulación. Use un cojín antiescaras." },
@@ -793,7 +1062,7 @@
     puntada: "Primera puntada",
     ojo: "Ojo atento",
     guardian: "Guardián de la piel",
-    aprendiz: "Aprendiz de los 6 cuidados",
+    aprendiz: "Aprendiz de la piel",
   };
   const ganadas = new Set(store.get("insignias", []));
   function renderInsignias(nueva) {
@@ -812,7 +1081,8 @@
   }
 
   const quiz = { orden: [], i: 0, aciertos: 0, marcas: [] };
-  const btnResp = $$("[data-respuesta]");
+  const RONDA = 10; // frases por partida, elegidas al azar
+  const btnResp = $$("#quiz [data-respuesta]");
   function barajar(arr) {
     const a = arr.slice();
     for (let i = a.length - 1; i > 0; i--) {
@@ -822,7 +1092,7 @@
     return a;
   }
   function iniciarQuiz() {
-    quiz.orden = barajar(PREGUNTAS.map((_, i) => i));
+    quiz.orden = barajar(PREGUNTAS.map((_, i) => i)).slice(0, RONDA);
     quiz.i = 0;
     quiz.aciertos = 0;
     quiz.marcas = [];
@@ -833,7 +1103,7 @@
   function renderHilo() {
     const box = $("#quizHilo");
     box.textContent = "";
-    PREGUNTAS.forEach((_, i) => {
+    quiz.orden.forEach((_, i) => {
       const s = document.createElement("span");
       if (quiz.marcas[i] === true) s.className = "is-ok";
       else if (quiz.marcas[i] === false) s.className = "is-no";
@@ -843,7 +1113,7 @@
   }
   function renderPregunta() {
     const q = PREGUNTAS[quiz.orden[quiz.i]];
-    $("#quizPaso").textContent = `Pregunta ${quiz.i + 1} de ${PREGUNTAS.length}`;
+    $("#quizPaso").textContent = `Pregunta ${quiz.i + 1} de ${RONDA}`;
     $("#quizPuntos").textContent = `${quiz.aciertos} ${quiz.aciertos === 1 ? "acierto" : "aciertos"}`;
     $("#quizAfirmacion").textContent = `«${q.t}»`;
     btnResp.forEach((b) => {
@@ -868,7 +1138,7 @@
       $("#quizFeedbackTitulo").textContent = ok ? "¡Correcto!" : `No exactamente: es ${q.r === "mito" ? "un mito" : "verdad"}.`;
       $("#quizFeedbackTexto").textContent = q.e;
       $("#quizFeedback").hidden = false;
-      const ultima = quiz.i === PREGUNTAS.length - 1;
+      const ultima = quiz.i === RONDA - 1;
       const sig = $("#quizSiguiente");
       sig.hidden = false;
       sig.firstChild.textContent = ultima ? "Ver mi resultado " : "Siguiente pregunta ";
@@ -881,7 +1151,7 @@
   );
   $("#quizSiguiente").addEventListener("click", () => {
     detenerLectura();
-    if (quiz.i < PREGUNTAS.length - 1) {
+    if (quiz.i < RONDA - 1) {
       quiz.i += 1;
       renderPregunta();
       $("#quizAfirmacion").focus?.();
@@ -892,28 +1162,20 @@
     store.set("mejorPuntaje", mejor);
     const fallos = quiz.orden.filter((_, i) => quiz.marcas[i] === false).map((qi) => PREGUNTAS[qi].tema);
     const partidas = store.get("partidas", []);
-    partidas.push({ fecha: new Date().toISOString(), aciertos: n, total: PREGUNTAS.length, fallos });
+    partidas.push({ fecha: new Date().toISOString(), aciertos: n, total: RONDA, fallos });
     store.set("partidas", partidas.slice(-60));
     renderProgreso();
     if (n >= 8) ganarInsignia("guardian");
     $("#quizPregunta").hidden = true;
     $("#quizFinal").hidden = false;
     $("#quizFinalTitulo").textContent = n >= 8 ? `¡${n} de 10! Es un guardián de la piel.` : n >= 5 ? `${n} de 10: ¡va muy bien!` : `${n} de 10: cada intento enseña.`;
-    $("#quizFinalTexto").textContent = `Su mejor resultado: ${mejor} de 10. Repase los seis cuidados y vuelva a jugar cuando quiera.`;
+    $("#quizFinalTexto").textContent = `Su mejor resultado: ${mejor} de 10. Repase las lecciones y vuelva a jugar cuando quiera.`;
     renderHilo();
     $("#quizOtraVez").focus({ preventScroll: true });
   });
   $("#quizOtraVez").addEventListener("click", iniciarQuiz);
 
   /* ---------- Mi progreso ---------- */
-  const TEMA_NOMBRE = {
-    posicion: "Cambie de posición",
-    piel: "Piel limpia y seca",
-    revise: "Revise la piel a diario",
-    superficie: "Colchón y cojín adecuados",
-    movimiento: "Muévase todo lo que pueda",
-    comida: "Coma bien y tome agua",
-  };
   const fechaCorta = (iso) => new Date(iso).toLocaleDateString("es-CL", { day: "numeric", month: "short" }).replace(".", "");
   const fechaMini = (iso) => {
     const d = new Date(iso);
@@ -946,7 +1208,7 @@
     } else {
       linea("Primera partida: ", `${primera.aciertos} de ${primera.total}`);
       linea(" · Última: ", `${ultima.aciertos} de ${ultima.total}`);
-      resumen.append(delta > 0 ? ` · ¡Mejoró ${delta} ${delta === 1 ? "acierto" : "aciertos"}!` : delta === 0 ? " · Se mantiene igual." : ` · ${-delta} menos que la primera vez: repase los cuidados.`);
+      resumen.append(delta > 0 ? ` · ¡Mejoró ${delta} ${delta === 1 ? "acierto" : "aciertos"}!` : delta === 0 ? " · Se mantiene igual." : ` · ${-delta} menos que la primera vez: repase las lecciones.`);
     }
     // columnas: últimas 10 partidas
     const visibles = todas.slice(-10);
@@ -1005,15 +1267,10 @@
     } else {
       reforzar.append("Para repasar: ");
       temas.forEach((t, i) => {
+        const l = leccionPorId(t);
         const a = document.createElement("a");
-        a.href = "#cuidados";
-        a.textContent = TEMA_NOMBRE[t] || t;
-        a.addEventListener("click", (e) => {
-          e.preventDefault();
-          const tab = $(`[aria-controls="panel-${t}"]`);
-          if (tab) seleccionarCuidado(tab);
-          $("#cuidados").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
-        });
+        a.href = l ? `#/aprender/${l.id}/1` : "#/aprender";
+        a.textContent = l ? l.titulo : t;
         reforzar.append(a, i < temas.length - 1 ? ", " : ".");
       });
     }
@@ -1048,7 +1305,7 @@
     const r = $("#revisorResultado");
     r.dataset.nivel = nivel;
     r.textContent = RESULTADOS[nivel];
-    $$(".luz").forEach((l) => {
+    $$("#luces .luz").forEach((l) => {
       l.classList.toggle("is-activa", marcadas.length > 0 && l.dataset.luz === nivel);
     });
   }
@@ -1103,7 +1360,10 @@
      Lectura en voz alta
      ========================================================== */
   const tts = "speechSynthesis" in window ? window.speechSynthesis : null;
+  const btnNarrar = $("#btnNarrar");
   let botonLeyendo = null;
+  let lecturaId = 0;
+  let narrando = false; // en las lecciones: lee cada paso al avanzar
   function vozEspanol() {
     const voces = tts.getVoices();
     const pref = ["es-CL", "es-419", "es-US", "es-MX", "es-AR", "es-ES"];
@@ -1114,58 +1374,81 @@
     return voces.find((x) => x.lang && x.lang.toLowerCase().startsWith("es")) || null;
   }
   function textoDe(raiz) {
-    const sel = "h2, h3, p, li, legend, label.opcion, .quiz-afirmacion";
+    const sel = "h2, h3, h4, p, li, legend, label.opcion, .quiz-afirmacion";
     const nodos = $$(sel, raiz).filter((n) => {
-      if (n.closest("svg, .no-leer, .cuidados-tabs, button, [hidden]")) return false;
+      if (n.closest("svg, .no-leer, button, [hidden]")) return false;
       if (!n.getClientRects().length) return false;
       return !$$(sel, n).length;
     });
     return nodos.map((n) => n.textContent.replace(/\s+/g, " ").trim()).filter(Boolean).join(". ");
   }
+  function decir(texto, alTerminar) {
+    const u = new SpeechSynthesisUtterance(texto);
+    const v = vozEspanol();
+    if (v) u.voice = v;
+    u.lang = v ? v.lang : "es-CL";
+    u.rate = 0.92;
+    if (alTerminar) u.onend = u.onerror = alTerminar;
+    tts.speak(u);
+  }
   function detenerLectura() {
     if (!tts) return;
+    lecturaId += 1;
     tts.cancel();
     if (botonLeyendo) botonLeyendo.setAttribute("aria-pressed", "false");
     botonLeyendo = null;
   }
+  // Botón «Escuchar» de cada pantalla: lee lo que está a la vista
   function leer(btn) {
     if (botonLeyendo === btn) {
       detenerLectura();
       return;
     }
     detenerLectura();
-    const id = btn.dataset.leer;
-    const seccion = $("#" + id);
-    let texto = "";
-    if (id === "cuidados") {
-      const panel = $(".cuidado-panel:not([hidden])");
-      texto = textoDe(panel);
-    } else if (id === "jugar") {
-      texto = textoDe($("#quiz"));
-    } else {
-      texto = textoDe(seccion);
-    }
+    const texto = textoDe($("#" + btn.dataset.leer));
     if (!texto) return;
-    const u = new SpeechSynthesisUtterance(texto);
-    const v = vozEspanol();
-    if (v) u.voice = v;
-    u.lang = v ? v.lang : "es-CL";
-    u.rate = 0.92;
-    u.onend = u.onerror = () => {
-      if (botonLeyendo === btn) {
-        btn.setAttribute("aria-pressed", "false");
-        botonLeyendo = null;
-      }
-    };
+    const id = lecturaId;
     botonLeyendo = btn;
     btn.setAttribute("aria-pressed", "true");
-    tts.speak(u);
+    decir(texto, () => {
+      if (id !== lecturaId) return;
+      btn.setAttribute("aria-pressed", "false");
+      botonLeyendo = null;
+    });
+  }
+  // En las lecciones, «Escuchar» queda encendido y lee cada paso al avanzar
+  function renderNarrar() {
+    btnNarrar.setAttribute("aria-pressed", String(narrando));
+    btnNarrar.querySelector("span").textContent = narrando ? "Detener voz" : "Escuchar";
+  }
+  function narrarPaso() {
+    if (!tts || !narrando || !leccionActual) return;
+    const fin = pasoActual === leccionActual.pasos.length;
+    const texto = textoDe(fin ? leccionFin : leccionActual.pasos[pasoActual]);
+    tts.cancel();
+    if (texto) decir(`${leccionActual.pasos.length && pasoActual === 0 ? leccionActual.titulo + ". " : ""}${texto}`);
+  }
+  function apagarNarracion() {
+    if (!narrando) return;
+    narrando = false;
+    if (tts) tts.cancel();
+    renderNarrar();
   }
   if (tts) {
     tts.getVoices();
     $$("[data-leer]").forEach((b) => b.addEventListener("click", () => leer(b)));
+    btnNarrar.addEventListener("click", () => {
+      detenerLectura();
+      narrando = !narrando;
+      renderNarrar();
+      if (narrando) {
+        narrarPaso();
+        toast("Leeremos cada paso en voz alta.");
+      }
+    });
   } else {
     $$("[data-leer]").forEach((b) => (b.hidden = true));
+    btnNarrar.hidden = true;
   }
 
   /* ==========================================================
@@ -1179,14 +1462,24 @@
       .normalize("NFD")
       .replace(/[̀-ͯ]/g, "")
       .toLowerCase();
+  // Cada resultado sabe a qué pantalla (y a qué paso de qué lección) lleva
+  function rutaDe(n) {
+    const art = n.closest(".leccion");
+    if (art) {
+      const l = leccionPorId(art.dataset.leccion);
+      const paso = n.closest(".paso");
+      return `aprender/${l.id}/${paso ? l.pasos.indexOf(paso) + 1 : 1}`;
+    }
+    const v = n.closest(".vista");
+    return v ? v.id : "inicio";
+  }
   const indice = $$("[data-buscar]").map((n) => {
     const [titulo, claves = ""] = n.dataset.buscar.split("|");
-    const destino = n.id ? n : n.closest("[id]");
     const parrafo = n.querySelector("p");
     return {
       n,
       titulo,
-      destino: destino ? destino.id : "inicio",
+      ruta: rutaDe(n),
       resumen: parrafo ? parrafo.textContent.trim().slice(0, 110) : "",
       bolsa: norm(`${titulo} ${claves} ${n.textContent}`),
       cabeza: norm(`${titulo} ${claves}`),
@@ -1214,19 +1507,17 @@
     hits.forEach(({ it }) => {
       const li = document.createElement("li");
       const a = document.createElement("a");
-      a.href = `#${it.destino}`;
+      a.href = `#/${it.ruta}`;
       a.innerHTML = `<strong></strong><span></span>`;
       a.querySelector("strong").textContent = it.titulo;
       a.querySelector("span").textContent = it.resumen;
       a.addEventListener("click", (e) => {
         e.preventDefault();
         buscador.close();
-        if (it.n.classList.contains("cuidado-panel")) {
-          const tab = $(`[aria-controls="${it.n.id}"]`);
-          seleccionarCuidado(tab);
-          $("#cuidados").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
-        } else {
-          $("#" + it.destino).scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+        ir(it.ruta);
+        // Dentro de una pantalla larga (Mi día), baja hasta la herramienta buscada
+        if (!it.n.classList.contains("vista") && !it.n.closest(".leccion")) {
+          it.n.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
         }
       });
       li.appendChild(a);
@@ -1252,26 +1543,90 @@
   );
 
   /* ==========================================================
-     Navegación inferior: sección actual
+     Navegación: una pantalla a la vez
+     Rutas: #/inicio · #/aprender · #/aprender/<lección>/<paso|fin> · #/mi-dia · #/alarma ·
+     #/jugar · #/riesgo · #/desafios · #/cuidador
      ========================================================== */
-  const MAPA_NAV = { inicio: "#inicio", porque: "#porque", cuidados: "#porque", video: "#porque", revisar: "#porque", "mi-dia": "#mi-dia", jugar: "#jugar", desafios: "#jugar", alarma: "#alarma" };
-  const navLinks = $$(".bottomnav a");
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((en) => {
-          if (!en.isIntersecting) return;
-          const destino = MAPA_NAV[en.target.id];
-          navLinks.forEach((a) => {
-            if (destino && a.getAttribute("href") === destino) a.setAttribute("aria-current", "true");
-            else a.removeAttribute("aria-current");
-          });
-        });
-      },
-      { rootMargin: "-45% 0px -50% 0px" }
-    );
-    $$("main > section").forEach((s) => io.observe(s));
+  const PANTALLAS = $$(".vista");
+  const footer = $(".footer");
+  const video = $("#videoGuia");
+  // Enlaces de la versión de una sola página
+  const LEGADO = { porque: "aprender/porque", cuidados: "aprender", video: "aprender/posicion/3", revisar: "aprender/revise/2", fuentes: "inicio" };
+  let rutaMostrada = null;
+
+  function leerHash() {
+    let h = "";
+    try {
+      h = decodeURIComponent(location.hash).replace(/^#\/?/, "");
+    } catch (e) {
+      h = "";
+    }
+    if (h === "contenido") return rutaMostrada || "inicio";
+    return LEGADO[h] || h || "inicio";
   }
+  function ir(ruta) {
+    if (location.hash !== "#/" + ruta) history.pushState(null, "", "#/" + ruta);
+    mostrar(ruta);
+  }
+  function mostrar(ruta, inicial) {
+    if (ruta === rutaMostrada) return;
+    const partes = ruta.split("/");
+    let destino = PANTALLAS.find((v) => v.id === partes[0]);
+    if (!destino) {
+      destino = PANTALLAS[0];
+      ruta = "inicio";
+    }
+    const cambiaLeccion = partes[1] !== (leccionActual && leccionActual.id);
+    detenerLectura();
+    if (video && !video.paused) video.pause();
+    PANTALLAS.forEach((v) => v.classList.toggle("is-activa", v === destino));
+    footer.classList.toggle("is-visible", destino.id === "inicio");
+    $$("[data-nav]").forEach((a) => {
+      if (a.dataset.nav === destino.id) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    });
+
+    let cabeza = $("h1, h2", destino);
+    let titulo = destino.dataset.titulo;
+    const l = destino.id === "aprender" ? leccionPorId(partes[1]) : null;
+    if (l) {
+      let idx = 0;
+      if (partes[2] === "fin") idx = l.pasos.length;
+      else if (partes[2]) idx = Number(partes[2]) - 1;
+      else if (rutaPos && rutaPos.leccion === l.id && !aprendidos.has(l.id)) idx = rutaPos.paso;
+      mostrarPaso(l, idx);
+      const fin = pasoActual === l.pasos.length;
+      ruta = `aprender/${l.id}/${fin ? "fin" : pasoActual + 1}`;
+      cabeza = cambiaLeccion ? $("#repTitulo") : $(".paso-titulo", fin ? leccionFin : l.pasos[pasoActual]);
+      titulo = l.titulo;
+    } else {
+      apagarNarracion();
+      if (destino.id === "aprender") {
+        mostrarRuta();
+        ruta = "aprender";
+      }
+    }
+    if (destino.id === "inicio") renderSiguiente();
+
+    rutaMostrada = ruta;
+    if (location.hash !== "#/" + ruta && !(inicial && !location.hash)) history.replaceState(null, "", "#/" + ruta);
+    tituloVista = destino.id === "inicio" ? tituloBase : `${titulo} · CuidaPiel`;
+    renderEstado();
+    if (inicial) return;
+    window.scrollTo(0, 0);
+    if (cabeza) cabeza.focus({ preventScroll: true });
+    narrarPaso();
+  }
+  window.addEventListener("hashchange", () => {
+    const crudo = location.hash.replace(/^#\/?/, "");
+    mostrar(leerHash());
+    if (crudo === "fuentes") footer.scrollIntoView();
+  });
+  window.addEventListener("popstate", () => mostrar(leerHash()));
+  $(".skip-link").addEventListener("click", (e) => {
+    e.preventDefault();
+    $("#contenido").focus();
+  });
 
   /* ==========================================================
      Ciclo: reloj, cambio de día y avisos
@@ -1300,10 +1655,11 @@
   renderIntervalo();
   renderAvisos();
   renderTodoDia();
-  renderAprendidos();
   renderInsignias();
   renderProgreso();
   iniciarQuiz();
+  renderNarrar();
+  mostrar(leerHash(), true);
   setInterval(tick, 30000);
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden) tick();

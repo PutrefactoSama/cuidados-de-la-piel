@@ -398,13 +398,19 @@ The cross-section, body figures and cordillera use pale versions of the same fab
 
 ## Layout
 
-The layout is mobile-first and stacks in a single column, with two-column splits from 960px (hero, causes, care tour) and 1000px (Mi día, quiz, semáforo, skin check). Content sits in a 1200px wrap with a 16px gutter (32px at 700px and up). Sections alternate between fabric bands and stretches of bare linen. Bands are inset from the viewport edges by 6px (20px at 700px and up), capped at 1360px, separated by 44px of visible linen, and padded 56px top and 64px bottom (96px and 104px at 900px and up). Linen sections without a band are padded 40/48px (64/72px at 900px and up).
+The app is a **guided path, one screen at a time**. Four fixed destinations (Inicio, Aprender, Mi día, ¿Cuándo consultar?) carry everything; secondary tools (Repase jugando, riesgo, desafíos, para quien cuida) open from a «Más herramientas» list on Inicio and each carries a «‹ Inicio» back link. Every screen has its own hash route (`#/aprender/<lección>/<paso>`), so the phone's back button works. Without JavaScript every screen and every lesson step is shown as one long page.
 
-Each section opens with a section head made of three parts: the headline, one sentence of intro, and the Escuchar button. At 900px and up the button moves to the top-right column. Inside a section the stack gap is 22px, list rows sit 8–12px apart, and patches are padded 22px (30px at 700px and up).
+**Inicio** is three numbered patches: 1 · Aprenda (the next pending lesson, one honey button, progress «N de 8»), 2 · Cuide cada día (the thread clock and «Ya cambié de posición»), 3 · Pida ayuda a tiempo (the alarm checker). The hero sky sits above, the stitched cordillera runs between the first patch and the other two, and the patches overlap the hills.
 
-The top bar is sticky at 68px. Below 900px a fixed 76px bottom nav carries five destinations, with Alarma always last and always in sol. The page's scroll padding clears both bars. The full desktop nav appears only from 1180px. On phones the care tabs become a horizontal scroll-snap strip. At 960px and up they become a sticky 300px column beside the panel.
+**Aprender** shows either the route (a list of eight lessons joined by a dashed thread, the current one raised on linen with a deep-honey edge and a honey disc, learned ones with a sage check) or the player. The player shows one step at a time inside one linen patch: idea (Haga / Evite with a figure), practice (simulator, video, map, finger test), check (true-or-myth statements; a wrong answer is explained and asked again, and «Siguiente» stays hidden until the check is passed), and «Hágalo hoy» (a button that writes to Mi día). Each lesson takes its band's fabric, and its title writes in that fabric's ink. A segmented thread under the title shows the steps: sage for done, honey for the current one.
 
-Print collapses everything to black on white. Bands, zigzags, stitches and interactive tools are dropped, and every care panel is printed. "Imprimir mi día" prints only the day summary and the semáforo.
+The **Atrás / Siguiente** bar is sticky above the bottom nav so the next step is always within thumb reach; on the check step it stops floating so it never covers the answers.
+
+Content sits in a 1200px wrap with a 16px gutter (32px at 700px and up). Bands are inset from the viewport edges by 6px (20px at 700px and up), capped at 1360px, and padded 40/52px on phones and 64/80px at 900px and up. Each section opens with its headline, one sentence of intro, and the Escuchar button.
+
+The top bar is sticky at 68px. Below 1100px a fixed 76px bottom nav carries the four destinations, with Alarma always last and in clinical red; the current one gets an ink wash and a 3px deep-honey bar (red for Alarma). From 1100px the same four links move into the top bar.
+
+Print collapses everything to black on white. A lesson prints all its idea steps without exercises. «Imprimir mi día» prints only the day summary and the semáforo.
 
 ### Named Rules
 **The Inset Band Rule.** A band never touches the viewport edge and never butts against the next band. The linen must always show around it.
@@ -469,9 +475,10 @@ Buttons are sewn patches, chunky and tactile.
 - **Focus on custom inputs:** the 3px añil ring offset 2px on the visible tile or box.
 
 ### Navigation
-- **Top bar:** sticky, 68px, bar linen, with a 2px dashed ink seam along the bottom. The brand is a 40px mulberry mark with a stitched inner square and a sol heart, plus "CUIDAPIEL" in Londrina 900 at 1.75rem. The brand name hides at narrow widths and large text sizes. The tools (Buscar, Letra, Contraste) are at least 56×52px, with the icon stacked over a caption below 700px and in a row from 700px. A pressed tool turns pale honey with a 2px deep-honey edge. The desktop links (from 1180px) are 48px tall, 700 at 1rem, in ink. The alarm link is clinical red.
-- **Bottom nav (below 900px):** fixed, 76px plus the safe area, bar linen, with a dashed ink seam and a faint upward shadow. It has five equal columns, each with a 26px icon over a 700 label. Alarma is always clinical red, and the current item gets an ink wash at 7%.
-- **Care tabs:** at least 60px tall, with hand-cut button corners, translucent white at 60% with a hairline ink edge on the honey cloth, and graphite 800 text. A 38px linen disc with a deep-honey edge holds the care's icon in honey ink. The selected tab turns opaque linen with a 2px deep-honey edge, the low shadow, an inner deep-honey stitch and a honey disc, the only tab state that is sewn down. A learned care turns its disc to a sage wash with a sage icon.
+- **Top bar:** sticky, 68px, bar linen, with a 2px dashed ink seam along the bottom. The brand is a 40px mulberry mark with a stitched inner square and a sol heart, plus "CUIDAPIEL" in Londrina 900 at 1.75rem. The brand name hides at narrow widths and large text sizes. The tools (Buscar, Letra, Contraste) are at least 56×52px, with the icon stacked over a caption below 700px and in a row from 700px. A pressed tool turns pale honey with a 2px deep-honey edge. The four desktop links (from 1100px) are 48px tall, 700 at 1rem, in ink; the current one gets an ink wash and a 3px deep-honey underline. The alarm link is clinical red.
+- **Bottom nav (below 1100px):** fixed, 76px plus the safe area, bar linen, with a dashed ink seam and a faint upward shadow. It has four equal columns, each with a 26px icon over a 700 label. Alarma is always clinical red, and the current item gets an ink wash at 7%.
+- **Lesson route:** 80px rows on translucent linen with a 52px numbered disc, title, minutes and a state pill («Empezar», «Continuar», «Aprendida»), joined by a dashed thread in the band's mid colour. The current row is opaque linen with a 2px deep-honey edge and a honey disc; learned rows get a sage-wash disc with a check.
+- **Lesson player:** «‹ Todas las lecciones» and the Escuchar pill on top, the lesson title in its fabric ink, a segmented step thread and «Lección N de 8 · Paso X de Y». Steps live in one linen patch; the sticky Atrás / Siguiente bar sits at its foot.
 - **Segmented control:** a raw linen tray (radius 18px, 6px padding) of 52px options (48px for the interval picker), 800 at 1.0625rem. The selected option rises as a linen chip with a 2px añil edge, graphite text and the low shadow; hover is ink at 8%.
 
 ### Semáforo Lights (signature)

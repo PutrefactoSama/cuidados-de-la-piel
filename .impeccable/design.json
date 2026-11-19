@@ -1,263 +1,263 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T17:33:55+00:00",
+  "generatedAt": "2026-11-02T21:20:18+00:00",
   "title": "Design System: CuidaPiel",
   "extensions": {
     "colorMeta": {
       "cielo": {
         "role": "primary",
-        "displayName": "Añil",
-        "canonical": "#3d4a86",
-        "oklch": "oklch(42.9% 0.100 272.3)",
+        "displayName": "Soft Añil",
+        "canonical": "#526094",
+        "oklch": "oklch(50.1% 0.085 271.6)",
         "tonalRamp": [
-          "oklch(15.0% 0.100 272.3)",
-          "oklch(26.4% 0.100 272.3)",
-          "oklch(37.9% 0.100 272.3)",
-          "oklch(49.3% 0.100 272.3)",
-          "oklch(60.7% 0.100 272.3)",
-          "oklch(72.1% 0.100 272.3)",
-          "oklch(83.6% 0.100 272.3)",
-          "oklch(95.0% 0.100 272.3)"
+          "oklch(15.0% 0.085 271.6)",
+          "oklch(26.4% 0.085 271.6)",
+          "oklch(37.9% 0.085 271.6)",
+          "oklch(49.3% 0.085 271.6)",
+          "oklch(60.7% 0.085 271.6)",
+          "oklch(72.1% 0.085 271.6)",
+          "oklch(83.6% 0.085 271.6)",
+          "oklch(95.0% 0.085 271.6)"
         ]
       },
       "cielo-hondo": {
         "role": "primary",
         "displayName": "Deep Añil",
-        "canonical": "#2c3568",
-        "oklch": "oklch(34.9% 0.089 273.4)",
+        "canonical": "#3c4773",
+        "oklch": "oklch(40.9% 0.075 272.1)",
         "tonalRamp": [
-          "oklch(15.0% 0.089 273.4)",
-          "oklch(26.4% 0.089 273.4)",
-          "oklch(37.9% 0.089 273.4)",
-          "oklch(49.3% 0.089 273.4)",
-          "oklch(60.7% 0.089 273.4)",
-          "oklch(72.1% 0.089 273.4)",
-          "oklch(83.6% 0.089 273.4)",
-          "oklch(95.0% 0.089 273.4)"
+          "oklch(15.0% 0.075 272.1)",
+          "oklch(26.4% 0.075 272.1)",
+          "oklch(37.9% 0.075 272.1)",
+          "oklch(49.3% 0.075 272.1)",
+          "oklch(60.7% 0.075 272.1)",
+          "oklch(72.1% 0.075 272.1)",
+          "oklch(83.6% 0.075 272.1)",
+          "oklch(95.0% 0.075 272.1)"
         ]
       },
       "cielo-claro": {
         "role": "primary",
         "displayName": "Blue-Grey",
-        "canonical": "#8fa3c4",
-        "oklch": "oklch(71.2% 0.053 260.4)",
+        "canonical": "#abb8ce",
+        "oklch": "oklch(78.0% 0.035 261.0)",
         "tonalRamp": [
-          "oklch(15.0% 0.053 260.4)",
-          "oklch(26.4% 0.053 260.4)",
-          "oklch(37.9% 0.053 260.4)",
-          "oklch(49.3% 0.053 260.4)",
-          "oklch(60.7% 0.053 260.4)",
-          "oklch(72.1% 0.053 260.4)",
-          "oklch(83.6% 0.053 260.4)",
-          "oklch(95.0% 0.053 260.4)"
+          "oklch(15.0% 0.035 261.0)",
+          "oklch(26.4% 0.035 261.0)",
+          "oklch(37.9% 0.035 261.0)",
+          "oklch(49.3% 0.035 261.0)",
+          "oklch(60.7% 0.035 261.0)",
+          "oklch(72.1% 0.035 261.0)",
+          "oklch(83.6% 0.035 261.0)",
+          "oklch(95.0% 0.035 261.0)"
         ]
       },
       "noche": {
         "role": "primary",
         "displayName": "Toasted Linen",
-        "canonical": "#ebe4d6",
-        "oklch": "oklch(92.1% 0.020 84.6)",
+        "canonical": "#f2ede5",
+        "oklch": "oklch(94.8% 0.012 79.8)",
         "tonalRamp": [
-          "oklch(15.0% 0.020 84.6)",
-          "oklch(26.4% 0.020 84.6)",
-          "oklch(37.9% 0.020 84.6)",
-          "oklch(49.3% 0.020 84.6)",
-          "oklch(60.7% 0.020 84.6)",
-          "oklch(72.1% 0.020 84.6)",
-          "oklch(83.6% 0.020 84.6)",
-          "oklch(95.0% 0.020 84.6)"
+          "oklch(15.0% 0.012 79.8)",
+          "oklch(26.4% 0.012 79.8)",
+          "oklch(37.9% 0.012 79.8)",
+          "oklch(49.3% 0.012 79.8)",
+          "oklch(60.7% 0.012 79.8)",
+          "oklch(72.1% 0.012 79.8)",
+          "oklch(83.6% 0.012 79.8)",
+          "oklch(95.0% 0.012 79.8)"
         ]
       },
       "sol": {
-        "role": "secondary",
-        "displayName": "Ochre",
-        "canonical": "#e2b04a",
-        "oklch": "oklch(78.4% 0.131 82.4)",
+        "role": "accent",
+        "displayName": "Honey",
+        "canonical": "#eac788",
+        "oklch": "oklch(84.6% 0.090 81.7)",
         "tonalRamp": [
-          "oklch(15.0% 0.131 82.4)",
-          "oklch(26.4% 0.131 82.4)",
-          "oklch(37.9% 0.131 82.4)",
-          "oklch(49.3% 0.131 82.4)",
-          "oklch(60.7% 0.131 82.4)",
-          "oklch(72.1% 0.131 82.4)",
-          "oklch(83.6% 0.131 82.4)",
-          "oklch(95.0% 0.131 82.4)"
+          "oklch(15.0% 0.090 81.7)",
+          "oklch(26.4% 0.090 81.7)",
+          "oklch(37.9% 0.090 81.7)",
+          "oklch(49.3% 0.090 81.7)",
+          "oklch(60.7% 0.090 81.7)",
+          "oklch(72.1% 0.090 81.7)",
+          "oklch(83.6% 0.090 81.7)",
+          "oklch(95.0% 0.090 81.7)"
         ]
       },
       "sol-claro": {
-        "role": "secondary",
-        "displayName": "Pale Ochre",
-        "canonical": "#f7e6bd",
-        "oklch": "oklch(92.8% 0.057 88.2)",
+        "role": "accent",
+        "displayName": "Pale Honey",
+        "canonical": "#f9eed6",
+        "oklch": "oklch(95.1% 0.034 86.3)",
         "tonalRamp": [
-          "oklch(15.0% 0.057 88.2)",
-          "oklch(26.4% 0.057 88.2)",
-          "oklch(37.9% 0.057 88.2)",
-          "oklch(49.3% 0.057 88.2)",
-          "oklch(60.7% 0.057 88.2)",
-          "oklch(72.1% 0.057 88.2)",
-          "oklch(83.6% 0.057 88.2)",
-          "oklch(95.0% 0.057 88.2)"
+          "oklch(15.0% 0.034 86.3)",
+          "oklch(26.4% 0.034 86.3)",
+          "oklch(37.9% 0.034 86.3)",
+          "oklch(49.3% 0.034 86.3)",
+          "oklch(60.7% 0.034 86.3)",
+          "oklch(72.1% 0.034 86.3)",
+          "oklch(83.6% 0.034 86.3)",
+          "oklch(95.0% 0.034 86.3)"
         ]
       },
       "turquesa": {
         "role": "tertiary",
         "displayName": "Lagoon Thread",
-        "canonical": "#2e6e6a",
-        "oklch": "oklch(49.6% 0.066 189.7)",
+        "canonical": "#3e706c",
+        "oklch": "oklch(50.9% 0.055 189.0)",
         "tonalRamp": [
-          "oklch(15.0% 0.066 189.7)",
-          "oklch(26.4% 0.066 189.7)",
-          "oklch(37.9% 0.066 189.7)",
-          "oklch(49.3% 0.066 189.7)",
-          "oklch(60.7% 0.066 189.7)",
-          "oklch(72.1% 0.066 189.7)",
-          "oklch(83.6% 0.066 189.7)",
-          "oklch(95.0% 0.066 189.7)"
+          "oklch(15.0% 0.055 189.0)",
+          "oklch(26.4% 0.055 189.0)",
+          "oklch(37.9% 0.055 189.0)",
+          "oklch(49.3% 0.055 189.0)",
+          "oklch(60.7% 0.055 189.0)",
+          "oklch(72.1% 0.055 189.0)",
+          "oklch(83.6% 0.055 189.0)",
+          "oklch(95.0% 0.055 189.0)"
         ]
       },
       "turquesa-claro": {
         "role": "tertiary",
         "displayName": "Lagoon Wash",
-        "canonical": "#d8eae4",
-        "oklch": "oklch(92.2% 0.021 173.9)",
+        "canonical": "#ddf0ed",
+        "oklch": "oklch(94.0% 0.020 185.5)",
         "tonalRamp": [
-          "oklch(15.0% 0.021 173.9)",
-          "oklch(26.4% 0.021 173.9)",
-          "oklch(37.9% 0.021 173.9)",
-          "oklch(49.3% 0.021 173.9)",
-          "oklch(60.7% 0.021 173.9)",
-          "oklch(72.1% 0.021 173.9)",
-          "oklch(83.6% 0.021 173.9)",
-          "oklch(95.0% 0.021 173.9)"
+          "oklch(15.0% 0.020 185.5)",
+          "oklch(26.4% 0.020 185.5)",
+          "oklch(37.9% 0.020 185.5)",
+          "oklch(49.3% 0.020 185.5)",
+          "oklch(60.7% 0.020 185.5)",
+          "oklch(72.1% 0.020 185.5)",
+          "oklch(83.6% 0.020 185.5)",
+          "oklch(95.0% 0.020 185.5)"
         ]
       },
       "fucsia": {
         "role": "tertiary",
         "displayName": "Mulberry Thread",
-        "canonical": "#95475f",
-        "oklch": "oklch(50.3% 0.108 2.2)",
+        "canonical": "#915365",
+        "oklch": "oklch(51.9% 0.085 1.8)",
         "tonalRamp": [
-          "oklch(15.0% 0.108 2.2)",
-          "oklch(26.4% 0.108 2.2)",
-          "oklch(37.9% 0.108 2.2)",
-          "oklch(49.3% 0.108 2.2)",
-          "oklch(60.7% 0.108 2.2)",
-          "oklch(72.1% 0.108 2.2)",
-          "oklch(83.6% 0.108 2.2)",
-          "oklch(95.0% 0.108 2.2)"
+          "oklch(15.0% 0.085 1.8)",
+          "oklch(26.4% 0.085 1.8)",
+          "oklch(37.9% 0.085 1.8)",
+          "oklch(49.3% 0.085 1.8)",
+          "oklch(60.7% 0.085 1.8)",
+          "oklch(72.1% 0.085 1.8)",
+          "oklch(83.6% 0.085 1.8)",
+          "oklch(95.0% 0.085 1.8)"
         ]
       },
       "fucsia-claro": {
         "role": "tertiary",
         "displayName": "Mulberry Wash",
-        "canonical": "#f3dfe4",
-        "oklch": "oklch(92.1% 0.023 0.6)",
+        "canonical": "#fae5ea",
+        "oklch": "oklch(94.0% 0.024 1.3)",
         "tonalRamp": [
-          "oklch(15.0% 0.023 0.6)",
-          "oklch(26.4% 0.023 0.6)",
-          "oklch(37.9% 0.023 0.6)",
-          "oklch(49.3% 0.023 0.6)",
-          "oklch(60.7% 0.023 0.6)",
-          "oklch(72.1% 0.023 0.6)",
-          "oklch(83.6% 0.023 0.6)",
-          "oklch(95.0% 0.023 0.6)"
+          "oklch(15.0% 0.024 1.3)",
+          "oklch(26.4% 0.024 1.3)",
+          "oklch(37.9% 0.024 1.3)",
+          "oklch(49.3% 0.024 1.3)",
+          "oklch(60.7% 0.024 1.3)",
+          "oklch(72.1% 0.024 1.3)",
+          "oklch(83.6% 0.024 1.3)",
+          "oklch(95.0% 0.024 1.3)"
         ]
       },
       "cordillera": {
         "role": "tertiary",
         "displayName": "Sage Thread",
-        "canonical": "#3d6b4b",
-        "oklch": "oklch(48.5% 0.073 152.7)",
+        "canonical": "#4e7053",
+        "oklch": "oklch(51.1% 0.060 148.5)",
         "tonalRamp": [
-          "oklch(15.0% 0.073 152.7)",
-          "oklch(26.4% 0.073 152.7)",
-          "oklch(37.9% 0.073 152.7)",
-          "oklch(49.3% 0.073 152.7)",
-          "oklch(60.7% 0.073 152.7)",
-          "oklch(72.1% 0.073 152.7)",
-          "oklch(83.6% 0.073 152.7)",
-          "oklch(95.0% 0.073 152.7)"
+          "oklch(15.0% 0.060 148.5)",
+          "oklch(26.4% 0.060 148.5)",
+          "oklch(37.9% 0.060 148.5)",
+          "oklch(49.3% 0.060 148.5)",
+          "oklch(60.7% 0.060 148.5)",
+          "oklch(72.1% 0.060 148.5)",
+          "oklch(83.6% 0.060 148.5)",
+          "oklch(95.0% 0.060 148.5)"
         ]
       },
       "cordillera-claro": {
         "role": "tertiary",
         "displayName": "Sage Wash",
-        "canonical": "#dceada",
-        "oklch": "oklch(92.2% 0.026 141.8)",
+        "canonical": "#e1f0e2",
+        "oklch": "oklch(94.0% 0.024 147.3)",
         "tonalRamp": [
-          "oklch(15.0% 0.026 141.8)",
-          "oklch(26.4% 0.026 141.8)",
-          "oklch(37.9% 0.026 141.8)",
-          "oklch(49.3% 0.026 141.8)",
-          "oklch(60.7% 0.026 141.8)",
-          "oklch(72.1% 0.026 141.8)",
-          "oklch(83.6% 0.026 141.8)",
-          "oklch(95.0% 0.026 141.8)"
+          "oklch(15.0% 0.024 147.3)",
+          "oklch(26.4% 0.024 147.3)",
+          "oklch(37.9% 0.024 147.3)",
+          "oklch(49.3% 0.024 147.3)",
+          "oklch(60.7% 0.024 147.3)",
+          "oklch(72.1% 0.024 147.3)",
+          "oklch(83.6% 0.024 147.3)",
+          "oklch(95.0% 0.024 147.3)"
         ]
       },
       "lila": {
         "role": "tertiary",
         "displayName": "Heather Thread",
-        "canonical": "#5e5491",
-        "oklch": "oklch(48.3% 0.096 289.8)",
+        "canonical": "#686191",
+        "oklch": "oklch(51.9% 0.075 290.2)",
         "tonalRamp": [
-          "oklch(15.0% 0.096 289.8)",
-          "oklch(26.4% 0.096 289.8)",
-          "oklch(37.9% 0.096 289.8)",
-          "oklch(49.3% 0.096 289.8)",
-          "oklch(60.7% 0.096 289.8)",
-          "oklch(72.1% 0.096 289.8)",
-          "oklch(83.6% 0.096 289.8)",
-          "oklch(95.0% 0.096 289.8)"
+          "oklch(15.0% 0.075 290.2)",
+          "oklch(26.4% 0.075 290.2)",
+          "oklch(37.9% 0.075 290.2)",
+          "oklch(49.3% 0.075 290.2)",
+          "oklch(60.7% 0.075 290.2)",
+          "oklch(72.1% 0.075 290.2)",
+          "oklch(83.6% 0.075 290.2)",
+          "oklch(95.0% 0.075 290.2)"
         ]
       },
       "lila-claro": {
         "role": "tertiary",
         "displayName": "Heather Wash",
-        "canonical": "#e5e1f2",
-        "oklch": "oklch(91.8% 0.023 296.7)",
+        "canonical": "#eae9f9",
+        "oklch": "oklch(93.9% 0.021 288.9)",
         "tonalRamp": [
-          "oklch(15.0% 0.023 296.7)",
-          "oklch(26.4% 0.023 296.7)",
-          "oklch(37.9% 0.023 296.7)",
-          "oklch(49.3% 0.023 296.7)",
-          "oklch(60.7% 0.023 296.7)",
-          "oklch(72.1% 0.023 296.7)",
-          "oklch(83.6% 0.023 296.7)",
-          "oklch(95.0% 0.023 296.7)"
+          "oklch(15.0% 0.021 288.9)",
+          "oklch(26.4% 0.021 288.9)",
+          "oklch(37.9% 0.021 288.9)",
+          "oklch(49.3% 0.021 288.9)",
+          "oklch(60.7% 0.021 288.9)",
+          "oklch(72.1% 0.021 288.9)",
+          "oklch(83.6% 0.021 288.9)",
+          "oklch(95.0% 0.021 288.9)"
         ]
       },
       "naranjo": {
         "role": "tertiary",
         "displayName": "Terracotta Thread",
-        "canonical": "#a6553a",
-        "oklch": "oklch(54.2% 0.114 39.0)",
+        "canonical": "#99583e",
+        "oklch": "oklch(53.0% 0.094 42.2)",
         "tonalRamp": [
-          "oklch(15.0% 0.114 39.0)",
-          "oklch(26.4% 0.114 39.0)",
-          "oklch(37.9% 0.114 39.0)",
-          "oklch(49.3% 0.114 39.0)",
-          "oklch(60.7% 0.114 39.0)",
-          "oklch(72.1% 0.114 39.0)",
-          "oklch(83.6% 0.114 39.0)",
-          "oklch(95.0% 0.114 39.0)"
+          "oklch(15.0% 0.094 42.2)",
+          "oklch(26.4% 0.094 42.2)",
+          "oklch(37.9% 0.094 42.2)",
+          "oklch(49.3% 0.094 42.2)",
+          "oklch(60.7% 0.094 42.2)",
+          "oklch(72.1% 0.094 42.2)",
+          "oklch(83.6% 0.094 42.2)",
+          "oklch(95.0% 0.094 42.2)"
         ]
       },
       "naranjo-claro": {
         "role": "tertiary",
         "displayName": "Terracotta Wash",
-        "canonical": "#f6dfd3",
-        "oklch": "oklch(91.9% 0.030 49.4)",
+        "canonical": "#fbe6de",
+        "oklch": "oklch(94.0% 0.025 42.1)",
         "tonalRamp": [
-          "oklch(15.0% 0.030 49.4)",
-          "oklch(26.4% 0.030 49.4)",
-          "oklch(37.9% 0.030 49.4)",
-          "oklch(49.3% 0.030 49.4)",
-          "oklch(60.7% 0.030 49.4)",
-          "oklch(72.1% 0.030 49.4)",
-          "oklch(83.6% 0.030 49.4)",
-          "oklch(95.0% 0.030 49.4)"
+          "oklch(15.0% 0.025 42.1)",
+          "oklch(26.4% 0.025 42.1)",
+          "oklch(37.9% 0.025 42.1)",
+          "oklch(49.3% 0.025 42.1)",
+          "oklch(60.7% 0.025 42.1)",
+          "oklch(72.1% 0.025 42.1)",
+          "oklch(83.6% 0.025 42.1)",
+          "oklch(95.0% 0.025 42.1)"
         ]
       },
       "alarma": {
@@ -279,81 +279,81 @@
       "alarma-claro": {
         "role": "error",
         "displayName": "Clinical Red Wash",
-        "canonical": "#f9dcd8",
-        "oklch": "oklch(91.7% 0.033 27.1)",
+        "canonical": "#fee4e2",
+        "oklch": "oklch(93.9% 0.029 23.0)",
         "tonalRamp": [
-          "oklch(15.0% 0.033 27.1)",
-          "oklch(26.4% 0.033 27.1)",
-          "oklch(37.9% 0.033 27.1)",
-          "oklch(49.3% 0.033 27.1)",
-          "oklch(60.7% 0.033 27.1)",
-          "oklch(72.1% 0.033 27.1)",
-          "oklch(83.6% 0.033 27.1)",
-          "oklch(95.0% 0.033 27.1)"
+          "oklch(15.0% 0.029 23.0)",
+          "oklch(26.4% 0.029 23.0)",
+          "oklch(37.9% 0.029 23.0)",
+          "oklch(49.3% 0.029 23.0)",
+          "oklch(60.7% 0.029 23.0)",
+          "oklch(72.1% 0.029 23.0)",
+          "oklch(83.6% 0.029 23.0)",
+          "oklch(95.0% 0.029 23.0)"
         ]
       },
       "lienzo": {
         "role": "neutral",
         "displayName": "Linen",
-        "canonical": "#fffdf8",
-        "oklch": "oklch(99.4% 0.007 88.6)",
+        "canonical": "#fefdfa",
+        "oklch": "oklch(99.4% 0.004 91.4)",
         "tonalRamp": [
-          "oklch(15.0% 0.007 88.6)",
-          "oklch(26.4% 0.007 88.6)",
-          "oklch(37.9% 0.007 88.6)",
-          "oklch(49.3% 0.007 88.6)",
-          "oklch(60.7% 0.007 88.6)",
-          "oklch(72.1% 0.007 88.6)",
-          "oklch(83.6% 0.007 88.6)",
-          "oklch(95.0% 0.007 88.6)"
+          "oklch(15.0% 0.004 91.4)",
+          "oklch(26.4% 0.004 91.4)",
+          "oklch(37.9% 0.004 91.4)",
+          "oklch(49.3% 0.004 91.4)",
+          "oklch(60.7% 0.004 91.4)",
+          "oklch(72.1% 0.004 91.4)",
+          "oklch(83.6% 0.004 91.4)",
+          "oklch(95.0% 0.004 91.4)"
         ]
       },
       "lienzo-2": {
         "role": "neutral",
         "displayName": "Raw Linen Inset",
-        "canonical": "#f3eee4",
-        "oklch": "oklch(95.0% 0.014 84.6)",
+        "canonical": "#f4f1e9",
+        "oklch": "oklch(95.8% 0.011 89.7)",
         "tonalRamp": [
-          "oklch(15.0% 0.014 84.6)",
-          "oklch(26.4% 0.014 84.6)",
-          "oklch(37.9% 0.014 84.6)",
-          "oklch(49.3% 0.014 84.6)",
-          "oklch(60.7% 0.014 84.6)",
-          "oklch(72.1% 0.014 84.6)",
-          "oklch(83.6% 0.014 84.6)",
-          "oklch(95.0% 0.014 84.6)"
+          "oklch(15.0% 0.011 89.7)",
+          "oklch(26.4% 0.011 89.7)",
+          "oklch(37.9% 0.011 89.7)",
+          "oklch(49.3% 0.011 89.7)",
+          "oklch(60.7% 0.011 89.7)",
+          "oklch(72.1% 0.011 89.7)",
+          "oklch(83.6% 0.011 89.7)",
+          "oklch(95.0% 0.011 89.7)"
         ]
       },
       "tinta": {
         "role": "neutral",
-        "displayName": "Ink",
-        "canonical": "#1f2547",
-        "oklch": "oklch(27.8% 0.063 274.0)",
+        "displayName": "Graphite Ink",
+        "canonical": "#2f3649",
+        "oklch": "oklch(33.5% 0.035 268.8)",
         "tonalRamp": [
-          "oklch(15.0% 0.063 274.0)",
-          "oklch(26.4% 0.063 274.0)",
-          "oklch(37.9% 0.063 274.0)",
-          "oklch(49.3% 0.063 274.0)",
-          "oklch(60.7% 0.063 274.0)",
-          "oklch(72.1% 0.063 274.0)",
-          "oklch(83.6% 0.063 274.0)",
-          "oklch(95.0% 0.063 274.0)"
+          "oklch(15.0% 0.035 268.8)",
+          "oklch(26.4% 0.035 268.8)",
+          "oklch(37.9% 0.035 268.8)",
+          "oklch(49.3% 0.035 268.8)",
+          "oklch(60.7% 0.035 268.8)",
+          "oklch(72.1% 0.035 268.8)",
+          "oklch(83.6% 0.035 268.8)",
+          "oklch(95.0% 0.035 268.8)"
         ]
       },
       "tinta-suave": {
         "role": "neutral",
         "displayName": "Faded Ink",
-        "canonical": "#4a4f6e",
-        "oklch": "oklch(43.6% 0.052 277.0)",
+        "canonical": "#555c6c",
+        "oklch": "oklch(47.5% 0.027 266.6)",
         "tonalRamp": [
-          "oklch(15.0% 0.052 277.0)",
-          "oklch(26.4% 0.052 277.0)",
-          "oklch(37.9% 0.052 277.0)",
-          "oklch(49.3% 0.052 277.0)",
-          "oklch(60.7% 0.052 277.0)",
-          "oklch(72.1% 0.052 277.0)",
-          "oklch(83.6% 0.052 277.0)",
-          "oklch(95.0% 0.052 277.0)"
+          "oklch(15.0% 0.027 266.6)",
+          "oklch(26.4% 0.027 266.6)",
+          "oklch(37.9% 0.027 266.6)",
+          "oklch(49.3% 0.027 266.6)",
+          "oklch(60.7% 0.027 266.6)",
+          "oklch(72.1% 0.027 266.6)",
+          "oklch(83.6% 0.027 266.6)",
+          "oklch(95.0% 0.027 266.6)"
         ]
       },
       "piel-sana": {
@@ -390,190 +390,414 @@
       },
       "fondo": {
         "role": "neutral",
-        "displayName": "Raw Linen",
-        "canonical": "#f4eee3",
-        "oklch": "oklch(95.1% 0.016 82.8)",
+        "displayName": "Ivory Linen",
+        "canonical": "#f8f4ec",
+        "oklch": "oklch(96.8% 0.011 84.6)",
         "tonalRamp": [
-          "oklch(15.0% 0.016 82.8)",
-          "oklch(26.4% 0.016 82.8)",
-          "oklch(37.9% 0.016 82.8)",
-          "oklch(49.3% 0.016 82.8)",
-          "oklch(60.7% 0.016 82.8)",
-          "oklch(72.1% 0.016 82.8)",
-          "oklch(83.6% 0.016 82.8)",
-          "oklch(95.0% 0.016 82.8)"
+          "oklch(15.0% 0.011 84.6)",
+          "oklch(26.4% 0.011 84.6)",
+          "oklch(37.9% 0.011 84.6)",
+          "oklch(49.3% 0.011 84.6)",
+          "oklch(60.7% 0.011 84.6)",
+          "oklch(72.1% 0.011 84.6)",
+          "oklch(83.6% 0.011 84.6)",
+          "oklch(95.0% 0.011 84.6)"
         ]
       },
       "cielo-dia": {
         "role": "neutral",
         "displayName": "Morning Sky",
-        "canonical": "#e4ebf1",
-        "oklch": "oklch(93.6% 0.011 243.7)",
+        "canonical": "#e9f0f7",
+        "oklch": "oklch(95.2% 0.012 248.0)",
         "tonalRamp": [
-          "oklch(15.0% 0.011 243.7)",
-          "oklch(26.4% 0.011 243.7)",
-          "oklch(37.9% 0.011 243.7)",
-          "oklch(49.3% 0.011 243.7)",
-          "oklch(60.7% 0.011 243.7)",
-          "oklch(72.1% 0.011 243.7)",
-          "oklch(83.6% 0.011 243.7)",
-          "oklch(95.0% 0.011 243.7)"
+          "oklch(15.0% 0.012 248.0)",
+          "oklch(26.4% 0.012 248.0)",
+          "oklch(37.9% 0.012 248.0)",
+          "oklch(49.3% 0.012 248.0)",
+          "oklch(60.7% 0.012 248.0)",
+          "oklch(72.1% 0.012 248.0)",
+          "oklch(83.6% 0.012 248.0)",
+          "oklch(95.0% 0.012 248.0)"
         ]
       },
       "barra": {
         "role": "neutral",
         "displayName": "Bar Linen",
-        "canonical": "#fbf8f2",
-        "oklch": "oklch(98.0% 0.009 84.6)",
+        "canonical": "#fcfaf6",
+        "oklch": "oklch(98.6% 0.006 84.6)",
         "tonalRamp": [
-          "oklch(15.0% 0.009 84.6)",
-          "oklch(26.4% 0.009 84.6)",
-          "oklch(37.9% 0.009 84.6)",
-          "oklch(49.3% 0.009 84.6)",
-          "oklch(60.7% 0.009 84.6)",
-          "oklch(72.1% 0.009 84.6)",
-          "oklch(83.6% 0.009 84.6)",
-          "oklch(95.0% 0.009 84.6)"
+          "oklch(15.0% 0.006 84.6)",
+          "oklch(26.4% 0.006 84.6)",
+          "oklch(37.9% 0.006 84.6)",
+          "oklch(49.3% 0.006 84.6)",
+          "oklch(60.7% 0.006 84.6)",
+          "oklch(72.1% 0.006 84.6)",
+          "oklch(83.6% 0.006 84.6)",
+          "oklch(95.0% 0.006 84.6)"
         ]
       },
       "sol-hondo": {
-        "role": "secondary",
-        "displayName": "Deep Ochre",
-        "canonical": "#a87a22",
-        "oklch": "oklch(61.1% 0.115 78.9)",
+        "role": "accent",
+        "displayName": "Deep Honey",
+        "canonical": "#a27734",
+        "oklch": "oklch(59.9% 0.099 75.7)",
         "tonalRamp": [
-          "oklch(15.0% 0.115 78.9)",
-          "oklch(26.4% 0.115 78.9)",
-          "oklch(37.9% 0.115 78.9)",
-          "oklch(49.3% 0.115 78.9)",
-          "oklch(60.7% 0.115 78.9)",
-          "oklch(72.1% 0.115 78.9)",
-          "oklch(83.6% 0.115 78.9)",
-          "oklch(95.0% 0.115 78.9)"
+          "oklch(15.0% 0.099 75.7)",
+          "oklch(26.4% 0.099 75.7)",
+          "oklch(37.9% 0.099 75.7)",
+          "oklch(49.3% 0.099 75.7)",
+          "oklch(60.7% 0.099 75.7)",
+          "oklch(72.1% 0.099 75.7)",
+          "oklch(83.6% 0.099 75.7)",
+          "oklch(95.0% 0.099 75.7)"
         ]
       },
       "tela-turquesa": {
         "role": "tertiary",
         "displayName": "Lagoon Cloth",
-        "canonical": "#dcebe6",
-        "oklch": "oklch(92.7% 0.017 174.0)",
+        "canonical": "#e2f1ef",
+        "oklch": "oklch(94.6% 0.016 187.3)",
         "tonalRamp": [
-          "oklch(15.0% 0.017 174.0)",
-          "oklch(26.4% 0.017 174.0)",
-          "oklch(37.9% 0.017 174.0)",
-          "oklch(49.3% 0.017 174.0)",
-          "oklch(60.7% 0.017 174.0)",
-          "oklch(72.1% 0.017 174.0)",
-          "oklch(83.6% 0.017 174.0)",
-          "oklch(95.0% 0.017 174.0)"
+          "oklch(15.0% 0.016 187.3)",
+          "oklch(26.4% 0.016 187.3)",
+          "oklch(37.9% 0.016 187.3)",
+          "oklch(49.3% 0.016 187.3)",
+          "oklch(60.7% 0.016 187.3)",
+          "oklch(72.1% 0.016 187.3)",
+          "oklch(83.6% 0.016 187.3)",
+          "oklch(95.0% 0.016 187.3)"
         ]
       },
       "tela-fucsia": {
         "role": "tertiary",
         "displayName": "Mulberry Cloth",
-        "canonical": "#f3e1e5",
-        "oklch": "oklch(92.5% 0.020 2.3)",
+        "canonical": "#f8e9ec",
+        "oklch": "oklch(94.7% 0.017 3.7)",
         "tonalRamp": [
-          "oklch(15.0% 0.020 2.3)",
-          "oklch(26.4% 0.020 2.3)",
-          "oklch(37.9% 0.020 2.3)",
-          "oklch(49.3% 0.020 2.3)",
-          "oklch(60.7% 0.020 2.3)",
-          "oklch(72.1% 0.020 2.3)",
-          "oklch(83.6% 0.020 2.3)",
-          "oklch(95.0% 0.020 2.3)"
+          "oklch(15.0% 0.017 3.7)",
+          "oklch(26.4% 0.017 3.7)",
+          "oklch(37.9% 0.017 3.7)",
+          "oklch(49.3% 0.017 3.7)",
+          "oklch(60.7% 0.017 3.7)",
+          "oklch(72.1% 0.017 3.7)",
+          "oklch(83.6% 0.017 3.7)",
+          "oklch(95.0% 0.017 3.7)"
         ]
       },
       "tela-cordillera": {
         "role": "tertiary",
         "displayName": "Sage Cloth",
-        "canonical": "#e1ebdd",
-        "oklch": "oklch(92.9% 0.021 136.6)",
+        "canonical": "#e6f1e6",
+        "oklch": "oklch(94.7% 0.019 145.4)",
         "tonalRamp": [
-          "oklch(15.0% 0.021 136.6)",
-          "oklch(26.4% 0.021 136.6)",
-          "oklch(37.9% 0.021 136.6)",
-          "oklch(49.3% 0.021 136.6)",
-          "oklch(60.7% 0.021 136.6)",
-          "oklch(72.1% 0.021 136.6)",
-          "oklch(83.6% 0.021 136.6)",
-          "oklch(95.0% 0.021 136.6)"
+          "oklch(15.0% 0.019 145.4)",
+          "oklch(26.4% 0.019 145.4)",
+          "oklch(37.9% 0.019 145.4)",
+          "oklch(49.3% 0.019 145.4)",
+          "oklch(60.7% 0.019 145.4)",
+          "oklch(72.1% 0.019 145.4)",
+          "oklch(83.6% 0.019 145.4)",
+          "oklch(95.0% 0.019 145.4)"
         ]
       },
       "tela-lila": {
         "role": "tertiary",
         "displayName": "Heather Cloth",
-        "canonical": "#e8e4f3",
-        "oklch": "oklch(92.6% 0.021 298.2)",
+        "canonical": "#edebf8",
+        "oklch": "oklch(94.5% 0.017 293.1)",
         "tonalRamp": [
-          "oklch(15.0% 0.021 298.2)",
-          "oklch(26.4% 0.021 298.2)",
-          "oklch(37.9% 0.021 298.2)",
-          "oklch(49.3% 0.021 298.2)",
-          "oklch(60.7% 0.021 298.2)",
-          "oklch(72.1% 0.021 298.2)",
-          "oklch(83.6% 0.021 298.2)",
-          "oklch(95.0% 0.021 298.2)"
+          "oklch(15.0% 0.017 293.1)",
+          "oklch(26.4% 0.017 293.1)",
+          "oklch(37.9% 0.017 293.1)",
+          "oklch(49.3% 0.017 293.1)",
+          "oklch(60.7% 0.017 293.1)",
+          "oklch(72.1% 0.017 293.1)",
+          "oklch(83.6% 0.017 293.1)",
+          "oklch(95.0% 0.017 293.1)"
         ]
       },
       "tela-naranjo": {
         "role": "tertiary",
         "displayName": "Terracotta Cloth",
-        "canonical": "#f6e3d8",
-        "oklch": "oklch(92.8% 0.026 52.2)",
+        "canonical": "#fae9e3",
+        "oklch": "oklch(94.6% 0.020 40.5)",
         "tonalRamp": [
-          "oklch(15.0% 0.026 52.2)",
-          "oklch(26.4% 0.026 52.2)",
-          "oklch(37.9% 0.026 52.2)",
-          "oklch(49.3% 0.026 52.2)",
-          "oklch(60.7% 0.026 52.2)",
-          "oklch(72.1% 0.026 52.2)",
-          "oklch(83.6% 0.026 52.2)",
-          "oklch(95.0% 0.026 52.2)"
+          "oklch(15.0% 0.020 40.5)",
+          "oklch(26.4% 0.020 40.5)",
+          "oklch(37.9% 0.020 40.5)",
+          "oklch(49.3% 0.020 40.5)",
+          "oklch(60.7% 0.020 40.5)",
+          "oklch(72.1% 0.020 40.5)",
+          "oklch(83.6% 0.020 40.5)",
+          "oklch(95.0% 0.020 40.5)"
         ]
       },
       "tela-sol": {
         "role": "secondary",
         "displayName": "Ochre Cloth",
-        "canonical": "#f6e7c4",
-        "oklch": "oklch(93.1% 0.049 87.6)",
+        "canonical": "#f8eed9",
+        "oklch": "oklch(95.1% 0.030 85.6)",
         "tonalRamp": [
-          "oklch(15.0% 0.049 87.6)",
-          "oklch(26.4% 0.049 87.6)",
-          "oklch(37.9% 0.049 87.6)",
-          "oklch(49.3% 0.049 87.6)",
-          "oklch(60.7% 0.049 87.6)",
-          "oklch(72.1% 0.049 87.6)",
-          "oklch(83.6% 0.049 87.6)",
-          "oklch(95.0% 0.049 87.6)"
+          "oklch(15.0% 0.030 85.6)",
+          "oklch(26.4% 0.030 85.6)",
+          "oklch(37.9% 0.030 85.6)",
+          "oklch(49.3% 0.030 85.6)",
+          "oklch(60.7% 0.030 85.6)",
+          "oklch(72.1% 0.030 85.6)",
+          "oklch(83.6% 0.030 85.6)",
+          "oklch(95.0% 0.030 85.6)"
         ]
       },
       "tela-cielo": {
         "role": "primary",
         "displayName": "Blue-Grey Cloth",
-        "canonical": "#e2e8f2",
-        "oklch": "oklch(92.9% 0.015 260.7)",
+        "canonical": "#e9eef8",
+        "oklch": "oklch(94.8% 0.014 264.5)",
         "tonalRamp": [
-          "oklch(15.0% 0.015 260.7)",
-          "oklch(26.4% 0.015 260.7)",
-          "oklch(37.9% 0.015 260.7)",
-          "oklch(49.3% 0.015 260.7)",
-          "oklch(60.7% 0.015 260.7)",
-          "oklch(72.1% 0.015 260.7)",
-          "oklch(83.6% 0.015 260.7)",
-          "oklch(95.0% 0.015 260.7)"
+          "oklch(15.0% 0.014 264.5)",
+          "oklch(26.4% 0.014 264.5)",
+          "oklch(37.9% 0.014 264.5)",
+          "oklch(49.3% 0.014 264.5)",
+          "oklch(60.7% 0.014 264.5)",
+          "oklch(72.1% 0.014 264.5)",
+          "oklch(83.6% 0.014 264.5)",
+          "oklch(95.0% 0.014 264.5)"
         ]
       },
       "hilo-tinta": {
         "role": "neutral",
         "displayName": "Ink Thread",
-        "canonical": "rgba(31, 37, 71, 0.28)"
+        "canonical": "rgba(47, 54, 73, 0.2)"
+      },
+      "cielo-medio": {
+        "role": "primary",
+        "displayName": "Mid Añil",
+        "canonical": "#939dbe",
+        "oklch": "oklch(69.9% 0.050 271.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.050 271.8)",
+          "oklch(26.4% 0.050 271.8)",
+          "oklch(37.9% 0.050 271.8)",
+          "oklch(49.3% 0.050 271.8)",
+          "oklch(60.7% 0.050 271.8)",
+          "oklch(72.1% 0.050 271.8)",
+          "oklch(83.6% 0.050 271.8)",
+          "oklch(95.0% 0.050 271.8)"
+        ]
+      },
+      "seleccion": {
+        "role": "primary",
+        "displayName": "Selection Wash",
+        "canonical": "#e9edfa",
+        "oklch": "oklch(94.7% 0.018 272.3)",
+        "tonalRamp": [
+          "oklch(15.0% 0.018 272.3)",
+          "oklch(26.4% 0.018 272.3)",
+          "oklch(37.9% 0.018 272.3)",
+          "oklch(49.3% 0.018 272.3)",
+          "oklch(60.7% 0.018 272.3)",
+          "oklch(72.1% 0.018 272.3)",
+          "oklch(83.6% 0.018 272.3)",
+          "oklch(95.0% 0.018 272.3)"
+        ]
+      },
+      "turquesa-medio": {
+        "role": "secondary",
+        "displayName": "Mid thread · turquesa",
+        "canonical": "#689e99",
+        "oklch": "oklch(66.0% 0.058 188.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.058 188.5)",
+          "oklch(26.4% 0.058 188.5)",
+          "oklch(37.9% 0.058 188.5)",
+          "oklch(49.3% 0.058 188.5)",
+          "oklch(60.7% 0.058 188.5)",
+          "oklch(72.1% 0.058 188.5)",
+          "oklch(83.6% 0.058 188.5)",
+          "oklch(95.0% 0.058 188.5)"
+        ]
+      },
+      "fucsia-medio": {
+        "role": "secondary",
+        "displayName": "Mid thread · fucsia",
+        "canonical": "#c07b8e",
+        "oklch": "oklch(66.0% 0.089 1.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.089 1.9)",
+          "oklch(26.4% 0.089 1.9)",
+          "oklch(37.9% 0.089 1.9)",
+          "oklch(49.3% 0.089 1.9)",
+          "oklch(60.7% 0.089 1.9)",
+          "oklch(72.1% 0.089 1.9)",
+          "oklch(83.6% 0.089 1.9)",
+          "oklch(95.0% 0.089 1.9)"
+        ]
+      },
+      "cordillera-medio": {
+        "role": "secondary",
+        "displayName": "Mid thread · cordillera",
+        "canonical": "#789d7d",
+        "oklch": "oklch(65.9% 0.062 148.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.062 148.5)",
+          "oklch(26.4% 0.062 148.5)",
+          "oklch(37.9% 0.062 148.5)",
+          "oklch(49.3% 0.062 148.5)",
+          "oklch(60.7% 0.062 148.5)",
+          "oklch(72.1% 0.062 148.5)",
+          "oklch(83.6% 0.062 148.5)",
+          "oklch(95.0% 0.062 148.5)"
+        ]
+      },
+      "lila-medio": {
+        "role": "secondary",
+        "displayName": "Mid thread · lila",
+        "canonical": "#918ac0",
+        "oklch": "oklch(66.0% 0.080 290.0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.080 290.0)",
+          "oklch(26.4% 0.080 290.0)",
+          "oklch(37.9% 0.080 290.0)",
+          "oklch(49.3% 0.080 290.0)",
+          "oklch(60.7% 0.080 290.0)",
+          "oklch(72.1% 0.080 290.0)",
+          "oklch(83.6% 0.080 290.0)",
+          "oklch(95.0% 0.080 290.0)"
+        ]
+      },
+      "naranjo-medio": {
+        "role": "secondary",
+        "displayName": "Mid thread · naranjo",
+        "canonical": "#c67d61",
+        "oklch": "oklch(66.0% 0.100 41.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.100 41.7)",
+          "oklch(26.4% 0.100 41.7)",
+          "oklch(37.9% 0.100 41.7)",
+          "oklch(49.3% 0.100 41.7)",
+          "oklch(60.7% 0.100 41.7)",
+          "oklch(72.1% 0.100 41.7)",
+          "oklch(83.6% 0.100 41.7)",
+          "oklch(95.0% 0.100 41.7)"
+        ]
+      },
+      "titulo-turquesa": {
+        "role": "secondary",
+        "displayName": "Title ink · turquesa",
+        "canonical": "#275652",
+        "oklch": "oklch(41.9% 0.052 188.0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.052 188.0)",
+          "oklch(26.4% 0.052 188.0)",
+          "oklch(37.9% 0.052 188.0)",
+          "oklch(49.3% 0.052 188.0)",
+          "oklch(60.7% 0.052 188.0)",
+          "oklch(72.1% 0.052 188.0)",
+          "oklch(83.6% 0.052 188.0)",
+          "oklch(95.0% 0.052 188.0)"
+        ]
+      },
+      "titulo-sol": {
+        "role": "secondary",
+        "displayName": "Title ink · sol",
+        "canonical": "#674d2c",
+        "oklch": "oklch(44.0% 0.059 71.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.059 71.8)",
+          "oklch(26.4% 0.059 71.8)",
+          "oklch(37.9% 0.059 71.8)",
+          "oklch(49.3% 0.059 71.8)",
+          "oklch(60.7% 0.059 71.8)",
+          "oklch(72.1% 0.059 71.8)",
+          "oklch(83.6% 0.059 71.8)",
+          "oklch(95.0% 0.059 71.8)"
+        ]
+      },
+      "titulo-fucsia": {
+        "role": "secondary",
+        "displayName": "Title ink · fucsia",
+        "canonical": "#71394a",
+        "oklch": "oklch(42.1% 0.081 1.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.081 1.8)",
+          "oklch(26.4% 0.081 1.8)",
+          "oklch(37.9% 0.081 1.8)",
+          "oklch(49.3% 0.081 1.8)",
+          "oklch(60.7% 0.081 1.8)",
+          "oklch(72.1% 0.081 1.8)",
+          "oklch(83.6% 0.081 1.8)",
+          "oklch(95.0% 0.081 1.8)"
+        ]
+      },
+      "titulo-cordillera": {
+        "role": "secondary",
+        "displayName": "Title ink · cordillera",
+        "canonical": "#37563b",
+        "oklch": "oklch(42.1% 0.058 147.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.058 147.7)",
+          "oklch(26.4% 0.058 147.7)",
+          "oklch(37.9% 0.058 147.7)",
+          "oklch(49.3% 0.058 147.7)",
+          "oklch(60.7% 0.058 147.7)",
+          "oklch(72.1% 0.058 147.7)",
+          "oklch(83.6% 0.058 147.7)",
+          "oklch(95.0% 0.058 147.7)"
+        ]
+      },
+      "titulo-lila": {
+        "role": "secondary",
+        "displayName": "Title ink · lila",
+        "canonical": "#4d4671",
+        "oklch": "oklch(42.0% 0.071 290.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.071 290.5)",
+          "oklch(26.4% 0.071 290.5)",
+          "oklch(37.9% 0.071 290.5)",
+          "oklch(49.3% 0.071 290.5)",
+          "oklch(60.7% 0.071 290.5)",
+          "oklch(72.1% 0.071 290.5)",
+          "oklch(83.6% 0.071 290.5)",
+          "oklch(95.0% 0.071 290.5)"
+        ]
+      },
+      "titulo-naranjo": {
+        "role": "secondary",
+        "displayName": "Title ink · naranjo",
+        "canonical": "#753a22",
+        "oklch": "oklch(42.0% 0.090 42.1)",
+        "tonalRamp": [
+          "oklch(15.0% 0.090 42.1)",
+          "oklch(26.4% 0.090 42.1)",
+          "oklch(37.9% 0.090 42.1)",
+          "oklch(49.3% 0.090 42.1)",
+          "oklch(60.7% 0.090 42.1)",
+          "oklch(72.1% 0.090 42.1)",
+          "oklch(83.6% 0.090 42.1)",
+          "oklch(95.0% 0.090 42.1)"
+        ]
+      },
+      "titulo-cielo": {
+        "role": "secondary",
+        "displayName": "Title ink · cielo",
+        "canonical": "#3c4773",
+        "oklch": "oklch(40.9% 0.075 272.1)",
+        "tonalRamp": [
+          "oklch(15.0% 0.075 272.1)",
+          "oklch(26.4% 0.075 272.1)",
+          "oklch(37.9% 0.075 272.1)",
+          "oklch(49.3% 0.075 272.1)",
+          "oklch(60.7% 0.075 272.1)",
+          "oklch(72.1% 0.075 272.1)",
+          "oklch(83.6% 0.075 272.1)",
+          "oklch(95.0% 0.075 272.1)"
+        ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Felt Display",
-        "purpose": "Hero headline only; Londrina Solid 900, uppercase, max 12ch; locks to 2.45rem below 600px."
+        "purpose": "Hero headline only; Londrina Solid 400, uppercase, max 12ch; locks to 2.45rem below 600px. Londrina 900 is reserved for the brand name."
       },
       "headline": {
         "displayName": "Section Headline",
@@ -615,32 +839,32 @@
     "shadows": [
       {
         "name": "sombra-baja",
-        "value": "0 4px 10px -6px rgba(31, 37, 71, 0.32), 0 1px 2px rgba(31, 37, 71, 0.08)",
+        "value": "0 6px 14px -10px rgba(47, 54, 73, 0.3), 0 1px 2px rgba(47, 54, 73, 0.06)",
         "purpose": "Resting buttons, selected care tab and position tile, stepper keys, slider thumb, chart tooltip."
       },
       {
         "name": "sombra",
-        "value": "0 10px 24px -14px rgba(31, 37, 71, 0.32), 0 2px 5px rgba(31, 37, 71, 0.08)",
+        "value": "0 14px 30px -20px rgba(47, 54, 73, 0.28), 0 1px 3px rgba(47, 54, 73, 0.06)",
         "purpose": "Linen patches, semáforo lights, toast, button hover."
       },
       {
         "name": "band-drop",
-        "value": "0 18px 30px -18px rgba(31, 37, 71, 0.45)",
+        "value": "0 16px 28px -26px rgba(47, 54, 73, 0.22)",
         "purpose": "Under each fabric band only."
       },
       {
         "name": "dialog-drop",
-        "value": "0 30px 60px -20px rgba(31, 37, 71, 0.45)",
+        "value": "0 30px 60px -24px rgba(47, 54, 73, 0.45)",
         "purpose": "Search dialog over a 72% midnight backdrop."
       },
       {
         "name": "luz-activa",
-        "value": "0 0 0 4px var(--sol-hondo), 0 22px 34px -16px rgba(31, 37, 71, 0.45)",
+        "value": "0 0 0 3px var(--sol-hondo), 0 18px 30px -20px rgba(47, 54, 73, 0.3)",
         "purpose": "The semáforo light that applies today."
       },
       {
         "name": "pressed",
-        "value": "0 1px 3px rgba(10, 14, 50, 0.35)",
+        "value": "0 1px 3px rgba(47, 54, 73, 0.25)",
         "purpose": "Button :active, sunk 1px."
       },
       {
@@ -749,17 +973,17 @@
       "name": "Primary Button (Sol)",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Sun-yellow sewn patch with an inner running stitch; one per decision.",
+      "description": "Honey sewn patch with a deep-honey edge and inner running stitch; one per decision.",
       "html": "<button class=\"ds-btn-sol\" type=\"button\">Empezar el recorrido <svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/></svg></button>",
-      "css": ".ds-btn-sol { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 56px; padding: 0.6rem 1.4rem; border: 2px solid transparent; border-radius: 16px 12px 16px 12px / 12px 16px 12px 16px; background: var(--sol, #e2b04a); color: var(--cielo-hondo, #1f2547); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 800; font-size: 1.125rem; line-height: 1.15; box-shadow: 0 4px 10px -4px rgba(10, 14, 50, 0.45), 0 1px 2px rgba(10, 14, 50, 0.2); cursor: pointer; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-sol:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -10px rgba(10, 14, 50, 0.55), 0 2px 5px rgba(10, 14, 50, 0.22); } .ds-btn-sol:active { transform: translateY(1px); box-shadow: 0 1px 3px rgba(10, 14, 50, 0.35); } .ds-btn-sol:focus-visible { outline: 4px solid var(--sol, #e2b04a); outline-offset: 3px; box-shadow: 0 0 0 7px var(--cielo-hondo, #1f2547); } .ds-btn-sol::after { content: \"\"; position: absolute; inset: 5px; border: 3px dashed color-mix(in srgb, var(--cielo-hondo, #1f2547) 38%, transparent); border-radius: inherit; pointer-events: none; } .ds-icon { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
+      "css": ".ds-btn-sol { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 56px; padding: 0.6rem 1.4rem; border: 2px solid color-mix(in srgb, #a27734 40%, transparent); border-radius: 16px 12px 16px 12px / 12px 16px 12px 16px; background: var(--sol, #eac788); color: var(--tinta, #2f3649); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 800; font-size: 1.125rem; line-height: 1.15; box-shadow: 0 6px 14px -10px rgba(47, 54, 73, 0.3), 0 1px 2px rgba(47, 54, 73, 0.06); cursor: pointer; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-sol:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -20px rgba(47, 54, 73, 0.28), 0 1px 3px rgba(47, 54, 73, 0.06); } .ds-btn-sol:active { transform: translateY(1px); box-shadow: 0 1px 3px rgba(47, 54, 73, 0.35); } .ds-btn-sol:focus-visible { outline: 3px solid var(--foco, #526094); outline-offset: 3px; } .ds-btn-sol::after { content: \"\"; position: absolute; inset: 5px; border: 2px dashed color-mix(in srgb, var(--sol-hondo, #a27734) 55%, transparent); border-radius: inherit; pointer-events: none; } .ds-icon { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
     },
     {
-      "name": "Sky Button (Cielo)",
+      "name": "Añil Button (Cielo)",
       "kind": "button",
       "refersTo": "button-cielo",
-      "description": "Indigo sewn patch with white-thread stitch; quick logs and next steps on linen.",
+      "description": "Pale añil sewn patch for quick logs and steps forward; never a dark fill.",
       "html": "<button class=\"ds-btn-cielo\" type=\"button\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8\"/><path d=\"M21 3v5h-5\"/></svg> Ya cambié de posición</button>",
-      "css": ".ds-btn-cielo { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 56px; padding: 0.6rem 1.4rem; border: 2px solid transparent; border-radius: 16px 12px 16px 12px / 12px 16px 12px 16px; background: var(--cielo, #3d4a86); color: #fff; font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 800; font-size: 1.125rem; line-height: 1.15; box-shadow: 0 4px 10px -4px rgba(10, 14, 50, 0.45), 0 1px 2px rgba(10, 14, 50, 0.2); cursor: pointer; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-cielo:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -10px rgba(10, 14, 50, 0.55), 0 2px 5px rgba(10, 14, 50, 0.22); } .ds-btn-cielo:active { transform: translateY(1px); box-shadow: 0 1px 3px rgba(10, 14, 50, 0.35); } .ds-btn-cielo:focus-visible { outline: 4px solid var(--sol, #e2b04a); outline-offset: 3px; box-shadow: 0 0 0 7px var(--cielo-hondo, #1f2547); } .ds-btn-cielo::after { content: \"\"; position: absolute; inset: 5px; border: 3px dashed var(--hilo-blanco, rgba(255, 255, 255, 0.72)); border-radius: inherit; pointer-events: none; } .ds-icon { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
+      "css": ".ds-btn-cielo { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 56px; padding: 0.6rem 1.4rem; border: 2px solid color-mix(in srgb, #526094 38%, transparent); border-radius: 16px 12px 16px 12px / 12px 16px 12px 16px; background: var(--seleccion, #e9edfa); color: var(--tinta, #2f3649); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 800; font-size: 1.125rem; line-height: 1.15; box-shadow: 0 6px 14px -10px rgba(47, 54, 73, 0.3), 0 1px 2px rgba(47, 54, 73, 0.06); cursor: pointer; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-cielo:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -20px rgba(47, 54, 73, 0.28), 0 1px 3px rgba(47, 54, 73, 0.06); } .ds-btn-cielo:active { transform: translateY(1px); box-shadow: 0 1px 3px rgba(47, 54, 73, 0.35); } .ds-btn-cielo:focus-visible { outline: 3px solid var(--foco, #526094); outline-offset: 3px; } .ds-btn-cielo::after { content: \"\"; position: absolute; inset: 5px; border: 2px dashed color-mix(in srgb, var(--cielo, #526094) 42%, transparent); border-radius: inherit; pointer-events: none; } .ds-icon { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
     },
     {
       "name": "Secondary Button (Linen)",
@@ -767,7 +991,7 @@
       "refersTo": "button-secondary",
       "description": "Linen face, solid indigo edge, no stitch: secondary actions never look like placeholders.",
       "html": "<button class=\"ds-btn-linen\" type=\"button\">Siguiente cuidado <svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
-      "css": ".ds-btn-linen { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 56px; padding: 0.6rem 1.4rem; border: 2px solid rgba(20, 27, 77, 0.22); border-radius: 16px 12px 16px 12px / 12px 16px 12px 16px; background: var(--lienzo, #fffdf8); color: var(--tinta, #1f2547); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 800; font-size: 1.125rem; line-height: 1.15; box-shadow: 0 4px 10px -4px rgba(10, 14, 50, 0.45), 0 1px 2px rgba(10, 14, 50, 0.2); cursor: pointer; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-linen:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -10px rgba(10, 14, 50, 0.55), 0 2px 5px rgba(10, 14, 50, 0.22); } .ds-btn-linen:active { transform: translateY(1px); box-shadow: 0 1px 3px rgba(10, 14, 50, 0.35); } .ds-btn-linen:focus-visible { outline: 4px solid var(--sol, #e2b04a); outline-offset: 3px; box-shadow: 0 0 0 7px var(--cielo-hondo, #1f2547); } .ds-icon { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
+      "css": ".ds-btn-linen { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 56px; padding: 0.6rem 1.4rem; border: 2px solid rgba(47, 54, 73, 0.22); border-radius: 16px 12px 16px 12px / 12px 16px 12px 16px; background: var(--lienzo, #fefdfa); color: var(--tinta, #2f3649); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 800; font-size: 1.125rem; line-height: 1.15; box-shadow: 0 6px 14px -10px rgba(47, 54, 73, 0.3), 0 1px 2px rgba(47, 54, 73, 0.06); cursor: pointer; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-linen:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -20px rgba(47, 54, 73, 0.28), 0 1px 3px rgba(47, 54, 73, 0.06); } .ds-btn-linen:active { transform: translateY(1px); box-shadow: 0 1px 3px rgba(47, 54, 73, 0.35); } .ds-btn-linen:focus-visible { outline: 3px solid var(--foco, #526094); outline-offset: 3px; } .ds-icon { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
     },
     {
       "name": "Linen Patch",
@@ -775,7 +999,7 @@
       "refersTo": "patch",
       "description": "The reading surface: woven linen, hand-cut corners, inner stitch dyed with the patch's hue mixed into deep indigo.",
       "html": "<article class=\"ds-patch\"><h3 class=\"ds-patch-title\">Cambie de posición</h3><p class=\"ds-patch-text\">Moverse deja que la sangre vuelva a la piel que estaba apretada.</p></article>",
-      "css": ".ds-patch { --hilo: color-mix(in srgb, var(--fucsia, #95475f) 82%, var(--cielo-hondo, #1f2547)); position: relative; max-width: 420px; padding: 30px; background: repeating-linear-gradient(0deg, rgba(20, 27, 77, 0.028) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(20, 27, 77, 0.022) 0 1px, transparent 1px 3px), var(--lienzo, #fffdf8); color: var(--tinta, #1f2547); border-radius: 26px 18px 28px 16px / 18px 26px 16px 28px; box-shadow: 0 10px 22px -10px rgba(10, 14, 50, 0.55), 0 2px 5px rgba(10, 14, 50, 0.22); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); } .ds-patch::before { content: \"\"; position: absolute; inset: 9px; border: 3.5px dashed var(--hilo); border-radius: inherit; pointer-events: none; } .ds-patch > * { position: relative; margin: 0; } .ds-patch-title { font-family: var(--f-display, \"Londrina Solid\", \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 400; text-transform: uppercase; font-size: 2.4rem; line-height: 0.98; letter-spacing: 0.01em; } .ds-patch-text { margin-top: 10px; font-size: 1.25rem; line-height: 1.45; color: var(--tinta-suave, #4a4f6e); }"
+      "css": ".ds-patch { --hilo: var(--fucsia-medio, #c07b8e); position: relative; max-width: 420px; padding: 30px; background: repeating-linear-gradient(0deg, rgba(47, 54, 73, 0.028) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(47, 54, 73, 0.022) 0 1px, transparent 1px 3px), var(--lienzo, #fefdfa); color: var(--tinta, #2f3649); border-radius: 26px 18px 28px 16px / 18px 26px 16px 28px; box-shadow: 0 14px 30px -20px rgba(47, 54, 73, 0.28), 0 1px 3px rgba(47, 54, 73, 0.06); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); } .ds-patch::before { content: \"\"; position: absolute; inset: 9px; border: 2px dashed var(--hilo); border-radius: inherit; pointer-events: none; } .ds-patch > * { position: relative; margin: 0; } .ds-patch-title { font-family: var(--f-display, \"Londrina Solid\", \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 400; text-transform: uppercase; font-size: 2.4rem; line-height: 0.98; letter-spacing: 0.01em; } .ds-patch-text { margin-top: 10px; font-size: 1.25rem; line-height: 1.45; color: var(--tinta-suave, #555c6c); }"
     },
     {
       "name": "Fabric Band",
@@ -783,15 +1007,15 @@
       "refersTo": "band",
       "description": "Section fabric: saturated hue under a faint weave, pinked zigzag top and bottom, inset white running-stitch seam.",
       "html": "<div class=\"ds-band-stage\"><section class=\"ds-band\"><h2 class=\"ds-band-title\">¿Por qué aparece una lesión por presión?</h2><p class=\"ds-band-text\">La presión aprieta la piel contra el hueso y la sangre deja de llegar.</p></section></div>",
-      "css": ".ds-band-stage { background: var(--cielo, #3d4a86); padding: 28px 12px; } .ds-band { --band: var(--turquesa, #2e6e6a); position: relative; padding: 48px 36px 52px; color: #fff; font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0 1px, transparent 1px 3px), var(--band); outline: 3px dashed var(--hilo-blanco, rgba(255, 255, 255, 0.72)); outline-offset: -12px; box-shadow: 0 18px 30px -18px rgba(5, 8, 30, 0.7); } .ds-band::before { content: \"\"; position: absolute; left: 0; right: 0; top: -13px; height: 14px; background: linear-gradient(-45deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x, linear-gradient(45deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x; } .ds-band::after { content: \"\"; position: absolute; left: 0; right: 0; top: calc(100% - 1px); height: 14px; background: linear-gradient(-135deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x, linear-gradient(135deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x; } .ds-band-title { margin: 0; max-width: 16ch; font-family: var(--f-display, \"Londrina Solid\", \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 400; text-transform: uppercase; font-size: clamp(2.15rem, 1.5rem + 2.6vw, 3.4rem); line-height: 0.98; letter-spacing: 0.01em; } .ds-band-text { margin: 14px 0 0; max-width: 54ch; font-size: 1.25rem; line-height: 1.5; }"
+      "css": ".ds-band-stage { background: var(--cielo, #526094); padding: 28px 12px; } .ds-band { --band: var(--turquesa, #2e6e6a); position: relative; padding: 48px 36px 52px; color: #fff; font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0 1px, transparent 1px 3px), var(--band); outline: 3px dashed var(--hilo-blanco, rgba(255, 255, 255, 0.72)); outline-offset: -12px; box-shadow: 0 18px 30px -18px rgba(5, 8, 30, 0.7); } .ds-band::before { content: \"\"; position: absolute; left: 0; right: 0; top: -13px; height: 14px; background: linear-gradient(-45deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x, linear-gradient(45deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x; } .ds-band::after { content: \"\"; position: absolute; left: 0; right: 0; top: calc(100% - 1px); height: 14px; background: linear-gradient(-135deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x, linear-gradient(135deg, var(--band) 7px, transparent 0) 0 0 / 14px 14px repeat-x; } .ds-band-title { margin: 0; max-width: 16ch; font-family: var(--f-display, \"Londrina Solid\", \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 400; text-transform: uppercase; font-size: clamp(2.15rem, 1.5rem + 2.6vw, 3.4rem); line-height: 0.98; letter-spacing: 0.01em; } .ds-band-text { margin: 14px 0 0; max-width: 54ch; font-size: 1.25rem; line-height: 1.5; }"
     },
     {
       "name": "Semáforo Light (Rojo)",
       "kind": "custom",
       "refersTo": "luz-rojo",
-      "description": "Alarm light as a sewn patch: hue + bulb icon + colour-named title + what-to-do box; shown in its active (applies today) state with the sol ring.",
+      "description": "Rojo light: clinical-red wash, solid red bulb with a white icon, red title and a white what-to-do box.",
       "html": "<div class=\"ds-luz is-activa\"><span class=\"ds-luz-bulbo\"><svg class=\"ds-luz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/></svg></span><div class=\"ds-luz-body\"><h3 class=\"ds-luz-title\">Rojo: consulte hoy</h3><p class=\"ds-luz-que\">Zona roja que no se pone blanca al presionar, ampolla o piel abierta.</p><p class=\"ds-luz-hacer\">No apoye a la persona sobre esa zona y consulte hoy a su equipo de salud.</p></div></div>",
-      "css": ".ds-luz { position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 16px; align-items: start; max-width: 520px; padding: 22px; border-radius: 26px 18px 28px 16px / 18px 26px 16px 28px; background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0 1px, transparent 1px 3px), var(--alarma, #b3261e); color: #fff; box-shadow: 0 10px 22px -10px rgba(10, 14, 50, 0.55), 0 2px 5px rgba(10, 14, 50, 0.22); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-luz::before { content: \"\"; position: absolute; inset: 8px; border: 3px dashed rgba(255, 255, 255, 0.7); border-radius: inherit; pointer-events: none; } .ds-luz > * { position: relative; } .ds-luz.is-activa { transform: scale(1.02); box-shadow: 0 0 0 5px var(--sol, #e2b04a), 0 22px 34px -16px rgba(5, 8, 30, 0.8); } .ds-luz-bulbo { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: #fff; color: var(--alarma, #b3261e); } .ds-luz-icon { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; } .ds-luz-title { margin: 0; font-size: 1.375rem; font-weight: 800; line-height: 1.2; } .ds-luz-que { margin: 4px 0 0; font-size: 1.0625rem; line-height: 1.5; } .ds-luz-hacer { margin: 10px 0 0; padding: 10px 12px; border-radius: 12px; background: rgba(0, 0, 0, 0.22); font-weight: 700; font-size: 1.0625rem; line-height: 1.45; }"
+      "css": ".ds-luz { position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 16px; align-items: start; max-width: 520px; padding: 22px; border-radius: 26px 18px 28px 16px / 18px 26px 16px 28px; background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0 1px, transparent 1px 3px), var(--alarma-claro, #fee4e2); color: var(--tinta, #2f3649); box-shadow: 0 14px 30px -20px rgba(47, 54, 73, 0.28), 0 1px 3px rgba(47, 54, 73, 0.06); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-luz::before { content: \"\"; position: absolute; inset: 8px; border: 2px dashed color-mix(in srgb, #b3261e 45%, transparent); border-radius: inherit; pointer-events: none; } .ds-luz > * { position: relative; } .ds-luz.is-activa { transform: scale(1.02); box-shadow: 0 0 0 3px var(--sol-hondo, #a27734), 0 18px 30px -20px rgba(47, 54, 73, 0.3); } .ds-luz-bulbo { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--alarma, #b3261e); color: #fff; } .ds-luz-icon { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; } .ds-luz-title { margin: 0; color: var(--alarma, #b3261e); font-size: 1.375rem; font-weight: 800; line-height: 1.2; } .ds-luz-que { margin: 4px 0 0; font-size: 1.0625rem; line-height: 1.5; } .ds-luz-hacer { margin: 10px 0 0; padding: 10px 12px; border-radius: 12px; background: rgba(255, 255, 255, 0.72); font-weight: 700; font-size: 1.0625rem; line-height: 1.45; }"
     },
     {
       "name": "Care Tab",
@@ -799,7 +1023,7 @@
       "refersTo": "cuidado-tab",
       "description": "Tab on the sol band; selected tab is the only tab state sewn down (inner white stitch).",
       "html": "<div class=\"ds-tabs-stage\" role=\"tablist\"><button class=\"ds-tab\" role=\"tab\" aria-selected=\"true\"><span class=\"ds-tab-num\"><svg class=\"ds-tab-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8\"/><path d=\"M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4\"/><path d=\"M12 4v6\"/><path d=\"M2 18h20\"/></svg></span>Cambie de posición</button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\"><span class=\"ds-tab-num\"><svg class=\"ds-tab-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z\"/><path d=\"M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97\"/></svg></span>Piel limpia y seca</button></div>",
-      "css": ".ds-tabs-stage { display: flex; flex-direction: column; gap: 10px; max-width: 300px; padding: 20px; background: var(--sol, #e2b04a); } .ds-tab { position: relative; display: flex; align-items: center; gap: 12px; min-height: 60px; padding: 10px 16px 10px 12px; border: 0; border-radius: 16px 12px 16px 12px / 12px 16px 12px 16px; background: rgba(255, 255, 255, 0.55); color: var(--cielo-hondo, #1f2547); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 800; font-size: 1.0625rem; text-align: left; cursor: pointer; transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-tab:hover { background: rgba(255, 255, 255, 0.8); } .ds-tab:focus-visible { outline: 4px solid var(--sol, #e2b04a); outline-offset: 3px; box-shadow: 0 0 0 7px var(--cielo-hondo, #1f2547); } .ds-tab[aria-selected=\"true\"] { background: var(--cielo-hondo, #1f2547); color: #fff; box-shadow: 0 4px 10px -4px rgba(10, 14, 50, 0.45), 0 1px 2px rgba(10, 14, 50, 0.2); } .ds-tab[aria-selected=\"true\"]::after { content: \"\"; position: absolute; inset: 5px; border: 2px dashed var(--hilo-blanco, rgba(255, 255, 255, 0.72)); border-radius: inherit; pointer-events: none; } .ds-tab-num { display: grid; place-items: center; width: 38px; height: 38px; flex: none; border-radius: 50%; background: var(--sol, #e2b04a); color: var(--cielo-hondo, #1f2547); border: 2px solid rgba(20, 27, 77, 0.45); } .ds-tab-icon { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
+      "css": ".ds-tabs-stage { display: flex; flex-direction: column; gap: 10px; max-width: 300px; padding: 20px; background: var(--tela-sol, #f8eed9); } .ds-tab { position: relative; display: flex; align-items: center; gap: 12px; min-height: 60px; padding: 10px 16px 10px 12px; border: 0; border-radius: 16px 12px 16px 12px / 12px 16px 12px 16px; background: rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 0 1.5px rgba(47, 54, 73, 0.07); color: var(--tinta, #2f3649); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); font-weight: 800; font-size: 1.0625rem; text-align: left; cursor: pointer; transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-tab:hover { background: rgba(255, 255, 255, 0.8); } .ds-tab:focus-visible { outline: 3px solid var(--foco, #526094); outline-offset: 3px; } .ds-tab[aria-selected=\"true\"] { background: var(--lienzo, #fefdfa); color: var(--tinta, #2f3649); box-shadow: inset 0 0 0 2px var(--sol-hondo, #a27734), 0 6px 14px -10px rgba(47, 54, 73, 0.3), 0 1px 2px rgba(47, 54, 73, 0.06); } .ds-tab[aria-selected=\"true\"] .ds-tab-num { background: var(--sol, #eac788); border-color: transparent; color: var(--tinta, #2f3649); } .ds-tab[aria-selected=\"true\"]::after { content: \"\"; position: absolute; inset: 5px; border: 2px dashed color-mix(in srgb, var(--sol-hondo, #a27734) 42%, transparent); border-radius: inherit; pointer-events: none; } .ds-tab-num { display: grid; place-items: center; width: 38px; height: 38px; flex: none; border-radius: 50%; background: var(--lienzo, #fefdfa); color: var(--titulo-sol, #674d2c); border: 2px solid color-mix(in srgb, #a27734 35%, transparent); } .ds-tab-icon { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
     },
     {
       "name": "Cross-Stitch Checkbox",
@@ -807,7 +1031,7 @@
       "refersTo": "cruz-box",
       "description": "Daily check row: solid-edged box; checking stitches a fuchsia X, stroke by stroke.",
       "html": "<label class=\"ds-cruz\"><input type=\"checkbox\" checked><span class=\"ds-cruz-box\" aria-hidden=\"true\"><svg viewBox=\"0 0 30 30\"><path d=\"M7 7l16 16\"/><path d=\"M23 7L7 23\"/></svg></span><span class=\"ds-cruz-text\"><strong>Revisé la piel con buena luz</strong><span>Sacro, glúteos, talones, caderas, codos y nuca.</span></span></label>",
-      "css": ".ds-cruz { position: relative; display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: start; max-width: 420px; padding: 10px 12px; border-radius: 14px; background: var(--lienzo-2, #f3eee4); color: var(--tinta, #1f2547); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); cursor: pointer; } .ds-cruz input { position: absolute; opacity: 0; width: 1px; height: 1px; } .ds-cruz-box { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 10px; background: #fff; border: 3px solid rgba(20, 27, 77, 0.45); } .ds-cruz-box svg { width: 30px; height: 30px; } .ds-cruz-box path { fill: none; stroke: var(--fucsia, #95475f); stroke-width: 4.5; stroke-linecap: round; stroke-dasharray: 32; stroke-dashoffset: 32; transition: stroke-dashoffset 260ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-cruz-box path + path { transition-delay: 160ms; } .ds-cruz input:checked ~ .ds-cruz-box { border-color: var(--fucsia, #95475f); } .ds-cruz input:checked ~ .ds-cruz-box path { stroke-dashoffset: 0; } .ds-cruz input:focus-visible ~ .ds-cruz-box { outline: 4px solid var(--sol, #e2b04a); outline-offset: 2px; } .ds-cruz-text strong { display: block; font-size: 1.0625rem; line-height: 1.3; } .ds-cruz-text span { display: block; margin-top: 2px; font-size: 0.9375rem; line-height: 1.35; color: var(--tinta-suave, #4a4f6e); }"
+      "css": ".ds-cruz { position: relative; display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: start; max-width: 420px; padding: 10px 12px; border-radius: 14px; background: var(--lienzo-2, #f4f1e9); color: var(--tinta, #2f3649); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); cursor: pointer; } .ds-cruz input { position: absolute; opacity: 0; width: 1px; height: 1px; } .ds-cruz-box { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 10px; background: #fff; border: 2.5px solid color-mix(in srgb, #555c6c 75%, #fff); } .ds-cruz-box svg { width: 30px; height: 30px; } .ds-cruz-box path { fill: none; stroke: var(--fucsia, #915365); stroke-width: 4.5; stroke-linecap: round; stroke-dasharray: 32; stroke-dashoffset: 32; transition: stroke-dashoffset 260ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-cruz-box path + path { transition-delay: 160ms; } .ds-cruz input:checked ~ .ds-cruz-box { border-color: var(--fucsia, #915365); } .ds-cruz input:checked ~ .ds-cruz-box path { stroke-dashoffset: 0; } .ds-cruz input:focus-visible ~ .ds-cruz-box { outline: 3px solid var(--foco, #526094); outline-offset: 2px; } .ds-cruz-text strong { display: block; font-size: 1.0625rem; line-height: 1.3; } .ds-cruz-text span { display: block; margin-top: 2px; font-size: 0.9375rem; line-height: 1.35; color: var(--tinta-suave, #555c6c); }"
     },
     {
       "name": "Search Field",
@@ -815,47 +1039,57 @@
       "refersTo": "search-field",
       "description": "Raw-linen field with a solid 3px deep-indigo edge; focus rings the whole field in sol.",
       "html": "<label class=\"ds-search\"><svg class=\"ds-search-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m21 21-4.34-4.34\"/><circle cx=\"11\" cy=\"11\" r=\"8\"/></svg><input type=\"search\" placeholder=\"Busque: talones, agua, ampolla…\" aria-label=\"Buscar\"></label>",
-      "css": ".ds-search { display: flex; align-items: center; gap: 10px; max-width: 520px; padding: 0 14px; border-radius: 14px; background: var(--lienzo-2, #f3eee4); border: 3px solid var(--cielo-hondo, #1f2547); color: var(--tinta, #1f2547); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); } .ds-search:focus-within { outline: 4px solid var(--sol, #e2b04a); outline-offset: 2px; } .ds-search input { flex: 1; min-height: 56px; border: 0; background: transparent; font: inherit; font-size: 1.25rem; color: inherit; outline: none; } .ds-search input::placeholder { color: var(--tinta-suave, #4a4f6e); } .ds-search-icon { width: 1.5em; height: 1.5em; flex: none; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
+      "css": ".ds-search { display: flex; align-items: center; gap: 10px; max-width: 520px; padding: 0 14px; border-radius: 14px; background: var(--lienzo-2, #f4f1e9); border: 2.5px solid var(--cielo, #526094); color: var(--tinta, #2f3649); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); } .ds-search:focus-within { outline: 3px solid var(--foco, #526094); outline-offset: 2px; } .ds-search input { flex: 1; min-height: 56px; border: 0; background: transparent; font: inherit; font-size: 1.25rem; color: inherit; outline: none; } .ds-search input::placeholder { color: var(--tinta-suave, #555c6c); } .ds-search-icon { width: 1.5em; height: 1.5em; flex: none; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
     },
     {
       "name": "Bottom Navigation",
       "kind": "nav",
       "refersTo": "bottomnav",
-      "description": "Phone-only 76px bar on deep sky with a dashed seam; Alarma always last and always sol.",
+      "description": "Bar-linen bottom nav with a dashed ink seam; Alarma always in clinical red.",
       "html": "<nav class=\"ds-bottomnav\" aria-label=\"Accesos rápidos\"><a href=\"#\" aria-current=\"true\"><svg class=\"ds-bn-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\"/><path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/></svg>Inicio</a><a href=\"#\"><svg class=\"ds-bn-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v16\"/><path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\"/></svg>Aprender</a><a href=\"#\"><svg class=\"ds-bn-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 2v3\"/><path d=\"M16 2v3\"/><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M3 9h18\"/><path d=\"m9 15 2 2 4-4\"/></svg>Mi día</a><a href=\"#\"><svg class=\"ds-bn-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><line x1=\"6\" x2=\"10\" y1=\"11\" y2=\"11\"/><line x1=\"8\" x2=\"8\" y1=\"9\" y2=\"13\"/><line x1=\"15\" x2=\"15.01\" y1=\"12\" y2=\"12\"/><line x1=\"18\" x2=\"18.01\" y1=\"10\" y2=\"10\"/><path d=\"M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z\"/></svg>Jugar</a><a href=\"#\" class=\"is-alarma\"><svg class=\"ds-bn-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/></svg>Alarma</a></nav>",
-      "css": ".ds-bottomnav { display: grid; grid-template-columns: repeat(5, 1fr); max-width: 420px; background: var(--cielo-hondo, #1f2547); border-top: 2px dashed rgba(255, 255, 255, 0.28); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); } .ds-bottomnav a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-width: 0; min-height: 76px; color: #fff; text-decoration: none; font-size: 0.9375rem; font-weight: 700; text-align: center; } .ds-bottomnav a:hover, .ds-bottomnav a[aria-current=\"true\"] { background: rgba(255, 255, 255, 0.1); } .ds-bottomnav a:focus-visible { outline: 4px solid var(--sol, #e2b04a); outline-offset: 3px; box-shadow: 0 0 0 7px var(--cielo-hondo, #1f2547); border-radius: 10px; } .ds-bottomnav a.is-alarma { color: var(--sol, #e2b04a); } .ds-bn-icon { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
+      "css": ".ds-bottomnav { display: grid; grid-template-columns: repeat(5, 1fr); max-width: 420px; background: var(--barra, #fcfaf6); border-top: 2px dashed rgba(47, 54, 73, 0.2); font-family: var(--f-body, \"Atkinson Hyperlegible Next\", system-ui, sans-serif); } .ds-bottomnav a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-width: 0; min-height: 76px; color: var(--tinta, #2f3649); text-decoration: none; font-size: 0.9375rem; font-weight: 700; text-align: center; } .ds-bottomnav a:hover, .ds-bottomnav a[aria-current=\"true\"] { background: rgba(47, 54, 73, 0.07); } .ds-bottomnav a:focus-visible { outline: 3px solid var(--foco, #526094); outline-offset: 3px; border-radius: 10px; } .ds-bottomnav a.is-alarma { color: var(--alarma, #b3261e); } .ds-bn-icon { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }"
     }
   ],
   "narrative": {
-    "northStar": "The Daylight Arpillera",
-    "overview": "CuidaPiel is sewn, not printed. It takes the form of a Chilean arpillera: scraps of cloth stitched onto a sack-cloth ground to tell a story. Here the ground is raw linen in daylight, with a pale morning sky over a stitched cordillera, little houses and a sun. The cloth is soft-dyed rather than saturated, because the people who use it spend long hours beside a bed and a loud, dark page tires them. Each section of the guide is a band of washed fabric cut with pinking shears and sewn onto the linen with a running stitch. The reading happens on linen patches stitched onto the bands. Every daily action the family logs becomes another stitch: an arc of thread on the clock, a cross stitch on the checklist, an embroidered badge.\n\nThe system is built for older patients and carers with low vision, tremor and little digital experience, so the textile world never costs legibility. Body text is a large hyperlegible humanist sans on linen at about 15:1 contrast. Controls are fat and easy to hit, with 48px as the minimum and 56px for standard buttons. Every alarm carries an icon and words, never colour alone. The density is generous: one idea per patch and one decision per control. The display letters are blocky caps that look cut from felt and appliquéd on, which gives the page a handmade voice. The prose stays plain and calm. The system explicitly rejects the white clinical health app with its row of identical white cards and a teal accent.\n\nDepth is cloth lying on cloth: linen ground, then band, then patch, with short, faint shadows tinted with ink. Motion means sewing. A new clock arc draws itself like a stitch pulled through, a knot pops in, and a new badge spins into place as if embroidered. All motion collapses when `prefers-reduced-motion` is set.",
+    "northStar": "The Morning Arpillera",
+    "overview": "CuidaPiel is sewn, not printed. It takes the form of a Chilean arpillera: scraps of cloth stitched onto a sack-cloth ground to tell a story. Here the ground is ivory linen in morning light, with a pale sky over a stitched cordillera, little houses and a sun. The cloth is dyed like watercolour rather than saturated, and nothing on the page is a dark surface, because the people who use it spend long hours beside a bed and a loud, dark page tires them. Colour is spent tone on tone: each band writes its headline in a deeper ink of its own fabric. Each section of the guide is a band of washed fabric cut with pinking shears and sewn onto the linen with a running stitch. The reading happens on linen patches stitched onto the bands. Every daily action the family logs becomes another stitch: an arc of thread on the clock, a cross stitch on the checklist, an embroidered badge.\n\nThe system is built for older patients and carers with low vision, tremor and little digital experience, so the textile world never costs legibility. Body text is a large hyperlegible humanist sans in graphite ink on linen at about 11:1 contrast. Controls are fat and easy to hit, with 48px as the minimum and 56px for standard buttons. Every alarm carries an icon and words, never colour alone. The density is generous: one idea per patch and one decision per control. The display letters are blocky caps that look cut from felt and appliquéd on, which gives the page a handmade voice. The prose stays plain and calm. The system explicitly rejects the white clinical health app with its row of identical white cards and a teal accent.\n\nDepth is cloth lying on cloth: linen ground, then band, then patch, with short, faint shadows tinted with ink. Motion means sewing. A new clock arc draws itself like a stitch pulled through, a knot pops in, and a new badge spins into place as if embroidered. All motion collapses when `prefers-reduced-motion` is set.",
     "keyCharacteristics": [
-      "Raw linen as the permanent ground, with a pale daylight sky in the hero and no dark pages.",
-      "Soft-dyed fabric bands (washes of each thread colour) with zigzag pinked edges and an inset running-stitch seam in the deeper thread.",
+      "Ivory linen as the permanent ground, with a pale morning sky in the hero and no dark pages, bars or selected states.",
+      "Watercolour fabric bands with zigzag pinked edges, a fine running-stitch seam in the mid thread, and the headline in the band's own deep ink.",
       "Linen reading patches with hand-cut asymmetric corners and a dashed thread dyed to match the patch.",
       "Londrina Solid uppercase display over Atkinson Hyperlegible Next body at 19px.",
-      "A sun-yellow primary action, with a stitch earned only by primary actions and sewn-down surfaces.",
+      "A honey primary action, with a stitch earned only by primary actions and sewn-down surfaces; selection is a raised linen face with an añil or honey edge, never a dark fill.",
       "Clinical colour always paired with an icon and text, plus high-contrast and three text-size modes built in."
     ],
     "rules": [
       {
         "name": "The Linen Ground Rule",
-        "body": "The page is never dark and never pure white. Raw linen is the ground under everything; reading happens on a lighter linen patch with its stitched edge.",
+        "body": "The page is never dark and never pure white. Ivory linen is the ground under everything; reading happens on a lighter linen patch with its stitched edge.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Dark Surface Rule",
+        "body": "Nothing larger than a 64px bulb or a small marker is filled with a deep tone. Selection is a raised linen face with a 2px añil or deep-honey edge; feedback is a wash with a mid-thread border. Only clinical red may fill a bulb, a pressure point or the alarm button.",
         "section": "colors"
       },
       {
         "name": "The Quiet Cloth Rule",
-        "body": "Band grounds are washes, never full-strength fabric. Full strength is spent on threads: icons, small fills, stitches and text. If a surface larger than a control needs colour, use its `tela-*` cloth.",
+        "body": "Band grounds are watercolour washes, never full-strength fabric. Full strength is spent on threads: icons, small marks and text. If a surface larger than a control needs colour, use its `tela-*` cloth or `-claro` wash.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tone on Tone Rule",
+        "body": "A band writes its headline, and the display sub-headings sewn directly on it, in its own `titulo-*` ink through `--band-titulo`. Body text stays graphite. Bare linen sections keep graphite headlines.",
         "section": "colors"
       },
       {
         "name": "The Dyed Thread Rule",
-        "body": "Stitches are never grey. On linen and on band washes the thread is the patch's hue: `color-mix(in srgb, <hue> 82%, var(--cielo-hondo))` on patches and the hue at about 40–50% on bands. On añil, sage or red surfaces the thread is white.",
+        "body": "Stitches are never grey and never dark. On patches the 2px thread is the subject's mid thread (`--hilo: var(--<hue>-medio)`); on bands the seam is the mid thread at about 55%. On the red bulb the thread is white.",
         "section": "colors"
       },
       {
-        "name": "The Ochre Means Act Rule",
-        "body": "Ochre marks what to do now: primary buttons, the focus ring, pressed toggles and numbered steps. On an ochre surface the ink is always deep añil or tinta.",
+        "name": "The Honey Means Act Rule",
+        "body": "Honey marks what to do now: primary buttons, the selected tab's disc and today's light. On a honey surface the ink is always tinta.",
         "section": "colors"
       },
       {
@@ -905,11 +1139,12 @@
       }
     ],
     "dos": [
-      "**Do** set every page on the cielo sky and put any reading longer than a short list on a linen patch with the `--trama-clara` weave.",
-      "**Do** give every patch its own thread: `--hilo: color-mix(in srgb, <patch hue> 82%, var(--cielo-hondo))`, 3.5px dashed, inset 9px.",
+      "**Do** set every page on ivory linen (`--fondo`) and put any reading longer than a short list on a linen patch with the `--trama-clara` weave.",
+      "**Do** give every patch its own thread: `--hilo: var(--<patch hue>-medio)`, 2px dashed, inset 9px.",
       "**Do** keep every touch target at 48px or more: 56px buttons, 48px small buttons and listen pills, 60px tabs and position tiles, and 52px option tiles and segments.",
       "**Do** pair every status colour with an icon and words, as the semáforo, the Haga/Evite lists and judged quiz answers do.",
-      "**Do** use the one focus ring everywhere: a 4px sol outline, a 3px offset and a 7px cielo-hondo halo (4px sol, 2px offset on custom tiles).",
+      "**Do** use the one focus ring everywhere: a 3px añil outline (`--foco`) at a 3px offset (2px on custom tiles). Añil reaches 5:1 on every light surface, so the ring needs no halo.",
+      "**Do** show selection as a raised linen face with an añil or deep-honey edge, and feedback as a wash with a mid-thread edge.",
       "**Do** set sizes in rem and colours through `:root` tokens, so the Letra sizes (112.5% and 125%) and `html[data-contraste=\"alto\"]` reach every new component.",
       "**Do** draw icons from the Lucide stroke sprite at stroke 2.1 with round caps and joins, sized 1.5em (1.15em in buttons), and coloured by currentColor.",
       "**Do** animate on `--ease-out` (`cubic-bezier(0.16, 1, 0.3, 1)`), keep control transitions at 160–180ms, and let `prefers-reduced-motion` collapse everything to 1ms."
@@ -918,8 +1153,10 @@
       "**Don't** build the white clinical health app: a white page of identical cards with a teal accent.",
       "**Don't** put a running stitch on an idle secondary button, checkbox, radio or position tile, chip, input or tile. Those keep solid edges.",
       "**Don't** set Londrina Solid in lowercase, in buttons, in form labels or in paragraphs.",
-      "**Don't** use grey. Borders are indigo at 22–45% alpha or white thread, and shadows are tinted indigo. Never use black shadows or hard offset shadows.",
-      "**Don't** spend alarma red on anything but clinical warning. Quiz mistakes are naranjo.",
+      "**Don't** use grey. Borders are graphite ink at 18–45% alpha or a fabric thread, and shadows are tinted with ink. Never use black shadows or hard offset shadows.",
+      "**Don't** spend alarma red on anything but clinical warning. Quiz mistakes are terracotta.",
+      "**Don't** fill a tab, segment, button, toast, tooltip or tag with añil, navy or any deep thread. Large surfaces take a `tela-*` cloth, a `-claro` wash or linen.",
+      "**Don't** set a headline in Londrina 900; it is reserved for the brand name.",
       "**Don't** let a band run to the viewport edge or touch the next band.",
       "**Don't** add a small uppercase label above a headline. A section head is its headline, one sentence and the Escuchar button."
     ]

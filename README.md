@@ -2,22 +2,21 @@
 
 Aplicación web para **pacientes y familias** (Chile), pensada primero para el celular en casa y también para tablet en consulta u hospital. Enseña por qué aparecen las lesiones por presión («escaras»), ayuda a llevar los cuidados diarios y deja claro cuándo consultar.
 
-Visualmente es una **arpillera chilena de día**: fondo de lino crudo, cordillera bajo un cielo de mañana, telas de tonos suaves cosidas, pespuntes y bordes de tijera zigzag. El único color intenso es el rojo clínico de las alarmas.
+Visualmente es una **arpillera chilena de mañana**: fondo de lino marfil, cordillera bajo un cielo claro, telas teñidas como acuarela, pespuntes finos y bordes de tijera zigzag. No hay superficies oscuras: la selección se marca con lino en relieve y un borde añil o miel, y los titulares van tono sobre tono. El único color intenso es el rojo clínico de las alarmas.
 
-## Qué puede hacer el paciente
+## Cómo se usa: un recorrido guiado
 
-| Sección | Interacción |
+La app funciona como una guía que se explica sola. Muestra una pantalla a la vez y en cada momento dice cuál es el siguiente paso. Tiene cuatro destinos fijos (barra inferior en el celular y barra superior en el escritorio): **Inicio · Aprender · Mi día · ¿Cuándo consultar?**
+
+| Pantalla | Qué encuentra el paciente |
 |---|---|
-| **¿Por qué aparece?** | Simulador del corte de la piel: al mover el «hilo» del tiempo, la presión aplasta los vasos y el tejido cambia de color. Un botón muestra cómo vuelve la sangre al cambiar de posición. |
-| **Seis cuidados** | Recorrido por pestañas (cambios de posición, piel limpia y seca, revisión diaria, colchón y cojín, movimiento, alimentación e hidratación), con listas «Haga / Evite». Cada cuidado se puede marcar como aprendido. |
-| **Video** | Animación de la rotación postural, compuesta con HyperFrames (`videos/rotacion-postural/`). |
-| **Revisar la piel** | Mapa de puntos de presión en tres posturas (boca arriba, de lado, sentado) y simulador de la **prueba del dedo** (zona que blanquea y zona que no). |
-| **Mi día** | Reloj de hilo de 24 h con los cambios de posición (intervalo de 2, 3 o 4 h según el equipo de salud; 1 h si está sentado), registro de vasos de agua, lista de revisión diaria con punto cruz y resumen de los últimos 7 días. Se puede imprimir. |
-| **Aprenda jugando** | Diez afirmaciones «¿mito o verdad?», insignias bordadas y **Mi progreso**: historial de partidas con gráfico, comparación entre la primera y la última, y temas para repasar. |
-| **Mis desafíos de hospitalización** | Prueba de ingreso (12 preguntas, forma A) → desafío diario de 3 preguntas con racha → 3 desafíos prácticos (almohadas, puntos de presión, semáforo de la piel) → prueba de alta (forma B, paralela) → resumen de ingreso y alta por tema, exportable en CSV, imprimible y copiable. Usa un código seudónimo, nunca nombre ni RUT. |
-| **¿Cuándo pedir ayuda?** | Semáforo (verde, amarillo, rojo y urgencia) con un revisor de señales que indica qué hacer. |
-| **Mi riesgo** | Autoevaluación orientativa de 6 preguntas inspirada en la escala de Braden (puntaje de 6 a 23). |
-| **Para quien cuida** | Apoyo a la persona cuidadora. |
+| **Inicio** | Tres pasos numerados. **1 · Aprenda**: la siguiente lección pendiente con un solo botón (Empezar o Continuar donde quedó) y el avance «N de 8». **2 · Cuide cada día**: el reloj de cambios de posición con «Ya cambié de posición». **3 · Pida ayuda a tiempo**: acceso directo al semáforo. Debajo, «Más herramientas». |
+| **Aprender** | Ruta de **8 lecciones cortas** (3 a 5 minutos), unidas por un hilo: ¿Por qué aparece una lesión?, Cambie de posición, Piel limpia y seca, Revise la piel a diario, Colchón y cojín, Muévase, Coma bien y tome agua, ¿Cuándo pedir ayuda? Cada lección avanza **un paso a la vez**: lo esencial (Haga / Evite) → práctica (simulador del corte de la piel, video, mapa de puntos de presión, prueba del dedo) → **compruebe lo aprendido** (frases de verdad o mito; si se equivoca, se explica y se vuelve a preguntar) → **hágalo hoy** (el aprendizaje queda registrado en «Mi día»). El botón «Siguiente» queda siempre a mano y «Escuchar» lee cada paso en voz alta al avanzar. El avance se guarda: al volver, la app ofrece seguir donde quedó. |
+| **Mi día** | Reloj de hilo de 24 h con los cambios de posición (intervalo de 2, 3 o 4 h según el equipo de salud; 1 h si está sentado), aviso de cambio, registro de vasos de agua, lista de revisión diaria con punto cruz, resumen de 7 días e impresión. |
+| **¿Cuándo consultar?** | Semáforo (verde, amarillo, rojo y urgencia) con un revisor de señales que indica qué hacer. |
+| **Más herramientas** | **Repase jugando** (rondas de 10 frases elegidas al azar de un banco de 17, con insignias y «Mi progreso»), **¿Cuánto riesgo hay?** (autoevaluación orientativa de 6 preguntas inspirada en la escala de Braden), **Mis desafíos de hospitalización** (prueba de ingreso → desafío diario → 3 prácticos → prueba de alta, con CSV) y **Para quien cuida**. |
+
+Cada pantalla tiene su propia dirección (`#/aprender/posicion/3`, `#/mi-dia`…), así que el botón Atrás del celular funciona y se puede compartir un enlace directo. Los enlaces de la versión anterior (`#porque`, `#revisar`, `#video`…) llevan a la lección que corresponde. Sin JavaScript, todo el contenido se muestra como una sola página.
 
 Accesibilidad: tipografía Atkinson Hyperlegible Next (diseñada para baja visión), tres tamaños de letra, modo de alto contraste, lectura en voz alta en español, uso completo con teclado y respeto de `prefers-reduced-motion`.
 
@@ -45,9 +44,9 @@ Se eliminaron afirmaciones sin respaldo de la versión anterior («95 % prevenib
 
 ```
 .
-├── index.html               # Página única con todo el contenido
-├── css/styles.css           # Arpillera de día: tokens, parches, bandas, accesibilidad, impresión
-├── js/app.js                # Interacciones: reloj, agua, juego, mapa, prueba del dedo, semáforo, riesgo, TTS
+├── index.html               # Todas las pantallas y las 8 lecciones (una se muestra a la vez)
+├── css/styles.css           # Arpillera de mañana: tokens, parches, bandas, accesibilidad, impresión
+├── js/app.js                # Navegación por pantallas, lecciones por pasos, comprobación, reloj, agua, juego, mapa, prueba del dedo, semáforo, riesgo, voz
 ├── js/banco.js              # Banco de preguntas (formas A/B y pool diario)
 ├── js/desafios.js           # Desafíos de hospitalización: ingreso, diario, prácticos, alta, CSV
 ├── docs/                    # Protocolo de validación, banco exportado y planilla de expertos

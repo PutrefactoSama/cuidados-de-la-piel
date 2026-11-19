@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>CuidaPiel · Prevenga las lesiones por presión en casa</title>
-  <meta name="description" content="Guía interactiva para pacientes y familias: por qué aparecen las lesiones por presión (escaras), seis cuidados diarios, prueba del dedo, registro de cambios de posición y agua, juego de mitos y señales de alarma.">
-  <meta name="theme-color" content="#fbf8f2">
+  <meta name="description" content="Guía paso a paso para pacientes y familias: ocho lecciones cortas para prevenir las lesiones por presión (escaras), registro diario de cambios de posición, agua y revisión de la piel, y un semáforo que dice cuándo consultar.">
+  <meta name="theme-color" content="#fcfaf6">
   <meta property="og:title" content="CuidaPiel · Cuidar su piel es cuidar su bienestar">
-  <meta property="og:description" content="Aprenda a prevenir las lesiones por presión en casa y lleve el control diario de sus cuidados.">
+  <meta property="og:description" content="Aprenda paso a paso a prevenir las lesiones por presión, cuide cada día y sepa cuándo pedir ayuda.">
   <meta property="og:image" content="images/og.png">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_CL">
@@ -15,9 +15,9 @@
   <link rel="apple-touch-icon" href="images/icono-180.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" href="fonts/atkinson-hyperlegible-next-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/londrina-solid-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/londrina-solid-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
-  <script>try{var p=JSON.parse(localStorage.getItem("cuidapiel:prefs")||"{}");if(p.texto)document.documentElement.dataset.texto=p.texto;if(p.contraste)document.documentElement.dataset.contraste="alto"}catch(e){}</script>
+  <script>document.documentElement.className="js";try{var p=JSON.parse(localStorage.getItem("cuidapiel:prefs")||"{}");if(p.texto)document.documentElement.dataset.texto=p.texto;if(p.contraste)document.documentElement.dataset.contraste="alto"}catch(e){}</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -99,21 +99,19 @@
 <!-- ============ Barra superior ============ -->
 <header class="topbar">
   <div class="wrap topbar-inner">
-    <a class="brand" href="#inicio" aria-label="CuidaPiel, volver al inicio">
-      <svg viewBox="0 0 40 40" aria-hidden="true">
-        <rect x="2" y="2" width="36" height="36" rx="11" fill="#95475f"/>
-        <rect x="6.5" y="6.5" width="27" height="27" rx="8" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.6" stroke-dasharray="3.2 2.6"/>
-        <path d="M20 29.5s-8.5-5.1-8.5-11.2a4.7 4.7 0 0 1 8.5-2.8 4.7 4.7 0 0 1 8.5 2.8c0 6.1-8.5 11.2-8.5 11.2z" fill="#e2b04a"/>
-      </svg>
+    <a class="brand" href="#/inicio" aria-label="CuidaPiel, ir al inicio">
+<svg viewBox="0 0 40 40" aria-hidden="true">
+  <rect x="2" y="2" width="36" height="36" rx="11" fill="#915365"/>
+  <rect x="6.5" y="6.5" width="27" height="27" rx="8" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.6" stroke-dasharray="3.2 2.6"/>
+  <path d="M20 29.5s-8.5-5.1-8.5-11.2a4.7 4.7 0 0 1 8.5-2.8 4.7 4.7 0 0 1 8.5 2.8c0 6.1-8.5 11.2-8.5 11.2z" fill="#eac788"/>
+</svg>
       <span class="brand-name">CuidaPiel</span>
     </a>
     <nav class="mainnav" aria-label="Secciones">
-      <a href="#porque">Por qué</a>
-      <a href="#cuidados">Cuidados</a>
-      <a href="#revisar">Revisar</a>
-      <a href="#mi-dia">Mi día</a>
-      <a href="#jugar">Jugar</a>
-      <a href="#alarma" class="is-alarma">¿Cuándo consultar?</a>
+      <a href="#/inicio" data-nav="inicio">Inicio</a>
+      <a href="#/aprender" data-nav="aprender">Aprender</a>
+      <a href="#/mi-dia" data-nav="mi-dia">Mi día</a>
+      <a href="#/alarma" data-nav="alarma" class="is-alarma">¿Cuándo consultar?</a>
     </nav>
     <div class="tools">
       <button class="tool" type="button" id="btnBuscar" aria-haspopup="dialog">
@@ -130,431 +128,556 @@
   </div>
 </header>
 
-<main id="contenido">
+<main id="contenido" tabindex="-1">
 
-<!-- ============ Héroe ============ -->
-<section class="hero" id="inicio" aria-labelledby="hero-titulo">
-  <div class="hero-sky" aria-hidden="true">
-    <svg viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax meet"><use href="#cordillera" width="1440" height="400"/></svg>
-  </div>
-
+<!-- ============ Inicio: su siguiente paso ============ -->
+<section class="vista hero" id="inicio" data-vista="inicio" data-titulo="Inicio" aria-labelledby="hero-titulo">
   <div class="wrap hero-grid">
-    <div>
-      <h1 class="h1" id="hero-titulo">Cuidar su piel es cuidar su bienestar</h1>
-      <p class="lead">Prevenga las lesiones por presión («escaras») y lleve el control de cada día.</p>
-      <div class="hero-actions">
-        <a class="btn btn-sol" href="#porque">Empezar el recorrido <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
-        <a class="btn btn-fantasma hero-alarma" href="#alarma"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-triangle-alert"/></svg> ¿Cuándo consultar?</a>
-      </div>
-      <div class="hero-montes" aria-hidden="true">
-        <svg viewBox="330 60 780 340" preserveAspectRatio="xMidYMax slice"><use href="#cordillera" width="1440" height="400"/></svg>
-      </div>
+    <div class="hero-texto">
+      <h1 class="h1" id="hero-titulo" tabindex="-1">Cuidar su piel es cuidar su bienestar</h1>
+      <p class="lead">Prevenga las lesiones por presión («escaras») en tres pasos: aprenda, cuide cada día y pida ayuda a tiempo.</p>
     </div>
 
-    <aside class="patch dia-mini" id="diaMini" aria-labelledby="diaMiniTitulo">
-      <div class="dia-mini-head">
-        <h2 class="dia-mini-title" id="diaMiniTitulo">Mi día</h2>
-        <span class="dia-mini-date" id="diaMiniFecha"></span>
+    <section class="patch sig" id="sigPaso" aria-labelledby="sigTitulo">
+      <h2 class="patch-titulo" id="sigTitulo"><span class="num-disc" aria-hidden="true">1</span>Aprenda</h2>
+      <p class="sig-estado" id="sigEstado">Empiece aquí</p>
+      <p class="sig-leccion" id="sigLeccion">¿Por qué aparece una lesión?</p>
+      <p class="sig-meta" id="sigMeta">Lección 1 de 8 · 3 minutos</p>
+      <div class="sig-progreso">
+        <div class="hilo-progress" aria-hidden="true"><span id="sigBarra"></span></div>
+        <span id="sigCuenta">0 de 8 lecciones aprendidas</span>
       </div>
-      <div class="dia-mini-body">
-        <svg class="reloj-svg" id="relojMini" viewBox="0 0 220 220" role="img" aria-label="Reloj de cambios de posición de hoy"></svg>
-        <div>
-          <p class="dia-mini-next-label" id="diaMiniLabel">Cambios de hoy</p>
-          <p class="dia-mini-next" id="diaMiniHora">—</p>
-          <p class="dia-mini-in" id="diaMiniEn">Toque el botón al cambiar de posición</p>
-        </div>
-      </div>
-      <button class="btn btn-cielo btn-block" type="button" data-registrar-rapido>
-        <svg class="icon icon-sm" aria-hidden="true"><use href="#i-rotate-cw"/></svg> Ya cambié de posición
-      </button>
-      <div class="dia-mini-stats">
-        <span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-glass-water"/></svg><span id="diaMiniAgua">0 de 8 vasos</span></span>
-        <span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-list-checks"/></svg><span id="diaMiniRevision">Revisión 0 de 5</span></span>
-        <a href="#mi-dia">Ver mi día completo</a>
-      </div>
-    </aside>
+      <a class="btn btn-sol btn-block" id="sigBtn" href="#/aprender/porque"><span>Empezar</span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <a class="sig-todas" href="#/aprender">Ver las 8 lecciones</a>
+    </section>
   </div>
+
+  <div class="hero-montes" aria-hidden="true">
+    <svg viewBox="0 60 1440 340" preserveAspectRatio="xMidYMax slice"><use href="#cordillera" width="1440" height="400"/></svg>
+  </div>
+
   <div class="wrap">
+    <div class="inicio-fila">
+      <aside class="patch dia-mini" id="diaMini" aria-labelledby="diaMiniTitulo">
+        <div class="dia-mini-head">
+          <h2 class="patch-titulo" id="diaMiniTitulo"><span class="num-disc" aria-hidden="true">2</span>Cuide cada día</h2>
+          <span class="dia-mini-date" id="diaMiniFecha"></span>
+        </div>
+<div class="dia-mini-body">
+  <svg class="reloj-svg" id="relojMini" viewBox="0 0 220 220" role="img" aria-label="Reloj de cambios de posición de hoy"></svg>
+  <div>
+    <p class="dia-mini-next-label" id="diaMiniLabel">Cambios de hoy</p>
+    <p class="dia-mini-next" id="diaMiniHora">—</p>
+    <p class="dia-mini-in" id="diaMiniEn">Toque el botón al cambiar de posición</p>
+  </div>
+</div>
+<button class="btn btn-cielo btn-block" type="button" data-registrar-rapido>
+  <svg class="icon icon-sm" aria-hidden="true"><use href="#i-rotate-cw"/></svg> Ya cambié de posición
+</button>
+<div class="dia-mini-stats">
+  <span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-glass-water"/></svg><span id="diaMiniAgua">0 de 8 vasos</span></span>
+  <span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-list-checks"/></svg><span id="diaMiniRevision">Revisión 0 de 5</span></span>
+  <a href="#/mi-dia">Ver mi día completo</a>
+</div>
+      </aside>
+
+      <section class="patch ayuda" aria-labelledby="ayudaTitulo">
+        <h2 class="patch-titulo" id="ayudaTitulo"><span class="num-disc" aria-hidden="true">3</span>Pida ayuda a tiempo</h2>
+        <p class="ayuda-texto">Una zona roja que no se pone blanca, una ampolla o una herida no pueden esperar.</p>
+        <p class="ayuda-nota">Marque lo que ve en la piel y el semáforo le dirá qué hacer.</p>
+        <a class="btn btn-aviso btn-block" href="#/alarma"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-triangle-alert"/></svg><span>¿Cuándo consultar?</span></a>
+      </section>
+    </div>
+
     <ul class="pilares" aria-label="Los cuatro pilares">
       <li><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg>Observe</li>
       <li><svg class="icon" aria-hidden="true"><use href="#i-hand-heart"/></svg>Cuide</li>
       <li><svg class="icon" aria-hidden="true"><use href="#i-shield-check"/></svg>Prevenga</li>
       <li><svg class="icon" aria-hidden="true"><use href="#i-heart-handshake"/></svg>Acompañe</li>
     </ul>
+
+    <section class="mas" aria-labelledby="masTitulo">
+      <h2 class="mas-titulo" id="masTitulo">Más herramientas</h2>
+      <ul class="mas-lista">
+        <li><a class="mas-item" href="#/jugar"><span class="mas-icono"><svg class="icon" aria-hidden="true"><use href="#i-gamepad-2"/></svg></span><span class="mas-texto"><strong>Repase jugando</strong><span>¿Mito o verdad? Diez frases para recordar lo aprendido.</span></span><svg class="icon mas-flecha" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
+        <li><a class="mas-item" href="#/riesgo"><span class="mas-icono"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg></span><span class="mas-texto"><strong>¿Cuánto riesgo hay?</strong><span>Seis preguntas que orientan. No reemplaza a su equipo de salud.</span></span><svg class="icon mas-flecha" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
+        <li><a class="mas-item" href="#/desafios"><span class="mas-icono"><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg></span><span class="mas-texto"><strong>Mis desafíos de hospitalización</strong><span>Si está en el hospital: prueba de ingreso, desafío diario y prueba de alta.</span></span><svg class="icon mas-flecha" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
+        <li><a class="mas-item" href="#/cuidador"><span class="mas-icono"><svg class="icon" aria-hidden="true"><use href="#i-heart-handshake"/></svg></span><span class="mas-texto"><strong>Para quien cuida</strong><span>Cuídese usted también mientras cuida.</span></span><svg class="icon mas-flecha" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
+      </ul>
+    </section>
   </div>
 </section>
 
-<!-- ============ ¿Por qué aparece? ============ -->
-<section class="band band-turquesa" id="porque" aria-labelledby="porque-titulo" data-buscar="Por qué aparece una lesión por presión|escara causa presión sangre oxígeno">
+<!-- ============ Aprender: la ruta y las lecciones ============ -->
+<section class="vista band band-sol" id="aprender" data-vista="aprender" data-titulo="Aprender" data-modo="ruta" aria-labelledby="aprender-titulo">
   <div class="wrap">
-    <div class="section-head">
-      <h2 class="h2" id="porque-titulo">¿Por qué aparece una lesión por presión?</h2>
-      <p>El peso aprieta la piel contra el hueso. Sin sangre ni oxígeno, la piel se daña, a veces desde adentro.</p>
-      <button class="listen" type="button" data-leer="porque" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-volume-2"/></svg>Escuchar</button>
+    <div class="ruta" id="ruta">
+      <div class="section-head">
+        <h2 class="h2" id="aprender-titulo" tabindex="-1">Aprenda paso a paso</h2>
+        <p>Ocho lecciones cortas. Vaya a su ritmo: su avance se guarda en este equipo.</p>
+      </div>
+      <div class="ruta-progreso">
+        <span id="rutaCuenta">0 de 8 lecciones aprendidas</span>
+        <div class="hilo-progress" aria-hidden="true"><span id="rutaBarra"></span></div>
+      </div>
+      <ol class="ruta-lista" id="rutaLista"></ol>
     </div>
 
-    <div class="porque-grid">
-      <div class="patch corte">
-        <svg class="corte-svg" id="corteSvg" viewBox="0 0 420 330" role="img" aria-labelledby="corteDesc">
-          <title id="corteDesc">Corte de la piel apoyada sobre el colchón: el peso aprieta los vasos sanguíneos entre el hueso y el colchón.</title>
-          <defs>
-            <clipPath id="clipCapas"><rect x="16" y="40" width="388" height="230" rx="18"/></clipPath>
-          </defs>
-          <g clip-path="url(#clipCapas)">
-            <rect x="16" y="40" width="388" height="152" fill="#c65a6e"/>
-            <rect x="16" y="190" width="388" height="52" fill="#f6d68a"/>
-            <rect x="16" y="240" width="388" height="30" fill="#f0a27e"/>
-            <path d="M16 191h388M16 241h388" stroke="rgba(20,27,77,.35)" stroke-width="2" stroke-dasharray="6 5"/>
-            <ellipse class="dano-hondo" cx="210" cy="164" rx="70" ry="26" fill="#5b1f5e"/>
-            <ellipse class="dano-piel" cx="210" cy="256" rx="96" ry="16" fill="#9b2d4f"/>
-            <g class="capilar">
-              <path d="M16 214q15-9 30 0t30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 28 0" fill="none" stroke="#b3261e" stroke-width="8" stroke-linecap="round"/>
-              <path class="flujo oxigeno" d="M16 214q15-9 30 0t30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 28 0" fill="none" stroke="#ffe0dc" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="4 18"/>
-            </g>
-            <g class="capilar">
-              <path d="M16 112q15-9 30 0t30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 28 0" fill="none" stroke="#8f1d17" stroke-width="7" stroke-linecap="round"/>
-              <path class="flujo oxigeno" d="M16 112q15-9 30 0t30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 28 0" fill="none" stroke="#ffe0dc" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 18"/>
-            </g>
-          </g>
-          <path d="M140 92c10-26 40-38 70-38s60 12 70 38c6 18-8 36-24 40-14 4-30 2-46 2s-32 2-46-2c-16-4-30-22-24-40z" fill="#f4ecd6" stroke="rgba(20,27,77,.45)" stroke-width="2.5" stroke-dasharray="6 5"/>
-          <!-- colchón -->
-          <rect x="0" y="270" width="420" height="60" rx="14" fill="#5b6fa3"/>
-          <path d="M14 300h392M70 276v48M140 276v48M210 276v48M280 276v48M350 276v48" stroke="rgba(255,255,255,.45)" stroke-width="2.5" stroke-dasharray="6 6"/>
-          <!-- peso -->
-          <g class="peso">
-            <path d="M210 0v26" stroke="#1f2547" stroke-width="10" stroke-linecap="round"/>
-            <path d="M196 20l14 18 14-18" fill="none" stroke="#1f2547" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-          </g>
-          <g class="oxigeno" fill="#fff">
-            <circle cx="60" cy="150" r="4"/><circle cx="352" cy="132" r="4"/><circle cx="300" cy="170" r="3.5"/><circle cx="110" cy="230" r="3.5"/><circle cx="320" cy="226" r="3.5"/>
-          </g>
-          <g font-family="Atkinson Hyperlegible Next, sans-serif" font-weight="800" font-size="17">
-            <text x="210" y="100" text-anchor="middle" fill="#1f2547">Hueso</text>
-            <text x="30" y="66" fill="#fff">Músculo</text>
-            <text x="30" y="234" fill="#1f2547">Grasa</text>
-            <text x="300" y="262" fill="#1f2547">Piel</text>
-            <text x="30" y="318" fill="#fff">Colchón</text>
-            <text x="236" y="22" fill="#1f2547" class="no-leer">Peso</text>
-          </g>
-        </svg>
-
-        <div class="corte-controls">
-          <label class="corte-label" for="corteRange">
-            <span>Tiempo sin cambiar de posición</span>
-            <span class="corte-horas" id="corteHoras" aria-hidden="true">0 h</span>
-          </label>
-          <input class="hilo-range" type="range" id="corteRange" min="0" max="6" step="0.5" value="0" aria-valuetext="0 horas">
-          <p class="corte-estado" id="corteEstado" aria-live="polite" data-nivel="0">Piel sana: la sangre circula bien.</p>
-          <button class="btn btn-sol" type="button" id="corteCambiar">
-            <svg class="icon icon-sm" aria-hidden="true"><use href="#i-rotate-cw"/></svg> Cambiar de posición
-          </button>
-          <p class="corte-nota">Mueva el hilo. Los tiempos son un ejemplo: su equipo de salud le dirá cada cuánto cambiar de posición.</p>
+    <div class="reproductor" id="reproductor">
+      <div class="rep-cabecera">
+        <a class="volver" href="#/aprender"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-left"/></svg>Todas las lecciones</a>
+        <button class="listen" type="button" id="btnNarrar" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-volume-2"/></svg><span>Escuchar</span></button>
+        <h2 class="h2" id="repTitulo" tabindex="-1">Lecciones</h2>
+        <div class="rep-progreso">
+          <ol class="rep-pasos" id="repPasos" aria-hidden="true"></ol>
+          <p class="rep-cuenta" id="repCuenta"></p>
         </div>
       </div>
 
-      <div>
-        <ul class="causas">
-          <li class="causa">
-            <span class="causa-icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg></span>
-            <div><h3>Presión</h3><p>El peso del cuerpo, en la cama o en la silla.</p></div>
-          </li>
-          <li class="causa">
-            <span class="causa-icon"><svg class="icon" aria-hidden="true"><use href="#i-move"/></svg></span>
-            <div><h3>Roce y arrastre</h3><p>Deslizar a la persona lastima la piel por dentro.</p></div>
-          </li>
-          <li class="causa">
-            <span class="causa-icon"><svg class="icon" aria-hidden="true"><use href="#i-droplets"/></svg></span>
-            <div><h3>Humedad</h3><p>Sudor, orina o deposiciones ablandan la piel.</p></div>
-          </li>
-        </ul>
-        <div class="riesgo-lista" data-buscar="Quién tiene más riesgo|riesgo adultos mayores incontinencia desnutrición">
-          <h3>¿Quién tiene más riesgo?</h3>
-          <ul>
-            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Pasa mucho tiempo en cama o sentado.</li>
-            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Persona mayor (piel más delgada).</li>
-            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>No siente o no puede avisar si algo le duele.</li>
-            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Piel húmeda (incontinencia o sudor).</li>
-            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Come poco o baja de peso.</li>
-            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Diabetes o mala circulación.</li>
+      <div class="patch rep-patch">
+      <div class="lecciones">
+      <article class="leccion" id="leccion-porque" data-leccion="porque" data-titulo="¿Por qué aparece una lesión?" data-min="3" data-tela="turquesa" data-icono="i-circle-help" data-buscar="Por qué aparece una lesión por presión|escara causa presión roce arrastre humedad sangre oxígeno">
+        <h3 class="leccion-titulo">¿Por qué aparece una lesión?</h3>
+
+        <section class="paso" data-tipo="idea">
+          <h3 class="paso-titulo" tabindex="-1">El peso aprieta la piel</h3>
+          <p class="cuidado-why">El peso aprieta la piel contra el hueso. Sin sangre ni oxígeno, la piel se daña, a veces desde adentro.</p>
+          <p class="paso-sub">Tres cosas la dañan:</p>
+          <ul class="causas">
+            <li class="causa"><span class="causa-icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg></span><div><h4>Presión</h4><p>El peso del cuerpo, en la cama o en la silla.</p></div></li>
+            <li class="causa"><span class="causa-icon"><svg class="icon" aria-hidden="true"><use href="#i-move"/></svg></span><div><h4>Roce y arrastre</h4><p>Deslizar a la persona lastima la piel por dentro.</p></div></li>
+            <li class="causa"><span class="causa-icon"><svg class="icon" aria-hidden="true"><use href="#i-droplets"/></svg></span><div><h4>Humedad</h4><p>Sudor, orina o deposiciones ablandan la piel.</p></div></li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        </section>
 
-<!-- ============ Seis cuidados ============ -->
-<section class="band band-sol" id="cuidados" aria-labelledby="cuidados-titulo">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 class="h2" id="cuidados-titulo">Seis cuidados que protegen la piel</h2>
-      <p>Toque cada cuidado y márquelo cuando lo aprenda.</p>
-      <button class="listen" type="button" data-leer="cuidados" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-volume-2"/></svg>Escuchar este cuidado</button>
-    </div>
+        <section class="paso" data-tipo="practica" data-buscar="Simulador de la presión bajo la piel|corte piel hueso músculo vasos sanguíneos horas sin moverse">
+          <h3 class="paso-titulo" tabindex="-1">Mire qué pasa bajo la piel</h3>
+          <p class="cuidado-why">Mueva el hilo para ver qué pasa con las horas. Después toque «Cambiar de posición».</p>
+          <div class="corte">
+<svg class="corte-svg" id="corteSvg" viewBox="0 0 420 330" role="img" aria-labelledby="corteDesc">
+  <title id="corteDesc">Corte de la piel apoyada sobre el colchón: el peso aprieta los vasos sanguíneos entre el hueso y el colchón.</title>
+  <defs>
+    <clipPath id="clipCapas"><rect x="16" y="40" width="388" height="230" rx="18"/></clipPath>
+  </defs>
+  <g clip-path="url(#clipCapas)">
+    <rect x="16" y="40" width="388" height="152" fill="#e3a8b2"/>
+    <rect x="16" y="190" width="388" height="52" fill="#f9e7b3"/>
+    <rect x="16" y="240" width="388" height="30" fill="#f0a27e"/>
+    <path d="M16 191h388M16 241h388" stroke="rgba(47,54,73,.35)" stroke-width="2" stroke-dasharray="6 5"/>
+    <ellipse class="dano-hondo" cx="210" cy="164" rx="70" ry="26" fill="#7c3a68"/>
+    <ellipse class="dano-piel" cx="210" cy="256" rx="96" ry="16" fill="#a4435f"/>
+    <g class="capilar">
+      <path d="M16 214q15-9 30 0t30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 28 0" fill="none" stroke="#c0453b" stroke-width="8" stroke-linecap="round"/>
+      <path class="flujo oxigeno" d="M16 214q15-9 30 0t30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 28 0" fill="none" stroke="#ffe0dc" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="4 18"/>
+    </g>
+    <g class="capilar">
+      <path d="M16 112q15-9 30 0t30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 28 0" fill="none" stroke="#a13832" stroke-width="7" stroke-linecap="round"/>
+      <path class="flujo oxigeno" d="M16 112q15-9 30 0t30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 28 0" fill="none" stroke="#ffe0dc" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 18"/>
+    </g>
+  </g>
+  <path d="M140 92c10-26 40-38 70-38s60 12 70 38c6 18-8 36-24 40-14 4-30 2-46 2s-32 2-46-2c-16-4-30-22-24-40z" fill="#f4ecd6" stroke="rgba(47,54,73,.45)" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <!-- colchón -->
+  <rect x="0" y="270" width="420" height="60" rx="14" fill="#c6d2e5"/>
+  <path d="M14 300h392M70 276v48M140 276v48M210 276v48M280 276v48M350 276v48" stroke="rgba(255,255,255,.9)" stroke-width="2.5" stroke-dasharray="6 6"/>
+  <!-- peso -->
+  <g class="peso">
+    <path d="M210 0v26" stroke="#2f3649" stroke-width="10" stroke-linecap="round"/>
+    <path d="M196 20l14 18 14-18" fill="none" stroke="#2f3649" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g class="oxigeno" fill="#fff">
+    <circle cx="60" cy="150" r="4"/><circle cx="352" cy="132" r="4"/><circle cx="300" cy="170" r="3.5"/><circle cx="110" cy="230" r="3.5"/><circle cx="320" cy="226" r="3.5"/>
+  </g>
+  <g font-family="Atkinson Hyperlegible Next, sans-serif" font-weight="800" font-size="17">
+    <text x="210" y="100" text-anchor="middle" fill="#2f3649">Hueso</text>
+    <text x="30" y="66" fill="#2f3649">Músculo</text>
+    <text x="30" y="234" fill="#2f3649">Grasa</text>
+    <text x="300" y="262" fill="#2f3649">Piel</text>
+    <text x="30" y="318" fill="#2f3649">Colchón</text>
+    <text x="236" y="22" fill="#2f3649" class="no-leer">Peso</text>
+  </g>
+</svg>
 
-    <div class="cuidados">
-      <div class="cuidados-tabs" role="tablist" aria-label="Cuidados">
-        <button class="cuidado-tab" role="tab" id="tab-posicion" aria-controls="panel-posicion" aria-selected="true"><span class="cuidado-tab-num"><svg class="icon" aria-hidden="true"><use href="#i-bed-double"/></svg></span><span class="cuidado-tab-text">Cambie de posición</span></button>
-        <button class="cuidado-tab" role="tab" id="tab-piel" aria-controls="panel-piel" aria-selected="false" tabindex="-1"><span class="cuidado-tab-num"><svg class="icon" aria-hidden="true"><use href="#i-droplets"/></svg></span><span class="cuidado-tab-text">Piel limpia y seca</span></button>
-        <button class="cuidado-tab" role="tab" id="tab-revise" aria-controls="panel-revise" aria-selected="false" tabindex="-1"><span class="cuidado-tab-num"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></span><span class="cuidado-tab-text">Revise la piel a diario</span></button>
-        <button class="cuidado-tab" role="tab" id="tab-superficie" aria-controls="panel-superficie" aria-selected="false" tabindex="-1"><span class="cuidado-tab-num"><svg class="icon" aria-hidden="true"><use href="#i-armchair"/></svg></span><span class="cuidado-tab-text">Colchón y cojín adecuados</span></button>
-        <button class="cuidado-tab" role="tab" id="tab-movimiento" aria-controls="panel-movimiento" aria-selected="false" tabindex="-1"><span class="cuidado-tab-num"><svg class="icon" aria-hidden="true"><use href="#i-footprints"/></svg></span><span class="cuidado-tab-text">Muévase todo lo que pueda</span></button>
-        <button class="cuidado-tab" role="tab" id="tab-comida" aria-controls="panel-comida" aria-selected="false" tabindex="-1"><span class="cuidado-tab-num"><svg class="icon" aria-hidden="true"><use href="#i-utensils"/></svg></span><span class="cuidado-tab-text">Coma bien y tome agua</span></button>
-      </div>
+<div class="corte-controls">
+  <label class="corte-label" for="corteRange">
+    <span>Tiempo sin cambiar de posición</span>
+    <span class="corte-horas" id="corteHoras" aria-hidden="true">0 h</span>
+  </label>
+  <input class="hilo-range" type="range" id="corteRange" min="0" max="6" step="0.5" value="0" aria-valuetext="0 horas">
+  <p class="corte-estado" id="corteEstado" aria-live="polite" data-nivel="0">Piel sana: la sangre circula bien.</p>
+  <button class="btn btn-sol" type="button" id="corteCambiar">
+    <svg class="icon icon-sm" aria-hidden="true"><use href="#i-rotate-cw"/></svg> Cambiar de posición
+  </button>
+  <p class="corte-nota">Los tiempos son un ejemplo: su equipo de salud le dirá cada cuánto cambiar de posición.</p>
+</div>
+          </div>
+        </section>
 
-      <div>
-        <!-- 1 -->
-        <article class="patch cuidado-panel" role="tabpanel" id="panel-posicion" aria-labelledby="tab-posicion" data-cuidado="posicion" data-buscar="Cambie de posición|giro girar rotación 30 grados talones almohada cabecera cada 2 horas">
-          <div>
-            <h3 class="h3">Cambie de posición</h3>
+        <section class="paso" data-tipo="idea" data-buscar="Quién tiene más riesgo|riesgo adultos mayores incontinencia desnutrición diabetes">
+          <h3 class="paso-titulo" tabindex="-1">¿Quién tiene más riesgo?</h3>
+          <ul class="riesgo-items">
+<li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Pasa mucho tiempo en cama o sentado.</li>
+<li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Persona mayor (piel más delgada).</li>
+<li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>No siente o no puede avisar si algo le duele.</li>
+<li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Piel húmeda (incontinencia o sudor).</li>
+<li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Come poco o baja de peso.</li>
+<li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Diabetes o mala circulación.</li>
+          </ul>
+          <p class="paso-nota">Si quiere medir su riesgo, responda después la <a href="#/riesgo">autoevaluación de seis preguntas</a>.</p>
+        </section>
+
+        <section class="paso" data-tipo="comprobar">
+          <h3 class="paso-titulo" tabindex="-1">Compruebe lo aprendido</h3>
+          <div class="comprobar" data-comprobar></div>
+        </section>
+      </article>
+
+      <article class="leccion" id="leccion-posicion" data-leccion="posicion" data-titulo="Cambie de posición" data-min="5" data-tela="sol" data-icono="i-bed-double" data-buscar="Cambie de posición|giro girar rotación 30 grados talones almohada cabecera cada 2 horas">
+        <h3 class="leccion-titulo">Cambie de posición</h3>
+
+        <section class="paso" data-tipo="idea">
+          <div class="paso-cols">
+            <div>
+            <h3 class="paso-titulo" tabindex="-1">Qué hacer</h3>
             <p class="cuidado-why">Al moverse, la sangre vuelve a la piel apretada.</p>
-            <p class="haga-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Haga</p>
-            <ul class="haga">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>En cama, cambie de posición cada 2 a 4 horas, como le indique su equipo de salud.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>De lado, solo un poco inclinado (30°), con almohadas en la espalda y entre las rodillas.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Talones en el aire: almohada bajo las pantorrillas.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Cabecera baja (máximo 30°), salvo para comer o por indicación médica.</span></li>
-            </ul>
-            <p class="evite-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"/></svg>Evite</p>
-            <ul class="evite">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Quedar completamente de lado (90°): el peso cae sobre la cadera.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Arrastrar a la persona: levántela con una sábana, entre dos.</span></li>
-            </ul>
-          </div>
-          <div>
+          <ul class="haga">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>En cama, cambie de posición cada 2 a 4 horas, como le indique su equipo de salud.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>De lado, solo un poco inclinado (30°), con almohadas en la espalda y entre las rodillas.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Talones en el aire: almohada bajo las pantorrillas.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Cabecera baja (máximo 30°), salvo para comer o por indicación médica.</span></li>
+          </ul>
+            </div>
             <figure class="cuidado-fig"><img src="images/posture_bed_guide.webp" width="960" height="717" alt="Persona acostada de lado, levemente inclinada, con almohadas en la espalda y entre las rodillas." loading="lazy"></figure>
-            <div class="cuidado-actions">
-              <button class="btn btn-sol" type="button" data-aprendido="posicion"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Lo aprendí</span></button>
-              <button class="btn" type="button" data-siguiente>Siguiente cuidado <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
-            </div>
           </div>
-        </article>
+        </section>
 
-        <!-- 2 -->
-        <article class="patch cuidado-panel" role="tabpanel" id="panel-piel" aria-labelledby="tab-piel" data-cuidado="piel" data-buscar="Piel limpia y seca|higiene humedad pañal incontinencia crema barrera óxido de zinc AGHO ácidos grasos hiperoxigenados masaje alcohol colonia talco" hidden>
-          <div>
-            <h3 class="h3">Piel limpia y seca</h3>
+        <section class="paso" data-tipo="idea">
+            <h3 class="paso-titulo" tabindex="-1">Qué evitar</h3>
+          <ul class="evite">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Quedar completamente de lado (90°): el peso cae sobre la cadera.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Arrastrar a la persona: levántela con una sábana, entre dos.</span></li>
+          </ul>
+        </section>
+
+        <section class="paso" data-tipo="practica" data-buscar="Video cambio de posición|video regla 30 grados almohada rodillas talones">
+          <h3 class="paso-titulo" tabindex="-1">Mírelo en movimiento</h3>
+          <p class="cuidado-why" id="video-desc">Video corto, sin sonido. Tres claves:</p>
+          <ol class="video-claves">
+            <li>De lado, inclinado solo 30°.</li>
+            <li>Almohadas entre las rodillas y en la espalda.</li>
+            <li>Talones en el aire: almohada bajo las pantorrillas.</li>
+          </ol>
+          <div class="video-frame">
+<video id="videoGuia" controls preload="none" playsinline poster="images/video-poster.svg" aria-describedby="video-desc">
+  <source src="videos/rotacion-postural.mp4" type="video/mp4">
+  Su navegador no puede mostrar este video.
+</video>
+          </div>
+        </section>
+
+        <section class="paso" data-tipo="comprobar">
+          <h3 class="paso-titulo" tabindex="-1">Compruebe lo aprendido</h3>
+          <div class="comprobar" data-comprobar></div>
+        </section>
+
+        <section class="paso" data-tipo="hoy">
+          <h3 class="paso-titulo" tabindex="-1">Hágalo hoy</h3>
+          <p class="cuidado-why">Registre el cambio de ahora: toque la posición en que quedó. Le diremos a qué hora toca el próximo.</p>
+          <div class="hoy-posiciones" role="group" aria-label="¿En qué posición quedó?">
+            <button class="btn" type="button" data-hoy="cambio:supino"><span class="dot" style="--c:#d6a95b"></span><span>Boca arriba</span></button>
+            <button class="btn" type="button" data-hoy="cambio:derecho"><span class="dot" style="--c:#689e99"></span><span>Lado derecho</span></button>
+            <button class="btn" type="button" data-hoy="cambio:izquierdo"><span class="dot" style="--c:#c07b8e"></span><span>Lado izquierdo</span></button>
+            <button class="btn" type="button" data-hoy="cambio:sentado"><span class="dot" style="--c:#918ac0"></span><span>Sentado</span></button>
+          </div>
+          <p class="hoy-estado" role="status"></p>
+          <p class="small muted">Puede hacerlo más tarde en «Mi día».</p>
+        </section>
+      </article>
+
+      <article class="leccion" id="leccion-piel" data-leccion="piel" data-titulo="Piel limpia y seca" data-min="3" data-tela="cielo" data-icono="i-droplets" data-buscar="Piel limpia y seca|higiene humedad pañal incontinencia crema barrera óxido de zinc AGHO ácidos grasos hiperoxigenados masaje alcohol colonia talco">
+        <h3 class="leccion-titulo">Piel limpia y seca</h3>
+
+        <section class="paso" data-tipo="idea">
+          <div class="paso-cols">
+            <div>
+            <h3 class="paso-titulo" tabindex="-1">Qué hacer</h3>
             <p class="cuidado-why">La humedad ablanda la piel.</p>
-            <p class="haga-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Haga</p>
-            <ul class="haga">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Lave con agua tibia y jabón suave. Seque con toquecitos, sin frotar.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Cambie el pañal apenas esté mojado o sucio.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Si hay humedad, use crema barrera (óxido de zinc).</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Hidrate con crema sin perfume. AGHO solo si se lo indican: nunca reemplaza los cambios de posición.</span></li>
-            </ul>
-            <p class="evite-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"/></svg>Evite</p>
-            <ul class="evite">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Masajear o frotar las zonas rojas.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Alcohol, colonia o talco: resecan la piel.</span></li>
-            </ul>
-          </div>
-          <div>
-            <figure class="cuidado-fig"><img src="images/skincare_agho.webp" width="960" height="717" alt="Toalla, crema barrera de zinc, aceite protector y un bol de agua tibia." loading="lazy"></figure>
-            <div class="cuidado-actions">
-              <button class="btn btn-sol" type="button" data-aprendido="piel"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Lo aprendí</span></button>
-              <button class="btn" type="button" data-siguiente>Siguiente cuidado <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+          <ul class="haga">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Lave con agua tibia y jabón suave. Seque con toquecitos, sin frotar.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Cambie el pañal apenas esté mojado o sucio.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Si hay humedad, use crema barrera (óxido de zinc).</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Hidrate con crema sin perfume. AGHO solo si se lo indican: nunca reemplaza los cambios de posición.</span></li>
+          </ul>
             </div>
+            <figure class="cuidado-fig"><img src="images/skincare_agho.webp" width="960" height="717" alt="Toalla, crema barrera de zinc, aceite protector y un bol de agua tibia." loading="lazy"></figure>
           </div>
-        </article>
+        </section>
 
-        <!-- 3 -->
-        <article class="patch cuidado-panel" role="tabpanel" id="panel-revise" aria-labelledby="tab-revise" data-cuidado="revise" data-buscar="Revise la piel a diario|inspección zona roja piel oscura morena sondas dispositivos" hidden>
-          <div>
-            <h3 class="h3">Revise la piel a diario</h3>
+        <section class="paso" data-tipo="idea">
+            <h3 class="paso-titulo" tabindex="-1">Qué evitar</h3>
+          <ul class="evite">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Masajear o frotar las zonas rojas.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Alcohol, colonia o talco: resecan la piel.</span></li>
+          </ul>
+        </section>
+
+        <section class="paso" data-tipo="comprobar">
+          <h3 class="paso-titulo" tabindex="-1">Compruebe lo aprendido</h3>
+          <div class="comprobar" data-comprobar></div>
+        </section>
+
+        <section class="paso" data-tipo="hoy">
+          <h3 class="paso-titulo" tabindex="-1">Hágalo hoy</h3>
+          <p class="cuidado-why">Deje hoy la piel limpia y seca, con crema barrera si hubo humedad. Cuando lo haga, márquelo.</p>
+          <button class="btn btn-cielo" type="button" data-hoy="check:1"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Hoy la piel quedó limpia y seca</span></button>
+          <p class="hoy-estado" role="status"></p>
+          <p class="small muted">Puede hacerlo más tarde en «Mi día».</p>
+        </section>
+      </article>
+
+      <article class="leccion" id="leccion-revise" data-leccion="revise" data-titulo="Revise la piel a diario" data-min="5" data-tela="fucsia" data-icono="i-eye" data-buscar="Revise la piel a diario|inspección zona roja piel oscura morena sondas dispositivos">
+        <h3 class="leccion-titulo">Revise la piel a diario</h3>
+
+        <section class="paso" data-tipo="idea">
+          <div class="paso-cols">
+            <div>
+            <h3 class="paso-titulo" tabindex="-1">Qué hacer y qué evitar</h3>
             <p class="cuidado-why">Ver a tiempo una zona roja evita una herida.</p>
-            <p class="haga-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Haga</p>
-            <ul class="haga">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Mire la piel cada día con buena luz: sacro, talones, caderas, codos y nuca.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Zona roja: presiónela. Si no se pone blanca, no la apoye y avise.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>En piel morena, busque calor, dureza, hinchazón, dolor o color más oscuro.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Revise bajo sondas, mascarillas, pañales y medias.</span></li>
-            </ul>
-            <p class="evite-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"/></svg>Evite</p>
-            <ul class="evite">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Apoyar a la persona sobre una zona que sigue roja.</span></li>
-            </ul>
-          </div>
-          <div>
+          <p class="haga-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Haga</p>
+          <ul class="haga">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Mire la piel cada día con buena luz: sacro, talones, caderas, codos y nuca.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Zona roja: presiónela. Si no se pone blanca, no la apoye y avise.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>En piel morena, busque calor, dureza, hinchazón, dolor o color más oscuro.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Revise bajo sondas, mascarillas, pañales y medias.</span></li>
+          </ul>
+          <p class="evite-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"/></svg>Evite</p>
+          <ul class="evite">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Apoyar a la persona sobre una zona que sigue roja.</span></li>
+          </ul>
+            </div>
             <figure class="cuidado-fig is-mapa" aria-hidden="true">
               <svg viewBox="0 88 400 126"><use href="#fig-supino" width="400" height="230"/>
-                <g fill="#e2b04a" stroke="#1f2547" stroke-width="3"><circle cx="44" cy="154" r="10"/><circle cx="100" cy="166" r="10"/><circle cx="150" cy="156" r="10"/><circle cx="232" cy="166" r="10"/><circle cx="368" cy="154" r="10"/></g>
+                <g fill="#eac788" stroke="#2f3649" stroke-width="3"><circle cx="44" cy="154" r="10"/><circle cx="100" cy="166" r="10"/><circle cx="150" cy="156" r="10"/><circle cx="232" cy="166" r="10"/><circle cx="368" cy="154" r="10"/></g>
               </svg>
             </figure>
-            <div class="cuidado-actions">
-              <button class="btn btn-sol" type="button" data-aprendido="revise"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Lo aprendí</span></button>
-              <a class="btn" href="#revisar">Practicar la prueba del dedo <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-            </div>
           </div>
-        </article>
+        </section>
 
-        <!-- 4 -->
-        <article class="patch cuidado-panel" role="tabpanel" id="panel-superficie" aria-labelledby="tab-superficie" data-cuidado="superficie" data-buscar="Colchón y cojín adecuados|colchón antiescaras cojín sillón silla de ruedas rosca flotador dona sábanas arrugas" hidden>
-          <div>
-            <h3 class="h3">Colchón y cojín adecuados</h3>
+        <section class="paso" data-tipo="practica" data-buscar="Dónde mirar|puntos de presión sacro talones caderas omóplatos codos nuca orejas isquiones">
+          <h3 class="paso-titulo" tabindex="-1">¿Dónde mirar?</h3>
+          <p class="cuidado-why">Elija una postura y toque cada número.</p>
+          <div class="mapa">
+<div class="segmented mapa-posturas" role="tablist" aria-label="Postura">
+  <button role="tab" type="button" id="post-supino" aria-selected="true" aria-controls="mapaStage" data-postura="supino"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-bed-double"/></svg>Boca arriba</button>
+  <button role="tab" type="button" id="post-lado" aria-selected="false" aria-controls="mapaStage" data-postura="lado" tabindex="-1"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-rotate-cw"/></svg>De lado</button>
+  <button role="tab" type="button" id="post-sentado" aria-selected="false" aria-controls="mapaStage" data-postura="sentado" tabindex="-1"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-armchair"/></svg>Sentado</button>
+</div>
+<div class="mapa-stage" id="mapaStage" role="tabpanel" aria-labelledby="post-supino">
+  <svg viewBox="0 88 400 126" id="mapaSvg" aria-hidden="true"><use href="#fig-supino" id="mapaUse" width="400" height="230"/></svg>
+  <div id="mapaPuntos"></div>
+</div>
+<div class="punto-info" id="puntoInfo" aria-live="polite">
+  <h3>Toque un número</h3>
+  <p>Verá cómo proteger esa zona.</p>
+</div>
+          </div>
+        </section>
+
+        <section class="paso" data-tipo="practica" data-buscar="Prueba del dedo|blanqueo eritema zona roja no blanquea categoría 1">
+          <h3 class="paso-titulo" tabindex="-1">La prueba del dedo</h3>
+          <div class="dedo">
+<p class="dedo-pasos">Presione cada piel 3 segundos y suelte. ¿Se pone blanca?</p>
+<div class="dedo-muestras">
+  <div class="muestra">
+    <button class="muestra-btn" type="button" id="muestraA" data-blanquea="si" aria-describedby="dedoResultado" style="--enrojecido:#e0685c">
+      <span class="muestra-blanco"></span><span class="muestra-dedo"></span>
+      <span class="sr-only">Piel A: mantenga presionado</span>
+    </button>
+    <span class="muestra-nombre">Piel A</span>
+  </div>
+  <div class="muestra">
+    <button class="muestra-btn" type="button" id="muestraB" data-blanquea="no" aria-describedby="dedoResultado" style="--enrojecido:#b8323e">
+      <span class="muestra-blanco"></span><span class="muestra-dedo"></span>
+      <span class="sr-only">Piel B: mantenga presionado</span>
+    </button>
+    <span class="muestra-nombre">Piel B</span>
+  </div>
+</div>
+<p class="dedo-resultado" id="dedoResultado" aria-live="polite">Pruebe las dos pieles.</p>
+<p class="dedo-nota">En piel morena, compare con la piel de al lado: calor, dureza, hinchazón o dolor también son alerta.</p>
+          </div>
+        </section>
+
+        <section class="paso" data-tipo="comprobar">
+          <h3 class="paso-titulo" tabindex="-1">Compruebe lo aprendido</h3>
+          <div class="comprobar" data-comprobar></div>
+        </section>
+
+        <section class="paso" data-tipo="hoy">
+          <h3 class="paso-titulo" tabindex="-1">Hágalo hoy</h3>
+          <p class="cuidado-why">Revise hoy la piel con buena luz: sacro, glúteos, talones, caderas, codos y nuca. Cuando termine, márquelo.</p>
+          <button class="btn btn-cielo" type="button" data-hoy="check:0"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-eye"/></svg><span>Ya revisé la piel hoy</span></button>
+          <p class="hoy-estado" role="status"></p>
+          <p class="small muted">Puede hacerlo más tarde en «Mi día».</p>
+        </section>
+      </article>
+
+      <article class="leccion" id="leccion-superficie" data-leccion="superficie" data-titulo="Colchón y cojín adecuados" data-min="3" data-tela="cordillera" data-icono="i-armchair" data-buscar="Colchón y cojín adecuados|colchón antiescaras cojín sillón silla de ruedas rosca flotador dona sábanas arrugas">
+        <h3 class="leccion-titulo">Colchón y cojín adecuados</h3>
+
+        <section class="paso" data-tipo="idea">
+          <div class="paso-cols">
+            <div>
+            <h3 class="paso-titulo" tabindex="-1">Qué hacer</h3>
             <p class="cuidado-why">Un buen colchón o cojín reparte el peso.</p>
-            <p class="haga-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Haga</p>
-            <ul class="haga">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Pregunte a su equipo qué colchón o cojín antiescaras le conviene.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Sentado: cojín antiescaras, pies apoyados y espalda sostenida.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Sábanas estiradas, sin arrugas, migas ni objetos.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Con colchón especial, igual siga cambiando de posición.</span></li>
-            </ul>
-            <p class="evite-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"/></svg>Evite</p>
-            <ul class="evite">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Cojines de rosca o flotador: aprietan la piel alrededor del hoyo.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Guantes con agua bajo los talones.</span></li>
-            </ul>
-          </div>
-          <div>
+          <ul class="haga">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Pregunte a su equipo qué colchón o cojín antiescaras le conviene.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Sentado: cojín antiescaras, pies apoyados y espalda sostenida.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Sábanas estiradas, sin arrugas, migas ni objetos.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Con colchón especial, igual siga cambiando de posición.</span></li>
+          </ul>
+            </div>
             <figure class="cuidado-fig"><img src="images/cushion_sitting.webp" width="960" height="717" alt="Señora sentada en un sillón con cojín antiescaras y los pies apoyados en un reposapiés." loading="lazy"></figure>
-            <div class="cuidado-actions">
-              <button class="btn btn-sol" type="button" data-aprendido="superficie"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Lo aprendí</span></button>
-              <button class="btn" type="button" data-siguiente>Siguiente cuidado <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
-            </div>
           </div>
-        </article>
+        </section>
 
-        <!-- 5 -->
-        <article class="patch cuidado-panel" role="tabpanel" id="panel-movimiento" aria-labelledby="tab-movimiento" data-cuidado="movimiento" data-buscar="Muévase todo lo que pueda|movilidad ejercicios caminar sentado kinesiólogo" hidden>
-          <div>
-            <h3 class="h3">Muévase todo lo que pueda</h3>
+        <section class="paso" data-tipo="idea">
+            <h3 class="paso-titulo" tabindex="-1">Qué evitar</h3>
+          <ul class="evite">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Cojines de rosca o flotador: aprietan la piel alrededor del hoyo.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Guantes con agua bajo los talones.</span></li>
+          </ul>
+        </section>
+
+        <section class="paso" data-tipo="comprobar">
+          <h3 class="paso-titulo" tabindex="-1">Compruebe lo aprendido</h3>
+          <div class="comprobar" data-comprobar></div>
+        </section>
+
+        <section class="paso" data-tipo="hoy">
+          <h3 class="paso-titulo" tabindex="-1">Hágalo hoy</h3>
+          <p class="cuidado-why">Estire hoy las sábanas: sin arrugas, migas ni objetos. Cuando lo haga, márquelo.</p>
+          <button class="btn btn-cielo" type="button" data-hoy="check:2"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Hoy las sábanas quedaron estiradas</span></button>
+          <p class="hoy-estado" role="status"></p>
+          <p class="small muted">Puede hacerlo más tarde en «Mi día».</p>
+        </section>
+      </article>
+
+      <article class="leccion" id="leccion-movimiento" data-leccion="movimiento" data-titulo="Muévase todo lo que pueda" data-min="3" data-tela="lila" data-icono="i-footprints" data-buscar="Muévase todo lo que pueda|movilidad ejercicios caminar sentado kinesiólogo">
+        <h3 class="leccion-titulo">Muévase todo lo que pueda</h3>
+
+        <section class="paso" data-tipo="idea">
+          <div class="paso-cols">
+            <div>
+            <h3 class="paso-titulo" tabindex="-1">Qué hacer y qué evitar</h3>
             <p class="cuidado-why">Moverse ayuda a la circulación y mantiene la fuerza.</p>
-            <p class="haga-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Haga</p>
-            <ul class="haga">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Anime a la persona a moverse por sí misma todo lo que pueda.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Sentado: si puede, cambie el apoyo cada 15 a 30 minutos, inclinándose adelante o a un lado.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>En silla, cambie de posición más seguido que en cama (por ejemplo, cada hora).</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Si no puede moverse, pida ejercicios guiados a kinesiología.</span></li>
-            </ul>
-            <p class="evite-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"/></svg>Evite</p>
-            <ul class="evite">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Muchas horas seguidas en la misma silla.</span></li>
-            </ul>
-          </div>
-          <div>
+          <p class="haga-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Haga</p>
+          <ul class="haga">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Anime a la persona a moverse por sí misma todo lo que pueda.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Sentado: si puede, cambie el apoyo cada 15 a 30 minutos, inclinándose adelante o a un lado.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>En silla, cambie de posición más seguido que en cama (por ejemplo, cada hora).</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Si no puede moverse, pida ejercicios guiados a kinesiología.</span></li>
+          </ul>
+          <p class="evite-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"/></svg>Evite</p>
+          <ul class="evite">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Muchas horas seguidas en la misma silla.</span></li>
+          </ul>
+            </div>
             <figure class="cuidado-fig"><img src="images/active_mobility.webp" width="960" height="717" alt="Profesional de salud ayuda a una señora acostada a mover la pierna con suavidad." loading="lazy"></figure>
-            <div class="cuidado-actions">
-              <button class="btn btn-sol" type="button" data-aprendido="movimiento"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Lo aprendí</span></button>
-              <button class="btn" type="button" data-siguiente>Siguiente cuidado <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
-            </div>
           </div>
-        </article>
+        </section>
 
-        <!-- 6 -->
-        <article class="patch cuidado-panel" role="tabpanel" id="panel-comida" aria-labelledby="tab-comida" data-cuidado="comida" data-buscar="Coma bien y tome agua|alimentación proteínas hidratación agua vasos suplementos nutrición" hidden>
-          <div>
-            <h3 class="h3">Coma bien y tome agua</h3>
+        <section class="paso" data-tipo="comprobar">
+          <h3 class="paso-titulo" tabindex="-1">Compruebe lo aprendido</h3>
+          <div class="comprobar" data-comprobar></div>
+        </section>
+      </article>
+
+      <article class="leccion" id="leccion-comida" data-leccion="comida" data-titulo="Coma bien y tome agua" data-min="3" data-tela="naranjo" data-icono="i-utensils" data-buscar="Coma bien y tome agua|alimentación proteínas hidratación agua vasos suplementos nutrición">
+        <h3 class="leccion-titulo">Coma bien y tome agua</h3>
+
+        <section class="paso" data-tipo="idea">
+          <div class="paso-cols">
+            <div>
+            <h3 class="paso-titulo" tabindex="-1">Qué hacer y qué evitar</h3>
             <p class="cuidado-why">La piel necesita proteínas y agua para mantenerse firme.</p>
-            <p class="haga-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Haga</p>
-            <ul class="haga">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Proteínas en cada comida: huevo, lácteos, legumbres, pescado, pollo o carne.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Agua en sorbos: 6 a 8 vasos al día, salvo que le indiquen limitar líquidos.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Si come poco o baja de peso, avise: pueden indicarle suplementos.</span></li>
-            </ul>
-            <p class="evite-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"/></svg>Evite</p>
-            <ul class="evite">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Pasar varios días comiendo muy poco sin avisar.</span></li>
-            </ul>
-          </div>
-          <div>
-            <figure class="cuidado-fig"><img src="images/hydration_nutrition.webp" width="960" height="717" alt="Jarro y vaso de agua junto a un plato con salmón, huevo, palta y frutos secos." loading="lazy"></figure>
-            <div class="cuidado-actions">
-              <button class="btn btn-sol" type="button" data-aprendido="comida"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Lo aprendí</span></button>
-              <a class="btn" href="#video">Ver el video <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          <p class="haga-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Haga</p>
+          <ul class="haga">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Proteínas en cada comida: huevo, lácteos, legumbres, pescado, pollo o carne.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Agua en sorbos: 6 a 8 vasos al día, salvo que le indiquen limitar líquidos.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Si come poco o baja de peso, avise: pueden indicarle suplementos.</span></li>
+          </ul>
+          <p class="evite-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"/></svg>Evite</p>
+          <ul class="evite">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>Pasar varios días comiendo muy poco sin avisar.</span></li>
+          </ul>
             </div>
+            <figure class="cuidado-fig"><img src="images/hydration_nutrition.webp" width="960" height="717" alt="Jarro y vaso de agua junto a un plato con salmón, huevo, palta y frutos secos." loading="lazy"></figure>
           </div>
-        </article>
+        </section>
 
-        <div class="cuidados-progress">
-          <span id="cuidadosCuenta">0 de 6 aprendidos</span>
-          <div class="hilo-progress" aria-hidden="true"><span id="cuidadosBarra"></span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <section class="paso" data-tipo="comprobar">
+          <h3 class="paso-titulo" tabindex="-1">Compruebe lo aprendido</h3>
+          <div class="comprobar" data-comprobar></div>
+        </section>
 
-<!-- ============ Video ============ -->
-<section class="seccion-cielo video" id="video" aria-labelledby="video-titulo" data-buscar="Video cambio de posición|video regla 30 grados almohada rodillas talones">
-  <div class="wrap video-grid">
-    <div class="patch video-frame">
-      <video id="videoGuia" controls preload="none" playsinline poster="images/video-poster.svg" aria-describedby="video-desc">
-        <source src="videos/rotacion-postural.mp4" type="video/mp4">
-        Su navegador no puede mostrar este video.
-      </video>
-    </div>
-    <div class="video-texto">
-      <h2 class="h2" id="video-titulo">Mírelo en movimiento</h2>
-      <p class="lead" id="video-desc">Video corto, sin sonido. Tres claves:</p>
-      <ol class="video-claves">
-        <li>De lado, inclinado solo 30°.</li>
-        <li>Almohadas entre las rodillas y en la espalda.</li>
-        <li>Talones en el aire: almohada bajo las pantorrillas.</li>
-      </ol>
-    </div>
-  </div>
-</section>
+        <section class="paso" data-tipo="hoy">
+          <h3 class="paso-titulo" tabindex="-1">Hágalo hoy</h3>
+          <p class="cuidado-why">Tome ahora un vaso de agua y márquelo. Si le indicaron limitar líquidos, siga esa indicación.</p>
+          <button class="btn btn-cielo" type="button" data-hoy="agua"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-glass-water"/></svg><span>Marcar un vaso de agua</span></button>
+          <p class="hoy-estado" role="status"></p>
+          <p class="small muted">Puede hacerlo más tarde en «Mi día».</p>
+        </section>
+      </article>
 
-<!-- ============ Revisar la piel ============ -->
-<section class="band band-fucsia" id="revisar" aria-labelledby="revisar-titulo">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 class="h2" id="revisar-titulo">Aprenda a revisar la piel</h2>
-      <p>Las lesiones aparecen donde el hueso está cerca de la piel. Elija una postura y toque cada número.</p>
-      <button class="listen" type="button" data-leer="revisar" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-volume-2"/></svg>Escuchar</button>
-    </div>
+      <article class="leccion" id="leccion-alarma" data-leccion="alarma" data-titulo="¿Cuándo pedir ayuda?" data-min="4" data-tela="lienzo" data-icono="i-triangle-alert" data-buscar="Cuándo pedir ayuda|señales de alarma semáforo verde amarillo rojo urgencia consultar">
+        <h3 class="leccion-titulo">¿Cuándo pedir ayuda?</h3>
 
-    <div class="revisar-grid">
-      <div class="patch mapa" data-buscar="Dónde mirar|puntos de presión sacro talones caderas omóplatos codos nuca orejas isquiones">
-        <h3 class="h3">¿Dónde mirar?</h3>
-        <div class="segmented mapa-posturas" role="tablist" aria-label="Postura">
-          <button role="tab" type="button" id="post-supino" aria-selected="true" aria-controls="mapaStage" data-postura="supino"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-bed-double"/></svg>Boca arriba</button>
-          <button role="tab" type="button" id="post-lado" aria-selected="false" aria-controls="mapaStage" data-postura="lado" tabindex="-1"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-rotate-cw"/></svg>De lado</button>
-          <button role="tab" type="button" id="post-sentado" aria-selected="false" aria-controls="mapaStage" data-postura="sentado" tabindex="-1"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-armchair"/></svg>Sentado</button>
-        </div>
-        <div class="mapa-stage" id="mapaStage" role="tabpanel" aria-labelledby="post-supino">
-          <svg viewBox="0 88 400 126" id="mapaSvg" aria-hidden="true"><use href="#fig-supino" id="mapaUse" width="400" height="230"/></svg>
-          <div id="mapaPuntos"></div>
-        </div>
-        <div class="punto-info" id="puntoInfo" aria-live="polite">
-          <h3>Toque un número</h3>
-          <p>Verá cómo proteger esa zona.</p>
-        </div>
+        <section class="paso" data-tipo="idea">
+          <h3 class="paso-titulo" tabindex="-1">Verde y amarillo: siga y vigile</h3>
+          <p class="cuidado-why">El semáforo de la piel le dice qué hacer según lo que ve.</p>
+          <ul class="luces luces-leccion" data-luces="verde amarillo"></ul>
+        </section>
+
+        <section class="paso" data-tipo="idea">
+          <h3 class="paso-titulo" tabindex="-1">Rojo y urgencia: pida ayuda</h3>
+          <p class="cuidado-why">Estas señales no pueden esperar.</p>
+          <ul class="luces luces-leccion" data-luces="rojo urgencia"></ul>
+        </section>
+
+        <section class="paso" data-tipo="comprobar">
+          <h3 class="paso-titulo" tabindex="-1">Compruebe lo aprendido</h3>
+          <div class="comprobar" data-comprobar></div>
+        </section>
+      </article>
       </div>
 
-      <div class="patch dedo" data-buscar="Prueba del dedo|blanqueo eritema zona roja no blanquea categoría 1">
-        <h3 class="h3">La prueba del dedo</h3>
-        <p class="dedo-pasos">Presione cada piel 3 segundos y suelte. ¿Se pone blanca?</p>
-        <div class="dedo-muestras">
-          <div class="muestra">
-            <button class="muestra-btn" type="button" id="muestraA" data-blanquea="si" aria-describedby="dedoResultado" style="--enrojecido:#e0685c">
-              <span class="muestra-blanco"></span><span class="muestra-dedo"></span>
-              <span class="sr-only">Piel A: mantenga presionado</span>
-            </button>
-            <span class="muestra-nombre">Piel A</span>
+        <section class="paso paso-fin" id="leccionFin" data-tipo="fin">
+          <svg class="fin-medalla" viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="28" fill="#eac788"/><circle cx="30" cy="30" r="22" fill="none" stroke="#2f3649" stroke-width="2" stroke-dasharray="4 3"/><path d="M30 14l4.6 9.4 10.4 1.5-7.5 7.3 1.8 10.3L30 37.6l-9.3 4.9 1.8-10.3-7.5-7.3 10.4-1.5z" fill="#915365"/></svg>
+          <h3 class="paso-titulo" id="finTitulo" tabindex="-1">¡Lección aprendida!</h3>
+          <p class="cuidado-why" id="finTexto"></p>
+          <div class="fin-acciones">
+            <a class="btn btn-sol" id="finSig" href="#/aprender"><span>Siguiente lección</span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <a class="btn" id="finOtra" href="#/aprender"><span>Ver todas las lecciones</span></a>
           </div>
-          <div class="muestra">
-            <button class="muestra-btn" type="button" id="muestraB" data-blanquea="no" aria-describedby="dedoResultado" style="--enrojecido:#b8323e">
-              <span class="muestra-blanco"></span><span class="muestra-dedo"></span>
-              <span class="sr-only">Piel B: mantenga presionado</span>
-            </button>
-            <span class="muestra-nombre">Piel B</span>
-          </div>
+        </section>
+
+        <div class="rep-nav" id="repNav">
+          <button class="btn" type="button" id="repAtras"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-left"/></svg><span>Atrás</span></button>
+          <p class="rep-aviso" id="repAviso" hidden>Responda para continuar.</p>
+          <button class="btn btn-sol" type="button" id="repSig"><span>Siguiente</span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
         </div>
-        <p class="dedo-resultado" id="dedoResultado" aria-live="polite">Pruebe las dos pieles.</p>
-        <p class="dedo-nota">En piel morena, compare con la piel de al lado: calor, dureza, hinchazón o dolor también son alerta.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ Mi día ============ -->
-<section class="band band-cordillera" id="mi-dia" aria-labelledby="dia-titulo">
+<section class="vista band band-cordillera" id="mi-dia" data-vista="mi-dia" data-titulo="Mi día" aria-labelledby="dia-titulo">
   <div class="wrap">
     <div class="section-head">
-      <h2 class="h2" id="dia-titulo">Mi día de cuidados</h2>
+      <h2 class="h2" id="dia-titulo" tabindex="-1">Mi día de cuidados</h2>
       <p>Marque lo que va haciendo. Se guarda solo en este equipo y se reinicia cada día.</p>
-      <button class="btn btn-sol btn-sm" type="button" id="btnImprimir"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-printer"/></svg>Imprimir mi día</button>
+      <button class="btn btn-sm" type="button" id="btnImprimir"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-printer"/></svg>Imprimir mi día</button>
     </div>
 
     <div class="dia-grid">
@@ -575,10 +698,10 @@
           <fieldset>
             <legend>¿En qué posición quedó?</legend>
             <div class="posiciones">
-              <div class="posicion"><input type="radio" name="pos" id="pos-supino" value="supino" checked><label for="pos-supino"><span class="dot" style="--c:#e2b04a"></span>Boca arriba</label></div>
-              <div class="posicion"><input type="radio" name="pos" id="pos-derecho" value="derecho"><label for="pos-derecho"><span class="dot" style="--c:#2e6e6a"></span>Lado derecho</label></div>
-              <div class="posicion"><input type="radio" name="pos" id="pos-izquierdo" value="izquierdo"><label for="pos-izquierdo"><span class="dot" style="--c:#95475f"></span>Lado izquierdo</label></div>
-              <div class="posicion"><input type="radio" name="pos" id="pos-sentado" value="sentado"><label for="pos-sentado"><span class="dot" style="--c:#5e5491"></span>Sentado</label></div>
+              <div class="posicion"><input type="radio" name="pos" id="pos-supino" value="supino" checked><label for="pos-supino"><span class="dot" style="--c:#d6a95b"></span>Boca arriba</label></div>
+              <div class="posicion"><input type="radio" name="pos" id="pos-derecho" value="derecho"><label for="pos-derecho"><span class="dot" style="--c:#689e99"></span>Lado derecho</label></div>
+              <div class="posicion"><input type="radio" name="pos" id="pos-izquierdo" value="izquierdo"><label for="pos-izquierdo"><span class="dot" style="--c:#c07b8e"></span>Lado izquierdo</label></div>
+              <div class="posicion"><input type="radio" name="pos" id="pos-sentado" value="sentado"><label for="pos-sentado"><span class="dot" style="--c:#918ac0"></span>Sentado</label></div>
             </div>
           </fieldset>
           <div class="reloj-acciones">
@@ -631,7 +754,7 @@
             <li><label class="cruz"><input type="checkbox" data-check="4"><span class="cruz-box" aria-hidden="true"><svg viewBox="0 0 30 30"><path d="M7 7l16 16"/><path d="M23 7L7 23"/></svg></span><span class="cruz-text"><strong>Comió con proteínas</strong><span>Huevo, lácteos, legumbres, pescado o carne.</span></span></label></li>
           </ul>
           <p class="dia-completo" id="diaCompleto" role="status">
-            <svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="28" fill="#e2b04a"/><circle cx="30" cy="30" r="22" fill="none" stroke="#1f2547" stroke-width="2" stroke-dasharray="4 3"/><path d="M30 14l4.6 9.4 10.4 1.5-7.5 7.3 1.8 10.3L30 37.6l-9.3 4.9 1.8-10.3-7.5-7.3 10.4-1.5z" fill="#95475f"/></svg>
+            <svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="28" fill="#eac788"/><circle cx="30" cy="30" r="22" fill="none" stroke="#2f3649" stroke-width="2" stroke-dasharray="4 3"/><path d="M30 14l4.6 9.4 10.4 1.5-7.5 7.3 1.8 10.3L30 37.6l-9.3 4.9 1.8-10.3-7.5-7.3 10.4-1.5z" fill="#915365"/></svg>
             <span>¡Revisión completa!</span>
           </p>
         </div>
@@ -648,108 +771,13 @@
   </div>
 </section>
 
-<!-- ============ Jugar ============ -->
-<section class="band band-lila juego" id="jugar" aria-labelledby="jugar-titulo">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 class="h2" id="jugar-titulo">Aprenda jugando: ¿mito o verdad?</h2>
-      <p>Diez frases que se escuchan en casa. Responda y gane insignias.</p>
-      <button class="listen" type="button" data-leer="jugar" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-volume-2"/></svg>Escuchar la pregunta</button>
-    </div>
-    <div class="juego-grid">
-      <div class="juego-col">
-      <div class="patch quiz" id="quiz" data-buscar="Juego mito o verdad|quiz preguntas insignias aprender jugando">
-        <div class="quiz-meta">
-          <span id="quizPaso">Pregunta 1 de 10</span>
-          <span class="quiz-puntos"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><span id="quizPuntos">0 aciertos</span></span>
-        </div>
-        <div class="quiz-hilo" id="quizHilo" aria-hidden="true"></div>
-        <div id="quizPregunta">
-          <p class="quiz-afirmacion" id="quizAfirmacion"></p>
-          <div class="quiz-opciones">
-            <button class="btn" type="button" data-respuesta="verdad"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>Verdad</button>
-            <button class="btn" type="button" data-respuesta="mito"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-circle-x"/></svg>Mito</button>
-          </div>
-          <div class="quiz-feedback" id="quizFeedback" aria-live="polite" hidden>
-            <strong id="quizFeedbackTitulo"></strong>
-            <span id="quizFeedbackTexto"></span>
-          </div>
-          <button class="btn btn-cielo" type="button" id="quizSiguiente" hidden>Siguiente pregunta <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
-        </div>
-        <div class="quiz-final" id="quizFinal" hidden>
-          <p class="quiz-afirmacion" id="quizFinalTitulo"></p>
-          <p class="quiz-final-texto" id="quizFinalTexto"></p>
-          <button class="btn btn-sol" type="button" id="quizOtraVez"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-rotate-ccw"/></svg>Jugar otra vez</button>
-        </div>
-      </div>
-      <section class="patch progreso" id="progreso" aria-labelledby="progresoTitulo" data-buscar="Mi progreso|resultados partidas mejorar puntaje historial">
-        <h3 class="h3" id="progresoTitulo">Mi progreso</h3>
-        <p class="progreso-resumen" id="progresoResumen">Termine una partida para ver su progreso.</p>
-        <div class="progreso-chart" id="progresoChart" hidden>
-          <div class="progreso-eje" aria-hidden="true"><span>10</span><span>5</span><span>0</span></div>
-          <div class="progreso-plot">
-            <i class="progreso-grid" style="--y:100%"></i><i class="progreso-grid" style="--y:50%"></i><i class="progreso-grid is-base" style="--y:0%"></i>
-            <ol class="progreso-cols" id="progresoCols" aria-label="Aciertos por partida, de la más antigua a la más reciente"></ol>
-            <div class="progreso-tip" id="progresoTip" role="status" hidden></div>
-          </div>
-        </div>
-        <p class="progreso-reforzar" id="progresoReforzar" hidden></p>
-        <details class="progreso-tabla" id="progresoTablaBox" hidden>
-          <summary>Ver como tabla</summary>
-          <table>
-            <thead><tr><th scope="col">Partida</th><th scope="col">Fecha</th><th scope="col">Aciertos</th></tr></thead>
-            <tbody id="progresoTabla"></tbody>
-          </table>
-        </details>
-      </section>
-      </div>
-
-      <div class="insignias">
-        <h3>Mis insignias</h3>
-        <ul class="insignias-lista" id="insignias">
-          <li class="insignia" data-insignia="puntada">
-            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="38" fill="#e2b04a"/><circle cx="40" cy="40" r="31" fill="none" stroke="#1f2547" stroke-width="2.5" stroke-dasharray="5 4"/><path d="M24 52c8-4 10-14 16-20s14-8 18-8M54 20l6 4-4 6" fill="none" stroke="#95475f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div><strong>Primera puntada</strong><span>Responda su primera pregunta.</span></div>
-          </li>
-          <li class="insignia" data-insignia="ojo">
-            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="38" fill="#2e6e6a"/><circle cx="40" cy="40" r="31" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="5 4"/><path d="M18 40s8-13 22-13 22 13 22 13-8 13-22 13-22-13-22-13z" fill="#fff"/><circle cx="40" cy="40" r="7" fill="#1f2547"/></svg>
-            <div><strong>Ojo atento</strong><span>Acierte 5 preguntas.</span></div>
-          </li>
-          <li class="insignia" data-insignia="guardian">
-            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="38" fill="#95475f"/><circle cx="40" cy="40" r="31" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="5 4"/><path d="M40 20l16 6v12c0 11-7 18-16 22-9-4-16-11-16-22V26z" fill="#e2b04a"/><path d="M33 40l5 5 9-10" fill="none" stroke="#1f2547" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div><strong>Guardián de la piel</strong><span>Termine el juego con 8 o más aciertos.</span></div>
-          </li>
-          <li class="insignia" data-insignia="aprendiz">
-            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="38" fill="#3d6b4b"/><circle cx="40" cy="40" r="31" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="5 4"/><path d="M22 30l18-8 18 8-18 8z" fill="#fff"/><path d="M29 34v10c0 4 5 7 11 7s11-3 11-7V34" fill="none" stroke="#e2b04a" stroke-width="4" stroke-linecap="round"/></svg>
-            <div><strong>Aprendiz de los 6 cuidados</strong><span>Marque los seis cuidados como aprendidos.</span></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ Mis desafíos de hospitalización ============ -->
-<section class="band band-naranjo" id="desafios" aria-labelledby="desafios-titulo" data-buscar="Mis desafíos de hospitalización|evaluación prueba de ingreso prueba de alta desafío diario racha prácticos almohadas exportar resumen">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 class="h2" id="desafios-titulo">Mis desafíos de hospitalización</h2>
-      <p>Para ver cuánto aprende durante la hospitalización.</p>
-      <button class="listen" type="button" data-leer="desafios" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-volume-2"/></svg>Escuchar</button>
-    </div>
-    <div class="desafios" id="desafiosApp" aria-live="polite">
-      <p class="patch">Cargando sus desafíos…</p>
-    </div>
-  </div>
-</section>
-
 <!-- ============ ¿Cuándo consultar? ============ -->
-<section class="seccion-cielo" id="alarma" aria-labelledby="alarma-titulo" data-buscar="Cuándo consultar|señales de alarma semáforo ampolla herida fiebre mal olor urgencia CESFAM">
+<section class="vista seccion-cielo" id="alarma" data-vista="alarma" data-titulo="¿Cuándo consultar?" aria-labelledby="alarma-titulo" data-buscar="Cuándo consultar|señales de alarma semáforo ampolla herida fiebre mal olor urgencia CESFAM">
   <div class="wrap">
     <div class="section-head">
-      <h2 class="h2" id="alarma-titulo">¿Cuándo pedir ayuda?</h2>
+      <h2 class="h2" id="alarma-titulo" tabindex="-1">¿Cuándo pedir ayuda?</h2>
       <p>Marque lo que ve en la piel y le diremos qué hacer.</p>
-      <button class="listen" type="button" data-leer="alarma" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-volume-2"/></svg>Escuchar</button>
+      <button class="listen" type="button" data-leer="alarma" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-volume-2"/></svg><span>Escuchar</span></button>
     </div>
     <div class="semaforo-grid">
 
@@ -811,13 +839,111 @@
   </div>
 </section>
 
-<!-- ============ Mi riesgo ============ -->
-<section class="band band-turquesa" id="riesgo" aria-labelledby="riesgo-titulo" data-buscar="Mi riesgo|escala de Braden autoevaluación evaluación de riesgo">
+<!-- ============ Repase jugando ============ -->
+<section class="vista band band-lila juego" id="jugar" data-vista="jugar" data-titulo="Repase jugando" aria-labelledby="jugar-titulo">
   <div class="wrap">
+    <a class="volver" href="#/inicio"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-left"/></svg>Inicio</a>
     <div class="section-head">
-      <h2 class="h2" id="riesgo-titulo">¿Cuánto riesgo hay?</h2>
+      <h2 class="h2" id="jugar-titulo" tabindex="-1">Repase jugando: ¿mito o verdad?</h2>
+      <p>Diez frases que se escuchan en casa. Responda y gane insignias.</p>
+      <button class="listen" type="button" data-leer="quiz" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-volume-2"/></svg><span>Escuchar la pregunta</span></button>
+    </div>
+    <div class="juego-grid">
+      <div class="juego-col">
+      <div class="patch quiz" id="quiz" data-buscar="Juego mito o verdad|quiz preguntas insignias aprender jugando">
+        <div class="quiz-meta">
+          <span id="quizPaso">Pregunta 1 de 10</span>
+          <span class="quiz-puntos"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><span id="quizPuntos">0 aciertos</span></span>
+        </div>
+        <div class="quiz-hilo" id="quizHilo" aria-hidden="true"></div>
+        <div id="quizPregunta">
+          <p class="quiz-afirmacion" id="quizAfirmacion"></p>
+          <div class="quiz-opciones">
+            <button class="btn" type="button" data-respuesta="verdad"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>Verdad</button>
+            <button class="btn" type="button" data-respuesta="mito"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-circle-x"/></svg>Mito</button>
+          </div>
+          <div class="quiz-feedback" id="quizFeedback" aria-live="polite" hidden>
+            <strong id="quizFeedbackTitulo"></strong>
+            <span id="quizFeedbackTexto"></span>
+          </div>
+          <button class="btn btn-cielo" type="button" id="quizSiguiente" hidden>Siguiente pregunta <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+        </div>
+        <div class="quiz-final" id="quizFinal" hidden>
+          <p class="quiz-afirmacion" id="quizFinalTitulo"></p>
+          <p class="quiz-final-texto" id="quizFinalTexto"></p>
+          <button class="btn btn-sol" type="button" id="quizOtraVez"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-rotate-ccw"/></svg>Jugar otra vez</button>
+        </div>
+      </div>
+      <section class="patch progreso" id="progreso" aria-labelledby="progresoTitulo" data-buscar="Mi progreso|resultados partidas mejorar puntaje historial">
+        <h3 class="h3" id="progresoTitulo">Mi progreso</h3>
+        <p class="progreso-resumen" id="progresoResumen">Termine una partida para ver su progreso.</p>
+        <div class="progreso-chart" id="progresoChart" hidden>
+          <div class="progreso-eje" aria-hidden="true"><span>10</span><span>5</span><span>0</span></div>
+          <div class="progreso-plot">
+            <i class="progreso-grid" style="--y:100%"></i><i class="progreso-grid" style="--y:50%"></i><i class="progreso-grid is-base" style="--y:0%"></i>
+            <ol class="progreso-cols" id="progresoCols" aria-label="Aciertos por partida, de la más antigua a la más reciente"></ol>
+            <div class="progreso-tip" id="progresoTip" role="status" hidden></div>
+          </div>
+        </div>
+        <p class="progreso-reforzar" id="progresoReforzar" hidden></p>
+        <details class="progreso-tabla" id="progresoTablaBox" hidden>
+          <summary>Ver como tabla</summary>
+          <table>
+            <thead><tr><th scope="col">Partida</th><th scope="col">Fecha</th><th scope="col">Aciertos</th></tr></thead>
+            <tbody id="progresoTabla"></tbody>
+          </table>
+        </details>
+      </section>
+      </div>
+
+      <div class="insignias">
+        <h3>Mis insignias</h3>
+        <ul class="insignias-lista" id="insignias">
+          <li class="insignia" data-insignia="puntada">
+            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="38" fill="#eac788"/><circle cx="40" cy="40" r="31" fill="none" stroke="#2f3649" stroke-width="2.5" stroke-dasharray="5 4"/><path d="M24 52c8-4 10-14 16-20s14-8 18-8M54 20l6 4-4 6" fill="none" stroke="#915365" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><strong>Primera puntada</strong><span>Responda su primera pregunta.</span></div>
+          </li>
+          <li class="insignia" data-insignia="ojo">
+            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="38" fill="#689e99"/><circle cx="40" cy="40" r="31" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="5 4"/><path d="M18 40s8-13 22-13 22 13 22 13-8 13-22 13-22-13-22-13z" fill="#fff"/><circle cx="40" cy="40" r="7" fill="#2f3649"/></svg>
+            <div><strong>Ojo atento</strong><span>Acierte 5 preguntas.</span></div>
+          </li>
+          <li class="insignia" data-insignia="guardian">
+            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="38" fill="#c07b8e"/><circle cx="40" cy="40" r="31" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="5 4"/><path d="M40 20l16 6v12c0 11-7 18-16 22-9-4-16-11-16-22V26z" fill="#eac788"/><path d="M33 40l5 5 9-10" fill="none" stroke="#2f3649" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><strong>Guardián de la piel</strong><span>Termine el juego con 8 o más aciertos.</span></div>
+          </li>
+          <li class="insignia" data-insignia="aprendiz">
+            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="38" fill="#789d7d"/><circle cx="40" cy="40" r="31" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="5 4"/><path d="M22 30l18-8 18 8-18 8z" fill="#fff"/><path d="M29 34v10c0 4 5 7 11 7s11-3 11-7V34" fill="none" stroke="#eac788" stroke-width="4" stroke-linecap="round"/></svg>
+            <div><strong>Aprendiz de la piel</strong><span>Complete las ocho lecciones.</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Mis desafíos de hospitalización ============ -->
+<section class="vista band band-naranjo" id="desafios" data-vista="desafios" data-titulo="Mis desafíos" aria-labelledby="desafios-titulo" data-buscar="Mis desafíos de hospitalización|evaluación prueba de ingreso prueba de alta desafío diario racha prácticos almohadas exportar resumen">
+  <div class="wrap">
+    <a class="volver" href="#/inicio"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-left"/></svg>Inicio</a>
+    <div class="section-head">
+      <h2 class="h2" id="desafios-titulo" tabindex="-1">Mis desafíos de hospitalización</h2>
+      <p>Para ver cuánto aprende durante la hospitalización.</p>
+      <button class="listen" type="button" data-leer="desafios" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-volume-2"/></svg><span>Escuchar</span></button>
+    </div>
+    <div class="desafios" id="desafiosApp" aria-live="polite">
+      <p class="patch">Cargando sus desafíos…</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Mi riesgo ============ -->
+<section class="vista band band-turquesa" id="riesgo" data-vista="riesgo" data-titulo="¿Cuánto riesgo hay?" aria-labelledby="riesgo-titulo" data-buscar="Mi riesgo|escala de Braden autoevaluación evaluación de riesgo">
+  <div class="wrap">
+    <a class="volver" href="#/inicio"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-left"/></svg>Inicio</a>
+    <div class="section-head">
+      <h2 class="h2" id="riesgo-titulo" tabindex="-1">¿Cuánto riesgo hay?</h2>
       <p>Seis preguntas basadas en la escala de Braden. Solo orienta: no reemplaza a su equipo de salud.</p>
-      <button class="listen" type="button" data-leer="riesgo" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-volume-2"/></svg>Escuchar</button>
+      <button class="listen" type="button" data-leer="riesgo" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-volume-2"/></svg><span>Escuchar</span></button>
     </div>
     <form class="riesgo-form" id="riesgoForm">
       <fieldset class="patch pregunta">
@@ -888,18 +1014,21 @@
 </section>
 
 <!-- ============ Cuidador ============ -->
-<section class="band band-fucsia" id="cuidador" aria-labelledby="cuidador-titulo" data-buscar="Para quien cuida|cuidador cuidadora apoyo descanso">
-  <div class="wrap cuidador-grid">
-    <div>
-      <h2 class="cuidador-cita" id="cuidador-titulo">Su cariño y sus cuidados son el <span>mejor tratamiento</span></h2>
-      <p class="lead cuidador-lead">Cuidar cansa, y pedir ayuda también es cuidar. ¡Gracias!</p>
+<section class="vista band band-fucsia" id="cuidador" data-vista="cuidador" data-titulo="Para quien cuida" aria-labelledby="cuidador-titulo" data-buscar="Para quien cuida|cuidador cuidadora apoyo descanso">
+  <div class="wrap">
+    <a class="volver" href="#/inicio"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-left"/></svg>Inicio</a>
+    <div class="cuidador-grid">
+  <div>
+    <h2 class="cuidador-cita" id="cuidador-titulo" tabindex="-1">Su cariño y sus cuidados son el <span>mejor tratamiento</span></h2>
+    <p class="lead cuidador-lead">Cuidar cansa, y pedir ayuda también es cuidar. ¡Gracias!</p>
+  </div>
+  <ul class="cuidador-tips">
+    <li><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>Turne los cambios de posición con otra persona, sobre todo de noche.</li>
+    <li><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-hand"/></svg></span>Pida que le enseñen a mover a la persona sin dañar su espalda.</li>
+    <li><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg></span>Descanse, coma y duerma: usted también necesita cuidado.</li>
+    <li><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-heart-handshake"/></svg></span>Pregunte en su CESFAM por apoyos para personas cuidadoras.</li>
+  </ul>
     </div>
-    <ul class="cuidador-tips">
-      <li><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>Turne los cambios de posición con otra persona, sobre todo de noche.</li>
-      <li><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-hand"/></svg></span>Pida que le enseñen a mover a la persona sin dañar su espalda.</li>
-      <li><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg></span>Descanse, coma y duerma: usted también necesita cuidado.</li>
-      <li><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-heart-handshake"/></svg></span>Pregunte en su CESFAM por apoyos para personas cuidadoras.</li>
-    </ul>
   </div>
 </section>
 
@@ -914,7 +1043,7 @@
         <p class="footer-intro">Material educativo. No reemplaza las indicaciones de su equipo de salud.</p>
         <p class="aviso-legal">Sus registros se guardan solo en este equipo.</p>
         <div class="footer-acciones">
-          <button class="btn btn-sm btn-sol" type="button" id="btnImprimir2"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-printer"/></svg>Imprimir mi día</button>
+          <button class="btn btn-sm" type="button" id="btnImprimir2"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-printer"/></svg>Imprimir mi día</button>
           <button class="btn btn-sm btn-fantasma" type="button" id="btnBorrar"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-trash-2"/></svg>Borrar mis datos</button>
         </div>
       </div>
@@ -937,13 +1066,12 @@
   </div>
 </footer>
 
-<!-- Navegación inferior (móvil) -->
-<nav class="bottomnav" aria-label="Accesos rápidos">
-  <a href="#inicio"><svg class="icon" aria-hidden="true"><use href="#i-house"/></svg>Inicio</a>
-  <a href="#porque"><svg class="icon" aria-hidden="true"><use href="#i-book-open"/></svg>Aprender</a>
-  <a href="#mi-dia"><svg class="icon" aria-hidden="true"><use href="#i-calendar-check"/></svg>Mi día</a>
-  <a href="#jugar"><svg class="icon" aria-hidden="true"><use href="#i-gamepad-2"/></svg>Jugar</a>
-  <a href="#alarma" class="is-alarma"><svg class="icon" aria-hidden="true"><use href="#i-triangle-alert"/></svg>Alarma</a>
+<!-- Navegación inferior (celular y tablet) -->
+<nav class="bottomnav" aria-label="Secciones">
+  <a href="#/inicio" data-nav="inicio"><svg class="icon" aria-hidden="true"><use href="#i-house"/></svg>Inicio</a>
+  <a href="#/aprender" data-nav="aprender"><svg class="icon" aria-hidden="true"><use href="#i-book-open"/></svg>Aprender</a>
+  <a href="#/mi-dia" data-nav="mi-dia"><svg class="icon" aria-hidden="true"><use href="#i-calendar-check"/></svg>Mi día</a>
+  <a href="#/alarma" data-nav="alarma" class="is-alarma"><svg class="icon" aria-hidden="true"><use href="#i-triangle-alert"/></svg>Alarma</a>
 </nav>
 
 <!-- Búsqueda -->
@@ -973,87 +1101,87 @@
   <defs>
     <symbol id="cordillera" viewBox="0 0 1440 400">
       <!-- sol y nubes -->
-      <circle cx="1352" cy="96" r="58" fill="none" stroke="#e2b04a" stroke-width="7" stroke-dasharray="4 10" stroke-linecap="round"/>
-      <circle cx="1352" cy="96" r="40" fill="#e2b04a" stroke="rgba(31,37,71,.28)" stroke-width="2.5" stroke-dasharray="6 5"/>
-      <path transform="translate(-300 120)" d="M842 66c-4-18 14-30 30-22 6-16 32-18 40-2 16-6 32 6 28 22 12 4 12 22-2 24h-90c-14-2-18-18-6-22z" fill="#fff" stroke="rgba(31,42,110,.35)" stroke-width="2.5" stroke-dasharray="6 5"/>
+      <circle cx="1352" cy="96" r="58" fill="none" stroke="#eac788" stroke-width="7" stroke-dasharray="4 10" stroke-linecap="round"/>
+      <circle cx="1352" cy="96" r="40" fill="#eac788" stroke="rgba(47,54,73,.28)" stroke-width="2.5" stroke-dasharray="6 5"/>
+      <path transform="translate(-300 120)" d="M842 66c-4-18 14-30 30-22 6-16 32-18 40-2 16-6 32 6 28 22 12 4 12 22-2 24h-90c-14-2-18-18-6-22z" fill="#fff" stroke="rgba(47,54,73,.35)" stroke-width="2.5" stroke-dasharray="6 5"/>
             <!-- cordillera -->
-      <path d="M0 300 120 172l80 58 130-140 120 130 110-80 130 110 130-140 140 120 120-80 130 90 120-120 110 90v190H0z" fill="#b4bedb" stroke="rgba(255,255,255,.75)" stroke-width="3" stroke-dasharray="8 7"/>
+      <path d="M0 300 120 172l80 58 130-140 120 130 110-80 130 110 130-140 140 120 120-80 130 90 120-120 110 90v190H0z" fill="#bec6e2" stroke="rgba(255,255,255,.75)" stroke-width="3" stroke-dasharray="8 7"/>
       <path d="M300 122l30-32 32 38-16-6-16 12-16-10zM790 142l30-32 30 34-15-5-15 10-16-8zM1300 152l30-32 28 30-14-4-14 9-16-7zM536 164l24-24 24 26-12-4-12 8-12-6z" fill="#fff"/>
-      <path d="M0 330c150-70 260-30 380-60 140-35 220 30 380 10 140-18 240-50 380-10 120 30 220-15 300 0v130H0z" fill="#a9c8bc" stroke="rgba(255,255,255,.7)" stroke-width="3" stroke-dasharray="8 7"/>
+      <path d="M0 330c150-70 260-30 380-60 140-35 220 30 380 10 140-18 240-50 380-10 120 30 220-15 300 0v130H0z" fill="#afd0c3" stroke="rgba(255,255,255,.7)" stroke-width="3" stroke-dasharray="8 7"/>
       <!-- casitas -->
-      <g stroke="rgba(31,37,71,.28)" stroke-width="2" stroke-dasharray="5 4">
+      <g stroke="rgba(47,54,73,.28)" stroke-width="2" stroke-dasharray="5 4">
         <path d="M178 262h40v34h-40z" fill="#e8c47a"/><path d="M172 264l26-22 26 22z" fill="#c98e98"/>
         <path d="M232 252h34v30h-34z" fill="#fff"/><path d="M227 254l22-19 22 19z" fill="#d39a7e"/>
         <path d="M1028 250h40v34h-40z" fill="#c98e98"/><path d="M1022 252l26-22 26 22z" fill="#e8c47a"/>
         <path d="M1086 262h34v30h-34z" fill="#e9c6ca"/><path d="M1081 264l22-19 22 19z" fill="#a29ac6"/>
         <path d="M640 276h36v30h-36z" fill="#d39a7e"/><path d="M635 278l23-20 23 20z" fill="#fff"/>
       </g>
-      <g fill="#4a4f6e"><rect x="191" y="272" width="12" height="12"/><rect x="243" y="262" width="11" height="11"/><rect x="1041" y="260" width="12" height="12"/><rect x="1097" y="272" width="11" height="11"/><rect x="652" y="286" width="11" height="11"/></g>
-      <path d="M0 372c200-44 330-14 520-30 180-15 300 30 480 8 180-20 300 6 440-12v62H0z" fill="#8fae9a" stroke="rgba(255,255,255,.6)" stroke-width="3" stroke-dasharray="8 7"/>
+      <g fill="#808696"><rect x="191" y="272" width="12" height="12"/><rect x="243" y="262" width="11" height="11"/><rect x="1041" y="260" width="12" height="12"/><rect x="1097" y="272" width="11" height="11"/><rect x="652" y="286" width="11" height="11"/></g>
+      <path d="M0 372c200-44 330-14 520-30 180-15 300 30 480 8 180-20 300 6 440-12v62H0z" fill="#9bbaa5" stroke="rgba(255,255,255,.6)" stroke-width="3" stroke-dasharray="8 7"/>
       <path d="M90 360c10-24 30-24 40 0M360 352c10-22 28-22 38 0M880 366c10-22 28-22 38 0M1240 356c10-22 28-22 38 0" fill="none" stroke="#e3eedb" stroke-width="5" stroke-linecap="round"/>
     </symbol>
     <symbol id="fig-supino" viewBox="0 0 400 230">
-      <rect x="8" y="170" width="384" height="34" rx="12" fill="#5b6fa3"/>
-      <path d="M20 186h360" stroke="rgba(255,255,255,.5)" stroke-width="2.5" stroke-dasharray="7 6"/>
-      <ellipse cx="50" cy="160" rx="42" ry="12" fill="#fff" stroke="rgba(20,27,77,.35)" stroke-width="2" stroke-dasharray="5 4"/>
-      <ellipse cx="306" cy="160" rx="48" ry="11" fill="#fff" stroke="rgba(20,27,77,.35)" stroke-width="2" stroke-dasharray="5 4"/>
-      <path d="M226 128c34-2 56 8 76 12 24 3 44 0 60 0v16c-20 2-40 2-62 0-26 0-50 6-74 8z" fill="#5e5491" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
+      <rect x="8" y="170" width="384" height="34" rx="12" fill="#c6d2e5"/>
+      <path d="M20 186h360" stroke="rgba(255,255,255,.9)" stroke-width="2.5" stroke-dasharray="7 6"/>
+      <ellipse cx="50" cy="160" rx="42" ry="12" fill="#fff" stroke="rgba(47,54,73,.35)" stroke-width="2" stroke-dasharray="5 4"/>
+      <ellipse cx="306" cy="160" rx="48" ry="11" fill="#fff" stroke="rgba(47,54,73,.35)" stroke-width="2" stroke-dasharray="5 4"/>
+      <path d="M226 128c34-2 56 8 76 12 24 3 44 0 60 0v16c-20 2-40 2-62 0-26 0-50 6-74 8z" fill="#aaa5cf" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
       <path d="M356 124c10-2 18 6 20 16l-2 16h-16z" fill="#c98a6b"/>
-      <path d="M74 126c18-12 128-12 152 0l4 38c-28 6-128 6-154 0z" fill="#2e6e6a" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
-      <rect x="98" y="142" width="104" height="14" rx="7" fill="#5f9690"/>
+      <path d="M74 126c18-12 128-12 152 0l4 38c-28 6-128 6-154 0z" fill="#87b5b1" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
+      <rect x="98" y="142" width="104" height="14" rx="7" fill="#abd0cc"/>
       <circle cx="208" cy="149" r="8" fill="#c98a6b"/>
       <circle cx="50" cy="130" r="24" fill="#c98a6b"/>
       <path d="M27 126c0-16 12-26 26-26 12 0 22 8 23 20-8-6-20-8-30-4-6 2-12 6-19 10z" fill="#e8e6ef"/>
     </symbol>
     <symbol id="fig-supino-sin" viewBox="0 0 400 230">
-      <rect x="8" y="170" width="384" height="34" rx="12" fill="#5b6fa3"/>
-      <path d="M20 186h360" stroke="rgba(255,255,255,.5)" stroke-width="2.5" stroke-dasharray="7 6"/>
-      <ellipse cx="50" cy="160" rx="42" ry="12" fill="#fff" stroke="rgba(20,27,77,.35)" stroke-width="2" stroke-dasharray="5 4"/>
-      <path d="M226 132c40-2 92 2 132 6v30H226z" fill="#5e5491" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
+      <rect x="8" y="170" width="384" height="34" rx="12" fill="#c6d2e5"/>
+      <path d="M20 186h360" stroke="rgba(255,255,255,.9)" stroke-width="2.5" stroke-dasharray="7 6"/>
+      <ellipse cx="50" cy="160" rx="42" ry="12" fill="#fff" stroke="rgba(47,54,73,.35)" stroke-width="2" stroke-dasharray="5 4"/>
+      <path d="M226 132c40-2 92 2 132 6v30H226z" fill="#aaa5cf" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
       <path d="M356 134c10-2 18 6 20 16l-2 20h-18z" fill="#c98a6b"/>
-      <path d="M74 126c18-12 128-12 152 0l4 38c-28 6-128 6-154 0z" fill="#2e6e6a" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
-      <rect x="98" y="142" width="104" height="14" rx="7" fill="#5f9690"/>
+      <path d="M74 126c18-12 128-12 152 0l4 38c-28 6-128 6-154 0z" fill="#87b5b1" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
+      <rect x="98" y="142" width="104" height="14" rx="7" fill="#abd0cc"/>
       <circle cx="208" cy="149" r="8" fill="#c98a6b"/>
       <circle cx="50" cy="130" r="24" fill="#c98a6b"/>
       <path d="M27 126c0-16 12-26 26-26 12 0 22 8 23 20-8-6-20-8-30-4-6 2-12 6-19 10z" fill="#e8e6ef"/>
     </symbol>
     <symbol id="fig-lado" viewBox="0 0 400 230">
-      <rect x="8" y="170" width="384" height="34" rx="12" fill="#5b6fa3"/>
-      <path d="M20 186h360" stroke="rgba(255,255,255,.5)" stroke-width="2.5" stroke-dasharray="7 6"/>
-      <ellipse cx="46" cy="160" rx="40" ry="12" fill="#fff" stroke="rgba(20,27,77,.35)" stroke-width="2" stroke-dasharray="5 4"/>
-      <path d="M232 124c30-4 52 4 70 14 22 10 46 14 66 16v16h-72c-22-2-44-10-64-14z" fill="#5e5491" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
-      <ellipse cx="300" cy="150" rx="24" ry="9" fill="#fff" stroke="rgba(20,27,77,.35)" stroke-width="2" stroke-dasharray="5 4"/>
+      <rect x="8" y="170" width="384" height="34" rx="12" fill="#c6d2e5"/>
+      <path d="M20 186h360" stroke="rgba(255,255,255,.9)" stroke-width="2.5" stroke-dasharray="7 6"/>
+      <ellipse cx="46" cy="160" rx="40" ry="12" fill="#fff" stroke="rgba(47,54,73,.35)" stroke-width="2" stroke-dasharray="5 4"/>
+      <path d="M232 124c30-4 52 4 70 14 22 10 46 14 66 16v16h-72c-22-2-44-10-64-14z" fill="#aaa5cf" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
+      <ellipse cx="300" cy="150" rx="24" ry="9" fill="#fff" stroke="rgba(47,54,73,.35)" stroke-width="2" stroke-dasharray="5 4"/>
       <path d="M362 152c8 0 16 4 18 12l-2 6h-18z" fill="#c98a6b"/>
-      <path d="M78 118c46-14 112-8 152 6 16 8 18 34 6 46H84c-14-8-18-38-6-52z" fill="#2e6e6a" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
-      <path d="M110 128c30-6 70-6 96 2" fill="none" stroke="#5f9690" stroke-width="12" stroke-linecap="round"/>
+      <path d="M78 118c46-14 112-8 152 6 16 8 18 34 6 46H84c-14-8-18-38-6-52z" fill="#87b5b1" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
+      <path d="M110 128c30-6 70-6 96 2" fill="none" stroke="#abd0cc" stroke-width="12" stroke-linecap="round"/>
       <circle cx="46" cy="130" r="24" fill="#c98a6b"/>
       <ellipse cx="40" cy="150" rx="6" ry="8" fill="#b77558"/>
       <path d="M23 128c0-16 12-26 26-26 12 0 22 8 23 20-8-6-20-8-30-4-6 2-12 6-19 10z" fill="#e8e6ef"/>
     </symbol>
     <symbol id="fig-lado-sin" viewBox="0 0 400 230">
-      <rect x="8" y="170" width="384" height="34" rx="12" fill="#5b6fa3"/>
-      <path d="M20 186h360" stroke="rgba(255,255,255,.5)" stroke-width="2.5" stroke-dasharray="7 6"/>
-      <ellipse cx="46" cy="160" rx="40" ry="12" fill="#fff" stroke="rgba(20,27,77,.35)" stroke-width="2" stroke-dasharray="5 4"/>
-      <path d="M232 124c30-4 52 4 70 14 22 10 46 14 66 16v16h-72c-22-2-44-10-64-14z" fill="#5e5491" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
+      <rect x="8" y="170" width="384" height="34" rx="12" fill="#c6d2e5"/>
+      <path d="M20 186h360" stroke="rgba(255,255,255,.9)" stroke-width="2.5" stroke-dasharray="7 6"/>
+      <ellipse cx="46" cy="160" rx="40" ry="12" fill="#fff" stroke="rgba(47,54,73,.35)" stroke-width="2" stroke-dasharray="5 4"/>
+      <path d="M232 124c30-4 52 4 70 14 22 10 46 14 66 16v16h-72c-22-2-44-10-64-14z" fill="#aaa5cf" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
       <path d="M362 152c8 0 16 4 18 12l-2 6h-18z" fill="#c98a6b"/>
-      <path d="M78 118c46-14 112-8 152 6 16 8 18 34 6 46H84c-14-8-18-38-6-52z" fill="#2e6e6a" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
-      <path d="M110 128c30-6 70-6 96 2" fill="none" stroke="#5f9690" stroke-width="12" stroke-linecap="round"/>
+      <path d="M78 118c46-14 112-8 152 6 16 8 18 34 6 46H84c-14-8-18-38-6-52z" fill="#87b5b1" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
+      <path d="M110 128c30-6 70-6 96 2" fill="none" stroke="#abd0cc" stroke-width="12" stroke-linecap="round"/>
       <circle cx="46" cy="130" r="24" fill="#c98a6b"/>
       <ellipse cx="40" cy="150" rx="6" ry="8" fill="#b77558"/>
       <path d="M23 128c0-16 12-26 26-26 12 0 22 8 23 20-8-6-20-8-30-4-6 2-12 6-19 10z" fill="#e8e6ef"/>
     </symbol>
     <symbol id="fig-sentado" viewBox="0 0 400 230">
-      <path d="M20 212h360" stroke="#5b6fa3" stroke-width="5" stroke-linecap="round"/>
-      <rect x="96" y="34" width="26" height="126" rx="10" fill="#8a5a3c"/>
-      <rect x="112" y="140" width="156" height="22" rx="8" fill="#8a5a3c"/>
-      <path d="M118 162v48M258 162v48" stroke="#8a5a3c" stroke-width="10" stroke-linecap="round"/>
-      <rect x="120" y="126" width="146" height="18" rx="9" fill="#e2b04a" stroke="rgba(20,27,77,.35)" stroke-width="2" stroke-dasharray="5 4"/>
-      <rect x="132" y="108" width="112" height="10" rx="5" fill="#8a5a3c"/>
-      <path d="M126 120l120 2 12 2c8 2 10 14 2 18h-134z" fill="#5e5491" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
-      <path d="M248 128c10 22 14 46 16 70h-20c-2-20-6-40-12-60z" fill="#5e5491"/>
-      <path d="M244 196h40c8 0 10 12 2 14h-44z" fill="#1f2547"/>
-      <path d="M124 70c20-10 50-8 64 6l6 50h-70z" fill="#2e6e6a" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
-      <path d="M170 82c-6 10-10 18-12 26h70" fill="none" stroke="#5f9690" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M20 212h360" stroke="#a8b5cb" stroke-width="5" stroke-linecap="round"/>
+      <rect x="96" y="34" width="26" height="126" rx="10" fill="#c19c7f"/>
+      <rect x="112" y="140" width="156" height="22" rx="8" fill="#c19c7f"/>
+      <path d="M118 162v48M258 162v48" stroke="#c19c7f" stroke-width="10" stroke-linecap="round"/>
+      <rect x="120" y="126" width="146" height="18" rx="9" fill="#eac788" stroke="rgba(47,54,73,.35)" stroke-width="2" stroke-dasharray="5 4"/>
+      <rect x="132" y="108" width="112" height="10" rx="5" fill="#c19c7f"/>
+      <path d="M126 120l120 2 12 2c8 2 10 14 2 18h-134z" fill="#aaa5cf" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
+      <path d="M248 128c10 22 14 46 16 70h-20c-2-20-6-40-12-60z" fill="#aaa5cf"/>
+      <path d="M244 196h40c8 0 10 12 2 14h-44z" fill="#686e7e"/>
+      <path d="M124 70c20-10 50-8 64 6l6 50h-70z" fill="#87b5b1" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="5 4"/>
+      <path d="M170 82c-6 10-10 18-12 26h70" fill="none" stroke="#abd0cc" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
       <circle cx="232" cy="108" r="7" fill="#c98a6b"/>
       <circle cx="156" cy="50" r="22" fill="#c98a6b"/>
       <path d="M134 48c0-16 10-24 24-24 12 0 20 6 22 18-8-6-18-6-26-2-8 2-14 6-20 8z" fill="#e8e6ef"/>
